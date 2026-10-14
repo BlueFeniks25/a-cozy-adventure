@@ -1,0 +1,57 @@
+{
+  "cooldownSeconds": 60,
+  "graveDurationSeconds": 180,
+  "collectionDurationSeconds": 300,
+  "xpPercentage": 100,
+  "forceLoadGraveChunks": false,
+  "graveTextUpdateIntervalTicks": 20,
+  "reviveOfferDurationSeconds": 30,
+  "finalDamageTypes": [
+    "minecraft:lava",
+    "minecraft:out_of_world"
+  ],
+  "finalDimensions": [],
+  "belowWorldDeathsAreFinal": true,
+  "manualRevive": {
+    "enabled": true,
+    "allowDuringReviveCooldown": false,
+    "durationSeconds": 30,
+    "requiredHits": 6,
+    "allowedMisses": 2,
+    "helperRetryCooldownSeconds": 10,
+    "reviveHealthHalfHearts": 1,
+    "reviveLockSeconds": 180,
+    "weaknessSeconds": 90,
+    "weaknessAmplifier": 1,
+    "slownessSeconds": 45,
+    "slownessAmplifier": 0,
+    "miningFatigueSeconds": 60,
+    "miningFatigueAmplifier": 0,
+    "effects": [
+      {
+        "effectId": "minecraft:weakness",
+        "durationSeconds": 90,
+        "amplifier": 1
+      },
+      {
+        "effectId": "minecraft:slowness",
+        "durationSeconds": 45,
+        "amplifier": 0
+      },
+      {
+        "effectId": "minecraft:mining_fatigue",
+        "durationSeconds": 60,
+        "amplifier": 0
+      }
+    ],
+    "difficulty": {
+      "speedPercent": 160,
+      "speedIncreasePercent": 12,
+      "maximumSpeedPercent": 300,
+      "targetVariationPercent": 80,
+      "alternatingDirection": true
+    }
+  },
+  "debugLogging": false,
+  "diagnosticTestModeEnabled": false
+}

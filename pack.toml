@@ -1,0 +1,13 @@
+name = "A Cozy Adventure"
+author = "Feniks"
+version = "0.0.1"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "799edb65a14b1b81df4493cf262cf9650b8bed55c07436f8c8f8233643e197f8"
+
+[versions]
+fabric = "0.19.5"
+minecraft = "26.3"

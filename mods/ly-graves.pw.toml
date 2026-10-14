@@ -1,0 +1,13 @@
+name = "Graves (Fabric/Forge/NeoForge/Quilt)"
+filename = "graves-3.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1ad25b74b5857deb8601b68443e18a12579c46a1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9084205
+project-id = 1215040

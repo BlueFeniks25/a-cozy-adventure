@@ -1,0 +1,13 @@
+name = "Polydex"
+filename = "polydex-1.11.0+26.3-rc-1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a37f5efda42dab4e232e69f8adf2490760082b32"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8859841
+project-id = 580643

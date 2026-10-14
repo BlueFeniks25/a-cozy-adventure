@@ -1,0 +1,13 @@
+name = "Bundle API"
+filename = "bundle-api-fabric-5.0.0+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7883e38c21bcfc97503848796f26e1998ec7b9fe"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8990141
+project-id = 1189983

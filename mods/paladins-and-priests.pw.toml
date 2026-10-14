@@ -1,0 +1,13 @@
+name = "Paladins & Priests (RPG Series)"
+filename = "paladins-fabric-3.1.4+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f8ccaa11427da2cf280eb06fd91139d509a94d5d"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9062863
+project-id = 856548

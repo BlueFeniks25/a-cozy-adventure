@@ -1,0 +1,13 @@
+name = "3D Maps"
+filename = "3d-maps-0.8.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/s4WQHerM/versions/ArCyixUt/3d-maps-0.8.2.jar"
+hash-format = "sha512"
+hash = "c21a95dc7e8651f486d088b2f136af2d776a70aeb838c2d5e53de44f9b2d4ea110dc2ab7a04d5a318cbb27f6cabe181adc3603afa5cef6cfd43318946749ac96"
+
+[update]
+[update.modrinth]
+mod-id = "s4WQHerM"
+version = "ArCyixUt"

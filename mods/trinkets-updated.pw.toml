@@ -1,0 +1,13 @@
+name = "Trinkets Updated"
+filename = "trinkets-4.2.0+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "45426a4d60c46d9d91c512e4cc77d38711ab396a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8957515
+project-id = 1509777

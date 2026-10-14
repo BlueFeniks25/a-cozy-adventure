@@ -1,0 +1,13 @@
+name = "FrozenLib"
+filename = "FrozenLib-3.0.2-mc26.3-fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "45cabb88428112737bc1d5f20bee7b3e8619a312"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9061321
+project-id = 709773

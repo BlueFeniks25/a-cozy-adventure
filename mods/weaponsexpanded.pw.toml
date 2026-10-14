@@ -1,0 +1,13 @@
+name = "Weapons Expanded"
+filename = "weaponsexpanded_26.3_2.1.2_fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c3ed77601065b37cde607036389bd2d1c2830395"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9049792
+project-id = 1271198

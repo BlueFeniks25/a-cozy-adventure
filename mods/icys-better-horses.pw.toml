@@ -1,0 +1,13 @@
+name = "Icy's Better Horses"
+filename = "icys-better-horses-2.1.2-fab-26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "78110e2b5a6cf3b5214a1ca38b683239839cd21f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9163702
+project-id = 1527172

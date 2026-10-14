@@ -1,0 +1,13 @@
+name = "Serene Seasons"
+filename = "SereneSeasons-fabric-26.3-26.1.2.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cf8b98cb39fc3749d8f5069788eb43785a7a0973"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8938724
+project-id = 291874

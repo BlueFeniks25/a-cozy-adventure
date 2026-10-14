@@ -1,0 +1,13 @@
+name = "Wilder Delights"
+filename = "wilderdelights-1.0.0-26.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/2r4rp5Ns/versions/992fUyWi/wilderdelights-1.0.0-26.3.jar"
+hash-format = "sha512"
+hash = "e3a555bbe3208a2a28162b998e338cdf873bd2933926a1151831f4d1af29f0a06e3a7c314f2a3192e69f55a421858eb4c7e81f68a85596651b892a17037be858"
+
+[update]
+[update.modrinth]
+mod-id = "2r4rp5Ns"
+version = "992fUyWi"

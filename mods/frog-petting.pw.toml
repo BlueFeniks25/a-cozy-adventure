@@ -1,0 +1,13 @@
+name = "Pet Frogs and More!"
+filename = "frog_petting-5.1+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4ad9859d4f37970ad856e06ac4b811d85d5b311b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8933986
+project-id = 952880

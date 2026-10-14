@@ -1,0 +1,13 @@
+name = "Scale Me"
+filename = "scaleme-3.3.2+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c72b313dc2199c40aa3ca057ea1fce3292e72f5a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9068533
+project-id = 1378514

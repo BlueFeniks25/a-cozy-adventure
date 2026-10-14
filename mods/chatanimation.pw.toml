@@ -1,0 +1,13 @@
+name = "Chat Animation [Smooth Chat]"
+filename = "chatanimation-fabric-1.3.4+mc26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5743ce2bb57f67fd3d6bdd8936a3ee3444b1c143"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9069815
+project-id = 892086

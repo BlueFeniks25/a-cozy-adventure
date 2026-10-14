@@ -1,0 +1,13 @@
+name = "Arsenal (RPG Series)"
+filename = "arsenal-fabric-1.5.1+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "bafaed8ace7bc6a277d76d0766ad84951e817c05"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9013386
+project-id = 1230054

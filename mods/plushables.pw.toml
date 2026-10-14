@@ -1,0 +1,13 @@
+name = "Plushables"
+filename = "plushables-fabric-2.6.1+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1036cfded1868c622ed8ebfaabe73ebf753b99c1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9070535
+project-id = 318603

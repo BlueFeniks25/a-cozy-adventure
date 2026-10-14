@@ -1,0 +1,13 @@
+name = "Colorful Trims"
+filename = "colorful-trims-2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/hCf7CjRg/versions/Cuz8lyhf/colorful-trims-2.0.jar"
+hash-format = "sha512"
+hash = "0189e8db8a2e14d863231ef10d5e278b26fba54c114a9454f3bbd07d38feb5aea5e14a5c49012eceb62a5a2c422d445dea1e5a447c398eecba187307a514e7db"
+
+[update]
+[update.modrinth]
+mod-id = "hCf7CjRg"
+version = "Cuz8lyhf"

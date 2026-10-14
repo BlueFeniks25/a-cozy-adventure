@@ -1,0 +1,13 @@
+name = "Studious Keybinds"
+filename = "studious-keybinds.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c4fe71ee155d837f99b014bd49fbe99d517367ff"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9087802
+project-id = 1731572

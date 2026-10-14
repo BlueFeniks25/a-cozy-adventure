@@ -1,0 +1,13 @@
+name = "Armory (RPG Series)"
+filename = "armory-fabric-1.5.3+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0e915a3a971f6343a3ac5268ca8b40b8b68ec99e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9013395
+project-id = 1311561

@@ -1,0 +1,13 @@
+name = "Stoneworks"
+filename = "stoneworks-v26.3.1-mc26.3.x+fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7235318dc92e679c871f2700ae029242058f57ae"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8985433
+project-id = 852663

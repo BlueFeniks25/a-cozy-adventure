@@ -1,0 +1,13 @@
+name = "Natural Waters"
+filename = "naturalwaters-v26.3.0-mc26.3.x+fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8839e157d43501a8f572bd9d1f37f498ba255dc7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8989180
+project-id = 1367853

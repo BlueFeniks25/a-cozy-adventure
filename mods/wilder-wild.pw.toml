@@ -1,0 +1,13 @@
+name = "Wilder Wild"
+filename = "WilderWild-4.3.2-mc26.3-fabric.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/AtHRJSUW/versions/R4z4bH0F/WilderWild-4.3.2-mc26.3-fabric.jar"
+hash-format = "sha512"
+hash = "176de47d59c430cf63083f5b6d99696b482dfbd36d01d75a6108c51e76ffdeed3e86b9bdf326cf569c7b109a4b1e782455e2b65939f4436a3447d68a4734f963"
+
+[update]
+[update.modrinth]
+mod-id = "AtHRJSUW"
+version = "R4z4bH0F"

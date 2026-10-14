@@ -1,0 +1,13 @@
+name = "Glowing Trims Mod"
+filename = "glowing_trims-1.0.26.3.x.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/V1c2WNSt/versions/TSDuWsfM/glowing_trims-1.0.26.3.x.jar"
+hash-format = "sha512"
+hash = "d17a626bbec3b2106d8035343b031908308dc8e74aefa453d47e5335a8fcf7a4b876716a89d94738fcd0ec57cec91c7232ae4d359af46d037329375fa0e51231"
+
+[update]
+[update.modrinth]
+mod-id = "V1c2WNSt"
+version = "TSDuWsfM"

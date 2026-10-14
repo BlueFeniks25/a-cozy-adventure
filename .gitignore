@@ -1,0 +1,21 @@
+﻿*.jar
+*.zip
+packwiz.exe
+*.log
+
+# Local tools and backups
+*.jar
+*.zip
+*.log
+*.ps1
+packwiz.exe
+config-review/
+config-dateiliste.txt
+
+# Temporary and personal files
+*.bak
+*.tmp
+crash-reports/
+logs/
+saves/
+screenshots/

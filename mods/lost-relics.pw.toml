@@ -1,0 +1,13 @@
+name = "Lost Relics"
+filename = "lost-relics-fabric-26.3-r1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "632e9c70b57db83b851fcb61263a5c282348b63b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8897129
+project-id = 953036

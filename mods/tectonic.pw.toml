@@ -1,0 +1,13 @@
+name = "Tectonic"
+filename = "tectonic-3.0.31-fabric-26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1e0725c00c974190d19babf7ba61f44397e30f4b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8995544
+project-id = 686836

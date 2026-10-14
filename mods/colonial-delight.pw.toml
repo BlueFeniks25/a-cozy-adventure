@@ -1,0 +1,13 @@
+name = "Colonial Delight [Fabric]"
+filename = "colonial-delight-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "21b342f75aac323b0b2b53221300746b2840f074"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9103083
+project-id = 1702522

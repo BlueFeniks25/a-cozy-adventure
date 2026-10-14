@@ -1,0 +1,11 @@
+{
+  "general": {
+    "prideFlagAllYear": false
+  },
+  "network": {
+    "proxyHost": "",
+    "proxyPort": 8080,
+    "proxyUsername": "",
+    "proxyPassword": ""
+  }
+}

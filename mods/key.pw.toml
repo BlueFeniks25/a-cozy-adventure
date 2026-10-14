@@ -1,0 +1,13 @@
+name = "Key - Lock chests, other containers and doors"
+filename = "key-8.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/amB1Riy4/versions/VATW1D2u/key-8.1.jar"
+hash-format = "sha512"
+hash = "43576c4f0dce9dd5bdf0a7a03b4cae0061f6f0a7fd03d3682b86a50e165d06157bc3ee293334e94d37daeedcc0e4a34c02e1855cca6dad44bf53fe52d407984c"
+
+[update]
+[update.modrinth]
+mod-id = "amB1Riy4"
+version = "VATW1D2u"

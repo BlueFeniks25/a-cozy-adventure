@@ -1,0 +1,13 @@
+name = "Village Quest"
+filename = "village-quest-2.4.2-mc26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3300e16114a1011ba10bbc126ad46994c5abe73f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8957553
+project-id = 1492864

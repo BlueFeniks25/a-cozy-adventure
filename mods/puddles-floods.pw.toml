@@ -1,0 +1,13 @@
+name = "Puddles & Floods"
+filename = "puddleflood-1.1.6+26.2-fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "eae4a520699d441468eb404cef30e3292f266b27"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9013547
+project-id = 1450615

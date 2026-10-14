@@ -1,0 +1,13 @@
+name = "ColorLight"
+filename = "test-6-colorlight-26.3-0.2.5.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/DbLWxVRd/versions/i7MsChZd/test-6-colorlight-26.3-0.2.5.jar"
+hash-format = "sha512"
+hash = "8516463a1398f6ec8585f171df7fd2f82e735fb7466afe3cc971d8032621f0c24949eca36e2652312871ab89615eb3dae31ce2ed9193bd7b0d0083378d1b3a18"
+
+[update]
+[update.modrinth]
+mod-id = "DbLWxVRd"
+version = "i7MsChZd"

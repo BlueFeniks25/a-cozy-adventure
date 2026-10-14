@@ -1,0 +1,13 @@
+name = "Tom's Trees"
+filename = "tomstrees-1.0.0+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "322b549a17d81e764e394b807d77b2224505eae5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9059403
+project-id = 1726529

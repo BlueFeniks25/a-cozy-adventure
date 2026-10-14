@@ -1,0 +1,13 @@
+name = "KhazodaCore"
+filename = "khazodacore-fabric-1.0.4+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f30a9f159ac880b8342bb5e79daf4187f00b66cb"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9060602
+project-id = 1539791

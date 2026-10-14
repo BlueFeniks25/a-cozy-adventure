@@ -1,0 +1,13 @@
+name = "Pyrite"
+filename = "pyrite-0.18.3+26.3-fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "30237f603a16126dce6e4c4826eba897775ada2e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8941152
+project-id = 1101500

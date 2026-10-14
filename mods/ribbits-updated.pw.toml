@@ -1,0 +1,13 @@
+name = "Ribbits Updated"
+filename = "ribbits-fabric-4.2.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7f551d4876bc02b70a85fa0fc6a57b94864ded70"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9006507
+project-id = 1692353

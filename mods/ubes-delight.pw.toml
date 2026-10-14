@@ -1,0 +1,13 @@
+name = "Ube's Delight"
+filename = "ubesdelight-fabric-26.3-0.4.15.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2f698a34b2636a4be67ebbf022befa37f0724737"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8991718
+project-id = 903894

@@ -1,0 +1,13 @@
+name = "Climate Rivers"
+filename = "climaterivers-v26.3.1-mc26.3.x+fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d6a4e1da54ec7b44cc8514455d9ef6b8282bea2d"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9062719
+project-id = 1255421

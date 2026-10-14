@@ -1,0 +1,13 @@
+name = "Axolotl Buckets"
+filename = "axolotlbuckets-fabric-2.0.0+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cafc8182905a1fb600eaa1cd9a60795ce42eb3d1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8906376
+project-id = 1570109

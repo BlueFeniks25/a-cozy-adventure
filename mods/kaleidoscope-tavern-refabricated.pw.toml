@@ -1,0 +1,13 @@
+name = "Kaleidoscope Tavern Refabricated"
+filename = "kaleidoscope_tavern-1.2.0.11-fabric+mc26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c2cabaa53b9f743b8b722b0f48a374bc8e01b6c7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9053934
+project-id = 1475865

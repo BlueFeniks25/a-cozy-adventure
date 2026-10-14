@@ -1,0 +1,13 @@
+name = "StrawberryLib"
+filename = "strawberrylib-fabric-26.3-r1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "eda4907d3645fc12576d4f46e2aade17ab1ef69f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8895101
+project-id = 1218484

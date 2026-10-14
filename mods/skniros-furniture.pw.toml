@@ -1,0 +1,13 @@
+name = "Skniro's Furniture"
+filename = "SkniroFurniture-1.6.1-26.3-Fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "b89c26337f933a13ad050cf6fbd327d50808c2e3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8970881
+project-id = 1287342

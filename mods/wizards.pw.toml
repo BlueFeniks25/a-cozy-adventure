@@ -1,0 +1,13 @@
+name = "Wizards (RPG Series)"
+filename = "wizards-fabric-3.1.4+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d068d42039c59811fa5e7b2ac3fd21e990510548"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9062861
+project-id = 734325

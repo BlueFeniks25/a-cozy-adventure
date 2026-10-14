@@ -1,0 +1,13 @@
+name = "Ranged Weapon API"
+filename = "ranged_weapon_api-fabric-4.0.0+26.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "6363eab67f2dc22ce24f61fe25d4eeba45713f6b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9004410
+project-id = 962162
