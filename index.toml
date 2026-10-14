@@ -5,26 +5,6 @@ file = ".nojekyll"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
-file = "config-review/auto-host.json"
-hash = "a89d4eeaab6597586f25ba23ff3652038f0c16d0f5cbac7eb6082243b152bee9"
-
-[[files]]
-file = "config-review/openpartiesandclaims-server.toml"
-hash = "290a5cdfdca7d807753c3a866503b9bad958b788b4f498e3debff01a4e655cf5"
-
-[[files]]
-file = "config-review/remote_texture.cfg"
-hash = "b5a0662b6f5521df476ca6d66677958a786a7759ec548c6725769fbf51ecae50"
-
-[[files]]
-file = "config-review/resource-pack.json"
-hash = "8098128058770fc9cfe5c0a3bc41f1d028b4b3695657a0f2f924f98a81f3225d"
-
-[[files]]
-file = "config-review/security.cfg"
-hash = "8cbb0c0a158569aefd3416007c5dc81a47fb21b324491cbeb240c9d6ccde127d"
-
-[[files]]
 file = "config/appleskin.json5"
 hash = "65edc28ca2bf6bd3e3684ae545fb74bcc0ec935a40d6ac60cb68c00c152e34fb"
 

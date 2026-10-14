@@ -1,0 +1,12 @@
+.git/**
+.gitattributes
+.gitignore
+.packwizignore
+*.zip
+*.log
+*.ps1
+*.bak
+*.tmp
+packwiz.exe
+config-dateiliste.txt
+config-review/**
