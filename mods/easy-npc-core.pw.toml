@@ -1,13 +1,13 @@
 name = "Easy NPC: Core"
-filename = "easy_npc-fabric-26.3-7.14.0.jar"
+filename = "easy_npc-fabric-26.3-7.15.0.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "c0aab09ce6d0c03af1777062417b913ea97cca11"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/Epm6R3P2/versions/BYGpuXLc/easy_npc-fabric-26.3-7.15.0.jar"
+hash-format = "sha512"
+hash = "3621fe2503c2dcb17f2f18d4ca5ce0e28a224789d8f567bfe84e6993e793607e3bac9725410963c4e232a2e609c70a92f6d7ec9da08a2ec9c6ca02fb33d49b8c"
 
 [update]
-[update.curseforge]
-file-id = 9042367
-project-id = 1308987
+[update.modrinth]
+mod-id = "Epm6R3P2"
+version = "BYGpuXLc"

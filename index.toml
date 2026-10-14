@@ -1114,17 +1114,12 @@ metafile = true
 
 [[files]]
 file = "mods/easy-npc-config-ui.pw.toml"
-hash = "7e3b3625b0a45c62eb998146f2035a12bbd9232a39e07a9ab83d38b0eab3ef51"
+hash = "15b134b26325270a30625060676a16ad86f52021984751d1c7836252fb5f6bdc"
 metafile = true
 
 [[files]]
 file = "mods/easy-npc-core.pw.toml"
-hash = "77fb223c7035bd5c68fa6e6f9b149b272e678508e6fa13343bffff7eb173aa00"
-metafile = true
-
-[[files]]
-file = "mods/easy-npc.pw.toml"
-hash = "594d83e56dfe2b7969491d43be9db833bd4eda1fc303d737d22516c078bd8a15"
+hash = "4e5baa8ce7d1cc781837108821f051b1eaab30467487b9fb328015f0ffcc67be"
 metafile = true
 
 [[files]]
@@ -1139,7 +1134,7 @@ metafile = true
 
 [[files]]
 file = "mods/entityculling.pw.toml"
-hash = "cd080dc9b375472550624a33a8a4c4f6e2b6128ec9344effd50cae90b92eb4ad"
+hash = "29f920b8bdac98a1a1d9e6454d0c3b4d0eb1f3779f2fea7b7df177b2163e5d61"
 metafile = true
 
 [[files]]
@@ -1179,7 +1174,7 @@ metafile = true
 
 [[files]]
 file = "mods/frozenlib.pw.toml"
-hash = "f302bf5e705a5fdd6dff1dd0e267a64152d435a32a5c5a0ddfb70454bbbc70aa"
+hash = "c0bb1e86d5df2eaf51aafaad819f808519aadd20438d651ecd0f5632e940ae6b"
 metafile = true
 
 [[files]]
@@ -1279,7 +1274,7 @@ metafile = true
 
 [[files]]
 file = "mods/ly-graves.pw.toml"
-hash = "e328bdcef1d56f60c647fcf467223103aac8a038fff4fb3ed61c74e464f7ab78"
+hash = "47825abe2ba3e32decfbd7c61fecd4312e9016b1ff63a104fb121f61b14d0691"
 metafile = true
 
 [[files]]
@@ -1339,7 +1334,7 @@ metafile = true
 
 [[files]]
 file = "mods/particle-effects.pw.toml"
-hash = "696b005ce79a4c416d41c78c0ac7f5e7cabdf4b9d3e6abccce888eb70a3ad0f0"
+hash = "c681b68c52dffcda95782b3c64ddc7e8bb9ef2021ac761348008dca3adf88bf2"
 metafile = true
 
 [[files]]
@@ -1354,7 +1349,7 @@ metafile = true
 
 [[files]]
 file = "mods/player-animation-library.pw.toml"
-hash = "07ef0a310be991701cc8e1f51ee91f30cd22c8aa1cb0aa41d33e90c1d2a235f7"
+hash = "5f500b882196aa8eae0d0dff4299b2fff908a8e61c7b6aab0d840a2824b3bc5f"
 metafile = true
 
 [[files]]

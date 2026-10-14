@@ -1,13 +1,13 @@
-name = "Graves (Fabric/Forge/NeoForge/Quilt)"
-filename = "graves-3.0.1.jar"
+name = "Graves"
+filename = "ly-graves-3.0.1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "1ad25b74b5857deb8601b68443e18a12579c46a1"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/kieAM9Us/versions/5rgPAbeA/ly-graves-3.0.1.jar"
+hash-format = "sha512"
+hash = "581b98d78387ab8d95998ec806b68bd3bcc4f2f352bbc4ab1f991a98dc61ea355736379f5f0a3e15548f88b27db13b3774cd122c6bdad176c204babbbf2fd0cf"
 
 [update]
-[update.curseforge]
-file-id = 9084205
-project-id = 1215040
+[update.modrinth]
+mod-id = "kieAM9Us"
+version = "5rgPAbeA"
