@@ -5,10 +5,6 @@ file = ".nojekyll"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
-file = "config-dateiliste.txt"
-hash = "fef90589460b32b28c6adf730fe42428c9132ab75a494cd2e1f34cef964bf20c"
-
-[[files]]
 file = "config-review/auto-host.json"
 hash = "a89d4eeaab6597586f25ba23ff3652038f0c16d0f5cbac7eb6082243b152bee9"
 
