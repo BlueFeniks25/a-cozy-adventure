@@ -1,0 +1,76 @@
+name: Mod-Katalog prüfen und generieren
+
+# Generates a review artifact only. No commits, pushes, releases or Pages deployment.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mods/**"
+      - "pack.toml"
+      - "catalog/**"
+      - "scripts/generate_mods.py"
+      - "tests/**"
+      - "mods.json"
+      - ".github/workflows/mod-catalog.yml"
+  pull_request:
+    paths:
+      - "mods/**"
+      - "pack.toml"
+      - "catalog/**"
+      - "scripts/generate_mods.py"
+      - "tests/**"
+      - "mods.json"
+      - ".github/workflows/mod-catalog.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mod-catalog-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - name: Repository lesen
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Python einrichten
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.11"
+      - name: Generator testen
+        run: python -B -m unittest discover -s tests -v
+      - name: Modliste erzeugen
+        # Public APIs and checked-in cache suffice. No secrets exposed to PR code.
+        run: python -B scripts/generate_mods.py
+      - name: Ergebnis auf Konsistenz prüfen
+        run: python -B scripts/generate_mods.py --check
+      - name: Unveränderte Packwiz-Dateien prüfen
+        run: git diff --exit-code -- pack.toml index.toml mods/ resourcepacks/ config/ .packwizignore .nojekyll
+      - name: Ergebnis für die Prüfung bereitstellen
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: mod-catalog-${{ github.sha }}
+          path: |
+            mods.json
+            catalog/metadata-cache.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Prüfhinweis
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          data = json.loads(Path('mods.json').read_text(encoding='utf-8'))
+          cached = sum(bool(m['metadataSource']) for m in data['mods'])
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write(f"## Mod-Katalog\n\n{data['total']} Mods, {cached} mit API-Metadaten.\n\n")
+              summary.write("Die generierte mods.json und der Metadaten-Cache liegen im Artefakt. ")
+              summary.write("Es wurden keine Repository-Dateien committed oder veröffentlicht.\n")
+          PY

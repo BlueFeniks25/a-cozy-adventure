@@ -1,0 +1,552 @@
+{
+  "3d-maps": {
+    "description": "Verwandelt Karten in Gegenstandsrahmen in anpassbare, dreidimensionale Landschaften.",
+    "categories": ["Komfort"]
+  },
+  "additional-lanterns": {
+    "description": "Mehr Laternenvarianten für gemütliche Wege, Gärten und Häuser.",
+    "categories": ["Bauen"]
+  },
+  "ambientsounds": {
+    "description": "Füllt Biome und Landschaften mit passenden Umgebungsgeräuschen.",
+    "categories": ["Atmosphäre"]
+  },
+  "appleskin": {
+    "description": "Zeigt Sättigung und Nährwert deiner Nahrung direkt im Interface.",
+    "categories": ["Komfort", "Küche & Garten"]
+  },
+  "archers": {
+    "description": "Neue Bögen, Ausrüstung und Fähigkeiten für Abenteuer als Bogenschütze.",
+    "categories": ["Abenteuer"]
+  },
+  "architectury-api": {
+    "description": "Gemeinsame Schnittstelle, mit der Mods auf verschiedenen Modloadern funktionieren.",
+    "categories": ["Bibliotheken"]
+  },
+  "armor-model-api": {
+    "description": "Stellt anderen Mods die Darstellung eigener Rüstungsmodelle bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "armory-rpg-series": {
+    "description": "Erweitert dein RPG-Abenteuer um zusätzliche Rüstungen und Ausrüstung.",
+    "categories": ["Abenteuer"]
+  },
+  "arsenal-rpg-series": {
+    "description": "Bringt zusätzliche Waffen und Ausrüstung für unterschiedliche Kampfstile.",
+    "categories": ["Abenteuer"]
+  },
+  "axolotl-buckets": {
+    "description": "Macht die Axolotl-Variante schon am Aussehen des Eimers erkennbar.",
+    "categories": ["Tiere", "Komfort"]
+  },
+  "baguettelib": {
+    "description": "Technische Bibliothek, die gemeinsame Funktionen für andere Mods bereitstellt.",
+    "categories": ["Bibliotheken"]
+  },
+  "balm": {
+    "description": "Verbindet gemeinsame Funktionen verschiedener Mods mit dem verwendeten Modloader.",
+    "categories": ["Bibliotheken"]
+  },
+  "beautify-refabricated": {
+    "description": "Verschönere dein Zuhause mit Möbeln, Pflanzen und liebevollen Dekorationen.",
+    "categories": ["Bauen"],
+    "featured": true
+  },
+  "better-combat-by-daedelus": {
+    "description": "Flüssige Waffenanimationen und neue Angriffsabläufe machen Kämpfe lebendiger.",
+    "categories": ["Abenteuer"]
+  },
+  "bundle-api": {
+    "description": "Gemeinsame technische Grundlage für Mods, die Bündel-Funktionen erweitern.",
+    "categories": ["Bibliotheken"]
+  },
+  "chat-heads": {
+    "description": "Zeigt Spielerköpfe neben Chatnachrichten, damit du sofort weißt, wer schreibt.",
+    "categories": ["Komfort"]
+  },
+  "chatanimation": {
+    "description": "Lässt neue Chatnachrichten sanft in den Spielchat gleiten.",
+    "categories": ["Atmosphäre"]
+  },
+  "chunky-pregenerator": {
+    "description": "Kann Weltabschnitte vorab generieren und so spätere Erkundung entlasten.",
+    "categories": ["Performance"]
+  },
+  "climate-rivers": {
+    "description": "Passt Flüsse an die klimatischen Eigenschaften ihrer Umgebung an.",
+    "categories": ["Welt"]
+  },
+  "cloth-config": {
+    "description": "Stellt anderen Mods übersichtliche Menüs für ihre Einstellungen bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "collective": {
+    "description": "Bündelt gemeinsame Funktionen für mehrere Mods des Entwicklers Serilum.",
+    "categories": ["Bibliotheken"]
+  },
+  "colonial-delight": {
+    "description": "Ergänzt Farmer’s Delight um weitere kulinarische Inhalte und Rezepte.",
+    "categories": ["Küche & Garten"]
+  },
+  "colorful-trims": {
+    "description": "Erweitert die farbige Gestaltung deiner Rüstungsverzierungen.",
+    "categories": ["Atmosphäre"]
+  },
+  "colorlight": {
+    "description": "Ergänzt farbige Lichteffekte für eine stimmungsvollere Welt.",
+    "categories": ["Atmosphäre"]
+  },
+  "continuity": {
+    "description": "Verbindet passende Blocktexturen für weichere Übergänge, etwa bei Glas.",
+    "categories": ["Atmosphäre"]
+  },
+  "coolrain": {
+    "description": "Lässt Regen auf verschiedenen Blöcken mit passenden Umgebungsgeräuschen erklingen.",
+    "categories": ["Atmosphäre"]
+  },
+  "crate-delight-fabric": {
+    "description": "Lagere Ernte und Lebensmittel in dekorativen Kisten und Behältern.",
+    "categories": ["Küche & Garten", "Bauen"]
+  },
+  "creativecore": {
+    "description": "Technische Grundlage für Mods mit gemeinsamen Konfigurations- und Darstellungsfunktionen.",
+    "categories": ["Bibliotheken"]
+  },
+  "critical-strike": {
+    "description": "Ergänzt das Kampfsystem um Mechaniken für kritische Treffer.",
+    "categories": ["Abenteuer"]
+  },
+  "decubed-dungeons": {
+    "description": "Entdecke zusätzliche Dungeons mit neuen Räumen, Gefahren und Beute.",
+    "categories": ["Abenteuer", "Welt"]
+  },
+  "delight-lib": {
+    "description": "Gemeinsame Bibliothek für Mods aus dem Delight-Umfeld.",
+    "categories": ["Bibliotheken"]
+  },
+  "dungeon-and-taverns": {
+    "description": "Versteckte Verliese, neue Bauwerke und Tavernen belohnen deine Entdeckungsreisen.",
+    "categories": ["Abenteuer", "Welt"],
+    "featured": true
+  },
+  "easy-npc-config-ui": {
+    "description": "Bietet eine Oberfläche zum Einrichten und Anpassen eigener NPCs.",
+    "categories": ["Komfort"]
+  },
+  "easy-npc-core": {
+    "description": "Stellt die Grundlage zum Erstellen und Verwalten eigener NPCs bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "entity-model-features": {
+    "description": "Ermöglicht Ressourcenpaketen eigene Kreaturenmodelle und Animationen.",
+    "categories": ["Atmosphäre"]
+  },
+  "entity-texture-features-fabric": {
+    "description": "Ermöglicht zusätzliche und leuchtende Kreaturentexturen aus Ressourcenpaketen.",
+    "categories": ["Atmosphäre"]
+  },
+  "entityculling": {
+    "description": "Überspringt die Darstellung verdeckter Kreaturen und Blockobjekte und spart Rechenleistung.",
+    "categories": ["Performance"]
+  },
+  "fabric-api": {
+    "description": "Die zentrale technische Schnittstelle für viele Mods unter Fabric.",
+    "categories": ["Bibliotheken"]
+  },
+  "fabric-language-kotlin": {
+    "description": "Ermöglicht den Betrieb von Fabric-Mods, die in Kotlin geschrieben sind.",
+    "categories": ["Bibliotheken"]
+  },
+  "falling-tree": {
+    "description": "Fälle ganze Bäume, indem du ihren Stamm abbaust; das Verhalten hängt von den Einstellungen ab.",
+    "categories": ["Komfort"]
+  },
+  "farmers-delight-refabricated": {
+    "description": "Vom kleinen Gemüsebeet bis zum Festmahl: neue Pflanzen, Kochgeräte und Gerichte.",
+    "categories": ["Küche & Garten"],
+    "featured": true
+  },
+  "ferritecore-fabric": {
+    "description": "Verringert den Speicherbedarf von Minecraft durch optimierte interne Datenstrukturen.",
+    "categories": ["Performance"]
+  },
+  "forge-config-api-port": {
+    "description": "Macht das Forge-Konfigurationssystem auch für Fabric-Mods nutzbar.",
+    "categories": ["Bibliotheken"]
+  },
+  "frog-petting": {
+    "description": "Ermöglicht es dir, Frösche und weitere Tiere zu streicheln.",
+    "categories": ["Tiere"]
+  },
+  "frozenlib": {
+    "description": "Stellt gemeinsame technische Funktionen für Mods aus dem FrozenBlock-Umfeld bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "gazebos": {
+    "description": "Ergänzt Pavillons in Dörfern, die kleine Bibliotheken für Zauber beherbergen.",
+    "categories": ["Welt", "Magie"]
+  },
+  "geckolib": {
+    "description": "Animationsbibliothek für bewegliche Kreaturen, Gegenstände und andere Modmodelle.",
+    "categories": ["Bibliotheken"]
+  },
+  "glitchcore": {
+    "description": "Gemeinsame technische Bibliothek für Mods und deren Konfiguration.",
+    "categories": ["Bibliotheken"]
+  },
+  "glowing-trims-mod": {
+    "description": "Lässt Rüstungsverzierungen leuchten und macht deine Ausrüstung besonders sichtbar.",
+    "categories": ["Atmosphäre"]
+  },
+  "iceberg-fabric": {
+    "description": "Gemeinsame Bibliothek für Benutzeroberflächen und weitere Modfunktionen.",
+    "categories": ["Bibliotheken"]
+  },
+  "icys-better-horses": {
+    "description": "Erweitert Pferde um zusätzliche Varianten und Funktionen.",
+    "categories": ["Tiere"]
+  },
+  "immediatelyfast": {
+    "description": "Optimiert die unmittelbare Darstellung von Spielelementen für höhere Bildraten.",
+    "categories": ["Performance"]
+  },
+  "inventory-profiles-next": {
+    "description": "Sortiere Inventare, fülle Werkzeugleisten nach und verwalte Gegenstände komfortabler.",
+    "categories": ["Komfort"]
+  },
+  "irisshaders": {
+    "description": "Ermöglicht Shaderpakete für Licht, Schatten und stimmungsvolle Landschaften.",
+    "categories": ["Atmosphäre"]
+  },
+  "jewelry": {
+    "description": "Schmuckstücke mit zusätzlichen Attributen ergänzen deine RPG-Ausrüstung.",
+    "categories": ["Magie", "Abenteuer"]
+  },
+  "kaleidoscope-tavern-refabricated": {
+    "description": "Erweitert deine Küche um Getränke und Inhalte für eine eigene Taverne.",
+    "categories": ["Küche & Garten"]
+  },
+  "key": {
+    "description": "Verschließe Truhen, Türen und andere Behälter mit Schlüsseln.",
+    "categories": ["Komfort"]
+  },
+  "khazodacore": {
+    "description": "Gemeinsame technische Grundlage für Mods des Entwicklers Khazoda.",
+    "categories": ["Bibliotheken"]
+  },
+  "legendary-tooltips-fabric": {
+    "description": "Verleiht Gegenstandsbeschreibungen dekorative Rahmen und besondere Hintergründe.",
+    "categories": ["Atmosphäre"]
+  },
+  "libipn": {
+    "description": "Technische Bibliothek für Inventory Profiles Next und verwandte Funktionen.",
+    "categories": ["Bibliotheken"]
+  },
+  "lighty": {
+    "description": "Zeigt Lichtlevel und mögliche Spawnplätze direkt in deiner Welt an.",
+    "categories": ["Komfort"]
+  },
+  "lithium": {
+    "description": "Optimiert die Spiellogik, ohne dafür die grundlegenden Spielmechaniken zu ändern.",
+    "categories": ["Performance"]
+  },
+  "lithostitched": {
+    "description": "Bibliothek mit Werkzeugen zur Weltgenerierung für andere Mods.",
+    "categories": ["Bibliotheken"]
+  },
+  "lost-relics": {
+    "description": "Ergänzt Relikte und besondere Fundstücke für dein Abenteuer.",
+    "categories": ["Abenteuer"]
+  },
+  "ly-graves": {
+    "description": "Bewahrt deine Gegenstände nach dem Tod in einem Grab zur späteren Rückholung auf.",
+    "categories": ["Komfort", "Abenteuer"]
+  },
+  "macaws-lights-and-lamps": {
+    "description": "Beleuchte dein Zuhause mit neuen Lampen, Leuchten und dekorativen Lichtquellen.",
+    "categories": ["Bauen"]
+  },
+  "modmenu": {
+    "description": "Listet installierte Mods im Spiel auf und verlinkt ihre Einstellungen.",
+    "categories": ["Komfort"]
+  },
+  "modonomicon": {
+    "description": "Stellt interaktive Handbücher und verknüpfte Wissenseinträge für andere Mods bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "more-armor-trims": {
+    "description": "Ergänzt weitere Muster zur individuellen Verzierung deiner Rüstung.",
+    "categories": ["Atmosphäre"]
+  },
+  "more-delight-fabric": {
+    "description": "Erweitert Farmer’s Delight um zusätzliche Lebensmittel und Gerichte.",
+    "categories": ["Küche & Garten"]
+  },
+  "natural-waters": {
+    "description": "Bringt kräftigere, an die Bedrock Edition angelehnte Wasserfarben in deine Welt.",
+    "categories": ["Atmosphäre", "Welt"]
+  },
+  "naturalist": {
+    "description": "Begegne neuen Wildtieren mit eigenen Verhaltensweisen in ihren natürlichen Lebensräumen.",
+    "categories": ["Tiere"],
+    "featured": true
+  },
+  "nemos-woodcutter": {
+    "description": "Verarbeitet Holz in einem eigenen Holzschneider zu vielen passenden Bauteilen.",
+    "categories": ["Bauen", "Komfort"]
+  },
+  "netherportalfix": {
+    "description": "Hilft dabei, nach Netherreisen wieder am passenden Ausgangsportal anzukommen.",
+    "categories": ["Komfort"]
+  },
+  "open-parties-and-claims": {
+    "description": "Erstelle Gruppen und sichere Grundstücke für gemeinsames Bauen und Spielen.",
+    "categories": ["Komfort"]
+  },
+  "paladins-and-priests": {
+    "description": "Heilige Zauber, Heilung und neue Ausrüstung für Paladine und Priester.",
+    "categories": ["Magie", "Abenteuer"]
+  },
+  "particle-effects": {
+    "description": "Gibt den Statuseffekten eigene Partikeltexturen für eine bessere Unterscheidung.",
+    "categories": ["Atmosphäre"]
+  },
+  "particular-reforged": {
+    "description": "Kleine Partikeleffekte machen Wasser, Feuer und deine Umgebung lebendiger.",
+    "categories": ["Atmosphäre"]
+  },
+  "placeholder-api": {
+    "description": "Stellt dynamische Textplatzhalter als gemeinsame Schnittstelle für andere Mods bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "player-animation-library": {
+    "description": "Ermöglicht anderen Mods eigene Animationen für Spielfiguren.",
+    "categories": ["Bibliotheken"]
+  },
+  "plushables": {
+    "description": "Dekoriere dein Zuhause mit sammelbaren Plüschtieren.",
+    "categories": ["Bauen"]
+  },
+  "polydex": {
+    "description": "Ermöglicht das Nachschlagen von Rezepten und Gegenstandsinformationen.",
+    "categories": ["Komfort"]
+  },
+  "polymer": {
+    "description": "Technische Grundlage, um Modinhalte mit möglichst wenigen Client-Anforderungen darzustellen.",
+    "categories": ["Bibliotheken"]
+  },
+  "presence-footsteps": {
+    "description": "Passt Schrittgeräusche an Untergrund und Bewegung an.",
+    "categories": ["Atmosphäre"]
+  },
+  "prism-fabric": {
+    "description": "Stellt anderen Mods erweiterte Farb- und Darstellungsfunktionen bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "puddles-floods": {
+    "description": "Regen hinterlässt Pfützen und kann die Welt mit Überschwemmungen verändern.",
+    "categories": ["Welt", "Atmosphäre"]
+  },
+  "puffish-attributes": {
+    "description": "Stellt zusätzliche Charakterattribute für Fortschritts- und RPG-Systeme bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "puffish-skills": {
+    "description": "Ermöglicht konfigurierbare Fertigkeitsbäume und Charakterfortschritt.",
+    "categories": ["Abenteuer"]
+  },
+  "puzzles-lib": {
+    "description": "Bündelt gemeinsame Funktionen als technische Grundlage für andere Mods.",
+    "categories": ["Bibliotheken"]
+  },
+  "pyrite": {
+    "description": "Eine große Auswahl an Baublöcken, Farben und dekorativen Varianten für deine Projekte.",
+    "categories": ["Bauen"]
+  },
+  "ranged-weapon-api": {
+    "description": "Stellt gemeinsame Funktionen für Fernkampfwaffen anderer Mods bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "relics-rpg": {
+    "description": "Ergänzt besondere Relikte und Ausrüstung für RPG-Abenteuer.",
+    "categories": ["Abenteuer"]
+  },
+  "ribbits-updated": {
+    "description": "Entdecke kleine Froschwesen und ihre lebendigen Siedlungen.",
+    "categories": ["Tiere", "Welt"]
+  },
+  "rogues-and-warriors": {
+    "description": "Neue Waffen, Rüstungen und Fähigkeiten für Schurken und Krieger.",
+    "categories": ["Abenteuer"]
+  },
+  "rrv": {
+    "description": "Hilft dir, Rezepte und Verwendungsmöglichkeiten von Gegenständen nachzuschlagen.",
+    "categories": ["Komfort"]
+  },
+  "rune-crafting": {
+    "description": "Stelle Runen als Grundlage für Zauber und magische Ausrüstung her.",
+    "categories": ["Magie"]
+  },
+  "rustic-delight": {
+    "description": "Ergänzt Farmer’s Delight um neue Nutzpflanzen, Zutaten und rustikale Gerichte.",
+    "categories": ["Küche & Garten"]
+  },
+  "scale-me": {
+    "description": "Ermöglicht Anpassungen der Größe von Spielfiguren und anderen Kreaturen.",
+    "categories": ["Komfort"]
+  },
+  "serene-seasons": {
+    "description": "Erlebe wechselnde Jahreszeiten, die Farben und das Wachstum von Pflanzen beeinflussen.",
+    "categories": ["Welt", "Küche & Garten"]
+  },
+  "shogi": {
+    "description": "Bringt das japanische Brettspiel Shogi in deine Minecraft-Welt.",
+    "categories": ["Komfort"]
+  },
+  "simple-voice-chat": {
+    "description": "Unterhalte dich direkt im Spiel mit anderen – abhängig davon, wie nah ihr euch seid.",
+    "categories": ["Komfort"]
+  },
+  "skniros-furniture": {
+    "description": "Richte dein Zuhause mit zusätzlichen Möbeln und Dekorationen ein.",
+    "categories": ["Bauen"]
+  },
+  "skill-tree": {
+    "description": "Entwickle deinen Charakter mit einem Fertigkeitsbaum und neuen Attributboni.",
+    "categories": ["Abenteuer"]
+  },
+  "sodium": {
+    "description": "Optimiert die Grafikdarstellung und sorgt auf vielen Systemen für mehr Bilder pro Sekunde.",
+    "categories": ["Performance"]
+  },
+  "sound-physics-remastered": {
+    "description": "Lässt Geräusche mit Hall, Echos und Dämpfung auf ihre Umgebung reagieren.",
+    "categories": ["Atmosphäre"]
+  },
+  "spanish-delight-refabricated": {
+    "description": "Erweitert Farmer’s Delight um spanisch inspirierte Zutaten und Gerichte.",
+    "categories": ["Küche & Garten"]
+  },
+  "spark": {
+    "description": "Hilft bei der Analyse von Auslastung, Speicherbedarf und Leistungsproblemen.",
+    "categories": ["Performance"]
+  },
+  "spell-engine": {
+    "description": "Stellt das gemeinsame Zauber- und Fähigkeitensystem für mehrere RPG-Mods bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "spell-power": {
+    "description": "Stellt Attribute und Berechnungen für Zauberstärke anderer Mods bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "status-effect-bars": {
+    "description": "Zeigt die verbleibende Dauer von Statuseffekten als übersichtliche Balken.",
+    "categories": ["Komfort"]
+  },
+  "stoneworks": {
+    "description": "Ergänzt neue Steinvarianten und bearbeitete Baublöcke für deine Bauprojekte.",
+    "categories": ["Bauen"]
+  },
+  "storage-delight-fabric": {
+    "description": "Neue Schränke und Stauraummöbel ergänzen deine Küche und dein Zuhause.",
+    "categories": ["Bauen", "Küche & Garten"]
+  },
+  "strawberrylib": {
+    "description": "Gemeinsame technische Bibliothek für andere Mods.",
+    "categories": ["Bibliotheken"]
+  },
+  "structure-pool-api": {
+    "description": "Erleichtert anderen Mods das Ergänzen von Strukturen in der Weltgenerierung.",
+    "categories": ["Bibliotheken"]
+  },
+  "studious-keybinds": {
+    "description": "Ergänzt Komfortfunktionen für die Verwaltung deiner Tastenbelegungen.",
+    "categories": ["Komfort"]
+  },
+  "supermartijn642s-core-lib": {
+    "description": "Gemeinsame technische Grundlage für Mods von SuperMartijn642.",
+    "categories": ["Bibliotheken"]
+  },
+  "swinging-lanterns": {
+    "description": "Lässt aufgehängte Laternen schwingen und bringt Bewegung in deine Dekoration.",
+    "categories": ["Atmosphäre", "Bauen"]
+  },
+  "tectonic": {
+    "description": "Formt eindrucksvolle Gebirge, tiefe Täler und weitläufige Landschaften.",
+    "categories": ["Welt"]
+  },
+  "terralith": {
+    "description": "Entdecke abwechslungsreiche Biome und Landschaften aus vertrauten Minecraft-Blöcken.",
+    "categories": ["Welt"],
+    "featured": true
+  },
+  "timber-chests": {
+    "description": "Ergänzt Truhenvarianten passend zu unterschiedlichen Holzarten.",
+    "categories": ["Bauen", "Komfort"]
+  },
+  "toms-trees": {
+    "description": "Erweitert die Baumlandschaften deiner Welt um zusätzliche Varianten.",
+    "categories": ["Welt"]
+  },
+  "travelers-backpack-fabric": {
+    "description": "Nimm mehr mit auf Reisen: tragbare Rucksäcke mit zusätzlichem Stauraum und Funktionen.",
+    "categories": ["Komfort", "Abenteuer"]
+  },
+  "trinkets-updated": {
+    "description": "Stellt zusätzliche Ausrüstungsplätze und eine Schnittstelle für Accessoire-Mods bereit.",
+    "categories": ["Bibliotheken"]
+  },
+  "ubes-delight": {
+    "description": "Ergänzt Farmer’s Delight um philippinisch inspirierte Zutaten, Küchenutensilien und Gerichte.",
+    "categories": ["Küche & Garten"]
+  },
+  "village-quest": {
+    "description": "Erweitert das Dorfleben um Aufgaben und neue Anlässe für Abenteuer.",
+    "categories": ["Abenteuer"]
+  },
+  "village-taverns": {
+    "description": "Ergänzt Tavernen als gemütliche Treffpunkte in Dörfern.",
+    "categories": ["Welt"]
+  },
+  "villager-names": {
+    "description": "Gibt Dorfbewohnern eigene Namen und macht Begegnungen persönlicher.",
+    "categories": ["Komfort"]
+  },
+  "waystones": {
+    "description": "Aktiviere Wegsteine und reise bequem zwischen deinen Lieblingsorten.",
+    "categories": ["Komfort", "Abenteuer"]
+  },
+  "weaponsexpanded": {
+    "description": "Ergänzt weitere Waffen und mehr Auswahl für deine Kämpfe.",
+    "categories": ["Abenteuer"]
+  },
+  "wilder-delights": {
+    "description": "Verbindet Inhalte aus Wilder Wild mit den Kochmöglichkeiten von Farmer’s Delight.",
+    "categories": ["Küche & Garten"]
+  },
+  "wilder-wild": {
+    "description": "Macht die Natur mit neuen Details, Pflanzen und lebendigen Begegnungen vielfältiger.",
+    "categories": ["Welt"]
+  },
+  "wizards": {
+    "description": "Zauberstäbe, Roben und elementare Magie für dein Leben als Zauberer.",
+    "categories": ["Magie", "Abenteuer"],
+    "featured": true
+  },
+  "xaeros-minimap": {
+    "description": "Eine kleine Karte mit Orientierungspunkten begleitet dich auf deinen Reisen.",
+    "categories": ["Komfort"]
+  },
+  "xaeros-world-map": {
+    "description": "Hält deine erkundete Welt auf einer großen, durchsuchbaren Karte fest.",
+    "categories": ["Komfort"]
+  },
+  "yacl": {
+    "description": "Bibliothek für übersichtliche und anpassbare Einstellungsmenüs anderer Mods.",
+    "categories": ["Bibliotheken"]
+  },
+  "zoomify": {
+    "description": "Zoome per Tastendruck an entfernte Landschaften und Details heran.",
+    "categories": ["Komfort"]
+  }
+}

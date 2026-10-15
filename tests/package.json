@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "description": "Optional development-only browser checks; the website has no npm dependencies.",
+  "scripts": {
+    "test": "node browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
