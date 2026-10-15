@@ -5,6 +5,7 @@ const http = require("node:http");
 const path = require("node:path");
 const os = require("node:os");
 const { chromium } = require("playwright");
+const { checkReleases, releasesApi, releasesPage } = require("./releases.cjs");
 
 const root = path.resolve(__dirname, "..");
 const prefix = "/a-cozy-adventure/";
@@ -54,6 +55,7 @@ const server = http.createServer((request, response) => {
     });
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
+    await page.route(releasesApi, (route) => route.fulfill({ json: [] }));
     await page.goto(origin + prefix);
     await page.waitForSelector(".mod-card");
     assert.equal(await page.locator(".mod-card").count(), catalog.total);
@@ -141,7 +143,9 @@ const server = http.createServer((request, response) => {
         `Horizontal overflow at ${width}px`,
       );
       if (width === 390) {
-        await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+        await page.evaluate(() =>
+          window.scrollTo({ top: 0, behavior: "instant" }),
+        );
         await page.screenshot({
           path: path.join(os.tmpdir(), "cozy-adventure-mobile.png"),
           fullPage: false,
@@ -163,9 +167,14 @@ const server = http.createServer((request, response) => {
       await packResponse.body(),
       fs.readFileSync(path.join(root, "pack.toml")),
     );
+    await page.waitForFunction(() =>
+      document
+        .getElementById("download-message")
+        .textContent.includes("Noch keine passende"),
+    );
     assert.equal(
-      await page.locator(".download-placeholder").isDisabled(),
-      true,
+      await page.locator("#install-download-link").getAttribute("href"),
+      releasesPage,
     );
 
     // API payloads are displayed as text, and unsafe links/icons are ignored.
@@ -228,6 +237,7 @@ const server = http.createServer((request, response) => {
         document.querySelector(".mod-card .mod-icon")?.textContent.length > 0,
     );
     const reduced = await browser.newContext({ reducedMotion: "reduce" });
+    await reduced.route(releasesApi, (route) => route.fulfill({ json: [] }));
     const reducedPage = await reduced.newPage();
     await reducedPage.goto(origin + prefix);
     assert.equal(
@@ -237,6 +247,7 @@ const server = http.createServer((request, response) => {
       "auto",
     );
     await reduced.close();
+    await checkReleases(browser, origin + prefix);
     assert.deepEqual(errors, []);
     console.log(
       `Browser checks passed: ${catalog.total} mods; search, combined filters, sorting, dialogs, 6 viewport widths, project paths, text safety, errors, icon fallback and reduced motion.`,

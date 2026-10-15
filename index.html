@@ -10,13 +10,14 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://cdn.modrinth.com https://*.forgecdn.net; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://cdn.modrinth.com https://*.forgecdn.net; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <meta name="referrer" content="no-referrer" />
     <title>A Cozy Adventure · Dein Mod-Kompass</title>
     <link rel="icon" href="assets/leaf.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/app.js" defer></script>
+    <script src="assets/releases.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#katalog">Zum Mod-Katalog</a>
@@ -252,11 +253,20 @@
         <div class="install-download">
           <div>
             <strong>Ein Zuhause wartet schon auf dich.</strong>
-            <p>Die Installations-ZIP wird hier nach ihrer Freigabe verlinkt.</p>
+            <p id="download-message" role="status" aria-live="polite">
+              Installations-ZIPs und Versionshinweise findest du auf GitHub.
+            </p>
+            <p id="download-release" hidden>
+              <span id="download-version"></span>
+              <span id="download-channel" class="release-channel"></span>
+            </p>
           </div>
-          <button class="button download-placeholder" type="button" disabled>
-            Installations-ZIP · bald verfügbar <span aria-hidden="true">↓</span>
-          </button>
+          <a
+            id="install-download-link"
+            class="button button-secondary"
+            href="https://github.com/BlueFeniks25/a-cozy-adventure/releases"
+            >GitHub Releases ansehen <span aria-hidden="true">↗</span></a
+          >
         </div>
         <p class="install-help">
           Fragen zum Import?

@@ -719,11 +719,29 @@ h2 {
   color: var(--muted);
   margin: 6px 0 0;
 }
-.download-placeholder {
-  background: #2c3929;
-  color: #a3b192;
-  border-color: #43513a;
+.install-download > div {
+  min-width: 0;
+}
+#install-download-link {
+  flex-shrink: 0;
   font-size: 11px;
+}
+.release-channel {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #3c3428;
+  color: #dfbd7b;
+  font-size: 10px;
+}
+.release-channel[data-channel="beta"] {
+  background: #373040;
+  color: #c7b5d9;
+}
+.release-channel[data-channel="stable"] {
+  background: #2a3826;
+  color: var(--green);
 }
 .install-help {
   text-align: center;
