@@ -19,6 +19,7 @@ Die Website wird auf `feature/mod-catalog-website` vorbereitet. Kein Push, Merge
 ```text
 index.html                         Website und Prism-Installationsanleitung
 assets/app.js                      Suche, Kategorien, Sortierung, Detaildialog
+assets/releases.js                 GitHub-Releases-Abfrage und Prism-ZIP-Auswahl
 assets/styles.css                  Responsives Design, ohne externe Schriftarten
 assets/cozy-world.svg               Lokale Landschaftsillustration
 assets/leaf.svg                     Lokales Logo und Favicon
@@ -121,9 +122,15 @@ Der Katalog-Generator selbst ruft `packwiz refresh` niemals auf.
 
 ## Installation für Mitspieler
 
-Die Website beschreibt den [ZIP-Import in Prism Launcher](https://prismlauncher.org/wiki/help-pages/Zip-import/). Die Download-Schaltfläche ist ausdrücklich als **bald verfügbar** deaktiviert. Vorhandene Backup-ZIPs werden nicht als Installationsdatei ausgegeben.
+Die Website beschreibt den [ZIP-Import in Prism Launcher](https://prismlauncher.org/wiki/help-pages/Zip-import/) und ermittelt die neueste veröffentlichte Version mit passender Installations-ZIP über die öffentliche [GitHub Releases API](https://docs.github.com/en/rest/releases/releases#list-releases). Sie verwendet `/repos/BlueFeniks25/a-cozy-adventure/releases`, einschließlich Pre-releases und stabiler Releases, und ignoriert Drafts sowie Releases ohne Veröffentlichungsdatum. Maßgeblich ist `published_at`, nicht die Reihenfolge der API-Antwort oder die Kennzeichnung als „latest“.
 
-Sobald eine geprüfte, Prism-kompatible Installations-ZIP freigegeben ist, die Schaltfläche in `index.html` durch einen Link auf diese Datei ersetzen und den Begleittext aktualisieren. Ein Repository-Quellcode-ZIP ist kein automatisch importierbares Prism-Modpack. Erstellung und Veröffentlichung einer Installations-ZIP sind hier nicht enthalten.
+Die Abfrage berücksichtigt Folgeseiten mit jeweils 100 Einträgen. Nach insgesamt acht Sekunden, bei API-Fehlern, ungültigen Antworten oder mehr als zehn Seiten bleibt der Link zur [GitHub-Releases-Seite](https://github.com/BlueFeniks25/a-cozy-adventure/releases) verfügbar. Dieser Link funktioniert auch ohne JavaScript. Mod-Katalog und Release-Abfrage laufen unabhängig voneinander. Es werden weder Schlüssel noch eine Anmeldung benötigt; die Content Security Policy erlaubt dafür ausschließlich zusätzlich `api.github.com` als Verbindungsziel.
+
+Als Installationsdatei gilt ein hochgeladenes ZIP-Asset mit `Prism`, `MultiMC`, `Install`, `Installer` oder `Installation` als Wortbestandteil, beispielsweise **`A-Cozy-Adventure-Prism-v0.1.0.zip`**. Unterstützt werden auch **`A-Cozy-Adventure.zip`** und **`A-Cozy-Adventure-v0.1.0.zip`** einschließlich Alpha-/Beta-Suffixen und üblicher Trennzeichen. Explizite Prism-Dateien haben Vorrang vor anderen passenden ZIPs desselben Releases. Archivnamen mit `backup`, `server`, `source`, `config`, `audit` oder `resourcepack` werden ausgeschlossen. GitHubs automatisch erzeugtes Quellcode-ZIP wird nicht verwendet. Die Erkennung erfolgt anhand des Asset-Namens; die ZIP muss vom Herausgeber tatsächlich als Prism-kompatible Instanz gepackt sein.
+
+Der Download verweist unmittelbar auf das `browser_download_url`-Asset des gewählten Releases. Angezeigt werden der Versions-Tag und **Alpha**, **Beta** oder **Stable**. GitHubs `prerelease: false` ergibt Stable; Pre-releases mit `beta` oder `rc` im Tag/Namen ergeben Beta, andere Pre-releases Alpha. Bis Version 1.0.0 können somit auch Vorabversionen ohne Alpha-Suffix ausgeliefert werden.
+
+Bei neuen Releases ist keine Änderung am Website-Code nötig. Releases ohne passendes ZIP werden übersprungen; gibt es keinen passenden Treffer, erscheint die Releases-Seite. Erstellung und Veröffentlichung von Releases oder Installations-ZIPs sind hier nicht enthalten.
 
 ## Tests
 
@@ -133,6 +140,7 @@ Ohne zusätzliche Installation:
 python -B -m unittest discover -s tests -v
 python -B scripts/generate_mods.py --check
 node --check assets/app.js
+node --check assets/releases.js
 ```
 
 Die Generator-Tests prüfen unter anderem exakte Dateizuordnung, unveränderte TOML-Dateien, native Modrinth-Quellen, CurseForge-Fallbacks, API-Ausfälle, Cache-Veraltung, ergänzte/entfernte Mods, fehlerhafte Eingaben und den Umgang mit einem nur im Test vorhandenen Schlüssel.
@@ -146,4 +154,4 @@ npx playwright install chromium
 npm test
 ```
 
-Der Browsertest startet und beendet selbst einen lokalen Testserver unter dem Projektpfad `/a-cozy-adventure/`. Er prüft Suche, kombinierte Filter, Zähler, Sortierung, Dialog und Fokus-Rückgabe, sechs Breiten von 320 bis 1440 Pixeln, unveränderte Auslieferung von `pack.toml`, Ersatzicons, Fehlerzustände, sichere Textdarstellung und reduzierte Bewegung. Screenshots werden außerhalb des Repositorys im temporären Verzeichnis gespeichert.
+Der Browsertest startet und beendet selbst einen lokalen Testserver unter dem Projektpfad `/a-cozy-adventure/`. Er prüft Suche, kombinierte Filter, Zähler, Sortierung, Dialog und Fokus-Rückgabe, sechs Breiten von 320 bis 1440 Pixeln, unveränderte Auslieferung von `pack.toml`, Ersatzicons, Fehlerzustände, sichere Textdarstellung und reduzierte Bewegung. Die Release-Prüfungen simulieren Alpha/Beta/Stable, Drafts, Veröffentlichungsreihenfolge, ZIP-Auswahl, Folgeseiten und API-Ausfälle ohne echte Releases zu erstellen oder herunterzuladen. Screenshots werden außerhalb des Repositorys im temporären Verzeichnis gespeichert.
