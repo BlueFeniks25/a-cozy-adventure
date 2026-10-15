@@ -1,0 +1,1975 @@
+{
+  "entries": {
+    "CurseForge:1048409:sha1:a65e9c2a093e8f3632edc216965ea4806731ae2a": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Rogues",
+      "icon": "https://cdn.modrinth.com/data/3MKqoGuP/5dc4e73e3a2fa08fdcba074961b28bd842847037_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/3MKqoGuP",
+      "name": "Rogues & Warriors (RPG Series)",
+      "summary": "🗡️ Silent Blades, Mighty Blows - Dominate with martial skills!",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1101500:sha1:30237f603a16126dce6e4c4826eba897775ada2e": {
+      "authors": [],
+      "codeUrl": "https://github.com/cassiancc/Pyrite",
+      "icon": "https://cdn.modrinth.com/data/qO4ozPoe/a22e57256a6d3f73fb6db3c978cc9d38a6cba1de_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/qO4ozPoe",
+      "name": "Pyrite",
+      "summary": "Variations of Vanilla blocks, including dyed wood planks and bricks, new material blocks and more to complete your colourful builds.",
+      "tags": [
+        "decoration",
+        "utility"
+      ],
+      "wikiUrl": "https://moddedmc.wiki/en/project/pyrite/docs"
+    },
+    "CurseForge:1106612:sha1:eeccaad85c330367c33dcbef4366f8f6f0d45804": {
+      "authors": [],
+      "codeUrl": "https://github.com/PhantomWing/RusticDelight",
+      "icon": "https://cdn.modrinth.com/data/foa4fGIH/eecc99e281522f2291081c48176f0faa84c107bc.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/foa4fGIH",
+      "name": "Rustic Delight",
+      "summary": "An add-on for Farmer's Delight that adds Pancakes, Cotton, Coffee, Bell Peppers, fried foods and more!",
+      "tags": [
+        "adventure",
+        "decoration",
+        "food",
+        "worldgen"
+      ],
+      "wikiUrl": "https://github.com/PhantomWing/RusticDelight/wiki"
+    },
+    "CurseForge:1178224:sha1:0003a69c1a28322abdba313bc772b3e774481cfc": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Taverns",
+      "icon": "https://cdn.modrinth.com/data/bj4a8NjJ/da775ea634b9344ebd926119e77dfed6ded71928_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/bj4a8NjJ",
+      "name": "Village Taverns (RPG Series)",
+      "summary": "🍺 Find cozy taverns in villages, have a drink, and maybe some rest.",
+      "tags": [
+        "adventure",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1189983:sha1:7883e38c21bcfc97503848796f26e1998ec7b9fe": {
+      "authors": [],
+      "codeUrl": "https://github.com/TheRedBrain/bundle-api",
+      "icon": "https://cdn.modrinth.com/data/n8QN6Z1a/2a66ccc6b5b3e58c1484a411660b81590f356980_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/n8QN6Z1a",
+      "name": "Bundle API",
+      "summary": "Bundle API allows mod authors to easily add bundles that can hold more than 1 stack of items specified by an item tag.",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "library",
+        "storage"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1204049:sha1:4572276ad04a7d0fb95e7c99a1a2813fe2b2382f": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Relics",
+      "icon": "https://cdn.modrinth.com/data/BDQucwF0/6aac428c17df067875dfff8a37b6f2a3535ea2cc_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/BDQucwF0",
+      "name": "Relics (RPG Series)",
+      "summary": "🎖 Unleash your true potential with powerful trinkets! 🔮",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "magic"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1218484:sha1:eda4907d3645fc12576d4f46e2aade17ab1ef69f": {
+      "authors": [],
+      "codeUrl": "https://github.com/MoriyaShiine/strawberrylib",
+      "icon": "https://cdn.modrinth.com/data/9Ya7Yyre/101989d1e3c4649b2d736927b6ce43b73c90e2ba_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/9Ya7Yyre",
+      "name": "StrawberryLib",
+      "summary": "A silly common code library for my mods",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1219053:sha1:9ce277e691b7dfc23d5c0ff561e1163c55d9fc1a": {
+      "authors": [],
+      "codeUrl": "https://github.com/Leclowndu93150/Particular",
+      "icon": "https://cdn.modrinth.com/data/pYFUU6cq/152536579fe8e475149273b64cabdef764b3da9f_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/pYFUU6cq",
+      "name": "Particular ✨ Reforged",
+      "summary": "Particular is a mod that enhances Minecraft's ambience with many hand-crafted visual effects.",
+      "tags": [
+        "game-mechanics"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1230054:sha1:bafaed8ace7bc6a277d76d0766ad84951e817c05": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Arsenal",
+      "icon": "https://cdn.modrinth.com/data/LiP9Q3KV/522a5c3cd60cca6637599eff5ececf33276029ba_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/LiP9Q3KV",
+      "name": "Arsenal (RPG Series)",
+      "summary": "Legendary weapons from the past - not crafted, but conquered.",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "magic"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1255421:sha1:d6a4e1da54ec7b44cc8514455d9ef6b8282bea2d": {
+      "authors": [],
+      "codeUrl": "https://github.com/Fuzss/climaterivers",
+      "icon": "https://cdn.modrinth.com/data/DzZWws4q/32c51cda59e1ad6c77a50b970f08149b90eec367_96.webp",
+      "license": "MPL-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/DzZWws4q",
+      "name": "Climate Rivers",
+      "summary": "Make your rivers stop looking like mistakes – and start flowing with style.",
+      "tags": [
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1264423:sha1:03280769d514b26055ec0c4f11cb77fb6df020c9": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/OfKzpbRU/d007c3afd229b8e796f41174ceacd7c8f0f436cc_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/OfKzpbRU",
+      "name": "BaguetteLib",
+      "summary": "Ever tried to make a mod that needs proper death handling or inventory tracking? Yeah, NeoForge events suck for that.",
+      "tags": [],
+      "wikiUrl": null
+    },
+    "CurseForge:1271198:sha1:c3ed77601065b37cde607036389bd2d1c2830395": {
+      "authors": [],
+      "codeUrl": "https://github.com/AngelicTheAngel/weapons_expanded",
+      "icon": "https://cdn.modrinth.com/data/8pBLL0kb/29259ecfc5e762cb009871f12fee59f9ca440f02_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/8pBLL0kb",
+      "name": "Weapons Expanded",
+      "summary": "This mod adds new weapons, enchantments,  effects, advancements, and more.",
+      "tags": [
+        "equipment"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1287342:sha1:b89c26337f933a13ad050cf6fbd327d50808c2e3": {
+      "authors": [],
+      "codeUrl": "https://github.com/skniro/skniro-Furniture",
+      "icon": "https://cdn.modrinth.com/data/pezpt98N/e9e065c59fee0dae38869b981c9dae3184db7ac8_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/pezpt98N",
+      "name": "Skniro's Furniture",
+      "summary": "Skniro's furniture mod introduces a wide range of furniture while keeping the original Minecraft aesthetic.",
+      "tags": [
+        "decoration",
+        "storage"
+      ],
+      "wikiUrl": "https://wiki.skniro.org/players/Skniro's%20Furniture/01%20Introducing%20the%20Skniro's%20furniture.html"
+    },
+    "CurseForge:1311513:sha1:6e209ebee5aa78a1c6aba9855e0c91af411aeade": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/SkillTree",
+      "icon": "https://cdn.modrinth.com/data/PjDhruSC/bace75ef00b3f21b8a1bba68ba7888702c233067_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/PjDhruSC",
+      "name": "Skill Tree (RPG Series)",
+      "summary": "⭐️ Choose your path - Skills that shape your class",
+      "tags": [
+        "adventure",
+        "game-mechanics",
+        "magic"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1311561:sha1:0e915a3a971f6343a3ac5268ca8b40b8b68ec99e": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Armory",
+      "icon": "https://cdn.modrinth.com/data/PJvJUdGw/176c39adcee3e73c06265dd02e09a41b03cab9f6_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/PJvJUdGw",
+      "name": "Armory (RPG Series)",
+      "summary": "👑 Epic armor sets, with unique designs and set bonuses.",
+      "tags": [
+        "adventure",
+        "equipment",
+        "magic"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1367853:sha1:8839e157d43501a8f572bd9d1f37f498ba255dc7": {
+      "authors": [],
+      "codeUrl": "https://github.com/Fuzss/naturalwaters",
+      "icon": "https://cdn.modrinth.com/data/aYttCyCw/e863c7958c428b3ef8d5bd8e9516bcbe1ad2e5d8_96.webp",
+      "license": "MPL-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/aYttCyCw",
+      "name": "Natural Waters",
+      "summary": "Bring bright, colorful waters from Bedrock to Java. Easy to tweak and enjoy!",
+      "tags": [
+        "decoration",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1378514:sha1:c72b313dc2199c40aa3ca057ea1fce3292e72f5a": {
+      "authors": [],
+      "codeUrl": "https://github.com/KdGaming0/ScaleMe",
+      "icon": "https://cdn.modrinth.com/data/pEGu9f0K/35255ce210b462a3bbe50952ca8c858dc67ed11e_96.webp",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/pEGu9f0K",
+      "name": "Scale Me",
+      "summary": "Scale yourself, others, and items from 0.1x to 3x with smooth animations, swing speed control, and simple in-game menus.",
+      "tags": [
+        "game-mechanics",
+        "social"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1379562:sha1:2120ed1352e931072d7ce26a0c6361d3a1a1be8e": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Critical-Strike",
+      "icon": "https://cdn.modrinth.com/data/ilvNBzFn/105a93920143c5f87703a7db10f0edb3e4ca4a75_96.webp",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/ilvNBzFn",
+      "name": "Critical Strike",
+      "summary": "🍀 Chance based critical hits for melee and ranged attacks!",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "library",
+        "magic"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1422317:sha1:1b9bd0b13c809d93aca7ffc27a228b3e53332d0f": {
+      "authors": [],
+      "codeUrl": "https://github.com/cassiancc/ReliableRecipeViewer/",
+      "icon": "https://cdn.modrinth.com/data/5VolwT6c/c91c6519e275d9eeedd7e2cd5de7b253229942e6.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/5VolwT6c",
+      "name": "Reliable Recipe Viewer (RRV)",
+      "summary": "A recipe viewer for the latest versions of Minecraft, rebuilt from EIV and designed to be configured.",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": "https://moddedmc.wiki/en/project/rrv/latest/docs"
+    },
+    "CurseForge:1450615:sha1:eae4a520699d441468eb404cef30e3292f266b27": {
+      "authors": [],
+      "codeUrl": "https://github.com/PigCart/puddles-floods",
+      "icon": "https://cdn.modrinth.com/data/xeRVd78z/353576c6c47ea70a72e14fdd88ad323e8b24aadb_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/xeRVd78z",
+      "name": "Puddles & Floods",
+      "summary": "Adds detailed puddles and allows rivers to visually flood their banks",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1475865:sha1:c2cabaa53b9f743b8b722b0f48a374bc8e01b6c7": {
+      "authors": [],
+      "codeUrl": "https://github.com/NightEpiphany/KaleidoscopeTavern-Refabricated",
+      "icon": "https://cdn.modrinth.com/data/UMblNdlF/bfeeabb4b3f926a0afbc953490c32892a0999122.png",
+      "license": "CC-BY-NC-SA-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/UMblNdlF",
+      "name": "Kaleidoscope Tavern Refabricated",
+      "summary": "The unofficial fabric port for Kaleidoscope Tavern mod",
+      "tags": [
+        "decoration",
+        "food"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1477733:sha1:bb567b6344c91afaa8f65bcc2f782eb403746f8a": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/3IOcW74j/7a7acb86b4ee971558d8ad65aac6426b1eed5953_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/3IOcW74j",
+      "name": "Swinging Lanterns",
+      "summary": "Adds configurable swinging motions to Minecraft lanterns.",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1492864:sha1:3300e16114a1011ba10bbc126ad46994c5abe73f": {
+      "authors": [],
+      "codeUrl": "https://github.com/topasmusic/village-quest",
+      "icon": "https://cdn.modrinth.com/data/eJsPPGy9/4a99160e9e550a3657d54ef26db756352096f403_96.webp",
+      "license": "LGPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/eJsPPGy9",
+      "name": "Village Quest",
+      "summary": "Village Quest turns villages into living RPG hubs with quests, trade routes, caravans, village bonds, Wayshrines, guild progression, and unique relics.",
+      "tags": [
+        "adventure",
+        "economy",
+        "equipment",
+        "mobs"
+      ],
+      "wikiUrl": "https://github.com/topasmusic/village-quest/blob/main/26.1.2/docs/wiki/README.md"
+    },
+    "CurseForge:1509777:sha1:45426a4d60c46d9d91c512e4cc77d38711ab396a": {
+      "authors": [],
+      "codeUrl": "https://github.com/Patbox/trinkets",
+      "icon": "https://cdn.modrinth.com/data/XaT8sLP6/3749d37537cf7f2a31d7208a231069f2ba6f494b_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/XaT8sLP6",
+      "name": "Trinkets Updated",
+      "summary": "A modern data driven accessory mod. Updated fork of trinkets for 1.21.11 and beyond.",
+      "tags": [
+        "equipment",
+        "library",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/Patbox/trinkets/wiki"
+    },
+    "CurseForge:1527172:sha1:78110e2b5a6cf3b5214a1ca38b683239839cd21f": {
+      "authors": [],
+      "codeUrl": "https://github.com/Icywhenhot/Icy-s-Better-Horses",
+      "icon": "https://cdn.modrinth.com/data/XlUm5I57/c6c29b527477d5b92ce3ea727e52f9efb16e1bc2_96.webp",
+      "license": "LicenseRef-Bare-Minimum-License",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/XlUm5I57",
+      "name": "Icy's Better Horses",
+      "summary": "Better Horses reworks horses into long-term companions through better traversal, progression, and utility systems.",
+      "tags": [
+        "adventure",
+        "equipment",
+        "mobs",
+        "technology",
+        "transportation",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1539791:sha1:f30a9f159ac880b8342bb5e79daf4187f00b66cb": {
+      "authors": [],
+      "codeUrl": "https://github.com/khazoda-mods/khazodacore",
+      "icon": "https://cdn.modrinth.com/data/336usnuE/a21255370395e744158832925824c14766ce92e8_96.webp",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/336usnuE",
+      "name": "KhazodaCore",
+      "summary": "Library for Khazoda's mods containing lots of useful code",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1570109:sha1:cafc8182905a1fb600eaa1cd9a60795ce42eb3d1": {
+      "authors": [],
+      "codeUrl": "https://github.com/Roundaround/mc-fabric-axolotl-buckets",
+      "icon": "https://cdn.modrinth.com/data/6tlhZmC5/icon.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/6tlhZmC5",
+      "name": "Axolotl Buckets",
+      "summary": "Show the color and age of axolotls when in buckets.",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:1659764:sha1:ad42a4703f3b3dd2151c5a8269868308af37bf87": {
+      "authors": [],
+      "codeUrl": "https://github.com/FabricExtras/ArmorModelAPI",
+      "icon": "https://cdn.modrinth.com/data/onz2NN2n/7e1e6fabf1d2241be986d564d0cced008b028214_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/onz2NN2n",
+      "name": "Armor Model API",
+      "summary": "Renders Bedrock/GeckoLib geo armor models through the vanilla armor pipeline.",
+      "tags": [
+        "equipment",
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:241160:sha1:931aa21198cdff436adecc90cbf73de8f16b0d67": {
+      "authors": [],
+      "codeUrl": "https://github.com/TwelveIterations/NetherPortalFix",
+      "icon": "https://cdn.modrinth.com/data/nPZr02ET/1496de70af297897258b7520aafc0886fa0ad918_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/nPZr02ET",
+      "name": "NetherPortalFix",
+      "summary": "Ensures correct destinations when traveling back and forth through Nether Portals in Multiplayer.",
+      "tags": [
+        "game-mechanics",
+        "social",
+        "utility"
+      ],
+      "wikiUrl": "https://mods.twelveiterations.com/minecraft/netherportalfix"
+    },
+    "CurseForge:245755:sha1:5de88d705e3d17a70a4f87dff7359c437e0235c9": {
+      "authors": [],
+      "codeUrl": "https://github.com/TwelveIterations/Waystones",
+      "icon": "https://cdn.modrinth.com/data/LOpKHB2A/d56c030a875582aff5bab477ddcfec317a1610f0_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/LOpKHB2A",
+      "name": "Waystones",
+      "summary": "Teleport from waystone to waystone or craft magical scrolls to warp.",
+      "tags": [
+        "adventure",
+        "magic",
+        "social",
+        "transportation",
+        "worldgen"
+      ],
+      "wikiUrl": "https://mods.twelveiterations.com/minecraft/waystones"
+    },
+    "CurseForge:248787:sha1:3d19e40c5f97186857db98e622c01c2cd0030497": {
+      "authors": [],
+      "codeUrl": "https://github.com/squeek502/AppleSkin",
+      "icon": "https://cdn.modrinth.com/data/EsAfCjCV/icon.png",
+      "license": "Unlicense",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/EsAfCjCV",
+      "name": "AppleSkin",
+      "summary": "Food/hunger-related HUD improvements",
+      "tags": [
+        "food",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:254284:sha1:4fabbefc02692d1d35c999fd16fc3934b4e77c64": {
+      "authors": [],
+      "codeUrl": "https://github.com/CreativeMD/AmbientSounds",
+      "icon": "https://cdn.modrinth.com/data/fM515JnW/9a8eca9c055ec1dd753a7209210fcb22a2d40ff7_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/fM515JnW",
+      "name": "AmbientSounds",
+      "summary": "#listentonature",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:257814:sha1:1b3681bc987c6ce360220d4173139fc392080fe0": {
+      "authors": [],
+      "codeUrl": "https://github.com/CreativeMD/CreativeCore",
+      "icon": "https://cdn.modrinth.com/data/OsZiaDHq/4953ecd3c0c8b185b2a56d64cdb104b03f3e5038_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/OsZiaDHq",
+      "name": "CreativeCore",
+      "summary": "A core mod",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:263420:sha1:287f670348124261bef5c7833715c49960e74dee": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/1bokaNcj/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/1bokaNcj",
+      "name": "Xaero's Minimap",
+      "summary": "Displays a map of the nearby world terrain, players, mobs, entities in the corner of your screen. Lets you create waypoints which help you find the locations you've marked.",
+      "tags": [
+        "adventure",
+        "transportation",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:308702:sha1:66ec40f1cd0c037ddca2b5fc6b4b976d479c18e8": {
+      "authors": [],
+      "codeUrl": "https://github.com/TerraformersMC/ModMenu",
+      "icon": "https://cdn.modrinth.com/data/mOgUt4GM/5a20ed1450a0e1e79a1fe04e61bb4e5878bf1d20.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/mOgUt4GM",
+      "name": "Mod Menu",
+      "summary": "Adds a mod menu to view the list of mods you have installed.",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/TerraformersMC/ModMenu/wiki"
+    },
+    "CurseForge:308769:sha1:f1d4ab6ecd54d9782521333a87eb50724ecb03e0": {
+      "authors": [],
+      "codeUrl": "https://github.com/FabricMC/fabric-language-kotlin/",
+      "icon": "https://cdn.modrinth.com/data/Ha28R6CL/72c3d74aeb665e45aea93a945a01474cbce3b7da_96.webp",
+      "license": "Apache-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/Ha28R6CL",
+      "name": "Fabric Language Kotlin",
+      "summary": "This is a mod that enables usage of the Kotlin programming language for Fabric mods.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://fabricmc.net/wiki/"
+    },
+    "CurseForge:317780:sha1:9ace0b064668929e3f1df6b7eb012ac713526e96": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/NcUtCpym/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/NcUtCpym",
+      "name": "Xaero's World Map",
+      "summary": "Adds a full screen world map which shows you what you have explored in the world. Works great together with Xaero's Minimap.",
+      "tags": [
+        "adventure",
+        "transportation",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:318603:sha1:1036cfded1868c622ed8ebfaabe73ebf753b99c1": {
+      "authors": [],
+      "codeUrl": "https://github.com/khazoda-mods/plushables",
+      "icon": "https://cdn.modrinth.com/data/bpUgmHBo/3c1629636cf8f39828a6cf8d2dc7293876459d89_96.webp",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/bpUgmHBo",
+      "name": "Plushables",
+      "summary": "Cute plushies for your home",
+      "tags": [
+        "adventure",
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:334259:sha1:2747a6c39d42ef4024a26bb43fc17be5f1eb86b5": {
+      "authors": [],
+      "codeUrl": "https://github.com/Sollace/Presence-Footsteps",
+      "icon": "https://cdn.modrinth.com/data/rcTfTZr3/c08dc581f0bf3b729f86e962fa800463af86e9a2_96.webp",
+      "license": "LicenseRef-Polyform-Shield-1.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/rcTfTZr3",
+      "name": "Presence Footsteps",
+      "summary": "..An Overly complicated Sound Mod...",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": "https://github.com/Sollace/Presence-Footsteps/wiki"
+    },
+    "CurseForge:342584:sha1:cc524c95c41e2cb34d6bdb2fd8881b15ecab5dd9": {
+      "authors": [],
+      "codeUrl": "https://github.com/Serilum/Collective",
+      "icon": "https://cdn.modrinth.com/data/e0M1UDsY/f5e4fe9ac298e2c14591920d6bda937c566accd0_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/e0M1UDsY",
+      "name": "Collective",
+      "summary": "🎓 Collective is a shared library with common code for all of Serilum's mods.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:345854:sha1:b3d7fdd3e372f01e1874425f296bbd3e0a834040": {
+      "authors": [],
+      "codeUrl": "https://github.com/Serilum/Villager-Names",
+      "icon": "https://cdn.modrinth.com/data/gqRXDo8B/44a24693e277ae99295054691d0acbbbf0d56774_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/gqRXDo8B",
+      "name": "Villager Names",
+      "summary": "🧑‍🌾 Gives all villager entities a default or custom name to liven up the world.",
+      "tags": [
+        "adventure",
+        "game-mechanics",
+        "social"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:348521:sha1:9a5cce069380a2047250831dcb19f4ef1b15872d": {
+      "authors": [],
+      "codeUrl": "https://github.com/shedaniel/ClothConfig/",
+      "icon": "https://cdn.modrinth.com/data/9s6osm5g/ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/9s6osm5g",
+      "name": "Cloth Config API",
+      "summary": "Configuration Library for Minecraft Mods",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://shedaniel.gitbook.io/cloth-config/"
+    },
+    "CurseForge:360438:sha1:dd5a4ec2c68d7601d8bce9076f789c55a5f8bef3": {
+      "authors": [],
+      "codeUrl": "https://github.com/caffeinemc/lithium-fabric",
+      "icon": "https://cdn.modrinth.com/data/gvQqBUqZ/bcc8686c13af0143adf4285d741256af824f70b7_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/gvQqBUqZ",
+      "name": "Lithium",
+      "summary": "No-compromises game logic optimization mod, useful for both single-player games and multi-player servers.",
+      "tags": [
+        "optimization"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:361579:sha1:0940b4089affdfca37d6b6d0ea5ecae4dbd8fe98": {
+      "authors": [],
+      "codeUrl": "https://github.com/lucko/spark",
+      "icon": "https://cdn.modrinth.com/data/l6YH9Als/61a777dd08a8447ac93e8b6372e6d27d48cd1e1a_96.webp",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/l6YH9Als",
+      "name": "spark",
+      "summary": "spark is a performance profiler for Minecraft clients, servers and proxies.",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": "https://spark.lucko.me/docs"
+    },
+    "CurseForge:388172:sha1:064ad66ea62bcf3fd0e89a719843b1a06c81925c": {
+      "authors": [],
+      "codeUrl": "https://github.com/bernie-g/geckolib",
+      "icon": "https://cdn.modrinth.com/data/8BmcQJ2H/012d1aadbc754995de66e8c149a56aa10b63fe05_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/8BmcQJ2H",
+      "name": "Geckolib",
+      "summary": "A 3D animation library for entities, blocks, items, armor, and more!",
+      "tags": [
+        "game-mechanics",
+        "library",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/bernie-g/geckolib/wiki"
+    },
+    "CurseForge:394468:sha1:5d88caf6f3e182cd39d0fb0d2e7200c5e613f287": {
+      "authors": [],
+      "codeUrl": "https://github.com/CaffeineMC/sodium",
+      "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
+      "license": "LicenseRef-Polyform-Shield-1.0.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/AANobbMI",
+      "name": "Sodium",
+      "summary": "A high-performance rendering engine replacement for Minecraft, which greatly improves frame rates and reduces micro-stutter.",
+      "tags": [
+        "optimization"
+      ],
+      "wikiUrl": "https://github.com/CaffeineMC/sodium/wiki"
+    },
+    "CurseForge:407206:sha1:cf4eec23f6bc4b3ce7c3c20308694beb5f4c5edf": {
+      "authors": [],
+      "codeUrl": "https://github.com/dzwdz/chat_heads",
+      "icon": "https://cdn.modrinth.com/data/Wb5oqrBJ/icon.png",
+      "license": "MPL-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/Wb5oqrBJ",
+      "name": "Chat Heads",
+      "summary": "See who you're chatting with!",
+      "tags": [
+        "decoration",
+        "social"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:419699:sha1:8c5f566e32bd47fbb80be4932b9be1cfa97c4e3a": {
+      "authors": [],
+      "codeUrl": "https://github.com/architectury/architectury",
+      "icon": "https://cdn.modrinth.com/data/lhGA9TYQ/05fe3a61c28faaccaec3533b92e1b321edde7bf6_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/lhGA9TYQ",
+      "name": "Architectury API",
+      "summary": "An intermediary api aimed to ease developing multiplatform mods.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:433175:sha1:fc1f2f374c5c82117599071ed18b6ef9bba2c7fb": {
+      "authors": [],
+      "codeUrl": "https://github.com/pop4959/Chunky",
+      "icon": "https://cdn.modrinth.com/data/fALzjamp/e1954413665e57b7bae1feef44eda530270c7d47_96.webp",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/fALzjamp",
+      "name": "Chunky",
+      "summary": "Pre-generates chunks, quickly and efficiently",
+      "tags": [
+        "optimization",
+        "utility",
+        "worldgen"
+      ],
+      "wikiUrl": "https://github.com/pop4959/Chunky/wiki"
+    },
+    "CurseForge:454372:sha1:e2bc1f3b51e6ee6fe6da6e1ebc166803e4830e84": {
+      "authors": [],
+      "codeUrl": "https://github.com/SuperMartijn642/SuperMartijn642sCoreLib",
+      "icon": "https://cdn.modrinth.com/data/rOUBggPv/e745e719d7fe2aa0335d819ca9c97defbf2e0bcb_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/rOUBggPv",
+      "name": "SuperMartijn642's Core Lib",
+      "summary": "SuperMartijn642's Core Lib adds lots of basic implementations that allow for similar code between different Minecraft versions!",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:455508:sha1:fa03640ba1e4ef2f7ae3619c6373a06e46d0ba2c": {
+      "authors": [],
+      "codeUrl": "https://github.com/IrisShaders/Iris",
+      "icon": "https://cdn.modrinth.com/data/YL57xq9U/18d0e7f076d3d6ed5bedd472b853909aac5da202_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/YL57xq9U",
+      "name": "Iris Shaders",
+      "summary": "A modern shader pack loader for Minecraft intended to be compatible with existing OptiFine shader packs",
+      "tags": [
+        "decoration",
+        "optimization"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:459857:sha1:eac76ff0f3753422c61b2c44487d0d195d88d4bc": {
+      "authors": [],
+      "codeUrl": "https://github.com/malte0811/FerriteCore",
+      "icon": "https://cdn.modrinth.com/data/uXXizFIs/222a126f26f8f9ae1eb339f3b767677f18bff31f_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/uXXizFIs",
+      "name": "FerriteCore",
+      "summary": "Memory usage optimizations",
+      "tags": [
+        "optimization",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:495267:sha1:2e0c90e7a1e7aab6cd6d65349f55b69f79995a9e": {
+      "authors": [],
+      "codeUrl": "https://codeberg.org/Inventory-Profiles-Next-Mod/IPN",
+      "icon": "https://cdn.modrinth.com/data/O7RBXm3n/04cdecd37b4c7409f70d36fcdc85722ebf14aab8_96.webp",
+      "license": "AGPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/O7RBXm3n",
+      "name": "Inventory Profiles Next",
+      "summary": "Take control over your inventory. Sort. Move matching Items. Throw all. Locked slots. Gear sets! And much more.",
+      "tags": [
+        "storage",
+        "utility"
+      ],
+      "wikiUrl": "https://inventory-profiles-next.github.io"
+    },
+    "CurseForge:495476:sha1:aba1acde6bfe6c7dde42612f89cde990d3c4557f": {
+      "authors": [],
+      "codeUrl": "https://github.com/Fuzss/puzzleslib",
+      "icon": "https://cdn.modrinth.com/data/QAGBst4M/c78216c61f65b6ce82593e4e92e9c358402bb524_96.webp",
+      "license": "MPL-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/QAGBst4M",
+      "name": "Puzzles Lib",
+      "summary": "Why is it called Puzzles? That's the puzzle.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:501590:sha1:39f9f1849cd9e5d6f66812b89e567c46a4d2624e": {
+      "authors": [],
+      "codeUrl": "https://github.com/SuperMartijn642/AdditionalLanterns",
+      "icon": "https://cdn.modrinth.com/data/jXNvTKds/400f77a5ca85e92ed113babc8693c457bde90685_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/jXNvTKds",
+      "name": "Additional Lanterns",
+      "summary": "Additional Lanterns adds many new lanterns with different colors and materials!",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:502372:sha1:0bee69eb0cd2e491c64252d1a6f7df8b8dcc8eb1": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/w4an97C2/23b3786d03ab6ed8b8df056d1123f20129175b6b_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/w4an97C2",
+      "name": "Macaw's Lights and Lamps",
+      "summary": "Adds vanilla styled lamps, torches, street lamps, paper lamps, wall lamps, slabs... Make your world brighter!",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:513688:sha1:725bd469bc72d6e366ecbf4818e0438524ca5741": {
+      "authors": [],
+      "codeUrl": "https://github.com/Stardust-Labs-MC/Terralith",
+      "icon": "https://cdn.modrinth.com/data/8oi3bsk5/1959d924a1088944bbf07a06ba523726112d7e7a_96.webp",
+      "license": "LicenseRef-Stardust-Labs-License",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/8oi3bsk5",
+      "name": "Terralith",
+      "summary": "Explore almost 100 new biomes consisting of both realism and light fantasy, using just Vanilla blocks. Complete with several immersive structures to compliment the overhauled terrain.",
+      "tags": [
+        "worldgen"
+      ],
+      "wikiUrl": "https://stardustlabs.miraheze.org/wiki/Terralith"
+    },
+    "CurseForge:531351:sha1:63d51781b2c87e3b4b4ca98a133db8c98d3f2afb": {
+      "authors": [],
+      "codeUrl": "https://github.com/PepperCode1/Continuity",
+      "icon": "https://cdn.modrinth.com/data/1IjD5062/icon.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/1IjD5062",
+      "name": "Continuity",
+      "summary": "A Minecraft mod that allows for efficient connected textures",
+      "tags": [
+        "decoration",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/PepperCode1/Continuity/wiki"
+    },
+    "CurseForge:531761:sha1:1b44d97048c1c2e9cc7e0a03c00f5cb117463a60": {
+      "authors": [],
+      "codeUrl": "https://github.com/TwelveIterations/Balm",
+      "icon": "https://cdn.modrinth.com/data/MBAkmtvl/285b7bcfd6e525c043e640b08f3efc0cde90f7dd_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/MBAkmtvl",
+      "name": "Balm",
+      "summary": "Abstraction Layer for Multi-Loader Mods",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://balm.twelveiterations.com/"
+    },
+    "CurseForge:535489:sha1:6259b275cda55f802cdb898729e88fd33f437310": {
+      "authors": [],
+      "codeUrl": "https://github.com/henkelmax/sound-physics-remastered",
+      "icon": "https://cdn.modrinth.com/data/qyVF9oeo/798fbfae58ec95ad51f3e1d522b43227306c326c.png",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/qyVF9oeo",
+      "name": "Sound Physics Remastered",
+      "summary": "A Minecraft mod that provides realistic sound attenuation, reverberation, and absorption through blocks.",
+      "tags": [
+        "adventure",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:538392:sha1:35256260d33c3cc9634f82879a66fa8e936aea13": {
+      "authors": [],
+      "codeUrl": "https://github.com/klikli-dev/modonomicon",
+      "icon": "https://cdn.modrinth.com/data/692GClaE/2ff28ac59b51945e62f2680166dc8322f112be2c.png",
+      "license": "MIT AND CC-BY-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/692GClaE",
+      "name": "Modonomicon",
+      "summary": "Modonomicon is an in-game documentation mod inspired by Thaumcraft's Thaumonomicon and Patchouli, and aims to provide the best of both, with some unique flavors.",
+      "tags": [
+        "game-mechanics",
+        "library",
+        "utility"
+      ],
+      "wikiUrl": "https://klikli-dev.github.io/modonomicon/"
+    },
+    "CurseForge:539382:sha1:e65d856fdfa925045b99283b60ba002dcca7e332": {
+      "authors": [],
+      "codeUrl": "https://github.com/AHilyard/Iceberg/",
+      "icon": "https://cdn.modrinth.com/data/5faXoLqX/88c9b9918841470dad995049244ef7a3cb2f34f5_96.webp",
+      "license": "CC-BY-NC-ND-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/5faXoLqX",
+      "name": "Iceberg",
+      "summary": "A modding library that contains new events, helpers, and utilities to make modder's lives easier.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://github.com/AHilyard/Iceberg/wiki/Item-Selectors-Documentation"
+    },
+    "CurseForge:541171:sha1:47c1f44461eafff9a3d7998c79bcdfa612931584": {
+      "authors": [],
+      "codeUrl": "https://github.com/Tiviacz1337/Travelers-Backpack",
+      "icon": "https://cdn.modrinth.com/data/rlloIFEV/271b2133a315ee3d864ea5a429472f0e71591fe3_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/rlloIFEV",
+      "name": "Traveler's Backpack",
+      "summary": "Unique and upgradeable backpacks with customisation, Curios API/Trinkets integration and more!",
+      "tags": [
+        "adventure",
+        "decoration",
+        "equipment",
+        "management",
+        "storage"
+      ],
+      "wikiUrl": "https://github.com/Tiviacz1337/Travelers-Backpack/wiki"
+    },
+    "CurseForge:542478:sha1:51e6ecdd6bf927bb5eddd8dfb88df8c98930d567": {
+      "authors": [],
+      "codeUrl": "https://github.com/AHilyard/LegendaryTooltips/",
+      "icon": "https://cdn.modrinth.com/data/atHH8NyV/bd47257c8d4aca0e04c43269e5beb7af680b144b_96.webp",
+      "license": "CC-BY-NC-ND-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/atHH8NyV",
+      "name": "Legendary Tooltips",
+      "summary": "Give your rare items a fancier tooltip! Also adds additional tooltip configuration options.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "equipment",
+        "game-mechanics",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/AHilyard/LegendaryTooltips/wiki/Configuration-Instructions"
+    },
+    "CurseForge:547434:sha1:a0d802d2cb010a5054c72f1ccf248433b6e0bafb": {
+      "authors": [],
+      "codeUrl": "https://github.com/Fuzss/forgeconfigapiport",
+      "icon": "https://cdn.modrinth.com/data/ohNO6lps/cb3b942cc18a66a0f35f802e004713f134e46cc2_96.webp",
+      "license": "MPL-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/ohNO6lps",
+      "name": "Forge Config API Port",
+      "summary": "NeoForge's & Forge's config systems provided to other modding ecosystems. Designed for a multiloader architecture.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://github.com/Fuzss/forgeconfigapiport/wiki"
+    },
+    "CurseForge:551890:sha1:8571b8aaa1533e08739e75f01020836a76daa30d": {
+      "authors": [],
+      "codeUrl": "https://github.com/Patbox/polymer",
+      "icon": "https://cdn.modrinth.com/data/xGdtZczs/icon.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/xGdtZczs",
+      "name": "Polymer",
+      "summary": "Library for creating better server side content!",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://polymer.pb4.eu"
+    },
+    "CurseForge:568563:sha1:c4d8d0f47a2ab15091f47a1d74336a119ab5f1b1": {
+      "authors": [],
+      "codeUrl": "https://github.com/Traben-0/Entity_Texture_Features",
+      "icon": "https://cdn.modrinth.com/data/BVzZfTc1/af683d206d50b05258d865b0d6e4aa2f2cee12f2_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/BVzZfTc1",
+      "name": "[ETF] Entity Texture Features",
+      "summary": "Emissive, Random & Custom texture support for entities in resourcepacks just like Optifine but for Fabric",
+      "tags": [
+        "decoration",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/Traben-0/Entity_Texture_Features/blob/master/.github/README.md"
+    },
+    "CurseForge:574741:sha1:7f18090fea4a2ddae01e032d09629d14fa381d3f": {
+      "authors": [],
+      "codeUrl": "https://github.com/isXander/Zoomify",
+      "icon": "https://cdn.modrinth.com/data/w7ThoJFB/e2de67a0bfb9e8aa2347982ab3ec5463f26cca31_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/w7ThoJFB",
+      "name": "Zoomify (Zoom)",
+      "summary": "A zoom mod with infinite customizability.",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:580643:sha1:a37f5efda42dab4e232e69f8adf2490760082b32": {
+      "authors": [],
+      "codeUrl": "https://github.com/Patbox/polydex",
+      "icon": "https://cdn.modrinth.com/data/m5NB7FJE/icon.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/m5NB7FJE",
+      "name": "Polydex",
+      "summary": "Target block/entity tooltip and recipes in one ui mod for servers!",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:615459:sha1:f29719c3101ebe009dae76bca5215cf7482f8b9c": {
+      "authors": [],
+      "codeUrl": "https://github.com/A5b84/status-effect-bars",
+      "icon": "https://cdn.modrinth.com/data/x02cBj9Y/7ee93fac37512f4f04aa82f15deada7b2ca9269f.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/x02cBj9Y",
+      "name": "Status Effect Bars",
+      "summary": "Adds customizable bars to the status effects overlay to show the remaining duration of effects.",
+      "tags": [
+        "decoration",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:627986:sha1:8c93c3d182f4321274408aa3e30a867872714499": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/F8BQNPWX/e52917ba0f5ecc1d827f0d4465a15422e0584bf5_96.webp",
+      "license": "LicenseRef-Custom",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/F8BQNPWX",
+      "name": "Naturalist",
+      "summary": "Adds 47 animals *(and 66 variants)* to your world with immersive behaviors and drops.",
+      "tags": [
+        "adventure",
+        "mobs",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:636608:sha1:445f762f9f302cad7ba1db85e12962e81d7ea7c2": {
+      "authors": [],
+      "codeUrl": "https://github.com/thexaero/open-parties-and-claims",
+      "icon": "https://cdn.modrinth.com/data/gF3BGWvG/410c5443b268912b11709e7d03dd9ec3fda38ea5.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/gF3BGWvG",
+      "name": "Open Parties and Claims",
+      "summary": "Adds the ability to claim chunks and make player parties, integrates with Xaero's Minimap and World Map",
+      "tags": [
+        "library",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:639842:sha1:74e2f4053d26349699ce1fd5722149ecb02c9ffb": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/BetterCombat",
+      "icon": "https://cdn.modrinth.com/data/5sy6g3kz/4d59a2a1ddd25f977b39c89e391edc4cdc7c71ba_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/5sy6g3kz",
+      "name": "Better Combat",
+      "summary": "⚔️ Easy, spectacular and fun melee combat system from Minecraft Dungeons.",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "library"
+      ],
+      "wikiUrl": "https://github.com/ZsoltMolnarrr/BetterCombat"
+    },
+    "CurseForge:665526:sha1:91852e4f48ccc0bffe216ba000115c10a4afd84a": {
+      "authors": [],
+      "codeUrl": "https://github.com/AHilyard/Prism/",
+      "icon": "https://cdn.modrinth.com/data/1OE8wbN0/2fecc17cdc6036b648f0defc7c9a85a6733be435_96.webp",
+      "license": "CC-BY-NC-ND-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/1OE8wbN0",
+      "name": "Prism",
+      "summary": "A library all about color! Provides lots of color-related functionality for dependent mods.",
+      "tags": [
+        "decoration",
+        "library",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/AHilyard/Prism/wiki/Prism-Documentation"
+    },
+    "CurseForge:667299:sha1:e54d86dd4a78f95cd6ec0309d96fae01e661c00d": {
+      "authors": [],
+      "codeUrl": "https://github.com/isXander/YetAnotherConfigLib",
+      "icon": "https://cdn.modrinth.com/data/1eAoo2KR/08c0cd32515e260f4bb20bbc0696510041523f9a_96.webp",
+      "license": "LGPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/1eAoo2KR",
+      "name": "YetAnotherConfigLib (YACL)",
+      "summary": "A builder-based configuration library for Minecraft!",
+      "tags": [
+        "library",
+        "management",
+        "utility"
+      ],
+      "wikiUrl": "https://docs.isxander.dev/yet-another-config-lib"
+    },
+    "CurseForge:679177:sha1:f989cd24ace83f73db6bfcf704cab99ad6d53d10": {
+      "authors": [],
+      "codeUrl": "https://github.com/blackd/libIPN",
+      "icon": "https://cdn.modrinth.com/data/onSQdWhM/feb2d62d9f150539bfd2a69d373866b1e643545c_96.webp",
+      "license": "AGPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/onSQdWhM",
+      "name": "libIPN",
+      "summary": "Inventory Profiles Next GUI/Config library",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:686836:sha1:1e0725c00c974190d19babf7ba61f44397e30f4b": {
+      "authors": [],
+      "codeUrl": "https://github.com/Apollounknowndev/tectonic",
+      "icon": "https://cdn.modrinth.com/data/lWDHr9jE/d8b3413f797479dcc0d8764756613e449a358a2e_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/lWDHr9jE",
+      "name": "Tectonic",
+      "summary": "Terrain shaping brought to new heights, grander and more varied than ever before!",
+      "tags": [
+        "adventure",
+        "worldgen"
+      ],
+      "wikiUrl": "https://github.com/Apollounknowndev/tectonic/wiki/Config"
+    },
+    "CurseForge:686911:sha1:f565bbeb201f2305e81761429d3f1f47e1c3a321": {
+      "authors": [],
+      "codeUrl": "https://github.com/RaphiMC/ImmediatelyFast",
+      "icon": "https://cdn.modrinth.com/data/5ZwdcRci/e57b6b451425692ac17ad322d5e14bea686a383a_96.webp",
+      "license": "LGPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/5ZwdcRci",
+      "name": "ImmediatelyFast",
+      "summary": "Speed up immediate mode rendering in Minecraft",
+      "tags": [
+        "optimization"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:734325:sha1:d068d42039c59811fa5e7b2ac3fd21e990510548": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Wizards",
+      "icon": "https://cdn.modrinth.com/data/NkGaQMDA/06c5350c207bddffefdfea0b6fc80269d683bbd7_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/NkGaQMDA",
+      "name": "Wizards (RPG Series)",
+      "summary": "🧙🏻‍♂️ Destroy your enemies with Arcane, Fire and Frost magic",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:771265:sha1:5b59aa59eb9ab307a5543d1556725f4187853eba": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/SpellPower",
+      "icon": "https://cdn.modrinth.com/data/8ooWzSQP/fb6ef3214dcfddc7d0062f5642e30eb45de6df32_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/8ooWzSQP",
+      "name": "Spell Power Attributes",
+      "summary": "🔮 Spell Power entity attributes with related status effects and enchantments",
+      "tags": [
+        "adventure",
+        "game-mechanics",
+        "library",
+        "magic"
+      ],
+      "wikiUrl": "https://github.com/ZsoltMolnarrr/SpellPower"
+    },
+    "CurseForge:775518:sha1:7b1bf05fdecc57754d32b3a4748225861a29376c": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Runes",
+      "icon": "https://cdn.modrinth.com/data/lP9Yrr1E/d80117583d3b45e7e8d902e3e7e27ef15ee9b4dd_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/lP9Yrr1E",
+      "name": "Runes",
+      "summary": "🪨 Craft runes to serve as ammo for spells",
+      "tags": [
+        "adventure",
+        "magic"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:807653:sha1:7315ceea437dd46789559eb3852a7db9fa1bdb74": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/SpellEngine",
+      "icon": "https://cdn.modrinth.com/data/XvoWJaA2/9f3d222d82aebadd5325ae53a927463f1e20abd0.png",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/XvoWJaA2",
+      "name": "Spell Engine",
+      "summary": "🪄 Data driven magic library",
+      "tags": [
+        "game-mechanics",
+        "library",
+        "magic"
+      ],
+      "wikiUrl": "https://github.com/ZsoltMolnarrr/SpellEngine"
+    },
+    "CurseForge:809311:sha1:bd431ce2b4d63382e5b1a5e352a1c838c37c0fb1": {
+      "authors": [],
+      "codeUrl": "https://github.com/Suel-ki/Beautify-Refabricated",
+      "icon": "https://cdn.modrinth.com/data/DhSSvaxs/c13d3f6a8ea281ecea904e10daa7d4de7147c22c.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/DhSSvaxs",
+      "name": "Beautify: Refabricated",
+      "summary": "Adds lots of vanilla-styled ways to spice up your builds.",
+      "tags": [
+        "decoration",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/Pandarix/Beautify/wiki"
+    },
+    "CurseForge:835091:sha1:b6dd92c560356af98b56e908eb392d05c582f710": {
+      "authors": [],
+      "codeUrl": "https://github.com/pufmat/skillsmod",
+      "icon": "https://cdn.modrinth.com/data/hqQqvaa4/03ee8cc78c05ab021cfc96664741dd66fc69e515.png",
+      "license": "LicenseRef-Custom",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/hqQqvaa4",
+      "name": "Pufferfish's Skills",
+      "summary": "Adds a fully configurable skill system to the game.",
+      "tags": [
+        "adventure",
+        "game-mechanics",
+        "management",
+        "utility"
+      ],
+      "wikiUrl": "https://puffish.net/skillsmod/docs"
+    },
+    "CurseForge:844662:sha1:9c11805cc34153fd89cb9fecf78be2b5a803b373": {
+      "authors": [],
+      "codeUrl": "https://github.com/Traben-0/Entity_Model_Features",
+      "icon": "https://cdn.modrinth.com/data/4I1XuqiY/6e5bbd0d06b1741bfdab6c0cfab6de8fdaf0064c_96.webp",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/4I1XuqiY",
+      "name": "[EMF] Entity Model Features",
+      "summary": "EMF is an, OptiFine format, Custom Entity Model replacement mod available for Fabric and Forge.",
+      "tags": [
+        "decoration",
+        "mobs",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/Traben-0/Entity_Model_Features/blob/master/FEATURES.md"
+    },
+    "CurseForge:852663:sha1:7235318dc92e679c871f2700ae029242058f57ae": {
+      "authors": [],
+      "codeUrl": "https://github.com/Fuzss/stoneworks",
+      "icon": "https://cdn.modrinth.com/data/FzyTKtVF/c18c5fb3daa800d5d612efac7d658eafdcf51129_96.webp",
+      "license": "MPL-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/FzyTKtVF",
+      "name": "Stoneworks",
+      "summary": "Vanilla stone types in plenty of variations for all your building needs.",
+      "tags": [
+        "decoration"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:853794:sha1:172ba3915c8da4c46bdf63a24a8cff2b485b838d": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/tpehi7ww/429ba22d212868940cdd82465df949ac51c9791e_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/tpehi7ww",
+      "name": "Dungeons and Taverns",
+      "summary": "A Structure Datapack adding dungeons, taverns and other structures to find while you explore the world.",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "mobs",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:856548:sha1:f8ccaa11427da2cf280eb06fd91139d509a94d5d": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Paladins",
+      "icon": "https://cdn.modrinth.com/data/FxXkHaLe/0d64c2fad819691a42c9b6e436c4914c6ce4b413_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/FxXkHaLe",
+      "name": "Paladins & Priests (RPG Series)",
+      "summary": "✨ Protect and heal your friends as a Paladin or a Priest",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:865298:sha1:acaea9b48fe34265091b5b462c66f394334552e0": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Gazebo",
+      "icon": "https://cdn.modrinth.com/data/XIpMGI6r/4194614b15b1c9286bd7e2e3f41110a2e790da5d_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/XIpMGI6r",
+      "name": "Gazebos (RPG Series)",
+      "summary": "⛲️ Village structures hosting small spell libraries",
+      "tags": [
+        "adventure",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:892086:sha1:5743ce2bb57f67fd3d6bdd8936a3ee3444b1c143": {
+      "authors": [],
+      "codeUrl": "https://github.com/Ezzenix/ChatAnimation",
+      "icon": "https://cdn.modrinth.com/data/DnNYdJsx/f6b2002ed12e72c4d74d56b80fe768ae96cd4d24_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/DnNYdJsx",
+      "name": "Chat Animation [Smooth Chat]",
+      "summary": "Makes chat messages appear with a smooth animation.",
+      "tags": [
+        "decoration",
+        "social",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:903894:sha1:2f698a34b2636a4be67ebbf022befa37f0724737": {
+      "authors": [],
+      "codeUrl": "https://github.com/ChefMooon/ubes-delight",
+      "icon": "https://cdn.modrinth.com/data/PYjpoAys/747de679aefe6e668c153745f441ff1e16597907.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/PYjpoAys",
+      "name": "Ube's Delight",
+      "summary": "A Farmer’s Delight addon that adds Filipino inspired crops and food.",
+      "tags": [
+        "decoration",
+        "food",
+        "worldgen"
+      ],
+      "wikiUrl": "https://chefmooon.github.io/ubesdelight/wiki/1.21.1/home"
+    },
+    "CurseForge:910706:sha1:3b7acf0d241aa934e00efd95b09a0fe0d507b76d": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Jewelry",
+      "icon": "https://cdn.modrinth.com/data/sNJAIjUm/2eece212d22ebb4387f0b64df55d945e496d6e8c_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/sNJAIjUm",
+      "name": "Jewelry (RPG Series)",
+      "summary": "💍 Find precious gems deep down, and craft them into powerful jewelry!",
+      "tags": [
+        "adventure",
+        "equipment",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:914549:sha1:68f90906367aae1bcbd1f34f8729880b1f5f8354": {
+      "authors": [],
+      "codeUrl": "https://github.com/NemoNotFound/NemosWoodcutter",
+      "icon": "https://cdn.modrinth.com/data/mr1LTtgz/f095b77be9b4bba13f9d9c1ec5deddbeb0b9e569.gif",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/mr1LTtgz",
+      "name": "Nemo's Woodcutter",
+      "summary": "Just like a Stonecutter, but for wood!",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": "https://wiki.nemonotfound.com/projects/minecraft-mods/nemos-woodcutter/general"
+    },
+    "CurseForge:927915:sha1:1b0a4ed5f7800ea0641cafb086ed0618dc328874": {
+      "authors": [],
+      "codeUrl": "https://github.com/FabricExtras/StructurePoolAPI",
+      "icon": "https://cdn.modrinth.com/data/LrYZi08Q/90488ffba720db0ac727047e5e1ebc9213f53627_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/LrYZi08Q",
+      "name": "Structure Pool API",
+      "summary": "📚 API to inject structures into structure pools.",
+      "tags": [
+        "library",
+        "worldgen"
+      ],
+      "wikiUrl": "https://github.com/FabricExtras/StructurePoolAPI"
+    },
+    "CurseForge:932359:sha1:4881abae4b3bfa38188b530768c9145190323013": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZsoltMolnarrr/Archers",
+      "icon": "https://cdn.modrinth.com/data/QgooUXAJ/cd623d827366323dd4d604a25c4b7f74cfda353d_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/QgooUXAJ",
+      "name": "Archers (RPG Series)",
+      "summary": "🏹 Draw, Release, Conquer - Master the art of Archery!",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "magic",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:936015:sha1:f633eadd42a2d19026e69c35e1f10716593dd1a0": {
+      "authors": [],
+      "codeUrl": "https://github.com/Apollounknowndev/lithostitched/",
+      "icon": "https://cdn.modrinth.com/data/XaDC71GB/bc3425bcb318176adc7da99b6eec48787eed98d3.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/XaDC71GB",
+      "name": "Lithostitched",
+      "summary": "Library mod with new configurability and compatibility enhancements for worldgen",
+      "tags": [
+        "library",
+        "utility",
+        "worldgen"
+      ],
+      "wikiUrl": "https://github.com/Apollounknowndev/lithostitched/wiki"
+    },
+    "CurseForge:952880:sha1:4ad9859d4f37970ad856e06ac4b811d85d5b311b": {
+      "authors": [],
+      "codeUrl": "https://github.com/Trinketina/Frog-Petting-1.20.X",
+      "icon": "https://cdn.modrinth.com/data/gDxQ0Xdq/1909399c645892896a6378d33d44432112d16280_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/gDxQ0Xdq",
+      "name": "Pet Frogs and More!",
+      "summary": "Pet frogs, dogs, cats, and more! and watch them react with delight!",
+      "tags": [
+        "decoration",
+        "mobs"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:953036:sha1:632e9c70b57db83b851fcb61263a5c282348b63b": {
+      "authors": [],
+      "codeUrl": "https://github.com/MoriyaShiine/lost-relics",
+      "icon": "https://cdn.modrinth.com/data/xF60FXqO/91868ba1cb2e690e937fca716fbab579597afae8.png",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/xF60FXqO",
+      "name": "Lost Relics",
+      "summary": "Find unique and powerful artifacts in the ancient structures of the world!",
+      "tags": [
+        "adventure",
+        "equipment"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:957811:sha1:1f23efb23a744832cf1675abfddc326b0306b553": {
+      "authors": [],
+      "codeUrl": "https://github.com/axperty/cratedelight",
+      "icon": "https://cdn.modrinth.com/data/9rlXSyLg/1451f1af5cc41240ae8bbb166727bd0bdab5c5ab.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/9rlXSyLg",
+      "name": "Crate Delight",
+      "summary": "Useful crates and bags that will save you storage and look great.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "food"
+      ],
+      "wikiUrl": "https://axperty.github.io/cratedelight/"
+    },
+    "CurseForge:962162:sha1:6363eab67f2dc22ce24f61fe25d4eeba45713f6b": {
+      "authors": [],
+      "codeUrl": "https://github.com/FabricExtras/RangedWeaponAPI",
+      "icon": "https://cdn.modrinth.com/data/AqaIIO6D/cf4d822d2fa89e72d37eebcfb1113a6389a0abe6_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/AqaIIO6D",
+      "name": "Ranged Weapon API",
+      "summary": "🏹 Create fully functional bows and crossbows, with ease",
+      "tags": [
+        "equipment",
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:964408:sha1:f0ec4121af9901895c4c32bbddd08d3930969ce6": {
+      "authors": [],
+      "codeUrl": "https://github.com/axperty/moredelight",
+      "icon": "https://cdn.modrinth.com/data/znHQQtuU/a0b97c0306ac9507bca7b81059fb146051596e08.gif",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/znHQQtuU",
+      "name": "More Delight (for Farmer's Delight)",
+      "summary": "Extra meals, knives, and ingredients for Farmer's Delight that improve your culinary experience.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "food",
+        "storage",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/axperty/moredelight/wiki"
+    },
+    "CurseForge:978786:sha1:7e1e048af05081d2fc9677e5c6209988670ced00": {
+      "authors": [],
+      "codeUrl": "https://github.com/axperty/storagedelight",
+      "icon": "https://cdn.modrinth.com/data/LTTvOp5L/ea2f931c89c74b97d60df0a8048bea679a8123a8.gif",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/LTTvOp5L",
+      "name": "Storage Delight",
+      "summary": "Extra furniture for Farmer's Delight that makes your kitchen or any space look better.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "food",
+        "magic",
+        "storage",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/axperty/storagedelight/wiki"
+    },
+    "CurseForge:986380:sha1:38ac9924f72a4344d9c7e6aa98c69df5def6d857": {
+      "authors": [],
+      "codeUrl": "https://codeberg.org/SchmarrnDevs/Lighty",
+      "icon": "https://cdn.modrinth.com/data/yjvKidNM/aee2a3e0b3c10c82f76597edfef48d31966b2459.png",
+      "license": "Apache-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/yjvKidNM",
+      "name": "Lighty",
+      "summary": "The Light Overlay Mod with a twist!",
+      "tags": [
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "CurseForge:991341:sha1:97c1a0a5d0f06ab4bb48eb2d2b5e643f30e5ecb2": {
+      "authors": [],
+      "codeUrl": "https://github.com/pufmat/attributesmod",
+      "icon": "https://cdn.modrinth.com/data/FCFcFw09/f25e0000aca9f043997af84f44d33099f7c6b8ef.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/FCFcFw09",
+      "name": "Pufferfish's Attributes",
+      "summary": "A Minecraft mod that adds more attributes to the game.",
+      "tags": [
+        "game-mechanics",
+        "library",
+        "management",
+        "utility"
+      ],
+      "wikiUrl": "https://puffish.net/attributesmod/docs"
+    },
+    "Modrinth:2r4rp5Ns:sha512:e3a555bbe3208a2a28162b998e338cdf873bd2933926a1151831f4d1af29f0a06e3a7c314f2a3192e69f55a421858eb4c7e81f68a85596651b892a17037be858": {
+      "authors": [],
+      "codeUrl": "https://github.com/LilithElder/wilderdelights",
+      "icon": "https://cdn.modrinth.com/data/2r4rp5Ns/5ad16956dce782f99fc1a56d8dd9ae15c0bd4e65.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/2r4rp5Ns",
+      "name": "Wilder Delights",
+      "summary": "Adds compatibility between Wilder Wild and Farmer's Delight.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "food",
+        "storage"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:7vxePowz:sha512:337ee6b7ef6eb4bc7304531b77d91c942ba758adf47ae1feab5f68b46947821c932c4f9be662d18a218a9d6d4a8c41e31cb239d089dac094101b7ef674703f62": {
+      "authors": [],
+      "codeUrl": "https://github.com/MehVahdJukaar/FarmersDelightRefabricated",
+      "icon": "https://cdn.modrinth.com/data/7vxePowz/26e8448993e9bda4dba92b6e7a1a13d9c4333138.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/7vxePowz",
+      "name": "Farmer's Delight Refabricated",
+      "summary": "Modern Fabric port of the cooking and farming mod, \"Farmer's Delight\"",
+      "tags": [
+        "decoration",
+        "equipment",
+        "food"
+      ],
+      "wikiUrl": "https://github.com/vectorwing/FarmersDelight/wiki"
+    },
+    "Modrinth:9KawNmQc:sha512:267808f3cedaa9d6491853f0b6440291ac0e925927e73f5bf4d39b698e46f8f51b3d6a62e31da3a9f2cf0a686e0472a13a41effad92296824d0eb7758543dd4b": {
+      "authors": [],
+      "codeUrl": "https://github.com/FrozenBlock/FrozenLib",
+      "icon": "https://cdn.modrinth.com/data/9KawNmQc/icon.png",
+      "license": "GPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/9KawNmQc",
+      "name": "FrozenLib",
+      "summary": "A library for FrozenBlock's mods.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:9eGKb6K1:sha512:414eb51967305fe7740d34016bc8e3e4e2fa1590e1278ad06bcdfa0687f65007b825d345dc09f79a992704a51ec93baf01fe727e0bbc32fdf506828b5a65d85a": {
+      "authors": [],
+      "codeUrl": "https://github.com/henkelmax/simple-voice-chat",
+      "icon": "https://cdn.modrinth.com/data/9eGKb6K1/icon.png",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/9eGKb6K1",
+      "name": "Simple Voice Chat",
+      "summary": "A working voice chat in Minecraft!",
+      "tags": [
+        "adventure",
+        "social",
+        "utility"
+      ],
+      "wikiUrl": "https://modrepo.de/minecraft/voicechat/wiki"
+    },
+    "Modrinth:AtHRJSUW:sha512:176de47d59c430cf63083f5b6d99696b482dfbd36d01d75a6108c51e76ffdeed3e86b9bdf326cf569c7b109a4b1e782455e2b65939f4436a3447d68a4734f963": {
+      "authors": [],
+      "codeUrl": "https://github.com/FrozenBlock/WilderWild",
+      "icon": "https://cdn.modrinth.com/data/AtHRJSUW/9cef13699a169068ba7a8cc23bb3e5bae86f30fa_96.webp",
+      "license": "LicenseRef-FrozenBlock-Modding-Oasis-License",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/AtHRJSUW",
+      "name": "Wilder Wild",
+      "summary": "A massive overhaul that improves biomes, adds new mobs, trees, and more!",
+      "tags": [
+        "adventure",
+        "decoration",
+        "food",
+        "game-mechanics",
+        "mobs",
+        "storage",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:DbLWxVRd:sha512:8516463a1398f6ec8585f171df7fd2f82e735fb7466afe3cc971d8032621f0c24949eca36e2652312871ab89615eb3dae31ce2ed9193bd7b0d0083378d1b3a18": {
+      "authors": [],
+      "codeUrl": "https://github.com/MrHikmen/ColorLight",
+      "icon": "https://cdn.modrinth.com/data/DbLWxVRd/ee8cf6b27e0bad7b769179645cceeb6183198a27.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/DbLWxVRd",
+      "name": "ColorLight",
+      "summary": "ColorLight is a mod that automatically determines how a block should glow and generates colored lighting based on that.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "game-mechanics",
+        "technology",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:E2LV3K2B:sha512:a763c00424d97dd5dcb2d92c559145b1662ce09fee657c17e479ed365244bf4469d1856d14cac597a09cdcbeb6e1e574b298019af3005d9fdc5cf0e24ec217f3": {
+      "authors": [],
+      "codeUrl": "https://github.com/macuguita/Spanish-Delight-Refabricated",
+      "icon": "https://cdn.modrinth.com/data/E2LV3K2B/755ee809e4c77a0023d2c1362df70269c6ab3c65.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/E2LV3K2B",
+      "name": "Spanish Delight Refabricated",
+      "summary": "Adds spanish dishes and ingredients to Farmer's Delight on Fabric!",
+      "tags": [
+        "adventure",
+        "food",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:Epm6R3P2:sha512:3621fe2503c2dcb17f2f18d4ca5ce0e28a224789d8f567bfe84e6993e793607e3bac9725410963c4e232a2e609c70a92f6d7ec9da08a2ec9c6ca02fb33d49b8c": {
+      "authors": [],
+      "codeUrl": "https://github.com/MarkusBordihn/BOs-Easy-NPC",
+      "icon": "https://cdn.modrinth.com/data/Epm6R3P2/c1216d7e782dd9333e44159504f52778d0fa7efd_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/Epm6R3P2",
+      "name": "Easy NPC: Core",
+      "summary": "Provides the core functionallity for the Easy NPC mod.",
+      "tags": [
+        "adventure",
+        "decoration",
+        "game-mechanics",
+        "library",
+        "mobs"
+      ],
+      "wikiUrl": "https://github.com/MarkusBordihn/BOs-Easy-NPC/wiki"
+    },
+    "Modrinth:FGNYBAJ6:sha512:d6999f198c04d33ebbd95cdd6e86aeec4714b44c7cd548247b031b11b5af84db2ed401c70695102404540597745f9e4dbbed306fb75b57a0a04f820b026711bb": {
+      "authors": [],
+      "codeUrl": "https://github.com/masik16u/More-Armor-Trims-Fabric",
+      "icon": "https://cdn.modrinth.com/data/FGNYBAJ6/b1f3040a60407c173d63438dcb8128b85e1e6fb9_96.webp",
+      "license": "GPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/FGNYBAJ6",
+      "name": "More Armor Trims",
+      "summary": "Adds 13 new armor trims to discover and collect",
+      "tags": [
+        "adventure",
+        "decoration",
+        "equipment"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:NNAgCjsB:sha512:b6209bb62d72376d3fd284da137ec93a6dd38ebe5fd38ab9190deeade68b5b7f4bf915f4abcb4a807afe18cb9f0b59e11be789d46df6f0e6f64388ed2edc284d": {
+      "authors": [],
+      "codeUrl": "https://github.com/tr7zw/EntityCulling",
+      "icon": "https://cdn.modrinth.com/data/NNAgCjsB/7873452d6cede4daed12da3d7d8c193ab88b4fd6_96.webp",
+      "license": "LicenseRef-tr7zw-Protective-License",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/NNAgCjsB",
+      "name": "Entity Culling",
+      "summary": "Using async path-tracing to hide Block-/Entities that are not visible",
+      "tags": [
+        "optimization"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:P7dR8mSH:sha512:44fd8de10fa71ea39cf984d44d2ec4c8e9314f8af88ad95788d9a09ac7b02b5c2f796ae88f40e314bd27df677e66fed59d1a1b6784350b0cc1fd62efac9e08a3": {
+      "authors": [],
+      "codeUrl": "https://github.com/FabricMC/fabric-api",
+      "icon": "https://cdn.modrinth.com/data/P7dR8mSH/icon.png",
+      "license": "Apache-2.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/P7dR8mSH",
+      "name": "Fabric API",
+      "summary": "Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://docs.fabricmc.net/"
+    },
+    "Modrinth:PLAGcSFJ:sha512:8d295e53404493b500f66b42abcc5007f3b0ecef2428848dfc998ebdd7aa190c74d7304d82cc0235bbc240e9ae74223471742f7a0590f1d19448ddbf07dd2490": {
+      "authors": [],
+      "codeUrl": "https://github.com/LopyMine/Particle-Effects",
+      "icon": "https://cdn.modrinth.com/data/PLAGcSFJ/a1c206381f51a0fb2bf5e5e38bb850392b31141b_96.webp",
+      "license": "CC-BY-ND-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/PLAGcSFJ",
+      "name": "Particle Effects",
+      "summary": "Visual Mod which adds unique textured particles for every effect in vanilla Minecraft!",
+      "tags": [
+        "decoration",
+        "game-mechanics",
+        "magic",
+        "mobs",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/LopyMine/Particle-Effects"
+    },
+    "Modrinth:V1c2WNSt:sha512:d17a626bbec3b2106d8035343b031908308dc8e74aefa453d47e5335a8fcf7a4b876716a89d94738fcd0ec57cec91c7232ae4d359af46d037329375fa0e51231": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/V1c2WNSt/3e5157b8a5b7a6e35388faf98f41d588126d978c_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/V1c2WNSt",
+      "name": "Glowing Trims Mod",
+      "summary": "Glowing Trims adds permanent glow to armor trims.",
+      "tags": [
+        "decoration",
+        "equipment",
+        "game-mechanics",
+        "mobs",
+        "social"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:amB1Riy4:sha512:43576c4f0dce9dd5bdf0a7a03b4cae0061f6f0a7fd03d3682b86a50e165d06157bc3ee293334e94d37daeedcc0e4a34c02e1855cca6dad44bf53fe52d407984c": {
+      "authors": [],
+      "codeUrl": "https://github.com/CMD-Golem/Key-Data-Pack",
+      "icon": "https://cdn.modrinth.com/data/amB1Riy4/53f1452de3e0fcb25541e29c82cf5228f51b03a6.png",
+      "license": "LicenseRef-Therms-of-use",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/amB1Riy4",
+      "name": "Key - Lock chests, other containers and doors",
+      "summary": "Lock your containers and doors to protect your items and buildings from other players and Creepers.",
+      "tags": [
+        "storage",
+        "utility"
+      ],
+      "wikiUrl": "https://cmd-golem.com/packs/key.html"
+    },
+    "Modrinth:eXts2L7r:sha512:eb2bb31e51068aad2581b7864ea7b11b1209ba1c2b27551cd5837d9b312b818b73bb47c06374b46b99b73401c62c6b6c115f702c55aed6afd467ad8ad6448de4": {
+      "authors": [],
+      "codeUrl": "https://github.com/Patbox/TextPlaceholderAPI",
+      "icon": "https://cdn.modrinth.com/data/eXts2L7r/e9c9990896e6422bffc5f73d2c41b8f077348f83.png",
+      "license": "LGPL-3.0-only",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/eXts2L7r",
+      "name": "Text Placeholder API",
+      "summary": "Placeholder and Text manipulation library for your Minecraft mods.",
+      "tags": [
+        "library",
+        "management"
+      ],
+      "wikiUrl": "https://placeholders.pb4.eu/"
+    },
+    "Modrinth:hCf7CjRg:sha512:0189e8db8a2e14d863231ef10d5e278b26fba54c114a9454f3bbd07d38feb5aea5e14a5c49012eceb62a5a2c422d445dea1e5a447c398eecba187307a514e7db": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/hCf7CjRg/bbd1ab4afced7bee819b98f91c9cba9c4e3b459b.png",
+      "license": "CC-BY-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/hCf7CjRg",
+      "name": "Colorful Trims",
+      "summary": "Adds the ability to use dyes in the smithing table",
+      "tags": [
+        "decoration",
+        "equipment"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:ha1mEyJS:sha512:d6870759e2f5f83c6a74b2d02aeabab937d6d8da8c46245566646bc6e8efaeeb06c978edc43a50b57a0de2d015b341c284382bc5d4ae2e450d1b6aa5f8e2e97e": {
+      "authors": [],
+      "codeUrl": "https://github.com/ZigyTheBird/PlayerAnimationLibrary",
+      "icon": "https://cdn.modrinth.com/data/ha1mEyJS/c1fae260a9377cfb05692f01135b6ca2b7b682c7_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/ha1mEyJS",
+      "name": "Player Animation Library",
+      "summary": "A library that allows mods to animate the player, in a way that doesn't conflict with other mods. (and much more!)",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://docs.zigythebird.com/"
+    },
+    "Modrinth:iDyqnQLT:sha512:0bdf7b98afe37f4bb1fe6fe89889d55e26f82eba9a60dfe26241b7cba0d3ec14c3793d79a7847b6968a149d0bc3b935b17c68fb195e80285b873c3707da208cb": {
+      "authors": [],
+      "codeUrl": "https://github.com/Jaiz15/CoolRain",
+      "icon": "https://cdn.modrinth.com/data/iDyqnQLT/a252e26685c30f1ae82a47b087b01fa6b968a6f1_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/iDyqnQLT",
+      "name": "Cool Rain",
+      "summary": "Creates ambient sounds for certain blocks during rain",
+      "tags": [
+        "adventure",
+        "decoration",
+        "game-mechanics"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:kieAM9Us:sha512:581b98d78387ab8d95998ec806b68bd3bcc4f2f352bbc4ab1f991a98dc61ea355736379f5f0a3e15548f88b27db13b3774cd122c6bdad176c204babbbf2fd0cf": {
+      "authors": [],
+      "codeUrl": "https://github.com/lullaby6/data-packs/tree/main/Graves",
+      "icon": "https://cdn.modrinth.com/data/kieAM9Us/7236413aa99d28e8ead181c8d1bdd5448c74db22_96.webp",
+      "license": "AGPL-3.0-or-later",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/kieAM9Us",
+      "name": "Graves",
+      "summary": "A fully customizable grave to save your loot upon death!",
+      "tags": [
+        "adventure",
+        "equipment",
+        "game-mechanics",
+        "social",
+        "utility"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:nHORcEHd:sha512:d245d748de639ba06911426a0405436d7ba9dde9a965231bea1baf3c3b3187a545244d018d6ff3853cb8c121c111e58fea60ccb77a1db08676f9ab93e6111b9c": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/nHORcEHd/a462539dd0e510e42b837602a056ffb70f2fde1b_96.webp",
+      "license": "CC-BY-NC-SA-4.0",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/nHORcEHd",
+      "name": "DeCubed Dungeons (Formerly Dungeons+)",
+      "summary": "Brand new vanilla dungeons remade with biome specific designs and new mob spawner types",
+      "tags": [
+        "adventure",
+        "mobs",
+        "worldgen"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:rmDY6fYt:sha512:644e9a4a518db04aa448f28d6403bceb8d652fd8f538bb9022676d0367057f90099355281f09dcf8e355fc9db1c924296984e1452256129e23617ae7c6620adc": {
+      "authors": [],
+      "codeUrl": "https://github.com/axperty/delightlib",
+      "icon": "https://cdn.modrinth.com/data/rmDY6fYt/3f8cf9b61d0353d810dd89520c45c19642b33674.png",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/rmDY6fYt",
+      "name": "Delight Lib",
+      "summary": "Create Farmer's Delight add-ons for many mod loaders and versions easily.",
+      "tags": [
+        "library"
+      ],
+      "wikiUrl": "https://github.com/axperty/delightlib/wiki"
+    },
+    "Modrinth:s4WQHerM:sha512:c21a95dc7e8651f486d088b2f136af2d776a70aeb838c2d5e53de44f9b2d4ea110dc2ab7a04d5a318cbb27f6cabe181adc3603afa5cef6cfd43318946749ac96": {
+      "authors": [],
+      "codeUrl": null,
+      "icon": "https://cdn.modrinth.com/data/s4WQHerM/717fa7475bc862f3cd589a4332f508d9f347d145_96.webp",
+      "license": "LicenseRef-All-Rights-Reserved",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/s4WQHerM",
+      "name": "3D Maps",
+      "summary": "Makes Minecrafts maps three-dimensional and customizable inside item frames.",
+      "tags": [
+        "decoration",
+        "game-mechanics"
+      ],
+      "wikiUrl": null
+    },
+    "Modrinth:uTGjf7vA:sha512:e1dc1478ccda524721ddb9fb75986c9c1c26441c6a21c4a3da5107c43fd6ecbcc299cdd1aabc4abb341c60d5c71dc8a0e8795cae167812df6496d3f6e5f9fd6f": {
+      "authors": [],
+      "codeUrl": "https://github.com/MarkusBordihn/BOs-Easy-NPC",
+      "icon": "https://cdn.modrinth.com/data/uTGjf7vA/f86a6e2d735af107f38d60a6623d74e5b15c9af8_96.webp",
+      "license": "MIT",
+      "metadataSource": "Modrinth",
+      "metadataUrl": "https://modrinth.com/mod/uTGjf7vA",
+      "name": "Easy NPC: Config UI",
+      "summary": "Provides a configuration UI for the Easy NPC mod, allowing players to customize NPC settings easily.",
+      "tags": [
+        "library",
+        "management",
+        "utility"
+      ],
+      "wikiUrl": "https://github.com/MarkusBordihn/BOs-Easy-NPC/wiki"
+    }
+  },
+  "schemaVersion": 1
+}

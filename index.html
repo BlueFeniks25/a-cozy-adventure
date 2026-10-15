@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111b19" />
+    <meta
+      name="description"
+      content="Entdecke alle Mods in A Cozy Adventure: Abenteuer, Magie und ein gemütliches Zuhause. Mit deutscher Mod-Übersicht und Prism-Launcher-Anleitung."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://cdn.modrinth.com https://*.forgecdn.net; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <title>A Cozy Adventure · Dein Mod-Kompass</title>
+    <link rel="icon" href="assets/leaf.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#katalog">Zum Mod-Katalog</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#" aria-label="A Cozy Adventure – Startseite">
+          <img src="assets/leaf.svg" width="36" height="36" alt="" />
+          <span
+            >A Cozy Adventure<span class="brand-subtitle"
+              >EINE WELT. VIELE GESCHICHTEN.</span
+            ></span
+          >
+        </a>
+        <nav aria-label="Hauptnavigation">
+          <a class="nav-catalog" href="#katalog">Mod-Katalog</a>
+          <a href="#installation"
+            >Mitspielen <span aria-hidden="true">↗</span></a
+          >
+          <a
+            class="repository-link"
+            href="https://github.com/BlueFeniks25/a-cozy-adventure"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Repository auf GitHub öffnen"
+            >GitHub <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span> DEIN KLEINES
+            STÜCK MINECRAFT
+          </p>
+          <h1 id="hero-title">
+            Große Abenteuer.<br /><em>Gemütlich zu Hause.</em>
+          </h1>
+          <p class="hero-description">
+            Durch verwunschene Wälder streifen, Magie entdecken und am Ende nach
+            Hause kommen. Entdecke die Mods, die unsere gemeinsame Welt
+            besonders machen.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#katalog"
+              >Mods entdecken <span aria-hidden="true">↓</span></a
+            >
+            <a class="text-link" href="#installation"
+              >Wie spiele ich mit? <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="pack-facts" aria-label="Informationen zum Modpack">
+            <span><strong id="hero-count">…</strong> Mods zum Entdecken</span>
+            <span
+              ><span class="tiny-cube" aria-hidden="true">◇</span> Minecraft
+              <strong id="minecraft-version">…</strong></span
+            >
+            <span>Fabric <strong id="fabric-version">…</strong></span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img
+            class="landscape"
+            src="assets/cozy-world.svg"
+            width="640"
+            height="460"
+            alt="Illustration einer gemütlichen Hütte mit leuchtenden Fenstern, umgeben von Tannen, Bergen und einem kleinen Fluss."
+          />
+          <span class="art-caption"
+            ><span class="status-dot" aria-hidden="true"></span> Platz für dein
+            nächstes Abenteuer.</span
+          >
+        </div>
+      </section>
+
+      <section
+        class="catalog-section"
+        id="katalog"
+        aria-labelledby="catalog-title"
+      >
+        <div class="shell">
+          <div class="section-intro">
+            <div>
+              <p class="eyebrow">DAS STECKT IN UNSERER WELT</p>
+              <h2 id="catalog-title">
+                Dein Mod-Kompass<span class="heading-dot">.</span>
+              </h2>
+            </div>
+            <p>
+              Für neugierige Entdecker, kreative Baumeister<br
+                class="desktop-break"
+              />
+              und alle, die es sich gemütlich machen.
+            </p>
+          </div>
+          <div class="catalog-toolbar">
+            <label class="search-field" for="search"
+              ><span class="search-icon" aria-hidden="true"></span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Welche Mod suchst du?"
+                autocomplete="off"
+                maxlength="150"
+                disabled
+              /><span class="search-hint" aria-hidden="true">Suche</span></label
+            >
+            <label class="sort-control" for="sort"
+              >Sortieren
+              <select id="sort" disabled>
+                <option value="recommended">Entdeckungen zuerst</option>
+                <option value="az">Name: A–Z</option>
+                <option value="za">Name: Z–A</option>
+              </select></label
+            >
+          </div>
+          <div class="catalog-layout">
+            <aside class="filter-panel" aria-label="Kategorien">
+              <p class="filter-heading" id="category-heading">DEIN INTERESSE</p>
+              <div
+                class="category-list"
+                id="categories"
+                role="group"
+                aria-labelledby="category-heading"
+              ></div>
+              <div class="sidebar-note">
+                <span aria-hidden="true">✧</span>
+                <p>Ein kleines Detail,<br />ein neues Lieblingsabenteuer.</p>
+              </div>
+            </aside>
+            <div class="catalog-content" aria-busy="true" id="catalog-content">
+              <div class="results-toolbar">
+                <p
+                  id="result-count"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
+                  Mod-Katalog wird geladen …
+                </p>
+                <button class="reset-button" id="reset" type="button" hidden>
+                  Filter zurücksetzen <span aria-hidden="true">↺</span>
+                </button>
+              </div>
+              <div class="mod-grid" id="mod-grid"></div>
+              <div class="empty-state" id="empty-state" hidden>
+                <span aria-hidden="true">⌕</span>
+                <h3>Hier ist es noch ganz still.</h3>
+                <p>
+                  Für diese Suche haben wir keine Mod gefunden.<br />Versuche
+                  einen anderen Namen oder eine andere Kategorie.
+                </p>
+                <button
+                  type="button"
+                  class="button button-secondary"
+                  id="empty-reset"
+                >
+                  Alle Mods anzeigen
+                </button>
+              </div>
+              <div class="error-state" id="error-state" hidden>
+                <h3>Der Mod-Kompass macht gerade Pause.</h3>
+                <p>
+                  Die Modliste konnte nicht geladen werden. Bitte versuche es
+                  noch einmal.
+                </p>
+                <button
+                  type="button"
+                  class="button button-secondary"
+                  id="retry"
+                >
+                  Erneut laden
+                </button>
+              </div>
+              <noscript
+                ><p class="notice">
+                  Bitte aktiviere JavaScript für Suche und Mod-Katalog. Du
+                  kannst auch die
+                  <a href="mods.json">vollständige Modliste als JSON</a> öffnen.
+                </p></noscript
+              >
+              <p class="catalog-footnote" id="catalog-footnote" hidden>
+                <span aria-hidden="true">✦</span> Jede Mod ist ein kleines Stück
+                unserer Welt. Klick auf eine Karte und erfahre mehr.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="installation shell"
+        id="installation"
+        aria-labelledby="installation-title"
+      >
+        <div class="install-heading">
+          <p class="eyebrow">DEIN ABENTEUER BEGINNT HIER</p>
+          <h2 id="installation-title">Mach’s dir bei uns gemütlich.</h2>
+          <p>Mit Prism Launcher in wenigen Schritten in unsere Welt.</p>
+        </div>
+        <ol class="install-steps">
+          <li>
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3>Prism Launcher einrichten</h3>
+            <p>
+              <a
+                href="https://prismlauncher.org/download/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Prism Launcher herunterladen ↗</a
+              >, installieren und dein Minecraft-Konto hinzufügen.
+            </p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3>Unser Modpack importieren</h3>
+            <p>
+              Die Installations-ZIP herunterladen. In Prism auf „Instanz
+              hinzufügen“ → „Importieren“ klicken und die ZIP auswählen.
+            </p>
+          </li>
+          <li>
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3>Ankommen & losspielen</h3>
+            <p>
+              Den Import abschließen, die Instanz starten und eventuelle
+              Hinweise zum ersten Start befolgen. Willkommen im Abenteuer!
+            </p>
+          </li>
+        </ol>
+        <div class="install-download">
+          <div>
+            <strong>Ein Zuhause wartet schon auf dich.</strong>
+            <p>Die Installations-ZIP wird hier nach ihrer Freigabe verlinkt.</p>
+          </div>
+          <button class="button download-placeholder" type="button" disabled>
+            Installations-ZIP · bald verfügbar <span aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <p class="install-help">
+          Fragen zum Import?
+          <a
+            href="https://prismlauncher.org/wiki/help-pages/Zip-import/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Zur offiziellen Prism-Anleitung ↗</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer class="shell site-footer">
+      <a class="footer-brand" href="#"
+        ><img src="assets/leaf.svg" width="22" height="22" alt="" /> A Cozy
+        Adventure</a
+      >
+      <p>Zusammen entdecken. Gemeinsam zu Hause.</p>
+      <a
+        href="https://github.com/BlueFeniks25/a-cozy-adventure"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Unser Modpack auf GitHub ↗</a
+      >
+      <p class="credits">
+        Ein Community-Modpack. Nicht mit Mojang oder Microsoft verbunden.
+        Mod-Namen und Icons gehören ihren jeweiligen Urhebern.
+      </p>
+    </footer>
+
+    <dialog id="mod-dialog" aria-labelledby="detail-title">
+      <div class="dialog-content">
+        <button
+          class="dialog-close"
+          id="dialog-close"
+          type="button"
+          aria-label="Detailansicht schließen"
+          autofocus
+        >
+          ×
+        </button>
+        <div id="detail-header" class="detail-header"></div>
+        <p class="detail-description" id="detail-description"></p>
+        <div class="detail-categories" id="detail-categories"></div>
+        <div id="detail-original" class="detail-original" hidden>
+          <h3>Vom Mod-Projekt</h3>
+          <p id="detail-summary"></p>
+          <small id="detail-attribution"></small>
+        </div>
+        <dl id="detail-facts" class="detail-facts"></dl>
+        <p class="detail-fallback" id="detail-fallback" hidden></p>
+        <div class="detail-links" id="detail-links"></div>
+        <p class="detail-note">
+          Hier entdeckst du die Mods unseres Packs. Installiert wird das gesamte
+          Modpack über Prism Launcher.
+        </p>
+      </div>
+    </dialog>
+  </body>
+</html>
