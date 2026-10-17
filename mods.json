@@ -41,7 +41,7 @@
       "name": "Bibliotheken"
     }
   ],
-  "inputSha256": "b8d0187e45228866f0239bbf6586d88421654b4fa8d8dba992d1d57385278aaf",
+  "inputSha256": "df8bd07c1d411c816aa15d7a61bfd5f5b7b2da68bb7b065d58104a3b77b6d4cc",
   "mods": [
     {
       "authors": [],
@@ -686,7 +686,7 @@
       "metadataSource": "Modrinth",
       "metadataUrl": "https://modrinth.com/mod/DbLWxVRd",
       "name": "ColorLight",
-      "originalSummary": "ColorLight is a mod that automatically determines how a block should glow and generates colored lighting based on that.",
+      "originalSummary": "ColorLight is a mod that adds colored lighting and is compatible with many popular mods. The mod has support for some mods: Voxy, Distant Horizon, Sable (fabric/neoforge), LambDinamycLight.",
       "packwizFile": "mods/colorlight.pw.toml",
       "packwizName": "ColorLight",
       "projectId": "DbLWxVRd",
@@ -2616,7 +2616,7 @@
       "description": "Optimiert die Grafikdarstellung und sorgt auf vielen Systemen für mehr Bilder pro Sekunde.",
       "descriptionKind": "editorial",
       "featured": false,
-      "filename": "sodium-fabric-0.9.3-alpha.1+mc26.3.jar",
+      "filename": "sodium-fabric-0.9.3-beta.1+mc26.3.jar",
       "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
       "id": "sodium",
       "license": "LicenseRef-Polyform-Shield-1.0.0",

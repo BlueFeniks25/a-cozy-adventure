@@ -687,7 +687,7 @@
       ],
       "wikiUrl": "https://github.com/bernie-g/geckolib/wiki"
     },
-    "CurseForge:394468:sha1:5d88caf6f3e182cd39d0fb0d2e7200c5e613f287": {
+    "CurseForge:394468:sha1:1e6aec741b4134258ba1d7d458bae96a2e8e187e": {
       "authors": [],
       "codeUrl": "https://github.com/CaffeineMC/sodium",
       "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
@@ -1692,7 +1692,7 @@
       "metadataSource": "Modrinth",
       "metadataUrl": "https://modrinth.com/mod/DbLWxVRd",
       "name": "ColorLight",
-      "summary": "ColorLight is a mod that automatically determines how a block should glow and generates colored lighting based on that.",
+      "summary": "ColorLight is a mod that adds colored lighting and is compatible with many popular mods. The mod has support for some mods: Voxy, Distant Horizon, Sable (fabric/neoforge), LambDinamycLight.",
       "tags": [
         "adventure",
         "decoration",
