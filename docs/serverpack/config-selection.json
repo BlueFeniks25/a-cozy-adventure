@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "expectedTotalMods": 136,
-  "expectedServerMods": 107,
+  "expectedTotalMods": 137,
+  "expectedServerMods": 108,
   "include": [
     {
       "reason": "Shared gameplay, content and library settings needed by retained server mods; mixed common files are preserved without edits.",
@@ -118,8 +118,7 @@
         "config/polydex.json",
         "config/polymer/common.json",
         "config/polymer/server.json",
-        "config/polymer/sound-patch.json",
-        "config/rrv/server_settings.json"
+        "config/polymer/sound-patch.json"
       ]
     },
     {
@@ -177,7 +176,6 @@
       "files": [
         "config/rpg_series/loot_fallback_report.json",
         "config/rpg_series/tag_cache.json",
-        "config/rrv/bookmarks.json",
         "config/xaerohud.txt",
         "config/xaeropatreon.txt"
       ]
@@ -188,9 +186,7 @@
         "config/easy_npc/dialog_options.cfg",
         "config/easy_npc/render_entity_type_support.cfg",
         "config/ribbits-options.json",
-        "config/ribbits.json",
-        "config/rrv/recipe_categories.json",
-        "config/rrv/stack_groups.json"
+        "config/ribbits.json"
       ]
     },
     {
@@ -259,7 +255,6 @@
         "config/polymer/client.json",
         "config/presencefootsteps/updater.json",
         "config/presencefootsteps/userconfig.json5",
-        "config/rrv/client_settings.json",
         "config/scaleme.json",
         "config/sodium-mixins.properties",
         "config/sodium-options.json",
@@ -323,7 +318,7 @@
     },
     {
       "id": "unconfirmed-configs",
-      "detail": "Ribbits cosmetic/network files, Easy NPC dialog/render support, RRV recipe_categories/stack_groups and Easy NPC skin templates are excluded. Confirm whether any server-side customization is required."
+      "detail": "Ribbits cosmetic/network files, Easy NPC dialog/render support and Easy NPC skin templates are excluded. Confirm whether any server-side customization is required."
     },
     {
       "id": "worldgen",

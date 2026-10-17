@@ -108,15 +108,41 @@ class ServerpackTests(unittest.TestCase):
         self.assertEqual([m.filename for m in plan.mods], ["common.jar", "server.jar"])
         self.assertEqual([m.filename for m in plan.excluded], ["client.jar"])
 
-    def test_real_repository_has_107_and_preserves_five_libraries(self):
+    def test_real_repository_inventory_and_preserves_five_libraries(self):
         plan = builder.load_plan()
-        self.assertEqual(len(plan.mods), 107)
-        self.assertEqual(len(plan.excluded), 29)
+        index = tomllib.loads((builder.ROOT / "index.toml").read_text(encoding="utf-8"))
+        mods = {e["file"]: tomllib.loads((builder.ROOT / e["file"]).read_text(encoding="utf-8"))
+                for e in index["files"] if e["file"].startswith("mods/")}
+        configs = {e["file"] for e in index["files"] if e["file"].startswith("config/")}
         paths = {m.path for m in plan.mods}
+        self.assertEqual(paths, {p for p, m in mods.items() if m["side"] in ("both", "server")})
+        self.assertEqual({m.path for m in plan.excluded}, {p for p, m in mods.items() if m["side"] == "client"})
+        excluded_configs = {c["path"] for c in plan.excluded_configs}
+        self.assertEqual(set(plan.configs) | excluded_configs, configs)
+        self.assertFalse(set(plan.configs) & excluded_configs)
+        # Reviewed against the current Packwiz index, not the previous catalog.
+        self.assertEqual((len(mods), len(plan.mods), len(plan.excluded)), (137, 108, 29))
+        self.assertEqual((len(configs), len(plan.configs), len(plan.excluded_configs)), (226, 105, 121))
         for name in ("creativecore", "iceberg-fabric", "fabric-language-kotlin", "yacl", "baguettelib"):
             self.assertIn(f"mods/{name}.pw.toml", paths)
-        self.assertEqual(len(plan.configs), 106)
-        self.assertEqual(len(plan.excluded_configs), 125)
+
+    def test_real_repository_recipe_viewer_and_config_library_reach_server_installer(self):
+        plan = builder.load_plan()
+        selected = {m.path: m for m in plan.mods}
+        stage = self.base / "recipe-viewer-definition"
+        stage.mkdir()
+        builder.write_server_definition(plan, stage, plan.mods)
+        index = tomllib.loads((stage / "index.toml").read_text(encoding="utf-8"))
+        indexed = {e["file"] for e in index["files"]}
+        for name, filename in (("jei", "jei-26.3-fabric-31.15.0.79.jar"),
+                               ("mezzconfig", "mezz_config-26.3-fabric-0.6.8.jar")):
+            path = f"mods/{name}.pw.toml"
+            with self.subTest(mod=name):
+                self.assertIn(path, selected)
+                self.assertEqual(selected[path].side, "both")
+                self.assertEqual(selected[path].filename, filename)
+                self.assertIn(path, indexed)
+                self.assertEqual((stage / path).read_bytes(), (builder.ROOT / path).read_bytes())
 
     def test_unknown_side_fails(self):
         p = self.root / "mods/common.pw.toml"
@@ -495,7 +521,7 @@ class ServerpackTests(unittest.TestCase):
         self.assertIn('--source-mods', help_result.stdout)
         result = subprocess.run([sys.executable, '-B', str(script), '--dry-run', '--output', str(self.base/'dry.zip')], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn('Selected server mods: 107', result.stdout)
+        self.assertIn(f'Selected server mods: {len(builder.load_plan().mods)}', result.stdout)
         self.assertIn('Status: planned', result.stdout)
         self.assertFalse((self.base/'dry.zip').exists())
 
