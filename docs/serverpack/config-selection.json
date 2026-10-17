@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "expectedTotalMods": 136,
+  "expectedServerMods": 107,
+  "include": [
+    {
+      "reason": "Shared gameplay, content and library settings needed by retained server mods; mixed common files are preserved without edits.",
+      "files": [
+        "config/beautify.json",
+        "config/cardinal-components-api.properties",
+        "config/collective.json5",
+        "config/collective/entity_names.json",
+        "config/colonialdelight.properties",
+        "config/creativecore.json",
+        "config/fallingtree.json",
+        "config/farmersdelight-common.json",
+        "config/forgeconfigapiport.toml",
+        "config/frog_petting.json",
+        "config/frozenlib/main.json5",
+        "config/icys-better-horses.json",
+        "config/kaleidoscope_tavern-common.toml",
+        "config/mangatrees.json",
+        "config/modonomicon-server.json5",
+        "config/naturalist-server.properties",
+        "config/plushables.properties",
+        "config/puddleflood.json",
+        "config/puffish_skills/config.json",
+        "config/pyrite.toml",
+        "config/rusticdelight.json",
+        "config/stoneworks-common.toml",
+        "config/travelersbackpack-common.toml",
+        "config/travelersbackpack-server.toml",
+        "config/trinkets.json",
+        "config/ubesdelight.json",
+        "config/village-quest/server.properties",
+        "config/villagernames.json5",
+        "config/villagernames/customnames.txt",
+        "config/waystones-common.toml",
+        "config/weaponsexpanded.json"
+      ]
+    },
+    {
+      "reason": "RPG equipment, spells, effects, loot and structure definitions; required for matching server gameplay.",
+      "files": [
+        "config/archers/effects.json",
+        "config/archers/equipment.json",
+        "config/archers/summoned_entities.json",
+        "config/archers/tweaks.json",
+        "config/archers/villages.json",
+        "config/armory_rpgs/effects.json",
+        "config/armory_rpgs/equipment_v3.json",
+        "config/arsenal/effects.json",
+        "config/arsenal/equipment_v2.json",
+        "config/arsenal/ranged_weapons.json",
+        "config/arsenal/shields.json",
+        "config/bettercombat/fallback_compatibility.json",
+        "config/bettercombat/server.json5",
+        "config/critical_strike/server_config.json",
+        "config/gazebo/villages.json",
+        "config/jewelry/features.json",
+        "config/jewelry/items_v9.json",
+        "config/jewelry/villages.json",
+        "config/paladins/effects.json",
+        "config/paladins/equipment_v2.json",
+        "config/paladins/shields.json",
+        "config/paladins/summoned_entities.json",
+        "config/paladins/tweaks.json",
+        "config/paladins/villages.json",
+        "config/relics/effects.json",
+        "config/relics/items_v2.json",
+        "config/rogues/effects.json",
+        "config/rogues/equipment_v3.json",
+        "config/rogues/tweaks.json",
+        "config/rogues/villages.json",
+        "config/rpg_series/loot_equipment_v2.json",
+        "config/rpg_series/loot_misc.json",
+        "config/rpg_series/loot_scrolls_v2.json",
+        "config/skill_tree_rpgs/effects.json",
+        "config/spell_engine/elemental_weaknesses.json",
+        "config/spell_engine/server.json5",
+        "config/spell_engine/spell_container_templates_v2.json",
+        "config/spell_engine/weapon_fallback.json",
+        "config/spell_power/attributes.json",
+        "config/village_taverns/villages.json",
+        "config/wizards/effects.json",
+        "config/wizards/equipment_v2.json",
+        "config/wizards/summoned_entities.json",
+        "config/wizards/tweaks.json",
+        "config/wizards/villages.json"
+      ]
+    },
+    {
+      "reason": "World generation, seasons and shared Wilder Wild behaviour; review mixed common settings during Phase B.",
+      "files": [
+        "config/lithostitched.json",
+        "config/sereneseasons/fertility.toml",
+        "config/sereneseasons/seasons.toml",
+        "config/tectonic.json",
+        "config/terralith.json",
+        "config/wilderwild/block.json5",
+        "config/wilderwild/entity.json5",
+        "config/wilderwild/item.json5",
+        "config/wilderwild/misc.json5",
+        "config/wilderwild/mixins.json5",
+        "config/wilderwild/worldgen.json5"
+      ]
+    },
+    {
+      "reason": "Dedicated-server NPC base/spawner settings; rendering, skin templates and local UI files are deliberately excluded.",
+      "files": [
+        "config/easy_npc/npc_base.cfg",
+        "config/easy_npc/spawner_type.cfg"
+      ]
+    },
+    {
+      "reason": "Server recipe synchronization and Polymer behaviour; no resource-pack auto-hosting configuration is activated.",
+      "files": [
+        "config/polydex.json",
+        "config/polymer/common.json",
+        "config/polymer/server.json",
+        "config/polymer/sound-patch.json",
+        "config/rrv/server_settings.json"
+      ]
+    },
+    {
+      "reason": "Retained Xaero server profiles, permissions, status effects and server radar policy; client profiles and local map preferences are excluded.",
+      "files": [
+        "config/xaero/lib/common.cfg",
+        "config/xaero/lib/server_profiles/default.cfg",
+        "config/xaero/minimap/common.cfg",
+        "config/xaero/minimap/default_radar_categories_server.json",
+        "config/xaero/minimap/server_profiles/default.cfg",
+        "config/xaero/world-map/common.cfg",
+        "config/xaero/world-map/server_profiles/default.cfg"
+      ]
+    },
+    {
+      "reason": "Server performance/profiling settings and sound-distance behaviour; no gameplay or profiling defaults are changed.",
+      "files": [
+        "config/chunky/config.json",
+        "config/ferritecore.mixin.properties",
+        "config/lithium.properties",
+        "config/sound_physics_remastered/soundphysics.properties",
+        "config/spark/config.json"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "reason": "Configuration for mods absent from the current pack; not evidence of a missing required dependency.",
+      "files": [
+        "config/better_revive.json",
+        "config/camerapture.client.json",
+        "config/camerapture.server.json",
+        "config/chestseparators/.defaults_seeded_v2",
+        "config/chestseparators/chest_preset_27_1.json",
+        "config/chestseparators/chest_preset_27_2.json",
+        "config/chestseparators/chest_preset_27_3.json",
+        "config/chestseparators/chest_preset_27_4.json",
+        "config/chestseparators/chest_preset_27_5.json",
+        "config/chestseparators/chest_preset_54_1.json",
+        "config/chestseparators/chest_preset_54_2.json",
+        "config/chestseparators/chest_preset_54_3.json",
+        "config/chestseparators/chest_preset_54_4.json",
+        "config/chestseparators/chest_preset_54_5.json",
+        "config/chestseparators/inventory_preset_1.json",
+        "config/chestseparators/inventory_preset_2.json",
+        "config/chestseparators/inventory_preset_3.json",
+        "config/chestseparators/inventory_preset_4.json",
+        "config/chestseparators/inventory_preset_5.json",
+        "config/chestseparators_config.json",
+        "config/polyfactory.json"
+      ]
+    },
+    {
+      "reason": "Personal bookmarks, generated caches and diagnostic reports; not server gameplay inputs.",
+      "files": [
+        "config/rpg_series/loot_fallback_report.json",
+        "config/rpg_series/tag_cache.json",
+        "config/rrv/bookmarks.json",
+        "config/xaerohud.txt",
+        "config/xaeropatreon.txt"
+      ]
+    },
+    {
+      "reason": "Unconfirmed server relevance or cosmetic/network preferences; explicitly excluded pending Phase B review. Ribbits proxy credentials must never be copied into an artifact.",
+      "files": [
+        "config/easy_npc/dialog_options.cfg",
+        "config/easy_npc/render_entity_type_support.cfg",
+        "config/ribbits-options.json",
+        "config/ribbits.json",
+        "config/rrv/recipe_categories.json",
+        "config/rrv/stack_groups.json"
+      ]
+    },
+    {
+      "reason": "Client HUD, renderer, local UI, skin templates, sound processing or client-only mod settings; not required in the server output.",
+      "files": [
+        "config/appleskin.json5",
+        "config/armory_rpgs/client.json",
+        "config/bettercombat/client.json5",
+        "config/bettercombat/weapon_trails.json",
+        "config/chat_heads.json5",
+        "config/chatanimation.json",
+        "config/colorlight.json",
+        "config/continuity.json",
+        "config/coolrain.json",
+        "config/creativecore-client.json",
+        "config/critical_strike/client_config.json",
+        "config/easy_npc/dialog_client.cfg",
+        "config/easy_npc/highlight_client.cfg",
+        "config/easy_npc/name_tag_client.cfg",
+        "config/easy_npc/skin/allay/allay_template.png",
+        "config/easy_npc/skin/cat/cat_template.png",
+        "config/easy_npc/skin/chicken/chicken_template.png",
+        "config/easy_npc/skin/creeper/creeper_template.png",
+        "config/easy_npc/skin/ender_man/ender_man_template.png",
+        "config/easy_npc/skin/fairy/fairy_template.png",
+        "config/easy_npc/skin/fox/fox_template.png",
+        "config/easy_npc/skin/humanoid/humanoid_template.png",
+        "config/easy_npc/skin/humanoid_slim/humanoid_slim_template.png",
+        "config/easy_npc/skin/husk/husk_template.png",
+        "config/easy_npc/skin/illager/illager_template.png",
+        "config/easy_npc/skin/iron_golem/iron_golem_template.png",
+        "config/easy_npc/skin/orc/orc_template.png",
+        "config/easy_npc/skin/pig/pig_template.png",
+        "config/easy_npc/skin/piglin/piglin_template.png",
+        "config/easy_npc/skin/skeleton/skeleton_template.png",
+        "config/easy_npc/skin/spider/spider_template.png",
+        "config/easy_npc/skin/stray/stray_template.png",
+        "config/easy_npc/skin/vex/vex_template.png",
+        "config/easy_npc/skin/villager/villager_template.png",
+        "config/easy_npc/skin/villager/villager_without_hat_template.png",
+        "config/easy_npc/skin/witch/witch_template.png",
+        "config/easy_npc/skin/wolf/wolf_template.png",
+        "config/easy_npc/skin/zombie/zombie_template.png",
+        "config/easy_npc/skin/zombie_villager/zombie_villager_template.png",
+        "config/easy_npc/speech_bubble_client.cfg",
+        "config/entity_model_features.json",
+        "config/entity_texture_features.json",
+        "config/entityculling.json",
+        "config/etf_warnings.json",
+        "config/farmersdelight-client.json",
+        "config/immediatelyfast.json",
+        "config/inventoryprofilesnext/integrationHints/exampleIntegrationHints.json",
+        "config/inventoryprofilesnext/inventoryprofiles.json",
+        "config/iris-excluded.json",
+        "config/iris.properties",
+        "config/lambdynlights.toml",
+        "config/legendarytooltips.toml",
+        "config/lighty/base.config",
+        "config/midnightlib.json",
+        "config/modmenu.json",
+        "config/modonomicon.json5",
+        "config/naturalist-client.properties",
+        "config/naturalwaters-client.toml",
+        "config/particle_effects.json5",
+        "config/particular-common.toml",
+        "config/polymer/client.json",
+        "config/presencefootsteps/updater.json",
+        "config/presencefootsteps/userconfig.json5",
+        "config/rrv/client_settings.json",
+        "config/scaleme.json",
+        "config/sodium-mixins.properties",
+        "config/sodium-options.json",
+        "config/sound_physics_remastered/occlusion.properties",
+        "config/sound_physics_remastered/reflectivity.properties",
+        "config/sound_physics_remastered/sound_rates.properties",
+        "config/spell_engine/client.json5",
+        "config/spell_engine/hud_config.json",
+        "config/status-effect-bars.json",
+        "config/studiouskeybinds.properties",
+        "config/swinginglanterns/README.txt",
+        "config/swinginglanterns/lantern_overrides.json",
+        "config/swinginglanterns/raycast_ignored_blocks.json",
+        "config/swinginglanterns/swinginglanterns.json",
+        "config/transition.json",
+        "config/travelersbackpack-client.toml",
+        "config/trender.json",
+        "config/village-quest-client.properties",
+        "config/village-quest/client.properties",
+        "config/xaero/lib/client.cfg",
+        "config/xaero/lib/profiles/default.cfg",
+        "config/xaero/minimap/client.cfg",
+        "config/xaero/minimap/default_radar_categories_client.json",
+        "config/xaero/minimap/profiles/default.cfg",
+        "config/xaero/minimap/profiles/info_display_config/default.cfg.txt",
+        "config/xaero/world-map/client.cfg",
+        "config/xaero/world-map/profiles/default.cfg",
+        "config/yacl.json5",
+        "config/zoomify.json"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "phase-b",
+      "detail": "Final Dedicated-Server compatibility is untested. Test join, worldgen, combat/spells, recipes, NPCs, death/inventory, claims, voice chat and persistence before hosting."
+    },
+    {
+      "id": "host-voicechat",
+      "detail": "config/voicechat/voicechat-server.properties is absent. Obtain the assigned UDP port from Host Unlimited, generate the file on first start, and configure it manually. No production port is invented."
+    },
+    {
+      "id": "claims",
+      "detail": "Open Parties and Claims stays installed, but its server config is absent from the index. Do not copy config-review automatically; its prometheus and argonauts_guilds adapters are absent from this pack. Review claim permissions and defaults on first start."
+    },
+    {
+      "id": "polymer-resources",
+      "detail": "Polymer auto-host/resource-pack config is not included. Review config-review manually; world/resources.zip is absent. Colorful Trims RP remains in the clientpack; this ZIP distributes no client resource packs."
+    },
+    {
+      "id": "npc-security",
+      "detail": "Easy NPC security.cfg and remote_texture.cfg exist only in config-review. Review permission and remote URL policies manually before allowing NPC editing; no excluded file is promoted."
+    },
+    {
+      "id": "server-toml-location",
+      "detail": "Confirm that Traveler's Backpack loads config/travelersbackpack-server.toml with Forge Config API Port on a dedicated server. No defaultconfigs or world/serverconfig files are fabricated."
+    },
+    {
+      "id": "mixed-common",
+      "detail": "Common files for FrozenLib, Trinkets, Puddles & Floods and Sound Physics contain both client and server options. They are preserved byte-for-byte; confirm effective server settings in Phase B."
+    },
+    {
+      "id": "unconfirmed-configs",
+      "detail": "Ribbits cosmetic/network files, Easy NPC dialog/render support, RRV recipe_categories/stack_groups and Easy NPC skin templates are excluded. Confirm whether any server-side customization is required."
+    },
+    {
+      "id": "worldgen",
+      "detail": "No standalone Climate Rivers config is indexed. Confirm generated defaults and interaction with Tectonic, Terralith and structures before creating the final world or running Chunky."
+    },
+    {
+      "id": "library-candidates",
+      "detail": "CreativeCore, Iceberg, Fabric Language Kotlin, YACL and BaguetteLib remain included. Do not prune until dependency review and Phase B testing confirm removal is safe."
+    }
+  ]
+}

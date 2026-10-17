@@ -1,6 +1,6 @@
 name = "[ETF] Entity Texture Features - [Fabric & Forge]"
 filename = "entity_texture_features-7.2.5-26.3-fabric.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

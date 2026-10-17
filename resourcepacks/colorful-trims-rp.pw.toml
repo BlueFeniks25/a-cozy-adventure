@@ -1,6 +1,6 @@
 name = "Colorful Trims RP"
 filename = "Colorful Trims RP v2.0.zip"
-side = "both"
+side = "client"
 
 [download]
 url = "https://cdn.modrinth.com/data/hCf7CjRg/versions/vsHXBnXl/Colorful%20Trims%20RP%20v2.0.zip"

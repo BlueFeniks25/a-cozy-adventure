@@ -41,7 +41,7 @@
       "name": "Bibliotheken"
     }
   ],
-  "inputSha256": "c05e94d60ab8dcbefd174403bb9eacf55e7acf46294a69d0a00092a84f33746b",
+  "inputSha256": "b8d0187e45228866f0239bbf6586d88421654b4fa8d8dba992d1d57385278aaf",
   "mods": [
     {
       "authors": [],
@@ -88,7 +88,7 @@
       "packwizFile": "mods/entity-model-features.pw.toml",
       "packwizName": "[EMF] Entity Model Features [Fabric & Forge]",
       "projectId": "844662",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/844662",
       "wikiUrl": "https://github.com/Traben-0/Entity_Model_Features/blob/master/FEATURES.md"
@@ -113,7 +113,7 @@
       "packwizFile": "mods/entity-texture-features-fabric.pw.toml",
       "packwizName": "[ETF] Entity Texture Features - [Fabric & Forge]",
       "projectId": "568563",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/568563",
       "wikiUrl": "https://github.com/Traben-0/Entity_Texture_Features/blob/master/.github/README.md"
@@ -163,7 +163,7 @@
       "packwizFile": "mods/ambientsounds.pw.toml",
       "packwizName": "AmbientSounds 6",
       "projectId": "254284",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/254284",
       "wikiUrl": null
@@ -340,7 +340,7 @@
       "packwizFile": "mods/axolotl-buckets.pw.toml",
       "packwizName": "Axolotl Buckets",
       "projectId": "1570109",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/1570109",
       "wikiUrl": null
@@ -490,7 +490,7 @@
       "packwizFile": "mods/chatanimation.pw.toml",
       "packwizName": "Chat Animation [Smooth Chat]",
       "projectId": "892086",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/892086",
       "wikiUrl": null
@@ -515,7 +515,7 @@
       "packwizFile": "mods/chat-heads.pw.toml",
       "packwizName": "Chat Heads",
       "projectId": "407206",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/407206",
       "wikiUrl": null
@@ -715,7 +715,7 @@
       "packwizFile": "mods/continuity.pw.toml",
       "packwizName": "Continuity",
       "projectId": "531351",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/531351",
       "wikiUrl": "https://github.com/PepperCode1/Continuity/wiki"
@@ -1345,7 +1345,7 @@
       "packwizFile": "mods/immediatelyfast.pw.toml",
       "packwizName": "ImmediatelyFast",
       "projectId": "686911",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/686911",
       "wikiUrl": null
@@ -1370,7 +1370,7 @@
       "packwizFile": "mods/inventory-profiles-next.pw.toml",
       "packwizName": "Inventory Profiles Next",
       "projectId": "495267",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/495267",
       "wikiUrl": "https://inventory-profiles-next.github.io"
@@ -1395,7 +1395,7 @@
       "packwizFile": "mods/irisshaders.pw.toml",
       "packwizName": "Iris Shaders",
       "projectId": "455508",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/455508",
       "wikiUrl": null
@@ -1521,7 +1521,7 @@
       "packwizFile": "mods/legendary-tooltips-fabric.pw.toml",
       "packwizName": "Legendary Tooltips [Fabric]",
       "projectId": "542478",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/542478",
       "wikiUrl": "https://github.com/AHilyard/LegendaryTooltips/wiki/Configuration-Instructions"
@@ -1546,7 +1546,7 @@
       "packwizFile": "mods/libipn.pw.toml",
       "packwizName": "libIPN",
       "projectId": "679177",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/679177",
       "wikiUrl": null
@@ -1571,7 +1571,7 @@
       "packwizFile": "mods/lighty.pw.toml",
       "packwizName": "Lighty",
       "projectId": "986380",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/986380",
       "wikiUrl": null
@@ -1696,7 +1696,7 @@
       "packwizFile": "mods/modmenu.pw.toml",
       "packwizName": "Mod Menu",
       "projectId": "308702",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/308702",
       "wikiUrl": "https://github.com/TerraformersMC/ModMenu/wiki"
@@ -1797,7 +1797,7 @@
       "packwizFile": "mods/natural-waters.pw.toml",
       "packwizName": "Natural Waters",
       "projectId": "1367853",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/1367853",
       "wikiUrl": null
@@ -1974,7 +1974,7 @@
       "packwizFile": "mods/particular-reforged.pw.toml",
       "packwizName": "Particular ✨ Reforged",
       "projectId": "1219053",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/1219053",
       "wikiUrl": null
@@ -2124,7 +2124,7 @@
       "packwizFile": "mods/presence-footsteps.pw.toml",
       "packwizName": "Presence Footsteps",
       "projectId": "334259",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/334259",
       "wikiUrl": "https://github.com/Sollace/Presence-Footsteps/wiki"
@@ -2149,7 +2149,7 @@
       "packwizFile": "mods/prism-fabric.pw.toml",
       "packwizName": "Prism [Fabric]",
       "projectId": "665526",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/665526",
       "wikiUrl": "https://github.com/AHilyard/Prism/wiki/Prism-Documentation"
@@ -2476,7 +2476,7 @@
       "packwizFile": "mods/scale-me.pw.toml",
       "packwizName": "Scale Me",
       "projectId": "1378514",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/1378514",
       "wikiUrl": null
@@ -2627,7 +2627,7 @@
       "packwizFile": "mods/sodium.pw.toml",
       "packwizName": "Sodium",
       "projectId": "394468",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/394468",
       "wikiUrl": "https://github.com/CaffeineMC/sodium/wiki"
@@ -2777,7 +2777,7 @@
       "packwizFile": "mods/status-effect-bars.pw.toml",
       "packwizName": "Status Effect Bars",
       "projectId": "615459",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/615459",
       "wikiUrl": null
@@ -2903,7 +2903,7 @@
       "packwizFile": "mods/studious-keybinds.pw.toml",
       "packwizName": "Studious Keybinds",
       "projectId": "1731572",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/1731572",
       "wikiUrl": null
@@ -2954,7 +2954,7 @@
       "packwizFile": "mods/swinging-lanterns.pw.toml",
       "packwizName": "Swinging Lanterns",
       "projectId": "1477733",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/1477733",
       "wikiUrl": null
@@ -3458,7 +3458,7 @@
       "packwizFile": "mods/zoomify.pw.toml",
       "packwizName": "Zoomify",
       "projectId": "574741",
-      "side": "both",
+      "side": "client",
       "source": "CurseForge",
       "url": "https://www.curseforge.com/projects/574741",
       "wikiUrl": null

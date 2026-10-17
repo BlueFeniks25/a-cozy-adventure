@@ -19,3 +19,7 @@ crash-reports/
 logs/
 saves/
 screenshots/
+
+# Local server-pack artifacts and reports
+/build/
+/dist/
