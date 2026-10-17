@@ -10,3 +10,48 @@
 packwiz.exe
 config-dateiliste.txt
 config-review/**
+
+# Website files stay in the repository and on Pages, outside the game pack.
+.nojekyll
+index.html
+assets/**
+catalog/**
+mods.json
+README.md
+docs/**
+
+# Development tools, CI files, and local environments.
+scripts/**
+tests/**
+.github/**
+AGENTS.md
+.vscode/**
+.idea/**
+node_modules/**
+.venv/**
+venv/**
+**/__pycache__/**
+*.pyc
+.pytest_cache/**
+.mypy_cache/**
+.ruff_cache/**
+
+# Future server-pack outputs, temporary downloads, and caches.
+build/**
+dist/**
+serverpack/**
+serverpacks/**
+.serverpack/**
+downloads/**
+.downloads/**
+cache/**
+.cache/**
+.packwiz-cache/**
+tmp/**
+temp/**
+.tmp/**
+*.part
+*.download
+
+# The existing *.zip rule excludes local archives, not remote resource packs
+# referenced by resourcepacks/*.pw.toml. Add local ZIP assets only deliberately.

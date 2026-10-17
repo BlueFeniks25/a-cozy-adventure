@@ -1,6 +1,6 @@
 name = "Inventory Profiles Next"
 filename = "InventoryProfilesNext-fabric-26.3-2.3.8.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

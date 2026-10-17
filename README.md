@@ -101,24 +101,15 @@ Für eine spätere, ausdrücklich freigegebene Veröffentlichung:
 
 Ein späterer vollautomatischer Betrieb der **live ausgelieferten** JSON benötigt eine gesondert freigegebene Integration: etwa generierte Dateien in einen Review-PR schreiben oder nach einer geschützten Freigabe die vollständige Pages-Auslieferung erzeugen. Das wäre eine Erweiterung des derzeit lesenden Workflows.
 
-### Vor dem nächsten manuellen Packwiz-Refresh
+### Packwiz-Refresh und Serverpack-Vorbereitung
 
-Die bestehende `.packwizignore` wurde wie alle vorhandenen Dateien bewusst unverändert gelassen. Die neuen Website-Dateien stehen nicht im aktuellen `index.toml` und werden daher nicht an Minecraft-Clients verteilt. Ein zukünftiger, manuell ausgeführter `packwiz refresh` könnte sie aber aufnehmen.
+Die `.packwizignore` schließt Website-, Entwicklungs-, CI- und Dokumentationsdateien sowie künftige Build-, Download- und Cacheverzeichnisse aus. Dazu gehören `index.html`, `assets/`, `mods.json`, `catalog/`, `scripts/`, `tests/`, `.github/`, `README.md`, `docs/`, `build/` und `dist/`. `.nojekyll` bleibt für GitHub Pages im Repository, wird aber nicht mit dem Minecraft-Pack verteilt. `config/` und `resourcepacks/` bleiben im Packwiz-Bestand.
 
-**Vor einem solchen Refresh** nach separater Prüfung die folgenden Website-/Werkzeugpfade in `.packwizignore` aufnehmen; das wäre eine eigenständige Änderung an der Packwiz-Konfiguration:
+Die bestehende Regel `*.zip` schließt lokale Backups und Archive aus, nicht die über `.pw.toml` referenzierten entfernten Ressourcenpakete. Eine spätere Verteilung lokaler Ressourcenpaket-ZIPs benötigt eine ausdrücklich geprüfte Einbindung. Aus `config-review/` wird nichts automatisch übernommen.
 
-```text
-index.html
-assets/**
-mods.json
-catalog/**
-scripts/**
-tests/**
-.github/**
-README.md
-```
+Die geprüften Side-Korrekturen ergeben weiterhin 136 Clientpack-Mods: 29 mit `side = "client"` und 107 mit `side = "both"`. Die vier Ressourcenpakete einschließlich Colorful Trims RP sind als `client` eingestuft. Der lokale Serverpack-Builder in `scripts/build_serverpack.py` verwendet die lokale Packwiz-Definition und eine explizite Konfigurationsauswahl. Phase A3 ergänzt `.github/workflows/serverpack.yml` für PR- und manuelle Offline-Prüfungen ohne Mod-Downloads oder Veröffentlichung von Server-ZIPs. Befehle, Prüfartefakte, Bibliothekskandidaten und die ausstehende Dedicated-Server-Prüfung sind unter [docs/serverpack/README.md](docs/serverpack/README.md) dokumentiert.
 
-Der Katalog-Generator selbst ruft `packwiz refresh` niemals auf.
+Der Katalog-Generator selbst ruft `packwiz refresh` niemals auf. Nach einem separat ausgeführten Refresh lässt sich der Katalog ohne neue API-Abfragen mit `python -B scripts/generate_mods.py --offline` regenerieren und mit `--check` prüfen.
 
 ## Installation für Mitspieler
 

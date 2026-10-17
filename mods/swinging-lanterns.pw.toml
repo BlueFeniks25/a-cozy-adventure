@@ -1,6 +1,6 @@
 name = "Swinging Lanterns"
 filename = "swinginglanterns-fabric-26.3-2.0.4.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

@@ -1,6 +1,6 @@
 name = "Natural Waters"
 filename = "naturalwaters-v26.3.0-mc26.3.x+fabric.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

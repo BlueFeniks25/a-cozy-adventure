@@ -1,6 +1,6 @@
 name = "Axolotl Buckets"
 filename = "axolotlbuckets-fabric-2.0.0+26.3.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
