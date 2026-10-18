@@ -11,3 +11,8 @@ mode = "metadata:curseforge"
 [update.curseforge]
 file-id = 9068533
 project-id = 1378514
+
+[option]
+optional = true
+default = true
+description = "Optionale Client-Funktion; Auswahl bleibt bei Updates erhalten."

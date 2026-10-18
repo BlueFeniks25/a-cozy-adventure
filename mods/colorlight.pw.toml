@@ -11,3 +11,8 @@ hash = "e4f91d542b8cf2f860e07544a3888a24828d7198667d590d1237f79e0bba152f1daac9f7
 [update.modrinth]
 mod-id = "DbLWxVRd"
 version = "1oqxGxQS"
+
+[option]
+optional = true
+default = true
+description = "Optionale Client-Funktion; Auswahl bleibt bei Updates erhalten."

@@ -11,3 +11,8 @@ hash = "8d295e53404493b500f66b42abcc5007f3b0ecef2428848dfc998ebdd7aa190c74d7304d
 [update.modrinth]
 mod-id = "PLAGcSFJ"
 version = "QC0b0jJo"
+
+[option]
+optional = true
+default = true
+description = "Optionale Client-Funktion; Auswahl bleibt bei Updates erhalten."

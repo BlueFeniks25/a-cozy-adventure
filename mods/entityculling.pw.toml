@@ -11,3 +11,8 @@ hash = "b6209bb62d72376d3fd284da137ec93a6dd38ebe5fd38ab9190deeade68b5b7f4bf915f4
 [update.modrinth]
 mod-id = "NNAgCjsB"
 version = "X1g3VhTx"
+
+[option]
+optional = true
+default = true
+description = "Optionale Client-Funktion; Auswahl bleibt bei Updates erhalten."

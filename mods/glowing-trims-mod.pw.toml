@@ -11,3 +11,8 @@ hash = "d17a626bbec3b2106d8035343b031908308dc8e74aefa453d47e5335a8fcf7a4b876716a
 [update.modrinth]
 mod-id = "V1c2WNSt"
 version = "TSDuWsfM"
+
+[option]
+optional = true
+default = true
+description = "Optionale Client-Funktion; Auswahl bleibt bei Updates erhalten."

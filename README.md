@@ -2,6 +2,17 @@
 
 Ein gemütliches Minecraft-Modpack mit einer statischen, deutschen Mod-Übersicht. HTML5, CSS3 und Vanilla JavaScript; keine Laufzeit-Abhängigkeiten, Datenbank, kostenpflichtigen Dienste oder API-Schlüssel im Browser.
 
+## Player Customization Protection
+
+Die neue Java-Schutzschicht verwaltet 25 unabhängige Client-Mods und vier Ressourcenpakete optional, schützt persönliche Dateien und Einstellungen und beendet offizielle Eigentümerschaft nach einer einmaligen Entfernung. Der geprüfte Original-Packwiz-Installer arbeitet dafür ausschließlich in einem isolierten Staging. Bestehende v0.0.2-Instanzen benötigen einen einmaligen Java-Umstieg ihres Prism-Startbefehls; der alte Bootstrap aktiviert den Schutz nicht automatisch.
+
+- [Spieleranleitung: A Cozy Adventure individuell anpassen](docs/customization/README.md)
+- [Architektur, Migration, Sicherheitsregeln und Build](docs/customization/architecture.md)
+- [Vollständige Mod- und Abhängigkeitsprüfung](docs/customization/dependencies.md)
+- [Nachgewiesenes Verhalten des ursprünglichen Installers](docs/customization/installer-audit.md)
+
+`scripts/build_prism.py` erzeugt die neue Prism-ZIP und die eigenständige `.migration.jar` aus fest geprüften offiziellen Werkzeugen. `.github/workflows/customization.yml` testet echte Packwiz-Updateabläufe in temporären Instanzen unter Windows/Linux und Java 17/25. Es erfolgt keine Veröffentlichung. Die folgenden älteren Abschnitte beschreiben weiterhin die Katalog- und v0.0.2-Ausgangslage; für die neue Installer-Erzeugung gilt die oben verlinkte Architekturdokumentation.
+
 Die Website liegt im Repository-Stamm. Alle URLs zu eigenen Dateien sind relativ und funktionieren auch unter dem GitHub-Pages-Projektpfad `/a-cozy-adventure/`.
 
 ## Bestehende Installation und Veröffentlichungsstatus

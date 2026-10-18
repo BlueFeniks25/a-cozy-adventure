@@ -22,6 +22,7 @@ docs/**
 
 # Development tools, CI files, and local environments.
 scripts/**
+src/**
 tests/**
 .github/**
 AGENTS.md
