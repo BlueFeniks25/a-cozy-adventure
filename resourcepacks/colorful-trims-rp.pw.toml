@@ -6,3 +6,8 @@ side = "client"
 url = "https://cdn.modrinth.com/data/hCf7CjRg/versions/vsHXBnXl/Colorful%20Trims%20RP%20v2.0.zip"
 hash-format = "sha256"
 hash = "55a21390409f2091296ae7c1b1304dd787abf90df80439aa7db744ad8d2e16e1"
+
+[option]
+optional = true
+default = true
+description = "Optionales Ressourcenpaket; Aktivierung und Reihenfolge im Spiel einstellen."

@@ -11,3 +11,8 @@ hash = "0bdf7b98afe37f4bb1fe6fe89889d55e26f82eba9a60dfe26241b7cba0d3ec14c3793d79
 [update.modrinth]
 mod-id = "iDyqnQLT"
 version = "K9R06E1l"
+
+[option]
+optional = true
+default = true
+description = "Optionale Client-Funktion; Auswahl bleibt bei Updates erhalten."

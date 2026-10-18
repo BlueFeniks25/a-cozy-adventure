@@ -1,0 +1,112 @@
+name: Player Customization Protection prüfen
+
+# Runs only isolated fixtures. No release, Pages deployment or player data access.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: customization-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  protect:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: ["17", "25"]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      COZY_REQUIRE_E2E: "1"
+      COZY_TEST_JAR: ${{ github.workspace }}/dist/customization/A-Cozy-Adventure-Prism-protection.migration.jar
+      PACKWIZ_INSTALLER_JAR: ${{ github.workspace }}/build/customization/packwiz-installer.jar
+      ACA_TEST_REPORT: ${{ github.workspace }}/build/customization-e2e/report.json
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Repository lesen
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Python einrichten
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.11"
+
+      - name: Java einrichten
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+
+      - name: Unveränderte offizielle Packwiz-Werkzeuge verifizieren
+        run: |
+          python -B - <<'PY'
+          from pathlib import Path
+          import sys
+          from urllib.request import Request, urlopen
+
+          sys.path.insert(0, "scripts")
+          import build_prism as builder
+
+          directory = Path("build/customization")
+          directory.mkdir(parents=True, exist_ok=True)
+          tools = [
+              ("packwiz-installer.jar", builder.shared.INSTALLER_URL, builder.shared.INSTALLER_SHA256),
+              ("packwiz-installer-bootstrap.jar", builder.BOOTSTRAP_URL, builder.BOOTSTRAP_SHA256),
+          ]
+          for name, url, expected in tools:
+              with urlopen(Request(url, headers={"User-Agent": "A-Cozy-Adventure-CI"}), timeout=90) as response:
+                  data = response.read(32 * 1024 * 1024 + 1)
+              if len(data) > 32 * 1024 * 1024:
+                  raise RuntimeError("Unexpected tool size")
+              builder.shared.verify(data, "sha256", expected, name)
+              target = directory / name
+              target.write_bytes(data)
+              builder.verified_jar(target, expected, name)
+              print(name + ": verified " + expected)
+          PY
+
+      - name: Prism-Import und Migration mit Java-17-Ziel bauen
+        run: >-
+          python -B scripts/build_prism.py
+          --installer build/customization/packwiz-installer.jar
+          --bootstrap build/customization/packwiz-installer-bootstrap.jar
+          --output dist/customization/A-Cozy-Adventure-Prism-protection.zip
+
+      - name: Bestehende Tests und echte Packwiz-Updateabläufe prüfen
+        run: python -B -m unittest discover -s tests -v
+
+      - name: Packwiz- und Katalogkonsistenz prüfen
+        if: ${{ !cancelled() }}
+        run: |
+          python -B scripts/generate_mods.py --check
+          python -B scripts/build_serverpack.py --dry-run
+          git diff --exit-code -- pack.toml index.toml mods/ resourcepacks/ config/ mods.json catalog/
+
+      - name: Isolierte Testnachweise sichern
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: customization-test-${{ matrix.os }}-java${{ matrix.java }}
+          path: build/customization-e2e/
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Geprüfte Prism- und Migrationsartefakte für Review sichern
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: prism-customization-${{ matrix.os }}-java${{ matrix.java }}
+          path: |
+            dist/customization/A-Cozy-Adventure-Prism-protection.zip
+            dist/customization/A-Cozy-Adventure-Prism-protection.migration.jar
+          if-no-files-found: error
+          retention-days: 7
