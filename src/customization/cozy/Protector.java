@@ -23,9 +23,15 @@ public final class Protector {
                 boolean defaultValue, boolean seed, String name) {}
 
     Protector(Path root) throws IOException {
-        this.root = root.toAbsolutePath().normalize();
-        if (!Files.isDirectory(this.root) || Files.isSymbolicLink(this.root)
-                || !this.root.toRealPath().equals(this.root)) throw new IOException("Unsafe Minecraft directory");
+        Path requested = root.toAbsolutePath().normalize();
+        for (Path part = requested; part != null; part = part.getParent()) {
+            if (Files.isSymbolicLink(part) || Files.readAttributes(part,
+                    java.nio.file.attribute.BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS).isOther())
+                throw new IOException("Unsafe Minecraft directory");
+        }
+        if (!Files.isDirectory(requested, LinkOption.NOFOLLOW_LINKS)) throw new IOException("Unsafe Minecraft directory");
+        // Canonicalize legitimate Windows 8.3 aliases only after rejecting links.
+        this.root = requested.toRealPath();
     }
 
     public static void main(String[] args) throws Exception {

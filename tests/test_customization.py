@@ -247,6 +247,34 @@ class CustomizationE2ETests(unittest.TestCase):
     def fixture(self, label):
         return Fixture(self, label)
 
+    @unittest.skipUnless(os.name == "nt", "Windows 8.3 aliases are platform-specific")
+    def test_windows_short_path_instance_installs_and_updates(self):
+        import ctypes
+        from ctypes import wintypes
+
+        f = self.fixture("Windows 8.3 alias for a legitimate instance directory")
+        canonical = f.minecraft.resolve()
+        get_short_path = ctypes.WinDLL("kernel32", use_last_error=True).GetShortPathNameW
+        get_short_path.argtypes = (wintypes.LPCWSTR, wintypes.LPWSTR, wintypes.DWORD)
+        get_short_path.restype = wintypes.DWORD
+        required = get_short_path(str(canonical), None, 0)
+        self.assertGreater(required, 0, f"GetShortPathNameW failed: {ctypes.get_last_error()}")
+        buffer = ctypes.create_unicode_buffer(required)
+        written = get_short_path(str(canonical), buffer, required)
+        self.assertGreater(written, 0, f"GetShortPathNameW failed: {ctypes.get_last_error()}")
+        self.assertLess(written, required)
+        self.assertIn("~", buffer.value, "Windows regression requires an actual 8.3 alias")
+        short = Path(buffer.value)
+        self.assertEqual(short.resolve(), canonical)
+        f.minecraft = short
+        f.run("fresh installation launched with real short-path cwd")
+        f.preserve("mods/gameplay.jar", b"required-v1")
+        f.write("mods/private.jar", b"personal mod through short path")
+        f.upgrade_gameplay()
+        f.run("update launched with the same short-path cwd")
+        f.preserve("mods/private.jar", b"personal mod through short path")
+        self.assertTrue((canonical / ".cozy/state.json").is_file())
+
     def test_01_fresh_defaults_and_configuration_seed(self):
         f = self.fixture("01 fresh default installation")
         f.run("install")

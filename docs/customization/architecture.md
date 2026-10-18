@@ -22,6 +22,8 @@ Der Original-Installer arbeitet ausschließlich in `.cozy/stage/<Versuch-ID>/fil
 
 Die tatsächlichen Minecraft-/Fabric-Komponenten werden vorab lesend gegen `mmc-pack.json` der Prism-Instanz geprüft. Stimmen sie nicht mit dem Pack überein, werden keine Spieldateien übernommen. Die Meldung nennt die benötigten Versionen, die unter Prism → Instanz bearbeiten → Version einzustellen sind. Die bisherige native automatische Bearbeitung von Launcher-Metadaten wird bewusst nicht außerhalb des Datei-Journals nachgeahmt. Damit erfordert ein zukünftiger Wechsel der Minecraft-/Fabric-Version einen zusätzlichen Prism-Schritt; normale Modpack-Updates bei unveränderten Komponenten laufen automatisch weiter. Aktuell bleiben beide Versionen unverändert.
 
+Jeder Versuch besitzt ein eigenes Staging-Verzeichnis. Ein nach einem abrupten Abbruch weiterlaufender nativer Kindprozess kann deshalb keinen neuen Versuch überschreiben. Erfolgreiche Versuche und gewöhnliche Fehler nach beendetem Installer räumen ihr eigenes Staging auf. Offene Journale und bei abrupten Abbrüchen möglicherweise noch laufende Kindprozesse behalten ihre Quellen; solche Versuche können Speicherplatz belegen.
+
 Erst danach wird ein vollständiger Übernahmeplan erstellt. Zuerst werden alle Konflikte geprüft. Das Journal wird atomar geschrieben, jede Dateioperation prüft den erwarteten vorherigen SHA-256 und wird einzeln atomar übernommen beziehungsweise nach erneutem Inhaltsnachweis entfernt. Der neue Eigentumszustand wird zuletzt gespeichert. Minecraft wird erst nach erfolgreichem Abschluss gestartet.
 
 ## Eigentum und Lebenszyklus
