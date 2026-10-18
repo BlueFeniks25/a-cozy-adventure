@@ -1021,7 +1021,7 @@ metafile = true
 
 [[files]]
 file = "mods/colorlight.pw.toml"
-hash = "4ea805c477207a9a94411e029681e77d716b5a2083424c6b679d0291f6133cc1"
+hash = "cb78e3cdc8e1a0e453bd5ea6d9ce59f22d7ea12f543bf3cc662faffcdc00f55e"
 metafile = true
 
 [[files]]
