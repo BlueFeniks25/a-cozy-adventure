@@ -613,26 +613,6 @@ file = "config/rpg_series/tag_cache.json"
 hash = "8d50d749e8c7f9e5fcd4cc90e9aa612e2175fd8de233f0434d21fdfdf63fbc9a"
 
 [[files]]
-file = "config/rrv/bookmarks.json"
-hash = "87bd9d963a2410a41dde6354eae6f15e16c91313353a14a75929cf2baf30bde8"
-
-[[files]]
-file = "config/rrv/client_settings.json"
-hash = "4f572cc0e5a627dd6efa2bfd3790c9e78680c32c59309ab55ef104b9b82337ba"
-
-[[files]]
-file = "config/rrv/recipe_categories.json"
-hash = "f989abafd3a9a3b46584cb44fedf22b9de6aa5ba0778039ca9c9004c2e7693a4"
-
-[[files]]
-file = "config/rrv/server_settings.json"
-hash = "94e7757aecd7adc77230f7eebf21dc564972210c02033fd3344988bd35d36874"
-
-[[files]]
-file = "config/rrv/stack_groups.json"
-hash = "f141803b68bf26e1ecc1eba943de01d78e75401caaa85c085491da587d95fcbb"
-
-[[files]]
 file = "config/rusticdelight.json"
 hash = "cc11b2fe995a8b0e1e4fe9e40016ea9de5c1886677dd4b2d1a3311410a9ed9fa"
 
@@ -1195,6 +1175,11 @@ hash = "38563618a5acfcea8338d491ccc355483ea72f9b03826c0215ef6c01d80c6863"
 metafile = true
 
 [[files]]
+file = "mods/jei.pw.toml"
+hash = "811c94fb660e2c31bc43c5e67901ec968924dadbf70d7f7bb5309c7b13e14c1f"
+metafile = true
+
+[[files]]
 file = "mods/jewelry.pw.toml"
 hash = "b54b52e6c48e715e5defd8181a72a9a1234e7425d50b2923b65e380a22d5a1ed"
 metafile = true
@@ -1252,6 +1237,11 @@ metafile = true
 [[files]]
 file = "mods/macaws-lights-and-lamps.pw.toml"
 hash = "b30a62f022dadab8961e103c03d82f651ded0b7b6d979e6e0c75598cedaf51bf"
+metafile = true
+
+[[files]]
+file = "mods/mezzconfig.pw.toml"
+hash = "a2dfa48799029525d7795c1d73cb26454d37abd5bb0ad054ecbc733e78c9d764"
 metafile = true
 
 [[files]]
@@ -1392,11 +1382,6 @@ metafile = true
 [[files]]
 file = "mods/rogues-and-warriors.pw.toml"
 hash = "e5dd33e9e80dbc52438c600ca60c3953973a20f862ed1ff990d0174a50ed4d8b"
-metafile = true
-
-[[files]]
-file = "mods/rrv.pw.toml"
-hash = "15f861dd26c69b90dbcff84a8ca1b42859d694b1387961baf6c8c9c1482d599f"
 metafile = true
 
 [[files]]

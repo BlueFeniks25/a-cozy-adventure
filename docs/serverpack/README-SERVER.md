@@ -9,7 +9,7 @@ Dieses Archiv enthält Mods und eine geprüfte Auswahl vorhandener Konfiguration
 3. Das vom Hoster eingerichtete Fabric-Server-Startziel verwenden. Kein beliebiges Mod-JAR als Startdatei auswählen. RAM und Startparameter entsprechend dem gebuchten Tarif einstellen.
 4. Die Minecraft-EULA selbst prüfen und, falls akzeptiert, über den vorgesehenen Ablauf bestätigen. Das Archiv setzt `eula=true` nicht automatisch.
 5. Zunächst mit einer separaten Testwelt starten. Die endgültige Welt wird später gesondert vorbereitet und hochgeladen; dieses Archiv enthält keine Spielstände.
-6. Mit dem vollständigen A-Cozy-Adventure-Clientpack verbinden. Es enthält weiterhin alle 136 Mods und insbesondere das **Colorful Trims RP**. Das Serverarchiv enthält keine Client-Ressourcenpakete oder Shader.
+6. Mit dem vollständigen A-Cozy-Adventure-Clientpack verbinden. Es enthält alle 137 Mods einschließlich JEI und MezzConfig und insbesondere das **Colorful Trims RP**. Das Serverarchiv enthält keine Client-Ressourcenpakete oder Shader.
 
 ## Offene Host- und Konfigurationsentscheidungen
 
@@ -18,7 +18,7 @@ Dieses Archiv enthält Mods und eine geprüfte Auswahl vorhandener Konfiguration
 - **Easy NPC:** Rechte zum Erstellen/Bearbeiten von NPCs und Regeln für externe Texturen vor einer öffentlichen Nutzung prüfen. Sicherheitsdateien aus `config-review/` wurden nicht automatisch eingebunden. Skin-Templates und lokale UI-Konfigurationen wurden nicht übernommen.
 - **Polymer:** Eine zusätzliche Ressourcenpaketauslieferung müsste ausdrücklich eingerichtet werden. Autohost ist hier nicht konfiguriert. Der alte Verweis auf `world/resources.zip` ist kein mitgeliefertes Asset.
 - **Traveler's Backpack:** Prüfen, ob die beigefügte `config/travelersbackpack-server.toml` am tatsächlichen Dedicated-Server-Ladeort wirksam ist. Der Builder erfindet keine Welt-/Defaultkonfigurationen.
-- **Gemeinsame Einstellungen:** Die ausgewählten Common-Dateien bleiben unverändert. Wirksame Einstellungen für FrozenLib, Trinkets, Puddles & Floods und Sound Physics sowie nicht übernommene Ribbits-/NPC-/RRV-Einstellungen im Test bestätigen.
+- **Gemeinsame Einstellungen:** Die ausgewählten Common-Dateien bleiben unverändert. Wirksame Einstellungen für FrozenLib, Trinkets, Puddles & Floods und Sound Physics sowie nicht übernommene Ribbits-/NPC-Einstellungen im Test bestätigen.
 - **Weltgenerierung:** Tectonic, Terralith, Climate Rivers und Strukturen gemeinsam prüfen. Erst danach die endgültige Welt vorbereiten und gegebenenfalls Chunky verwenden.
 
 ## Nachweis und Tests

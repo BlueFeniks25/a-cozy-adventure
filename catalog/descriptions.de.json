@@ -218,6 +218,10 @@
     "description": "Ermöglicht Shaderpakete für Licht, Schatten und stimmungsvolle Landschaften.",
     "categories": ["Atmosphäre"]
   },
+  "jei": {
+    "description": "Hilft dir, Rezepte und Verwendungsmöglichkeiten von Gegenständen nachzuschlagen.",
+    "categories": ["Komfort"]
+  },
   "jewelry": {
     "description": "Schmuckstücke mit zusätzlichen Attributen ergänzen deine RPG-Ausrüstung.",
     "categories": ["Magie", "Abenteuer"]
@@ -265,6 +269,10 @@
   "macaws-lights-and-lamps": {
     "description": "Beleuchte dein Zuhause mit neuen Lampen, Leuchten und dekorativen Lichtquellen.",
     "categories": ["Bauen"]
+  },
+  "mezzconfig": {
+    "description": "Technische Bibliothek für die Konfiguration von JEI und weiteren Mods.",
+    "categories": ["Bibliotheken"]
   },
   "modmenu": {
     "description": "Listet installierte Mods im Spiel auf und verlinkt ihre Einstellungen.",
@@ -378,10 +386,6 @@
   "rogues-and-warriors": {
     "description": "Neue Waffen, Rüstungen und Fähigkeiten für Schurken und Krieger.",
     "categories": ["Abenteuer"]
-  },
-  "rrv": {
-    "description": "Hilft dir, Rezepte und Verwendungsmöglichkeiten von Gegenständen nachzuschlagen.",
-    "categories": ["Komfort"]
   },
   "rune-crafting": {
     "description": "Stelle Runen als Grundlage für Zauber und magische Ausrüstung her.",

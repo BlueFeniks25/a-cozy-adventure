@@ -1,6 +1,6 @@
 # Serverpack: lokaler Builder und CI (Phase A2/A3)
 
-`scripts/build_serverpack.py` erzeugt aus dem **aktuellen lokalen Git-Checkout** ein Serverarchiv für Minecraft **26.3**, Fabric Loader **0.19.5** und **Java 25**. Die veröffentlichte GitHub-Pages-Version wird nicht als Eingabe verwendet. A1 bleibt erhalten: 136 Clientpack-Mods, davon 29 `client`, 107 `both`, keine `server`; vier Client-Ressourcenpakete einschließlich Colorful Trims RP. Phase A3 ergänzt ausschließlich Offline-Prüfungen über GitHub Actions. Die finale Dedicated-Server-Kompatibilität wird erst in Phase B geprüft.
+`scripts/build_serverpack.py` erzeugt aus dem **aktuellen lokalen Git-Checkout** ein Serverarchiv für Minecraft **26.3**, Fabric Loader **0.19.5** und **Java 25**. Die veröffentlichte GitHub-Pages-Version wird nicht als Eingabe verwendet. Der aktuelle Bestand umfasst 137 Clientpack-Mods, davon 29 `client`, 108 `both`, keine `server`; vier Client-Ressourcenpakete einschließlich Colorful Trims RP. Phase A3 ergänzt ausschließlich Offline-Prüfungen über GitHub Actions. Die finale Dedicated-Server-Kompatibilität wird erst in Phase B geprüft.
 
 ## Voraussetzungen
 
@@ -35,7 +35,7 @@ Ohne `--download` gibt es keine Netzwerkanfragen. `--source-mods` liest nur erwa
 Eine vorhandene ZIP und ihre Reports bleiben im regulären Dry-Run unverändert. Die Meldung benennt ausdrücklich den Dry-Run und bezeichnet ihn nicht als fehlgeschlagenen Build. Tatsächliche Fehler behalten ihren Fehlerstatus und den Hinweis auf ein erhaltenes früheres Archiv.
 
 - Exit-Code **0**, Status `planned`: gültiger Plan. Fehlende JARs bleiben als `missing` und Abhängigkeiten als `pending` sichtbar. Das ist kein erfolgreicher ZIP-Build. `readyForArchive` ist nur bei vollständig geprüften Dateien wahr.
-- Exit-Code **0**, Status `built`: alle 107 JARs und die statische Abhängigkeitsprüfung bestanden; vollständiges Archiv geschrieben.
+- Exit-Code **0**, Status `built`: alle 108 JARs und die statische Abhängigkeitsprüfung bestanden; vollständiges Archiv geschrieben.
 - Exit-Code **1**, Status `failed`: ungültige Metadaten, falsche Hashes, fehlende Pflichtdateien/-abhängigkeiten, deklarierte harte Konflikte oder Schreibfehler. Keine unvollständige ZIP wird veröffentlicht.
 
 Ein bestehendes Archiv wird erst nach vollständiger Neuerstellung atomar ersetzt. Bei einem Fehler bleibt es erhalten; der neue Report bezeichnet es ausdrücklich **nicht als Ergebnis des fehlgeschlagenen Builds**. Deshalb immer den aktuellen Report prüfen.
@@ -48,11 +48,13 @@ Verwendet wird der [offizielle Packwiz-Installer v0.5.14](https://github.com/pac
 
 `metadata:curseforge` wird dem offiziellen Installer überlassen. Keine URL-Vermutungen, Drittanbieter-Fallbacks oder Lizenzumgehungen. Der Prozess läuft ohne interaktive Standardeingabe und mit Zeitlimit. Bei Restriktionen die exakte Datei über die im Report genannte Originalprojektseite beziehen und mit `--source-mods` bereitstellen. Aus dem Installerverzeichnis werden ausschließlich erwartete JARs nach erneuter Hash- und Metadatenprüfung übernommen.
 
-Der lokale Downloadtest konnte alle 107 aktuellen Originaldateien auflösen. Das garantiert keine zukünftige Verfügbarkeit. Der Builder installiert niemals automatisch zusätzliche Mod-Versionen.
+Der frühere lokale Downloadtest konnte die damals enthaltenen 107 Originaldateien auflösen. Für die neu aufgenommenen JEI- und MezzConfig-Dateien steht diese Prüfung noch aus. Das garantiert keine zukünftige Verfügbarkeit. Der Builder installiert niemals automatisch zusätzliche Mod-Versionen.
 
 ## Auswahl und Validierung
 
-Packwiz ist maßgeblich; `mods.json` ist keine Build-Eingabe. Eingeschlossen werden nur `side = "both"` und `side = "server"`. Unbekannte/fehlende Side-Werte sowie ungültige Dateinamen, Hashes und Projekt-/Versionsmetadaten führen zum Fehler. Die Policy erwartet aktuell 136 Mods insgesamt und 107 Servermods; Abweichungen erfordern eine neue Prüfung.
+Packwiz ist maßgeblich; `mods.json` ist keine Build-Eingabe. Eingeschlossen werden nur `side = "both"` und `side = "server"`. Unbekannte/fehlende Side-Werte sowie ungültige Dateinamen, Hashes und Projekt-/Versionsmetadaten führen zum Fehler. Die Policy erwartet aktuell 137 Mods insgesamt und 108 Servermods; Abweichungen erfordern eine neue Prüfung.
+
+JEI 31.15.0.79 und MezzConfig 0.6.8 bleiben beide mit `side = "both"` im Clientpack und in der Serverauswahl. Für sie sind derzeit keine Konfigurationsdateien eingecheckt; die Standardwerte und das Zusammenspiel mit Polydex sind in Phase B zu prüfen.
 
 JARs werden gegen ihre Packwiz-Hashes und `fabric.mod.json` geprüft. Eingebettete JARs, `provides`-Aliasnamen, Versionsbedingungen, `depends`, `breaks` und `conflicts` werden berücksichtigt. Minecraft 26.3, Loader 0.19.5, Java 25 und das im Loader enthaltene MixinExtras 0.5.5 bilden die Zielumgebung. Versionsbedingungen folgen der [Fabric-Spezifikation](https://wiki.fabricmc.net/documentation:fabric_mod_json_spec), einschließlich AND, OR-Arrays, Wildcards, Tilde/Caret und Build-Metadaten.
 
@@ -60,13 +62,13 @@ Die Prüfung bestätigt verfügbare deklarierte Abhängigkeiten und betrachtet d
 
 Originale Packwiz-Dateien und Konfigurationen werden nie verändert. Vor der ZIP-Erstellung wird der Eingabesnapshot erneut geprüft. Pfad-Traversal, unzulässige Windows-Namen, Dateinamenskollisionen und verlinkte Quelldateien werden abgelehnt. Der ZIP-Inhalt stammt aus einer ausdrücklichen Auswahl, nicht aus einem rekursiv kopierten Arbeitsverzeichnis.
 
-## Konfigurationsauswahl: 106 von 231 Dateien
+## Konfigurationsauswahl: 105 von 226 Dateien
 
-[config-selection.json](config-selection.json) benennt jede der **231** Konfigurationsdateien einzeln mit begründeter Entscheidung: **106 eingeschlossen, 125 ausgeschlossen**. Neue, fehlende oder doppelt klassifizierte Dateien stoppen den Build. Keine Verzeichnis-Globs zur Laufzeit.
+[config-selection.json](config-selection.json) benennt jede der **226** Konfigurationsdateien einzeln mit begründeter Entscheidung: **105 eingeschlossen, 121 ausgeschlossen**. Neue, fehlende oder doppelt klassifizierte Dateien stoppen den Build. Keine Verzeichnis-Globs zur Laufzeit.
 
-Enthalten sind ausgewählte Kampf-/RPG-/Spell-Engine-Dateien, Better Combat, Weltgenerierung einschließlich Tectonic/Terralith, Waystones, Serene Seasons, Farmer's Delight, NPC-Basis und Spawner, Polymer-Verhalten, Rezept-Synchronisierung, Xaero-Serverprofile, Lithium, FerriteCore, spark und Chunky. Gemischte Verzeichnisse werden auf Dateiebene behandelt.
+Enthalten sind ausgewählte Kampf-/RPG-/Spell-Engine-Dateien, Better Combat, Weltgenerierung einschließlich Tectonic/Terralith, Waystones, Serene Seasons, Farmer's Delight, NPC-Basis und Spawner, Polymer-Verhalten, Xaero-Serverprofile, Lithium, FerriteCore, spark und Chunky. Gemischte Verzeichnisse werden auf Dateiebene behandelt.
 
-Clientoberflächen, Shader/HUD, persönliche Bookmarks, generierte Reports/Caches, alte Modreste und Skin-Templates sind ausgeschlossen. Unklare Ribbits-, NPC- und RRV-Dateien sind ausdrücklich ausgeschlossen und als offene Fragen dokumentiert. Gemeinsame Dateien für FrozenLib, Trinkets, Puddles & Floods und Sound Physics bleiben unverändert enthalten; ihre Serverwirkung ist zu testen.
+Clientoberflächen, Shader/HUD, persönliche Bookmarks, generierte Reports/Caches, alte Modreste und Skin-Templates sind ausgeschlossen. Unklare Ribbits- und NPC-Dateien sind ausdrücklich ausgeschlossen und als offene Fragen dokumentiert. Gemeinsame Dateien für FrozenLib, Trinkets, Puddles & Floods und Sound Physics bleiben unverändert enthalten; ihre Serverwirkung ist zu testen.
 
 **Keine automatische Übernahme aus `config-review/`.** Das betrifft Claims, NPC-Sicherheit, externe Texturen und Polymer-Autohost. Kein erfundener produktiver Voice-Chat-Port; manuelle Schritte stehen in [README-SERVER.md](README-SERVER.md).
 
@@ -80,14 +82,14 @@ Clientoberflächen, Shader/HUD, persönliche Bookmarks, generierte Reports/Cache
 | YACL | Im aktuellen Bestand für Zoomify benötigt. Serverausschluss unbestätigt. |
 | BaguetteLib | Erkannter Nutzer: Particular Reforged. Plattformlabel allein rechtfertigt keinen Clientausschluss. |
 
-Alle fünf bleiben `both` und im Serverarchiv enthalten. Eine mögliche spätere Reduktion auf 102 Mods wird in A2 nicht umgesetzt.
+Alle fünf bleiben `both` und im Serverarchiv enthalten. Eine mögliche spätere Reduktion auf 103 Mods wird in A2 nicht umgesetzt.
 
 ## Archiv, Manifest und Report
 
 Das ZIP enthält ausschließlich:
 
-- `mods/`: 107 geprüfte Original-JARs.
-- `config/`: 106 ausgewählte, unveränderte Dateien.
+- `mods/`: 108 geprüfte Original-JARs.
+- `config/`: 105 ausgewählte, unveränderte Dateien.
 - `README-SERVER.md`: Versionen, Installation, offene Host-Einstellungen.
 - `build-manifest.json`: Quellcommit, Dirty-Markierung, Eingabe-Fingerabdruck, Modnamen, Dateinamen, Hashes, Fabric-Versionen, ausgeschlossene Mods/Konfigurationen, Abhängigkeitsbefund.
 - `build-report.json` und `build-report.txt`: Status, Prüfumfang, Fehler/Warnungen, Konfigurationsfragen.
@@ -107,7 +109,7 @@ node --check assets/app.js
 node --check assets/releases.js
 ```
 
-Die neuen Unit-/Integrationstests verwenden synthetische JARs ohne externe Netzwerkanfragen. Geprüft werden Auswahl und 107er-Bestand, Hashes, fehlende Dateien, Pfade, Whitelist, Ressourcenpaketausschluss, Abhängigkeiten, ZIP/Manifest, Reproduzierbarkeit, Fehlerfälle und unveränderte Packwiz-Quelldateien. Installer-Aufrufe werden simuliert und auf Toolhash und lokale Eingabe geprüft.
+Die Unit-/Integrationstests verwenden synthetische JARs ohne externe Netzwerkanfragen. Geprüft werden Auswahl und aktueller Packwiz-Bestand einschließlich JEI und MezzConfig, Hashes, fehlende Dateien, Pfade, Whitelist, Ressourcenpaketausschluss, Abhängigkeiten, ZIP/Manifest, Reproduzierbarkeit, Fehlerfälle und unveränderte Packwiz-Quelldateien. Installer-Aufrufe werden simuliert und auf Toolhash und lokale Eingabe geprüft.
 
 Die bestehenden Browserprüfungen bleiben verfügbar:
 

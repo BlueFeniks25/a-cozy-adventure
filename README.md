@@ -57,7 +57,7 @@ Namen, Icons und weitere Angaben kommen nach Möglichkeit aus offiziellen APIs:
 3. Die tatsächliche Packwiz-Quelle bleibt dabei **CurseForge**. Die Detailansicht bietet die CurseForge-Projektseite sowie den nachgewiesenen Modrinth-Link und benennt die Quelle des Original-Kurztextes.
 4. Optional unterstützt der Generator die offizielle CurseForge-API über die Umgebungsvariable `CURSEFORGE_API_KEY`. Ein Schlüssel wird nicht benötigt. Falls verwendet, ausschließlich lokal als Umgebungsvariable oder in einem separat geprüften, vertrauenswürdigen Workflow als GitHub Secret setzen. Der mitgelieferte PR-Workflow erhält keine Secrets. Niemals einen Schlüssel in Dateien, Browsercode oder Git eintragen.
 
-Die initiale Liste enthält **136 Mods**, davon **127 mit API-Metadaten** und **9 mit Packwiz-Ersatzangaben**. Diese Zahlen sind eine Bestandsaufnahme; die Website zählt stets die tatsächlich generierten Einträge.
+Die aktuelle Liste enthält **137 Mods**, davon **128 mit API-Metadaten** und **9 mit Packwiz-Ersatzangaben**. Diese Zahlen sind eine Bestandsaufnahme; die Website zählt stets die tatsächlich generierten Einträge.
 
 ### Deutsche Beschreibungen und Kategorien
 
@@ -107,7 +107,7 @@ Die `.packwizignore` schließt Website-, Entwicklungs-, CI- und Dokumentationsda
 
 Die bestehende Regel `*.zip` schließt lokale Backups und Archive aus, nicht die über `.pw.toml` referenzierten entfernten Ressourcenpakete. Eine spätere Verteilung lokaler Ressourcenpaket-ZIPs benötigt eine ausdrücklich geprüfte Einbindung. Aus `config-review/` wird nichts automatisch übernommen.
 
-Die geprüften Side-Korrekturen ergeben weiterhin 136 Clientpack-Mods: 29 mit `side = "client"` und 107 mit `side = "both"`. Die vier Ressourcenpakete einschließlich Colorful Trims RP sind als `client` eingestuft. Der lokale Serverpack-Builder in `scripts/build_serverpack.py` verwendet die lokale Packwiz-Definition und eine explizite Konfigurationsauswahl. Phase A3 ergänzt `.github/workflows/serverpack.yml` für PR- und manuelle Offline-Prüfungen ohne Mod-Downloads oder Veröffentlichung von Server-ZIPs. Befehle, Prüfartefakte, Bibliothekskandidaten und die ausstehende Dedicated-Server-Prüfung sind unter [docs/serverpack/README.md](docs/serverpack/README.md) dokumentiert.
+Der aktuelle Packwiz-Bestand umfasst 137 Clientpack-Mods: 29 mit `side = "client"` und 108 mit `side = "both"`. JEI 31.15.0.79 und MezzConfig 0.6.8 sind beide mit `side = "both"` enthalten. Die vier Ressourcenpakete einschließlich Colorful Trims RP sind als `client` eingestuft. Der lokale Serverpack-Builder in `scripts/build_serverpack.py` verwendet die lokale Packwiz-Definition und eine explizite Konfigurationsauswahl. Phase A3 ergänzt `.github/workflows/serverpack.yml` für PR- und manuelle Offline-Prüfungen ohne Mod-Downloads oder Veröffentlichung von Server-ZIPs. Befehle, Prüfartefakte, Bibliothekskandidaten und die ausstehende Dedicated-Server-Prüfung sind unter [docs/serverpack/README.md](docs/serverpack/README.md) dokumentiert.
 
 Der Katalog-Generator selbst ruft `packwiz refresh` niemals auf. Nach einem separat ausgeführten Refresh lässt sich der Katalog ohne neue API-Abfragen mit `python -B scripts/generate_mods.py --offline` regenerieren und mit `--check` prüfen.
 
