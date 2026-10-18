@@ -41,7 +41,7 @@
       "name": "Bibliotheken"
     }
   ],
-  "inputSha256": "61eb718997083fa2aed517f620faf69b7377511da5698e6ad9c274c0055af5fe",
+  "inputSha256": "02c8cc5813a279b31d4902000f9e300e4c98e87b9537d2a72e13efc7ab671a20",
   "mods": [
     {
       "authors": [],
@@ -679,7 +679,7 @@
       "description": "Ergänzt farbige Lichteffekte für eine stimmungsvollere Welt.",
       "descriptionKind": "editorial",
       "featured": false,
-      "filename": "test-6-colorlight-26.3-0.2.5.jar",
+      "filename": "colorlight-26.3-0.2.5.jar",
       "icon": "https://cdn.modrinth.com/data/DbLWxVRd/ee8cf6b27e0bad7b769179645cceeb6183198a27.png",
       "id": "colorlight",
       "license": "MIT",
@@ -3493,7 +3493,7 @@
     "fabric": "0.19.5",
     "minecraft": "26.3",
     "name": "A Cozy Adventure",
-    "version": "0.0.1"
+    "version": "0.0.2"
   },
   "schemaVersion": 1,
   "total": 137
