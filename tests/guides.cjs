@@ -38,7 +38,7 @@ async function checkGuides(browser, page, origin, prefix, catalog) {
     assert.ok(installation.includes(text), text);
   assert.match(
     await page.locator("#client-mods").textContent(),
-    /Download Mods/,
+    /Download\s+Mods/,
   );
   assert.match(await page.locator("#client-mods").textContent(), /Pflichtmods/);
   for (const summary of await page.locator(".guide-detail > summary").all()) {
@@ -74,7 +74,7 @@ async function checkGuides(browser, page, origin, prefix, catalog) {
   );
   assert.match(
     await page.locator("#ressourcenpakete").textContent(),
-    /oben.*Vorrang/,
+    /oben[\s\S]*Vorrang/,
   );
   assert.match(await page.locator("#migration").textContent(), /instance\.cfg/);
   assert.match(

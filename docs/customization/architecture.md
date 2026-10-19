@@ -2,7 +2,7 @@
 
 ## Umfang und Entscheidung
 
-Die bisherigen Modversionen, Minecraft 26.3, Fabric 0.19.5 und der Packversionstext 0.0.2 bleiben unverändert. Es wird kein Release erzeugt. 25 geprüfte Client-Komponenten und vier Ressourcenpakete verwenden natives Packwiz `[option]` mit `optional=true, default=true`. Vier Client-Bibliotheken und alle bisherigen `both`-Komponenten bleiben Pflicht. [Abhängigkeitsnachweis](dependencies.md) und [Installer-Quellcodeprüfung](installer-audit.md) begründen dies.
+Die bisherigen Modversionen, Minecraft 26.3 und Fabric 0.19.5 bleiben unverändert. Der v1.0.0-Kandidat ändert nur den Packversionstext auf 1.0.0; die Schutzarchitektur aus PR #8 bleibt unverändert. Es wird kein Release erzeugt. 25 geprüfte Client-Komponenten und vier Ressourcenpakete verwenden natives Packwiz `[option]` mit `optional=true, default=true`. Vier Client-Bibliotheken und alle bisherigen `both`-Komponenten bleiben Pflicht. [Abhängigkeitsnachweis](dependencies.md) und [Installer-Quellcodeprüfung](installer-audit.md) begründen dies.
 
 Packwiz 0.5.14 allein erfüllt die Eigentums- und Prism-Deaktivierungsregeln nicht. Die zusätzliche Java-Schicht begrenzt sich deshalb auf Auswahl, isolierte Bereitstellung, Eigentumsabgleich und Übernahme. Sie implementiert keinen eigenen Mod-Downloader. Der unveränderte Original-Installer wird bytegenau eingebettet, vor seiner Verwendung mit dem festgelegten SHA-256 geprüft und in einem separaten JVM-Prozess ausgeführt. Seine TOML- und Gson-Bibliotheken werden mitbenutzt; eine kleine typisierte Fassade berücksichtigt die durch Upstream verkleinerten Java-APIs. Diese Anbindung ist absichtlich an die geprüfte Version gebunden.
 

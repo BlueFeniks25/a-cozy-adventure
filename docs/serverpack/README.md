@@ -1,4 +1,10 @@
-# Serverpack: lokaler Builder und CI (Phase A2/A3)
+# Serverpack: Builder und CI
+
+## v1.0.0-Kandidat
+
+Der [Release-Kandidaten-Workflow](../../.github/workflows/release-candidate.yml) erweitert die bisherige Offline-CI: `scripts/prepare_release.py` verwendet das per SHA-256 gepinnte ursprüngliche v0.0.2-Serverarchiv, prüft alle 108 Original-JARs erneut gegen die unveränderten Packwiz-Hashes und baut daraus `A-Cozy-Adventure-Server-v1.0.0.zip`. 105 Konfigurationen bleiben bytegleich. Das Manifest enthält jetzt zusätzlich die Packversion. Die ZIP wird nach erfolgreichen Tests als Review-Artefakt bereitgestellt, ohne Release oder Deployment. Das erlaubt keine unkontrollierten Moddownloads und beweist weiterhin keinen bestandenen Dedicated-Server-Start. [Release Notes](../releases/v1.0.0.md).
+
+## Bisheriger Builder und Offline-Workflow
 
 `scripts/build_serverpack.py` erzeugt aus dem **aktuellen lokalen Git-Checkout** ein Serverarchiv für Minecraft **26.3**, Fabric Loader **0.19.5** und **Java 25**. Die veröffentlichte GitHub-Pages-Version wird nicht als Eingabe verwendet. Der aktuelle Bestand umfasst 137 Clientpack-Mods, davon 29 `client`, 108 `both`, keine `server`; vier Client-Ressourcenpakete einschließlich Colorful Trims RP. Phase A3 ergänzt ausschließlich Offline-Prüfungen über GitHub Actions. Die finale Dedicated-Server-Kompatibilität wird erst in Phase B geprüft.
 
