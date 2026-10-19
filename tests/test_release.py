@@ -49,11 +49,11 @@ class ReleaseTests(unittest.TestCase):
         internal = json.loads(options.splitlines()[0].split(':', 1)[1])
         self.assertEqual(internal[0], 'vanilla')
         menu = PriorityParser()
-        menu.feed((ROOT / 'index.html').read_text())
+        menu.feed((ROOT / 'index.html').read_text(encoding="utf-8"))
         self.assertEqual(menu.filenames, [name.removeprefix('file/') for name in reversed(internal[1:])])
 
     def test_release_keeps_original_game_versions_and_full_hash_chain(self):
-        pack = tomllib.loads((ROOT / 'pack.toml').read_text())
+        pack = tomllib.loads((ROOT / 'pack.toml').read_text(encoding="utf-8"))
         self.assertEqual(pack['version'], prepare_release.VERSION)
         self.assertEqual(pack['versions'], {'minecraft': '26.3', 'fabric': '0.19.5'})
         plan = build_serverpack.load_plan(ROOT)
@@ -74,22 +74,22 @@ class ReleaseTests(unittest.TestCase):
 
 class V101PreparationTests(unittest.TestCase):
     def test_colorlight_removed_from_pack_catalog_and_server_plan(self):
-        index = tomllib.loads((ROOT / 'index.toml').read_text())
+        index = tomllib.loads((ROOT / 'index.toml').read_text(encoding="utf-8"))
         paths = {item['file'] for item in index['files']}
         for path in ('mods/colorlight.pw.toml', 'config/colorlight.json'):
             self.assertNotIn(path, paths)
             self.assertFalse((ROOT / path).exists())
-        catalog = json.loads((ROOT / 'mods.json').read_text())
-        self.assertNotIn('ColorLight', (ROOT / 'mods.json').read_text())
+        catalog = json.loads((ROOT / 'mods.json').read_text(encoding="utf-8"))
+        self.assertNotIn('ColorLight', (ROOT / 'mods.json').read_text(encoding="utf-8"))
         self.assertTrue(catalog)
         plan = build_serverpack.load_plan(ROOT)
         self.assertFalse(any('colorlight' in m.path for m in (*plan.mods, *plan.excluded)))
 
     def test_website_removes_stale_release_notice_and_colorlight_reactivation(self):
-        html = (ROOT / 'index.html').read_text()
+        html = (ROOT / 'index.html').read_text(encoding="utf-8")
         self.assertNotIn('Vorbereitung von v1.0.0', html)
         self.assertNotIn('Wie deaktiviere ich ColorLight?', html)
-        self.assertNotIn('ColorLight', (ROOT / 'assets/guides/mods.svg').read_text())
+        self.assertNotIn('ColorLight', (ROOT / 'assets/guides/mods.svg').read_text(encoding="utf-8"))
         self.assertIn('veröffentlichten Stable Release', html)
 
     def test_incomplete_v101_candidate_is_blocked_before_any_download(self):

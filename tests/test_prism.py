@@ -54,9 +54,9 @@ class MigrationTests(unittest.TestCase):
         # Exercise the exact hash-gated upgrade with isolated fixture bytes.
         cls.previous_jar = b"official previous launcher fixture"
         cls.previous_digest = hashlib.sha256(cls.previous_jar).hexdigest()
-        source = (builder.ROOT / "src/customization/cozy/Launcher.java").read_text()
+        source = (builder.ROOT / "src/customization/cozy/Launcher.java").read_text(encoding="utf-8")
         source = source.replace("99dc680b056805515d48cab3800a096239b4206ee584402873107fe06023ffc6", cls.previous_digest)
-        (sources / "Launcher.java").write_text(source)
+        (sources / "Launcher.java").write_text(source, encoding="utf-8")
         # Exercise the launcher and migration without replacing native E2E coverage.
         (sources / "Protector.java").write_text(
             'package cozy; public final class Protector { public static void main(String[] args) {} }', encoding="utf-8")
