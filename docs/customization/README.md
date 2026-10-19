@@ -27,7 +27,7 @@ Wenn eine ausgeschaltete Mod aktualisiert wird, bleibt ihre alte deaktivierte Da
 
 ## Eigene Client-Mods hinzufügen
 
-In Prism **Instanz bearbeiten → Mods → Mods herunterladen / Download Mods** für die integrierte Suche verwenden (Minecraft 26.3 und Fabric prüfen). Alternativ **Hinzufügen / Add** für eine eigene JAR verwenden oder die JAR in den `mods`-Ordner der Instanz legen. Nur zur Minecraft-/Fabric-Version passende Client-Mods benutzen; erforderliche Zusatzbibliotheken und mögliche Konflikte beachten. Eine zusätzliche Mod kann die Verbindung zum Server oder das Spiel beeinträchtigen.
+In Prism **Instanz bearbeiten → Mods → Mods herunterladen / Download Mods** für die integrierte Suche verwenden (Minecraft 26.3 und Fabric prüfen). Alternativ **Datei hinzufügen / Add File** für eine eigene JAR verwenden oder die JAR in den `mods`-Ordner der Instanz legen. Nur zur Minecraft-/Fabric-Version passende Client-Mods benutzen; erforderliche Zusatzbibliotheken und mögliche Konflikte beachten. Eine zusätzliche Mod kann die Verbindung zum Server oder das Spiel beeinträchtigen.
 
 Dateien, die nicht offiziell verwaltet werden, bleiben erhalten. Trifft eine offizielle Datei auf denselben Namen wie eine persönliche Datei, hält das Update an. Auch eine bytegleiche Datei wird ohne Eigentumsnachweis nicht einfach übernommen. `.cozy/conflicts.txt` nennt die betroffenen Pfade. Die betreffende persönliche Datei über den Dateimanager außerhalb von `mods` beziehungsweise `resourcepacks` sichern und erneut starten. So bleibt eine rückholbare Kopie erhalten. Keine Zustandsdateien löschen, um den Konflikt zu umgehen.
 

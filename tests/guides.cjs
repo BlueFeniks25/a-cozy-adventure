@@ -41,6 +41,7 @@ async function checkGuides(browser, page, origin, prefix, catalog) {
     /Download\s+Mods/,
   );
   assert.match(await page.locator("#client-mods").textContent(), /Pflichtmods/);
+  assert.match(await page.locator("#client-mods").textContent(), /Add File/);
   for (const summary of await page.locator(".guide-detail > summary").all()) {
     const detail = summary.locator("..");
     if ((await detail.getAttribute("open")) !== null) await summary.click();
