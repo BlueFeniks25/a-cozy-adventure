@@ -2,26 +2,22 @@
 
 Ein gemütliches Minecraft-Modpack mit einer statischen, deutschen Mod-Übersicht. HTML5, CSS3 und Vanilla JavaScript; keine Laufzeit-Abhängigkeiten, Datenbank, kostenpflichtigen Dienste oder API-Schlüssel im Browser.
 
-## v1.0.0 – Release-Kandidat
+## v1.0.1 – Vorbereitung, durch Unified-Download blockiert
 
-Die Spielerwebsite enthält jetzt einen sichtbaren Wegweiser mit Installation, eigenen Mods, Ressourcenpaketen, Tasten und FAQ. Einstieg: [Website](index.html#wegweiser). Sieben eigene SVG-Schemata sind ausdrücklich als schematisch gekennzeichnet; die Tastenübersicht nennt nur belegte Standards oder markiert unbekannte Werte.
+ColorLight ist vollständig aus dem offiziellen Pack entfernt; Website und Katalog sind angepasst. Minecraft 26.3, Fabric 0.19.5 und alle übrigen Mod-/Ressourcenpaket-Versionen bleiben unverändert. Aktuell: 136 Mods, davon 28 clientseitig und 108 auf beiden Seiten; nach erfolgreicher Unified-Integration müssen diese Zahlen erneut geprüft werden.
 
-- [Deutsche Release Notes und Artefakte](docs/releases/v1.0.0.md)
-- [Verbindlicher Rollout: Migration vor Merge/Pages](docs/releases/v1.0.0-rollout.md)
-- [Quellen der Spieleranleitungen](docs/releases/v1.0.0-evidence.md)
-- [Arbeitsstand und aktuelle Validierung](docs/releases/v1.0.0-progress.md)
+- [Release Notes und offene Anforderungen](docs/releases/v1.0.1.md)
+- [Rollout: Backups und Schutz-Updater vor Merge/Pages](docs/releases/v1.0.1-rollout.md)
+- [Weltübertragung, Karten und Backup](docs/serverpack/GEMEINSAME-KARTE.md)
+- [Prüfbericht und Blocker](docs/releases/v1.0.1-validation.md)
 
-`python -B scripts/prepare_release.py` baut mit Python 3.11+ und JDK 17+ die Prism-ZIP, Migrations-JAR und Server-ZIP unter `dist/v1.0.0/`, dazu Prüfsummen und Berichte. Es prüft die festgelegten offiziellen Werkzeuge und das ursprüngliche v0.0.2-Serverarchiv vollständig per SHA-256 und jede Mod zusätzlich gegen die unveränderten Packwiz-Hashes. Keine neuen Modversionen, keine Veröffentlichung. Bei gleicher Quelle und Werkzeugkette deterministisch; der Server manifestiert Quellcommit und Dirty-Status.
+`scripts/prepare_release.py` und die Kandidaten-CI verwenden ausschließlich v1.0.1-Namen. Der Release-Build bricht vor Downloads ab, solange Unified Xaero Worldmap nicht verifiziert integriert ist. Es gibt daher noch kein vollständiges v1.0.1-Releasepaket. Vorhandene v1.0.0-Releases bleiben unverändert; die Website erkennt weiterhin nur veröffentlichte Releases.
 
-`.github/workflows/release-candidate.yml` baut dieselben Dateien auf dem Release-Branch/PR, erzwingt echte Packwiz-Tests und Browserprüfungen und stellt die Kandidaten **erst nach erfolgreichen Prüfungen** als Actions-Artefakt bereit. Prüfberichte werden auch bei Fehlern gesichert. Der Workflow hat nur Leserechte und keinen Release-/Pages-Schritt. Für lokale Browsertests kann `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium` einen vorhandenen Browser verwenden; sonst den mit Playwright gepinnten Chromium installieren.
-
-**Die öffentlich ausgelieferte Packdefinition stammt aus main.** Neue ZIPs greifen beim Start weiter auf diesen Endpunkt zu. Ein Merge kann deshalb Bestandsinstallationen bereits vor einem GitHub-Release verändern. Zuerst Bestände sichern und mit der geprüften Migrations-JAR umstellen; danach nur zum freigegebenen Termin mergen, Pages prüfen und anschließend die Veröffentlichung separat freigeben. Minecraft-GUI und Dedicated-Server-Laufzeit sind weiterhin offene praktische Prüfungen.
-
-Die folgenden Bestandsabschnitte dokumentieren teilweise die v0.0.2-/PR-8-Ausgangslage. Für v1.0.0 gelten die oben verlinkten Release-Unterlagen.
+**main liefert den öffentlichen Packwiz-Endpunkt.** Ein Merge kann Clients vor einem GitHub-Release aktualisieren. Zuerst Instanzen sichern und die strengere Schutzschicht per hashgesichertem Migrationsprogramm einspielen; danach Server und Clients im Wartungsfenster koordiniert umstellen. Kein Merge, Tag, Deployment oder Release im Rahmen dieses Auftrags. Die v1.0.0-Unterlagen bleiben als historische Nachweise erhalten.
 
 ## Player Customization Protection
 
-Die neue Java-Schutzschicht verwaltet 25 unabhängige Client-Mods und vier Ressourcenpakete optional, schützt persönliche Dateien und Einstellungen und beendet offizielle Eigentümerschaft nach einer einmaligen Entfernung. Der geprüfte Original-Packwiz-Installer arbeitet dafür ausschließlich in einem isolierten Staging. Bestehende v0.0.2-Instanzen benötigen einen einmaligen Java-Umstieg ihres Prism-Startbefehls; der alte Bootstrap aktiviert den Schutz nicht automatisch.
+Die neue Java-Schutzschicht verwaltet 24 unabhängige Client-Mods und vier Ressourcenpakete optional, schützt persönliche Dateien und Einstellungen und beendet offizielle Eigentümerschaft nach einer einmaligen Entfernung. Der geprüfte Original-Packwiz-Installer arbeitet dafür ausschließlich in einem isolierten Staging. Bestehende v0.0.2-Instanzen benötigen einen einmaligen Java-Umstieg ihres Prism-Startbefehls; der alte Bootstrap aktiviert den Schutz nicht automatisch.
 
 - [Spieleranleitung: A Cozy Adventure individuell anpassen](docs/customization/README.md)
 - [Architektur, Migration, Sicherheitsregeln und Build](docs/customization/architecture.md)
@@ -135,7 +131,7 @@ Die `.packwizignore` schließt Website-, Entwicklungs-, CI- und Dokumentationsda
 
 Die bestehende Regel `*.zip` schließt lokale Backups und Archive aus, nicht die über `.pw.toml` referenzierten entfernten Ressourcenpakete. Eine spätere Verteilung lokaler Ressourcenpaket-ZIPs benötigt eine ausdrücklich geprüfte Einbindung. Aus `config-review/` wird nichts automatisch übernommen.
 
-Der aktuelle Packwiz-Bestand umfasst 137 Clientpack-Mods: 29 mit `side = "client"` und 108 mit `side = "both"`. JEI 31.15.0.79 und MezzConfig 0.6.8 sind beide mit `side = "both"` enthalten. Die vier Ressourcenpakete einschließlich Colorful Trims RP sind als `client` eingestuft. Der lokale Serverpack-Builder in `scripts/build_serverpack.py` verwendet die lokale Packwiz-Definition und eine explizite Konfigurationsauswahl. Phase A3 ergänzt `.github/workflows/serverpack.yml` für PR- und manuelle Offline-Prüfungen ohne Mod-Downloads oder Veröffentlichung von Server-ZIPs. Befehle, Prüfartefakte, Bibliothekskandidaten und die ausstehende Dedicated-Server-Prüfung sind unter [docs/serverpack/README.md](docs/serverpack/README.md) dokumentiert.
+Der aktuelle Packwiz-Bestand umfasst 136 Clientpack-Mods: 28 mit `side = "client"` und 108 mit `side = "both"`. JEI 31.15.0.79 und MezzConfig 0.6.8 sind beide mit `side = "both"` enthalten. Die vier Ressourcenpakete einschließlich Colorful Trims RP sind als `client` eingestuft. Der lokale Serverpack-Builder in `scripts/build_serverpack.py` verwendet die lokale Packwiz-Definition und eine explizite Konfigurationsauswahl. Phase A3 ergänzt `.github/workflows/serverpack.yml` für PR- und manuelle Offline-Prüfungen ohne Mod-Downloads oder Veröffentlichung von Server-ZIPs. Befehle, Prüfartefakte, Bibliothekskandidaten und die ausstehende Dedicated-Server-Prüfung sind unter [docs/serverpack/README.md](docs/serverpack/README.md) dokumentiert.
 
 Der Katalog-Generator selbst ruft `packwiz refresh` niemals auf. Nach einem separat ausgeführten Refresh lässt sich der Katalog ohne neue API-Abfragen mit `python -B scripts/generate_mods.py --offline` regenerieren und mit `--check` prüfen.
 

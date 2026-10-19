@@ -107,6 +107,7 @@ class Fixture:
         testcase.addCleanup(self.close)
         self.jar = testcase.jar
         self.revision = 0
+        self.pack_version = None
         self.specs = self.defaults()
         self.publish()
 
@@ -163,6 +164,8 @@ class Fixture:
         pack = (f'name = "A Cozy Adventure Test Fixture"\nauthor = "E2E"\nversion = "0.0.{self.revision}"\npack-format = "packwiz:1.1.0"\n'
                 f'[index]\nfile = "index.toml"\nhash-format = "sha256"\nhash = "{sha(index)}"\n'
                 '[versions]\nminecraft = "26.3"\nfabric = "0.19.5"\n').encode()
+        if self.pack_version:
+            pack = pack.replace(f'version = "0.0.{self.revision}"'.encode(), f'version = "{self.pack_version}"'.encode())
         (self.source / "pack.toml").write_bytes(pack)
 
     def command(self):
@@ -390,11 +393,14 @@ class CustomizationE2ETests(unittest.TestCase):
     def lifecycle(self, identifier, target, disabled):
         kind = "ColorLight" if identifier.startswith("mods/") else "resource pack"
         f = self.fixture(f"11–13 {kind} four-state lifecycle, initially {'disabled' if disabled else 'active'}")
+        f.pack_version = "1.0.0"
+        f.publish()
         f.run("1 officially present")
         if disabled:
             f.disabled(target)
             f.run("record official disabled state")
         old_data = f.specs.pop(identifier)["data"]
+        f.pack_version = "1.0.1"
         f.publish()
         f.run("2 officially removed; ownership retired")
         self.assertFalse((f.minecraft / target).exists())
@@ -415,6 +421,52 @@ class CustomizationE2ETests(unittest.TestCase):
             with self.subTest(disabled=disabled):
                 self.lifecycle("mods/colorlight.pw.toml", "mods/colorlight.jar", disabled)
 
+    def test_released_v100_launcher_upgrades_without_reset_and_removes_colorlight_once(self):
+        previous = Path(os.environ.get("COZY_PREVIOUS_JAR", str(ROOT / "build/customization/v1.0.0-protection.jar")))
+        if not previous.exists():
+            if os.environ.get("COZY_REQUIRE_E2E") == "1":
+                self.fail("Released v1.0.0 JAR required for upgrade regression")
+            self.skipTest("Released v1.0.0 JAR not present")
+        build_prism.verified_jar(previous, "99dc680b056805515d48cab3800a096239b4206ee584402873107fe06023ffc6", "released v1.0.0 protector")
+        for disabled in (False, True):
+            with self.subTest(disabled=disabled):
+                f = self.fixture("Released v1.0.0 protection to v1.0.1, active/disabled removal")
+                instance = f.minecraft.parent
+                command = chr(92) + chr(34) + "$INST_JAVA" + chr(92) + chr(34) + " -jar cozy-customization.jar --pack " + build_prism.PACK_URL
+                (instance / "instance.cfg").write_text("[General]\nOverrideCommands=true\nPreLaunchCommand=" + command + "\n")
+                installed = f.minecraft / "cozy-customization.jar"
+                installed.write_bytes(previous.read_bytes())
+                f.jar = installed
+                f.pack_version = "1.0.0"
+                f.publish()
+                f.run("actual released v1.0.0 installs official ColorLight")
+                if disabled:
+                    f.disabled("mods/colorlight.jar")
+                state_before = f.read(".cozy/state.json")
+                result = subprocess.run(["java", "-Djava.awt.headless=true", "-jar", str(self.jar), "--migrate", str(instance)], capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(f.read(".cozy/state.json"), state_before)
+                self.assertEqual(installed.read_bytes(), self.jar.read_bytes())
+                self.assertEqual(f.read("cozy-customization.jar.before-v1.0.1"), previous.read_bytes())
+                personal = {"XaeroWorldMap/server/map.zip": b"existing map", "options.txt": b"key_key.forward:key.keyboard.z", "mods/private.jar": b"private"}
+                for path, data in personal.items():
+                    f.write(path, data)
+                old = f.specs.pop("mods/colorlight.pw.toml")["data"]
+                f.pack_version = "1.0.1"
+                f.publish()
+                f.run("new protector updates existing v1.0.0 state")
+                self.assertNotIn("mods/colorlight.pw.toml", f.state()["entries"])
+                self.assertFalse((f.minecraft / "mods/colorlight.jar").exists())
+                self.assertFalse((f.minecraft / "mods/colorlight.jar.disabled").exists())
+                for path, data in personal.items():
+                    f.preserve(path, data)
+                target = "mods/colorlight.jar" + (".disabled" if disabled else "")
+                f.write(target, old)
+                for _ in range(2):
+                    f.upgrade_gameplay()
+                    f.run("later update leaves private same-byte reinstall untouched")
+                    f.preserve(target, old)
+
     def test_13_resource_lifecycle_active_and_disabled(self):
         for disabled in (False, True):
             with self.subTest(disabled=disabled):
@@ -432,21 +484,64 @@ class CustomizationE2ETests(unittest.TestCase):
                 self.assertIn("colorlight.jar", f.read(".cozy/conflicts.txt").decode())
 
     def test_15_modified_managed_file_is_preserved(self):
-        f = self.fixture("15 modified owned file, uncertain ownership")
-        f.run("initial")
-        f.write("mods/colorlight.jar", b"player replacement")
-        f.specs["mods/colorlight.pw.toml"]["data"] = b"new official version"
+        for disabled in (False, True):
+            with self.subTest(disabled=disabled):
+                f = self.fixture("15 ambiguous ownership blocks removal, including Prism disabled")
+                f.run("initial")
+                target = "mods/colorlight.jar"
+                if disabled:
+                    f.disabled(target)
+                    target += ".disabled"
+                f.write(target, b"player replacement")
+                f.specs.pop("mods/colorlight.pw.toml")
+                f.publish()
+                before, after, _ = f.run("ambiguous removal blocked", success=False)
+                self.assertEqual(gameplay(before), gameplay(after))
+                self.assertEqual(before[".cozy/state.json"], after[".cozy/state.json"])
+                f.preserve(target, b"player replacement")
+                self.assertIn("mods/colorlight.pw.toml", f.state()["entries"])
+                # Resolving the conflict without resetting state permits the transaction.
+                f.write(target, b"colorlight-v1")
+                f.run("proven official removal")
+                self.assertNotIn("mods/colorlight.pw.toml", f.state()["entries"])
+                f.write(target, b"player replacement")
+                f.upgrade_gameplay()
+                f.run("future update preserves private reinstall")
+                f.preserve(target, b"player replacement")
+
+    def test_v101_removal_preserves_personal_xaero_maps_and_settings(self):
+        f = self.fixture("v1.0.0 to v1.0.1 removal with personal maps and preferences")
+        f.pack_version = "1.0.0"
         f.publish()
-        before, after, _ = f.run("ambiguous replacement blocked", success=False)
-        self.assertEqual(gameplay(before), gameplay(after))
+        f.run("v1.0.0 installed")
+        personal = {
+            "XaeroWorldMap/Multiplayer_server/DIM0/region.zip": b"personal world map",
+            "XaeroWaypoints/Multiplayer_server/dim%0/waypoints.txt": b"personal waypoints",
+            "config/xaeroworldmap.txt": b"personal map preferences",
+            "options.txt": b'key_key.forward:key.keyboard.z\nresourcePacks:["vanilla","file/private.zip","file/cozy.zip"]\n',
+            "resourcepacks/private.zip": b"personal resources",
+            "mods/private.jar": b"personal mod",
+        }
+        for path, data in personal.items():
+            f.write(path, data)
+        f.specs.pop("mods/colorlight.pw.toml")
+        f.pack_version = "1.0.1"
+        f.publish()
+        f.run("v1.0.1 removes official ColorLight")
+        for path, data in personal.items():
+            f.preserve(path, data)
+        self.assertFalse((f.minecraft / "mods/colorlight.jar").exists())
+        self.assertNotIn("mods/colorlight.pw.toml", f.state()["entries"])
+
+    def test_removed_colorlight_duplicate_active_disabled_fails_closed(self):
+        f = self.fixture("removed ColorLight duplicate paths are ambiguous even with identical hashes")
+        f.run("initial")
+        f.write("mods/colorlight.jar.disabled", b"colorlight-v1")
         f.specs.pop("mods/colorlight.pw.toml")
         f.publish()
-        f.run("official removal preserves ambiguous file and retires ownership")
-        f.preserve("mods/colorlight.jar", b"player replacement")
-        self.assertNotIn("mods/colorlight.pw.toml", f.state()["entries"])
-        f.upgrade_gameplay()
-        f.run("future update leaves replacement private")
-        f.preserve("mods/colorlight.jar", b"player replacement")
+        before, after, _ = f.run("ambiguous duplicate removal blocked", success=False)
+        self.assertEqual(gameplay(before), gameplay(after))
+        self.assertEqual(before[".cozy/state.json"], after[".cozy/state.json"])
 
     def test_16_missing_and_corrupt_metadata_fail_closed(self):
         for manifest in (None, b"not JSON", b"{}"):
@@ -670,7 +765,7 @@ class CustomizationE2ETests(unittest.TestCase):
     def test_repository_optional_policy_matches_audited_pinned_dependencies(self):
         report = json.loads((ROOT / "docs/customization/dependencies.json").read_text(encoding="utf-8"))
         records = report["mods"]
-        self.assertEqual(len(records), 137)
+        self.assertEqual(len(records), report["counts"]["mods"])
         actual = {path.relative_to(ROOT).as_posix(): tomllib.loads(path.read_text(encoding="utf-8"))
                   for path in (ROOT / "mods").glob("*.pw.toml")}
         self.assertEqual(set(actual), {record["packwizFile"] for record in records})
@@ -681,7 +776,7 @@ class CustomizationE2ETests(unittest.TestCase):
             self.assertEqual(mod["download"]["hash"], record["hash"], record["id"])
         optional = {record["id"] for record in records
                     if actual[record["packwizFile"]].get("option", {}).get("optional") is True}
-        self.assertEqual(len(optional), 25)
+        self.assertEqual(len(optional), report["counts"]["independentOptions"])
         self.assertEqual(optional, set(report["optionalDefaultOn"]))
         for record in records:
             mod = actual[record["packwizFile"]]

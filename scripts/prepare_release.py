@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build review-only v1.0.0 artifacts from pinned tools and existing original JARs.
+"""Build review-only v1.0.1 artifacts from pinned tools and existing original JARs.
 
 Never tags, pushes, releases, deploys, changes the pack or starts Minecraft.
 Python 3.11+, JDK 17+, TLS verification and all pinned hashes are mandatory.
@@ -19,7 +19,7 @@ import build_prism as prism
 import build_serverpack as server
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 SOURCE_URL = "https://github.com/BlueFeniks25/a-cozy-adventure/releases/download/v0.0.2/A-Cozy-Adventure-Server-v0.0.2.zip"
 SOURCE_SHA256 = "95f6ff8346cb45c3303555bf8837b1cbd15ca96ce736711ce5101d36256d0f36"
 
@@ -78,11 +78,16 @@ def original_server_jars(plan):
 def build():
     pack = tomllib.loads((ROOT / "pack.toml").read_text(encoding="utf-8"))
     if pack.get("version") != VERSION:
-        raise server.BuildError("This reviewed release builder requires pack version 1.0.0")
+        raise server.BuildError("This reviewed release builder requires pack version 1.0.1")
     plan = server.load_plan(ROOT)  # Check full Packwiz hash chain before downloading.
+    # Never label this incomplete preparation as a complete v1.0.1 release candidate.
+    unified = [m for m in plan.mods if m.path == "mods/unified-xaero-worldmap.pw.toml"]
+    if not unified:
+        raise server.BuildError("v1.0.1 blocked: verified Unified Xaero Worldmap Fabric 26.3 metadata/JAR missing")
     tools = ROOT / "build/customization"
     for name, url, expected in [
         ("packwiz-installer.jar", server.INSTALLER_URL, server.INSTALLER_SHA256),
+        ("v1.0.0-protection.jar", "https://github.com/BlueFeniks25/a-cozy-adventure/releases/download/v1.0.0/A-Cozy-Adventure-Prism-v1.0.0.migration.jar", "99dc680b056805515d48cab3800a096239b4206ee584402873107fe06023ffc6"),
         ("packwiz-installer-bootstrap.jar", prism.BOOTSTRAP_URL, prism.BOOTSTRAP_SHA256),
     ]:
         target = tools / name
@@ -123,10 +128,10 @@ def build():
         "minecraftGui": "not-run", "dedicatedServerRuntime": "not-run", "published": False,
         "tests": "Separate current-run unittest/browser logs required; build success is not a test result",
         "prismPackEndpoint": prism.PACK_URL,
-        "rolloutWarning": "Migrate old instances before main/Pages changes. Do not launch fresh v1.0.0 imports against old live metadata as a v1.0.0 acceptance test.",
+        "rolloutWarning": "Migrate old instances before main/Pages changes. Do not launch fresh v1.0.1 imports against old live metadata as a v1.0.1 acceptance test.",
     }
     server.atomic_write(destination / "validation.json", server.json_bytes(result))
-    for name in ["v1.0.0.md", "v1.0.0-rollout.md"]:
+    for name in ["v1.0.1.md", "v1.0.1-rollout.md"]:
         server.atomic_write(destination / name, (ROOT / "docs/releases" / name).read_bytes())
     outputs = sorted(p for p in destination.iterdir() if p.is_file() and p.name != "SHA256SUMS.txt")
     checksums = "".join(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}\n" for p in outputs)

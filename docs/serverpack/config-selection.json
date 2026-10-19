@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "expectedTotalMods": 137,
+  "expectedTotalMods": 136,
   "expectedServerMods": 108,
   "include": [
     {
@@ -198,7 +198,6 @@
         "config/bettercombat/weapon_trails.json",
         "config/chat_heads.json5",
         "config/chatanimation.json",
-        "config/colorlight.json",
         "config/continuity.json",
         "config/coolrain.json",
         "config/creativecore-client.json",

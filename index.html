@@ -135,7 +135,7 @@
             ><span class="guide-link-number" aria-hidden="true">05</span
             ><span
               ><strong>Hilfe & FAQ</strong
-              ><small>Updates, ColorLight und alte Instanzen.</small></span
+              ><small>Updates, optionale Mods und alte Instanzen.</small></span
             ><span aria-hidden="true">↗</span></a
           >
           <a class="guide-link" href="#katalog"
@@ -189,12 +189,6 @@
           >
         </div>
 
-        <p class="notice">
-          Der Download zeigt immer die neueste
-          <strong>bereits veröffentlichte</strong> passende Version. Die
-          Vorbereitung von v1.0.0 ist noch keine Veröffentlichung. Prüfe den
-          Versionsnamen vor dem Import.
-        </p>
         <details class="guide-detail" open>
           <summary>1. Prism installieren und dein Konto anmelden</summary>
           <div class="guide-detail-body">
@@ -249,9 +243,9 @@
               <li>
                 Nutze die Download-Schaltfläche oben. Auf GitHub benötigst du
                 unter <strong>Assets</strong> die Datei
-                <code>A-Cozy-Adventure-Prism-v1.0.0.zip</code>, sobald v1.0.0
-                veröffentlicht ist. Bis dahin zeigt der Link den bisherigen
-                Release. Wähle weder die Server-ZIP noch „Source code“.
+                <code>A-Cozy-Adventure-Prism-v1.0.0.zip</code> aus dem
+                veröffentlichten Stable Release. Die Download-Schaltfläche
+                erkennt ausschließlich veröffentlichte passende Releases. Wähle weder die Server-ZIP noch „Source code“.
               </li>
               <li>Lass die ZIP ungeöffnet und unentpackt im Downloadordner.</li>
               <li>
@@ -375,12 +369,12 @@
                 <a href="docs/customization/dependencies.md"
                   >geprüfte Optionsliste</a
                 >
-                nennt die 25 optionalen Client-Mods. Der Katalog allein ist
+                nennt nach der Entfernung von ColorLight die 24 optionalen Client-Mods. Der Katalog allein ist
                 keine Freigabe zum Deaktivieren.
               </li>
               <li>
                 In <strong>Bearbeiten → Mods</strong> entfernst du das Häkchen
-                einer optionalen Mod, zum Beispiel <strong>ColorLight</strong>.
+                einer geprüften optionalen Mod.
                 Prism deaktiviert die Datei, statt sie zu löschen. Der
                 geschützte Updater erhält diesen Zustand.
               </li>
@@ -1032,12 +1026,14 @@
             </div>
           </details>
           <details class="guide-detail">
-            <summary>Wie deaktiviere ich ColorLight?</summary>
+            <summary>Warum wurde ColorLight entfernt?</summary>
             <div class="guide-detail-body">
               <p>
-                Minecraft schließen → Prism-Instanz bearbeiten → Mods → Häkchen
-                bei ColorLight entfernen. Oder im Schutzfenster „Auswahl ändern“
-                verwenden. Nur optionale Bestandteile deaktivieren.
+                ColorLight wird mit v1.0.1 wegen eines bestätigten Absturzes beim
+                Betreten einer Welt entfernt. Der geschützte Updater entfernt
+                nachweislich offizielle Dateien auch dann, wenn Prism sie deaktiviert
+                hat. Bei unklarem Besitz hält das Update an. Später privat
+                installierte Dateien bleiben persönlich verwaltet.
               </p>
             </div>
           </details>
@@ -1126,10 +1122,10 @@
             Eine neue Prism-ZIP ist für <strong>neue Instanzen</strong>. Für
             deine bestehende Testinstallation benötigst du die zur geprüften
             Version gehörende
-            <code>A-Cozy-Adventure-Prism-v1.0.0.migration.jar</code>. Sie steht
-            erst mit den freigegebenen Artefakten beziehungsweise dem späteren
-            Release zur Verfügung – hier gibt es noch keinen
-            v1.0.0-Live-Download.
+            <code>A-Cozy-Adventure-Prism-v1.0.0.migration.jar</code>. Sie gehört zum veröffentlichten Stable Release v1.0.0.
+            Die strengere Schutzschicht für v1.0.1 wird separat vorbereitet;
+            vor deren Rollout ist auch bei v1.0.0-Instanzen ein geprüftes
+            Updater-Upgrade erforderlich.
           </p>
           <ol>
             <li>

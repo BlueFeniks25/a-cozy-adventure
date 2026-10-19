@@ -1,6 +1,6 @@
 # Dependency audit for player customization
 
-All 137 pinned mod JARs were verified against their Packwiz hashes, then 307 top-level/nested Fabric metadata records were read. No installed instance was launched or modified.
+Inventory: 136 pinned mods, 306 top-level/nested Fabric metadata records. Recomputed from previously recorded Fabric metadata for unchanged pinned identities; no fresh JAR downloads or hash verification in this run. No installed instance was launched or modified.
 
 Reproduce with Python 3.11+: `python scripts/audit_customization.py --jars PATH_TO_PINNED_JARS`. The input directory is read only. The output JSON records hashes, exact versions, environment, dependency ranges, aliases, nested origins, breaks/conflicts, and dependency providers for every mod.
 
@@ -16,7 +16,6 @@ Dependency provider lists are alternatives: Fabric API modules can be supplied b
 | Axolotl Buckets | `axolotlbuckets` | optional-default-on | None |
 | Chat Heads | `chat_heads` | optional-default-on | None |
 | Chat Animation [Smooth Chat] | `chatanimation` | optional-default-on | None |
-| ColorLight | `colorlight` | optional-default-on | None |
 | Continuity | `continuity` | optional-default-on | None |
 | Cool Rain | `coolrain` | optional-default-on | None |
 | [EMF] Entity Model Features [Fabric & Forge] | `entity_model_features` | optional-default-on | None |
@@ -44,7 +43,7 @@ Dependency provider lists are alternatives: Fabric API modules can be supplied b
 
 ## Selection validation
 
-25 independent client options represent 33,554,432 selections. Each option plus the mandatory set is checked, and the full set is checked for incompatibilities. This proves availability of positive mandatory dependencies under all unions of options; it is not a complete Fabric version resolver, client launch, rendering, or server join test.
+24 independent client options represent 16,777,216 selections. Each option plus the mandatory set is checked, and the full set is checked for incompatibilities. This proves availability of positive mandatory dependencies under all unions of options; it is not a complete Fabric version resolver, client launch, rendering, or server join test.
 
 All static mandatory-dependency and declared incompatibility checks pass.
 
@@ -75,7 +74,6 @@ All static mandatory-dependency and declared incompatibility checks pass.
 | `mods/collective.pw.toml` | `collective` / `8.47` | both | fabric-api |
 | `mods/colonial-delight.pw.toml` | `colonialdelight` / `1.0.2` | both | fabric-api, farmers-delight-refabricated |
 | `mods/colorful-trims.pw.toml` | `mr_colorful_trims` / `2.0` | both | fabric-api, sodium |
-| `mods/colorlight.pw.toml` | `colorlight` / `0.2.5` | client | fabric-api |
 | `mods/continuity.pw.toml` | `continuity` / `3.0.1+26.3` | client | fabric-api |
 | `mods/coolrain.pw.toml` | `coolrain` / `unspecified` | client | fabric-api, sodium |
 | `mods/crate-delight-fabric.pw.toml` | `cratedelight` / `26.09.15-26.3-fabric` | both | fabric-api |

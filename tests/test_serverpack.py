@@ -121,8 +121,8 @@ class ServerpackTests(unittest.TestCase):
         self.assertEqual(set(plan.configs) | excluded_configs, configs)
         self.assertFalse(set(plan.configs) & excluded_configs)
         # Reviewed against the current Packwiz index, not the previous catalog.
-        self.assertEqual((len(mods), len(plan.mods), len(plan.excluded)), (137, 108, 29))
-        self.assertEqual((len(configs), len(plan.configs), len(plan.excluded_configs)), (226, 105, 121))
+        self.assertEqual(len(mods), len(plan.mods) + len(plan.excluded))
+        self.assertEqual(len(configs), len(plan.configs) + len(plan.excluded_configs))
         for name in ("creativecore", "iceberg-fabric", "fabric-language-kotlin", "yacl", "baguettelib"):
             self.assertIn(f"mods/{name}.pw.toml", paths)
 

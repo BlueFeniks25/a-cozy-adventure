@@ -226,11 +226,6 @@ hash = "d9d8552c67a8ae6399b880fed9ebfafea4e244fc005d8233a9e10a63cd44bf55"
 preserve = true
 
 [[files]]
-file = "config/colorlight.json"
-hash = "6f9ba6009f22adcb4dcb06b1ff5afdb4a5059646805333d99e36f65c27600e21"
-preserve = true
-
-[[files]]
 file = "config/continuity.json"
 hash = "28eaff624c99a24e49882e5f56496a9e0f55e9a25e583e9313b0360494810b65"
 preserve = true
@@ -1243,11 +1238,6 @@ metafile = true
 [[files]]
 file = "mods/colorful-trims.pw.toml"
 hash = "f52dd6945a223e4b1422476d7d1c430a15f18ef4ad1063ac984ba5f758a639bf"
-metafile = true
-
-[[files]]
-file = "mods/colorlight.pw.toml"
-hash = "25406012ddd51f0982ff5424c5c9ccab882ff8745190b882d9acb1d8146e30ac"
 metafile = true
 
 [[files]]

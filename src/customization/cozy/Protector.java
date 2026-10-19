@@ -475,18 +475,23 @@ public final class Protector {
         Map<String, JsonObject> byPath = new LinkedHashMap<>();
         JsonObject nextEntries = new JsonObject();
         boolean blocked = false;
-        // Retire ownership immediately after a removal, including disabled/null-location entries.
+        // Retire ownership only after a successful, unambiguous removal transaction.
         for (var e : oldEntries.entrySet()) {
             JsonObject old = e.getValue().getAsJsonObject();
             if (!old.has("path")) continue;
             String p = str(old, "path"), alg = str(old, "algorithm"), hash = str(old, "hash");
+            if (Files.exists(path(p)) && Files.exists(path(p + ".disabled"))) {
+                conflict("Mehrdeutiger aktiver/deaktivierter Doppelbestand: " + p);
+                blocked = true;
+                continue;
+            }
             for (String candidate : List.of(p, p + ".disabled")) {
                 if (!Files.exists(path(candidate))) continue;
                 if (matches(candidate, alg, hash)) {
                     addOperation(byPath, candidate, fingerprint(candidate), null, null);
                 } else {
                     conflict("Veränderte persönliche/unklare Datei erhalten: " + candidate);
-                    if (items.containsKey(e.getKey())) blocked = true;
+                    blocked = true; // Ambiguous ownership must also block official removal.
                 }
             }
         }

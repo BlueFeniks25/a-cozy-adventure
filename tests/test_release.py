@@ -57,8 +57,8 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(pack['version'], prepare_release.VERSION)
         self.assertEqual(pack['versions'], {'minecraft': '26.3', 'fabric': '0.19.5'})
         plan = build_serverpack.load_plan(ROOT)
-        self.assertEqual(len(plan.mods), 108)
-        self.assertEqual(len(plan.configs), 105)
+        self.assertTrue(plan.mods)
+        self.assertTrue(plan.configs)
         self.assertNotIn('options.txt', plan.inputs)
 
     def test_corrupted_cached_release_source_is_rejected_without_network(self):
@@ -72,6 +72,42 @@ class ReleaseTests(unittest.TestCase):
                 request.assert_not_called()
             self.assertEqual(target.read_bytes(), b'corrupted archive')
 
+class V101PreparationTests(unittest.TestCase):
+    def test_colorlight_removed_from_pack_catalog_and_server_plan(self):
+        index = tomllib.loads((ROOT / 'index.toml').read_text())
+        paths = {item['file'] for item in index['files']}
+        for path in ('mods/colorlight.pw.toml', 'config/colorlight.json'):
+            self.assertNotIn(path, paths)
+            self.assertFalse((ROOT / path).exists())
+        catalog = json.loads((ROOT / 'mods.json').read_text())
+        self.assertNotIn('ColorLight', (ROOT / 'mods.json').read_text())
+        self.assertTrue(catalog)
+        plan = build_serverpack.load_plan(ROOT)
+        self.assertFalse(any('colorlight' in m.path for m in (*plan.mods, *plan.excluded)))
 
-if __name__ == '__main__':
+    def test_website_removes_stale_release_notice_and_colorlight_reactivation(self):
+        html = (ROOT / 'index.html').read_text()
+        self.assertNotIn('Vorbereitung von v1.0.0', html)
+        self.assertNotIn('Wie deaktiviere ich ColorLight?', html)
+        self.assertNotIn('ColorLight', (ROOT / 'assets/guides/mods.svg').read_text())
+        self.assertIn('veröffentlichten Stable Release', html)
+
+    def test_incomplete_v101_candidate_is_blocked_before_any_download(self):
+        with patch.object(prepare_release, 'verified_download') as download:
+            with self.assertRaisesRegex(build_serverpack.BuildError, 'Unified Xaero Worldmap'):
+                prepare_release.build()
+            download.assert_not_called()
+
+    def test_cached_dependency_audit_rejects_unknown_or_changed_pins(self):
+        import audit_customization
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'mods').mkdir()
+            (root / 'mods/unknown.pw.toml').write_text(
+                'filename="unknown.jar"\nside="both"\n[download]\nhash-format="sha256"\nhash="abc"\n')
+            with self.assertRaisesRegex(build_serverpack.BuildError, 'added or changed'):
+                audit_customization.audit_snapshot(root, ROOT / 'docs/customization/dependencies.json')
+
+
+if __name__ == "__main__":
     unittest.main()

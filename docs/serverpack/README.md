@@ -1,6 +1,10 @@
 # Serverpack: Builder und CI
 
-## v1.0.0-Kandidat
+## v1.0.1-Vorbereitung
+
+Der aktuelle Stand entfernt ColorLight; die verifizierte Unified-Xaero-Integration fehlt wegen blockierter offizieller Downloads. Daher gibt es noch kein vollständiges neues Serverpaket. Weltübertragung, Backup und offene Kartenpfade: [Gemeinsame Karte](GEMEINSAME-KARTE.md). [Aktueller Prüfbericht](../releases/v1.0.1-validation.md).
+
+## Historischer v1.0.0-Kandidat
 
 Der [Release-Kandidaten-Workflow](../../.github/workflows/release-candidate.yml) erweitert die bisherige Offline-CI: `scripts/prepare_release.py` verwendet das per SHA-256 gepinnte ursprüngliche v0.0.2-Serverarchiv, prüft alle 108 Original-JARs erneut gegen die unveränderten Packwiz-Hashes und baut daraus `A-Cozy-Adventure-Server-v1.0.0.zip`. 105 Konfigurationen bleiben bytegleich. Das Manifest enthält jetzt zusätzlich die Packversion. Die ZIP wird nach erfolgreichen Tests als Review-Artefakt bereitgestellt, ohne Release oder Deployment. Das erlaubt keine unkontrollierten Moddownloads und beweist weiterhin keinen bestandenen Dedicated-Server-Start. [Release Notes](../releases/v1.0.0.md).
 

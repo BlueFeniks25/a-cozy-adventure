@@ -20,6 +20,8 @@ import javax.swing.JOptionPane;
 /** JDK-only entry point and explicit migration for existing Prism instances. */
 public final class Launcher {
     private static final String INSTALLER_SHA256 = "c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598";
+    // GitHub v1.0.0 release asset 656125771 digest, checked 2026-10-19.
+    private static final String PREVIOUS_LAUNCHER_SHA256 = "99dc680b056805515d48cab3800a096239b4206ee584402873107fe06023ffc6";
     private static final String PACK = "https://bluefeniks25.github.io/a-cozy-adventure/pack.toml";
     private static final String OLD_COMMAND = "\\\"$INST_JAVA\\\" -jar packwiz-installer-bootstrap.jar " + PACK;
     private static final String COMMAND = "\\\"$INST_JAVA\\\" -jar cozy-customization.jar --pack " + PACK;
@@ -171,10 +173,15 @@ public final class Launcher {
         Path executable = self();
         byte[] jar = Files.readAllBytes(executable);
         safe(target);
+        byte[] previousJar = null;
         if (Files.exists(target, LinkOption.NOFOLLOW_LINKS)) {
             regular(target);
-            if (!Arrays.equals(Files.readAllBytes(target), jar)) {
-                throw new IllegalArgumentException("An existing cozy-customization.jar differs; preserve it and resolve the collision first.");
+            byte[] existing = Files.readAllBytes(target);
+            if (!Arrays.equals(existing, jar)) {
+                String digest = HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(existing));
+                if (!previous.equals(COMMAND) || !digest.equals(PREVIOUS_LAUNCHER_SHA256))
+                    throw new IllegalArgumentException("An existing cozy-customization.jar differs; preserve it and resolve the collision first.");
+                previousJar = existing;
             }
         }
         Path backup = instance.resolve("instance.cfg.before-customization");
@@ -188,6 +195,22 @@ public final class Launcher {
         lines.set(command, "PreLaunchCommand=" + COMMAND);
         lines.set(override, "OverrideCommands=true");
         byte[] updated = String.join(newline, lines).getBytes(StandardCharsets.UTF_8);
+        if (previousJar != null) {
+            Path jarBackup = minecraft.resolve("cozy-customization.jar.before-v1.0.1");
+            safe(jarBackup);
+            if (Files.exists(jarBackup, LinkOption.NOFOLLOW_LINKS)) {
+                regular(jarBackup);
+                if (!Arrays.equals(Files.readAllBytes(jarBackup), previousJar))
+                    throw new IllegalArgumentException("Protection upgrade backup differs; no files were replaced.");
+            } else createBackup(jarBackup, previousJar);
+            regular(target);
+            if (!Arrays.equals(Files.readAllBytes(target), previousJar)
+                    || !Arrays.equals(original, Files.readAllBytes(config)))
+                throw new IllegalArgumentException("Protection or settings changed during upgrade; no replacement performed.");
+            atomicWrite(target, jar);
+            // Preserve the entire .cozy ownership state and existing Prism command.
+            return;
+        }
         if (Arrays.equals(original, updated) && Files.exists(target)) return;
         if (!Files.exists(backup)) createBackup(backup, original);
         if (!Files.exists(target)) atomicWrite(target, jar);

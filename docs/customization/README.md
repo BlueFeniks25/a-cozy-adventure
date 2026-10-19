@@ -13,13 +13,13 @@ Der Umstieg sichert `instance.cfg` als `instance.cfg.before-customization`, erg�
 
 Bei einer unbekannten eigenen Startanweisung, einer gleichnamigen abweichenden Java-Datei, fehlenden oder beschädigten Zustandsdateien hält das Programm an. Die Meldung nennt den Konflikt. **Nicht einfach `packwiz.json` oder `.cozy` löschen:** Diese Dateien enthalten den Eigentumsnachweis. Die Sicherung beziehungsweise den Fehlerbericht für die Packbetreuung aufbewahren.
 
-Der alte v0.0.2-Befehl kann die neue Schutzschicht nicht selbst aktivieren. Vollständiger Schutz beginnt deshalb erst nach diesem Umstieg. Die v1.0.0-Kandidaten werden im Release-Branch als CI-Artefakte vorbereitet; eine neue Veröffentlichung ist gesondert erforderlich. Der [Rollout-Plan](../releases/v1.0.0-rollout.md) verlangt den Umstieg bestehender Instanzen vor Merge/Pages-Änderungen.
+Der alte v0.0.2-Befehl kann die neue Schutzschicht nicht selbst aktivieren. Vollständiger Schutz beginnt deshalb erst nach diesem Umstieg. v1.0.0 ist veröffentlicht. Für v1.0.1 gilt der neue [Rollout-Plan](../releases/v1.0.1-rollout.md): Auch die bereits geschützte v1.0.0-Instanz erhält vor der Packumstellung die strengere Updater-JAR über das neue Migrationsprogramm. Dabei bleibt der Eigentumszustand erhalten.
 
 ## Offizielle Client-Mods aus- und einschalten
 
 Bei jedem Start bleibt das Schutzfenster vier Sekunden geöffnet. **Auswahl ändern** öffnet die Liste der offiziellen optionalen Bestandteile. Häkchen ändern, bestätigen und starten. Ohne Änderung läuft der Start automatisch weiter. Die Auswahl bleibt bei späteren Updates erhalten.
 
-25 unabhängig nutzbare Client-Mods sind anfangs eingeschaltet. Gameplay-Mods und benötigte Bibliotheken sind Pflichtbestandteile. Beispielsweise bleiben Sodium für Iris und libIPN für Inventory Profiles Next installiert, auch wenn ihre Benutzer ausgeschaltet sind. Die [vollständige Prüfung](dependencies.md) erklärt die Auswahl.
+24 unabhängig nutzbare Client-Mods sind anfangs eingeschaltet. Gameplay-Mods und benötigte Bibliotheken sind Pflichtbestandteile. Beispielsweise bleiben Sodium für Iris und libIPN für Inventory Profiles Next installiert, auch wenn ihre Benutzer ausgeschaltet sind. Die [vollständige Prüfung](dependencies.md) erklärt die Auswahl.
 
 Alternativ kann Prism eine offizielle optionale Mod deaktivieren: Es benennt ihre `.jar` in `.jar.disabled` um. Der geschützte Updater erkennt diesen Zustand anhand des gespeicherten Pfades und Inhalts und behält ihn. Dieselbe Datei in Prism wieder aktivieren oder die Startauswahl benutzen. Pflichtmods dürfen nicht deaktiviert werden.
 
@@ -58,3 +58,8 @@ Ein unterbrochener Download verändert den Spielbestand noch nicht. Nach einem A
 ## Bebilderter Spielerwegweiser
 
 [Installation, Mods, Ressourcenpakete, Tasten und FAQ auf der Website](../../index.html#wegweiser). Die sieben Abbildungen sind ausdrücklich schematisch, keine Prism-Screenshots.
+
+
+### ColorLight in v1.0.1
+
+ColorLight entfällt wegen des bestätigten Rendering-Absturzes. Der aktualisierte Schutz-Updater entfernt einmalig nur nachgewiesene offizielle Bytes, auch als `.jar.disabled`. Bei veränderten Dateien oder aktivem/deaktiviertem Doppelbestand hält er an. Instanz sichern und Konflikt anhand `.cozy/conflicts.txt` klären; niemals `.cozy/state.json` löschen. Nach erfolgreicher Entfernung bleibt eine spätere private Neuinstallation persönlich verwaltet. Bereits vorhandene Configs und Xaero-Karten werden nicht gelöscht.

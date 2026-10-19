@@ -1,12 +1,12 @@
 name = "A Cozy Adventure"
 author = "Feniks"
-version = "1.0.0"
+version = "1.0.1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "e24ba6c67a7660805dabc03234093fce26732f1ee5e2d73abea8cfda343e5bcd"
+hash = "0f117717e91abaf3167be1c7d566f861578c814d282c6b835097cb72c1f78fd0"
 
 [versions]
 fabric = "0.19.5"
