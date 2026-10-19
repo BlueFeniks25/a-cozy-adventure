@@ -5,6 +5,7 @@ const http = require("node:http");
 const path = require("node:path");
 const os = require("node:os");
 const { chromium } = require("playwright");
+const { checkGuides } = require("./guides.cjs");
 const { checkReleases, releasesApi, releasesPage } = require("./releases.cjs");
 
 const root = path.resolve(__dirname, "..");
@@ -48,13 +49,19 @@ const server = http.createServer((request, response) => {
 (async () => {
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const origin = `http://127.0.0.1:${server.address().port}`;
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({
+    headless: true,
+    ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE
+      ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }
+      : {}),
+  });
   try {
     const page = await browser.newPage({
       viewport: { width: 1440, height: 1000 },
     });
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
+    await page.route("https://cdn.modrinth.com/**", (route) => route.abort());
     await page.route(releasesApi, (route) => route.fulfill({ json: [] }));
     await page.goto(origin + prefix);
     await page.waitForSelector(".mod-card");
@@ -67,10 +74,9 @@ const server = http.createServer((request, response) => {
       await page.locator("#minecraft-version").innerText(),
       catalog.pack.minecraft,
     );
-    await page.waitForFunction(() => {
-      const icons = [...document.querySelectorAll(".mod-card .mod-icon img")];
-      return icons.slice(0, 3).every((img) => img.complete);
-    });
+    // Lazy images below the viewport cannot be a readiness condition.
+    // Use offline icon fallback and check the actual player workflows instead.
+    await checkGuides(browser, page, origin, prefix, catalog);
     await page.screenshot({
       path: path.join(os.tmpdir(), "cozy-adventure-desktop.png"),
       fullPage: false,
@@ -238,6 +244,9 @@ const server = http.createServer((request, response) => {
     );
     const reduced = await browser.newContext({ reducedMotion: "reduce" });
     await reduced.route(releasesApi, (route) => route.fulfill({ json: [] }));
+    await reduced.route("https://cdn.modrinth.com/**", (route) =>
+      route.abort(),
+    );
     const reducedPage = await reduced.newPage();
     await reducedPage.goto(origin + prefix);
     assert.equal(
