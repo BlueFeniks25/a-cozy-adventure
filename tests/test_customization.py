@@ -346,6 +346,30 @@ class CustomizationE2ETests(unittest.TestCase):
         f.run("intentional personal deletion of a seeded config remains deleted")
         self.assertFalse((f.minecraft / "config/cozy.json").exists())
 
+    def test_personal_keybindings_survive_first_install_and_repeated_updates(self):
+        f = self.fixture("personal keybindings before first protected install and updates")
+        options = (b'key_key.attack:key.mouse.left\nkey_key.inventory:key.keyboard.i\n'
+                   b'key_zoomify.key.zoom:key.keyboard.v\n'
+                   b'resourcePacks:["vanilla","file/my-pack.zip"]\n')
+        zoom = b'{"zoomKeyBehaviour":"toggle","scrollZoom":false}\n'
+        layout = b'keyboardLayout=102\n'
+        f.specs["config/zoomify.json"] = {"data": b'{"zoomKeyBehaviour":"hold"}\n'}
+        f.specs["config/studiouskeybinds.properties"] = {"data": b'keyboardLayout=100\n'}
+        f.publish()
+        f.write("options.txt", options)
+        f.write("config/zoomify.json", zoom)
+        f.write("config/studiouskeybinds.properties", layout)
+        f.run("existing personal keybinds before first protected installation")
+        for revision in range(2):
+            f.specs["config/zoomify.json"]["data"] = b'{"newOfficialDefault":true}\n'
+            f.specs["config/studiouskeybinds.properties"]["data"] = b'keyboardLayout=101\n'
+            f.upgrade_gameplay()
+            f.run(f"keybinds retained across official update {revision + 1}")
+            f.preserve("options.txt", options)
+            f.preserve("config/zoomify.json", zoom)
+            f.preserve("config/studiouskeybinds.properties", layout)
+        self.assertNotIn("options.txt", f.state()["entries"])
+
     def test_09_required_update_and_10_disabled_option_version_update(self):
         f = self.fixture("09 required upgrade / 10 disabled optional upgrade")
         f.run("initial")

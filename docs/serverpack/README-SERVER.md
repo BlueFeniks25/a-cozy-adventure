@@ -1,5 +1,7 @@
 # A Cozy Adventure – Dedicated Server
 
+Der v1.0.0-Kandidat wird zur Prüfung vorbereitet und ist noch nicht veröffentlicht.
+
 Dieses Archiv enthält Mods und eine geprüfte Auswahl vorhandener Konfigurationen. Es enthält **keine Welt und kein Minecraft-/Fabric-Server-JAR**. Die endgültige Dedicated-Server-Kompatibilität muss in Phase B getestet werden.
 
 ## Voraussetzungen und Installation bei Host Unlimited

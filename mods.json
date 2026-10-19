@@ -41,7 +41,7 @@
       "name": "Bibliotheken"
     }
   ],
-  "inputSha256": "822b1a9576c1dd5dc69c6425cd737a462a0a5a98d616fd02159d978d1fe2a4df",
+  "inputSha256": "e6daa4779612d7abc140deb1efe98589c953c050a27f84c26e76fbff7ae2c3b9",
   "mods": [
     {
       "authors": [],
@@ -3493,7 +3493,7 @@
     "fabric": "0.19.5",
     "minecraft": "26.3",
     "name": "A Cozy Adventure",
-    "version": "0.0.2"
+    "version": "1.0.0"
   },
   "schemaVersion": 1,
   "total": 137

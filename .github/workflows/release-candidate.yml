@@ -1,0 +1,88 @@
+name: v1.0.0 Kandidat prüfen – ohne Veröffentlichung
+
+on:
+  push:
+    branches: [release/v1.0.0]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-candidate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  candidate:
+    # This workflow prepares review artifacts only, never Pages, tags or releases.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      COZY_REQUIRE_E2E: "1"
+      COZY_TEST_JAR: ${{ github.workspace }}/dist/v1.0.0/A-Cozy-Adventure-Prism-v1.0.0.migration.jar
+      PACKWIZ_INSTALLER_JAR: ${{ github.workspace }}/build/customization/packwiz-installer.jar
+      ACA_TEST_REPORT: ${{ github.workspace }}/build/release-validation/e2e.json
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Quellstand lesen
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Python einrichten
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.11"
+      - name: Einheitliche Build-Werkzeugkette
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Kandidaten aus geprüften offiziellen Dateien bauen
+        run: |
+          mkdir -p build/release-validation
+          set -o pipefail
+          python -B scripts/prepare_release.py | tee build/release-validation/build.log
+      - name: Alle Python- und echten Packwiz-Tests
+        run: |
+          set -o pipefail
+          python -B -m unittest discover -s tests -v 2>&1 | tee build/release-validation/unittest.log
+      - name: Packwiz, Katalog und JavaScript prüfen
+        run: |
+          python -B scripts/generate_mods.py --check
+          python -B scripts/build_serverpack.py --dry-run > build/release-validation/server-plan.txt
+          node --check assets/app.js
+          node --check assets/releases.js
+          node --check assets/guides.js
+          git diff --exit-code
+      - name: Browser-Abhängigkeiten installieren
+        working-directory: tests
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Spielerwege, Mobilansichten und Release-Erkennung prüfen
+        run: |
+          set -o pipefail
+          npm --prefix tests test 2>&1 | tee build/release-validation/browser.log
+          cp /tmp/cozy-*.png build/release-validation/
+      - name: Integrität der Kandidaten prüfen
+        working-directory: dist/v1.0.0
+        run: sha256sum --check SHA256SUMS.txt
+      - name: Geprüfte Kandidaten zum Download bereitstellen
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: a-cozy-adventure-v1.0.0-${{ github.sha }}
+          path: dist/v1.0.0/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Prüfnachweise auch bei Fehlern sichern
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: v1.0.0-validation-${{ github.sha }}
+          path: build/release-validation/
+          if-no-files-found: error
+          retention-days: 14

@@ -13,7 +13,7 @@ Der Umstieg sichert `instance.cfg` als `instance.cfg.before-customization`, erg�
 
 Bei einer unbekannten eigenen Startanweisung, einer gleichnamigen abweichenden Java-Datei, fehlenden oder beschädigten Zustandsdateien hält das Programm an. Die Meldung nennt den Konflikt. **Nicht einfach `packwiz.json` oder `.cozy` löschen:** Diese Dateien enthalten den Eigentumsnachweis. Die Sicherung beziehungsweise den Fehlerbericht für die Packbetreuung aufbewahren.
 
-Der alte v0.0.2-Befehl kann die neue Schutzschicht nicht selbst aktivieren. Vollständiger Schutz beginnt deshalb erst nach diesem Umstieg. Die hier beschriebenen Artefakte werden im Feature-PR gebaut; eine neue Veröffentlichung ist gesondert erforderlich.
+Der alte v0.0.2-Befehl kann die neue Schutzschicht nicht selbst aktivieren. Vollständiger Schutz beginnt deshalb erst nach diesem Umstieg. Die v1.0.0-Kandidaten werden im Release-Branch als CI-Artefakte vorbereitet; eine neue Veröffentlichung ist gesondert erforderlich. Der [Rollout-Plan](../releases/v1.0.0-rollout.md) verlangt den Umstieg bestehender Instanzen vor Merge/Pages-Änderungen.
 
 ## Offizielle Client-Mods aus- und einschalten
 
@@ -27,7 +27,7 @@ Wenn eine ausgeschaltete Mod aktualisiert wird, bleibt ihre alte deaktivierte Da
 
 ## Eigene Client-Mods hinzufügen
 
-In Prism **Instanz bearbeiten → Mods → Hinzufügen** verwenden oder die JAR in den `mods`-Ordner der Instanz legen. Nur zur Minecraft-/Fabric-Version passende Client-Mods benutzen; erforderliche Zusatzbibliotheken und mögliche Konflikte beachten. Eine zusätzliche Mod kann die Verbindung zum Server oder das Spiel beeinträchtigen.
+In Prism **Instanz bearbeiten → Mods → Mods herunterladen / Download Mods** für die integrierte Suche verwenden (Minecraft 26.3 und Fabric prüfen). Alternativ **Datei hinzufügen / Add File** für eine eigene JAR verwenden oder die JAR in den `mods`-Ordner der Instanz legen. Nur zur Minecraft-/Fabric-Version passende Client-Mods benutzen; erforderliche Zusatzbibliotheken und mögliche Konflikte beachten. Eine zusätzliche Mod kann die Verbindung zum Server oder das Spiel beeinträchtigen.
 
 Dateien, die nicht offiziell verwaltet werden, bleiben erhalten. Trifft eine offizielle Datei auf denselben Namen wie eine persönliche Datei, hält das Update an. Auch eine bytegleiche Datei wird ohne Eigentumsnachweis nicht einfach übernommen. `.cozy/conflicts.txt` nennt die betroffenen Pfade. Die betreffende persönliche Datei über den Dateimanager außerhalb von `mods` beziehungsweise `resourcepacks` sichern und erneut starten. So bleibt eine rückholbare Kopie erhalten. Keine Zustandsdateien löschen, um den Konflikt zu umgehen.
 
@@ -54,3 +54,7 @@ Minecraft schließen, eine Sicherung anlegen und zuletzt hinzugefügte persönli
 Für die Packbetreuung sind der genaue Fehler, die zusätzlichen Modversionen, Prism-Konsole und gegebenenfalls `logs/latest.log` beziehungsweise ein Crashreport hilfreich. Bei Updateproblemen kommen `.cozy/conflicts.txt` und `.cozy/installer.log` hinzu. Protokolle vor dem Weitergeben auf persönliche Angaben prüfen. Der Updater startet Minecraft bei einem unaufgelösten Konflikt nicht.
 
 Ein unterbrochener Download verändert den Spielbestand noch nicht. Nach einem Abbruch während der Übernahme setzt der nächste Start die protokollierte Transaktion fort. Ist eine betroffene Datei zwischenzeitlich verändert worden, hält das Programm zur Klärung an. Während eines Updates die Instanzdateien daher nicht parallel bearbeiten.
+
+## Bebilderter Spielerwegweiser
+
+[Installation, Mods, Ressourcenpakete, Tasten und FAQ auf der Website](../../index.html#wegweiser). Die sieben Abbildungen sind ausdrücklich schematisch, keine Prism-Screenshots.

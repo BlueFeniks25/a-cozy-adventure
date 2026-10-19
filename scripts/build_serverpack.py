@@ -673,7 +673,8 @@ def build(root=ROOT, *, source_mods=None, output=None, dry_run=False, download=F
                     if current != raw:
                         raise BuildError("Source inputs changed during the build; retry from a stable checkout.")
                 report.update(status="built", archiveWritten=True, previousArchivePreserved=False)
-                manifest = {"schemaVersion": 1, "pack": {"name": "A Cozy Adventure", **TARGET, "java": "25"},
+                manifest = {"schemaVersion": 1, "pack": {"name": "A Cozy Adventure",
+                            "version": read_toml(plan.inputs["pack.toml"], "pack.toml").get("version"), **TARGET, "java": "25"},
                             "source": plan.source, "mods": sorted(found, key=lambda m: m["packwizFile"]),
                             "excludedMods": [m.public() for m in plan.excluded],
                             "configs": [{"path": p, "sha256": digest(b, "sha256")} for p, b in plan.configs.items()],
