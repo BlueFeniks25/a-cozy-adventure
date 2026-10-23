@@ -1,0 +1,75 @@
+{
+  "approach": "Only explicit pack.lock.json entries; never recursively copy the Minecraft directory.",
+  "blockedMods": [
+    "colorlight",
+    "color_light",
+    "color-light"
+  ],
+  "excludedLegacyServerConfigs": [
+    {
+      "path": "config/xaero/lib/common.cfg",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/xaero/lib/server_profiles/default.cfg",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/xaero/minimap/common.cfg",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/xaero/minimap/default_radar_categories_server.json",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/xaero/minimap/server_profiles/default.cfg",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/xaero/world-map/common.cfg",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/xaero/world-map/server_profiles/default.cfg",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/chunky/config.json",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    },
+    {
+      "path": "config/spark/config.json",
+      "reason": "Omitted: profiles, administration or runtime settings; review separately before server testing."
+    }
+  ],
+  "excludedPersonalFiles": [
+    "options.txt",
+    "servers.dat",
+    "usercache.json",
+    "saves/**",
+    "xaero/**",
+    "logs/**",
+    "screenshots/**",
+    "automodpack/**",
+    ".cozy/**",
+    ".fabric/**",
+    "config/voicechat/**",
+    "config/inventoryprofilesnext/**",
+    "config/xaero/**",
+    "config/ribbits.json",
+    "config/colorlight.json",
+    "config/sodium*",
+    "config/iris.properties",
+    "config/rpg_series/tag_cache.json",
+    "config/rpg_series/loot_fallback_report.json"
+  ],
+  "excludedResourcepacks": [
+    "Ashen_16x.zip",
+    "Patrix_26.3_256x_*.zip"
+  ],
+  "excludedShaderpacks": [
+    "Solas Shader V3.7b.zip"
+  ],
+  "schemaVersion": 1
+}

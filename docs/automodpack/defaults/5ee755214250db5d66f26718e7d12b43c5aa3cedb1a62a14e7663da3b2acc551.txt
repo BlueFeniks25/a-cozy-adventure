@@ -1,0 +1,16 @@
+# Village Quest 2.3.x server/world-owner settings
+# Restart the game or dedicated server after changing this file.
+# AUTO uses the timezone of the running integrated or dedicated server.
+reset_timezone=AUTO
+daily_reset_hour=6
+weekly_reset_day=MONDAY
+weekly_reset_hour=6
+
+# RELAXED, STANDARD, or HARDENED. Changes quantities, combat pressure, incident pity, and failure strain.
+adventure_profile=STANDARD
+
+# Allows one deliberately registered player base to act as the route network's home node after Market Charter access.
+allow_player_caravan_yards=true
+
+# FULL = three nearby merchants, REDUCED = one nearby merchant, MAP_ONLY = simulation and maps only.
+physical_caravans=FULL
