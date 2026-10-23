@@ -1,0 +1,40 @@
+# Colonial Delight settings. Also editable in game, from Mod Menu.
+# vine_pumpkins_and_melons: pumpkin and melon seeds grow vines with the fruit on them, harvested
+#   from the ripe vine, instead of vanilla stems and gourd blocks. Set false to keep vanilla stems
+#   (for automatic pumpkin/melon farms). Stems already planted are never changed. Takes effect at once.
+# alcohol: the drinks (hard cider, molasses beer, spruce beer, birch beer, mead), the fermenting tub
+#   and cask, the copper still and its spirits. Set false to remove their recipes and hide them.
+#   NEEDS A RESTART - the recipes are filtered as the datapack loads.
+# food_effect_particles: whether a dish's Nourishment and Comfort throw potion particles off the
+#   player. False by default - the effect's icon still shows, so you can see what dinner gave you.
+#   Takes effect at once.
+# override_farmers_delight_cider: whether Farmer's Delight's Apple Cider is brewed from our Apple
+#   Juice (true) or from their own two apples and sugar (false). NEEDS A RESTART - the recipes are
+#   chosen as the datapack loads.
+# redone_sweet_berry_bushes: draw vanilla's sweet berry bushes as leafy bushes with the berries
+#   hanging from the shoot tips, instead of vanilla's flat pictures. Only the look changes; growing,
+#   picking and the thorns are vanilla's. Takes effect on a resource reload (F3+T) or a restart.
+# trough_adult_extra_cooldown_minutes: Feeding Trough. Minutes an adult waits, after vanilla's own
+#   5-minute breeding cooldown, before it eats from a trough again. Default 5 (so every 10 minutes).
+# trough_baby_meal_minutes: Feeding Trough. Minutes between a baby's meals there; each one grows it
+#   as feeding it by hand does. Default 2.
+# trough_crowd_limit: Feeding Trough. Adults stop eating to breed once this many of their kind are
+#   near. Default 24; 0 for no limit.
+# trough_crowd_radius: Feeding Trough. How far, in blocks, that crowd is counted. Default 16.
+#   The four trough settings take effect at once.
+# fish_trap_catch_minutes: Fish Trap. The average minutes between catches in a baited trap, 1 to 120.
+#   Default 4.
+# fish_trap_capacity: Fish Trap. How many fish a trap holds before it stops until hauled, 1 to 8.
+#   Default 3. Both trap settings take effect at once.
+#Fri Oct 09 02:46:21 CEST 2026
+alcohol=true
+fish_trap_capacity=3
+fish_trap_catch_minutes=4
+food_effect_particles=false
+override_farmers_delight_cider=true
+redone_sweet_berry_bushes=true
+trough_adult_extra_cooldown_minutes=5
+trough_baby_meal_minutes=2
+trough_crowd_limit=24
+trough_crowd_radius=16
+vine_pumpkins_and_melons=true

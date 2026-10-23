@@ -1,0 +1,2 @@
+# Snapshots preserve the exact reviewed master bytes on Windows and Linux.
+defaults/*.txt -text
