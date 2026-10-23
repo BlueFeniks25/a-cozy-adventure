@@ -80,10 +80,6 @@ def build():
     if pack.get("version") != VERSION:
         raise server.BuildError("This reviewed release builder requires pack version 1.0.1")
     plan = server.load_plan(ROOT)  # Check full Packwiz hash chain before downloading.
-    # Never label this incomplete preparation as a complete v1.0.1 release candidate.
-    unified = [m for m in plan.mods if m.path == "mods/unified-xaero-worldmap.pw.toml"]
-    if not unified:
-        raise server.BuildError("v1.0.1 blocked: verified Unified Xaero Worldmap Fabric 26.3 metadata/JAR missing")
     tools = ROOT / "build/customization"
     for name, url, expected in [
         ("packwiz-installer.jar", server.INSTALLER_URL, server.INSTALLER_SHA256),

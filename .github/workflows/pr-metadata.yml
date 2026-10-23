@@ -1,0 +1,48 @@
+name: v1.0.1 PR-Beschreibung aktualisieren
+
+on:
+  push:
+    branches: [release/v1.0.1]
+    paths:
+      - docs/releases/v1.0.1-pr.md
+      - .github/workflows/pr-metadata.yml
+
+permissions:
+  contents: read
+
+jobs:
+  update-pr:
+    if: github.repository == 'BlueFeniks25/a-cozy-adventure' && github.event_name == 'push' && github.ref == 'refs/heads/release/v1.0.1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Beschreibung vom autorisierten Release-Branch lesen
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Ausschließlich offenen PR 10 gegen main aktualisieren
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api repos/BlueFeniks25/a-cozy-adventure/pulls/10 > "$RUNNER_TEMP/pr10.json"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          directory = Path(os.environ['RUNNER_TEMP'])
+          pr = json.loads((directory / 'pr10.json').read_text(encoding='utf-8'))
+          assert pr['state'] == 'open' and not pr['merged']
+          assert pr['head']['repo']['full_name'] == 'BlueFeniks25/a-cozy-adventure'
+          assert pr['base']['repo']['full_name'] == 'BlueFeniks25/a-cozy-adventure'
+          assert pr['head']['ref'] == 'release/v1.0.1' and pr['base']['ref'] == 'main'
+          payload = {
+              'title': 'fix: remove ColorLight safely and prepare v1.0.1',
+              'body': Path('docs/releases/v1.0.1-pr.md').read_text(encoding='utf-8'),
+          }
+          (directory / 'pr10-update.json').write_text(json.dumps(payload), encoding='utf-8')
+          PY
+          gh api --method PATCH repos/BlueFeniks25/a-cozy-adventure/pulls/10 \
+            --input "$RUNNER_TEMP/pr10-update.json" --jq '{number, title, state, html_url}'

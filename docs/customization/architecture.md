@@ -2,7 +2,7 @@
 
 ## Umfang und Entscheidung
 
-Minecraft 26.3 und Fabric 0.19.5 bleiben unverändert. v1.0.1 entfernt ColorLight und dessen ungenutzten Standard-Config aus dem offiziellen Bestand. 24 Client-Komponenten und vier Ressourcenpakete bleiben optional; vier Client-Bibliotheken und alle `both`-Komponenten bleiben Pflicht. Der aktuelle [Abhängigkeitsnachweis](dependencies.md) wurde aus den zuvor geprüften Metadaten für unveränderte JAR-Identitäten neu berechnet. Unified Xaero Worldmap ist wegen fehlender verifizierbarer Downloads noch nicht integriert; der Release-Build hält deshalb an.
+Minecraft 26.3 und Fabric 0.19.5 bleiben unverändert. v1.0.1 entfernt ColorLight und dessen ungenutzten Standard-Config aus dem offiziellen Bestand. 24 Client-Komponenten und vier Ressourcenpakete bleiben optional; vier Client-Bibliotheken und alle `both`-Komponenten bleiben Pflicht. Der aktuelle [Abhängigkeitsnachweis](dependencies.md) wurde aus den zuvor geprüften Metadaten für unveränderte JAR-Identitäten neu berechnet.
 
 Packwiz 0.5.14 allein erfüllt die Eigentums- und Prism-Deaktivierungsregeln nicht. Die zusätzliche Java-Schicht begrenzt sich deshalb auf Auswahl, isolierte Bereitstellung, Eigentumsabgleich und Übernahme. Sie implementiert keinen eigenen Mod-Downloader. Der unveränderte Original-Installer wird bytegenau eingebettet, vor seiner Verwendung mit dem festgelegten SHA-256 geprüft und in einem separaten JVM-Prozess ausgeführt. Seine TOML- und Gson-Bibliotheken werden mitbenutzt; eine kleine typisierte Fassade berücksichtigt die durch Upstream verkleinerten Java-APIs. Diese Anbindung ist absichtlich an die geprüfte Version gebunden.
 

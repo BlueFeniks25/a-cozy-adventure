@@ -1,6 +1,6 @@
 # A Cozy Adventure – Dedicated Server
 
-v1.0.0 ist veröffentlicht. v1.0.1 ist noch unvollständig: Unified Xaero Worldmap wurde nicht verifiziert integriert. Die neue Server-ZIP wird bis zur vollständigen Prüfung nicht als Release-Kandidat gebaut. [Welt und gemeinsame Karten](GEMEINSAME-KARTE.md).
+v1.0.0 ist veröffentlicht. v1.0.1 wird als Release-Kandidat vorbereitet. Gegenüber v1.0.0 bleiben alle 108 Server-Mods und 105 ausgewählten Konfigurationen unverändert; es werden keine neuen Mods hinzugefügt. Der Client entfernt ColorLight. Der Build beziehungsweise die CI erzeugt vollständige geprüfte Kandidaten, veröffentlicht sie jedoch nicht.
 
 Dieses Archiv enthält Mods und eine geprüfte Auswahl vorhandener Konfigurationen. Es enthält **keine Welt und kein Minecraft-/Fabric-Server-JAR**. Die endgültige Dedicated-Server-Kompatibilität muss in Phase B getestet werden.
 
@@ -11,7 +11,7 @@ Dieses Archiv enthält Mods und eine geprüfte Auswahl vorhandener Konfiguration
 3. Das vom Hoster eingerichtete Fabric-Server-Startziel verwenden. Kein beliebiges Mod-JAR als Startdatei auswählen. RAM und Startparameter entsprechend dem gebuchten Tarif einstellen.
 4. Die Minecraft-EULA selbst prüfen und, falls akzeptiert, über den vorgesehenen Ablauf bestätigen. Das Archiv setzt `eula=true` nicht automatisch.
 5. Zunächst mit einer separaten Testwelt starten. Die endgültige Welt wird später gesondert vorbereitet und hochgeladen; dieses Archiv enthält keine Spielstände.
-6. Mit dem vollständigen A-Cozy-Adventure-Clientpack verbinden. Es enthält alle 137 Mods einschließlich JEI und MezzConfig und insbesondere das **Colorful Trims RP**. Das Serverarchiv enthält keine Client-Ressourcenpakete oder Shader.
+6. Mit dem vollständigen A-Cozy-Adventure-Clientpack verbinden. Es enthält alle 136 Mods einschließlich JEI und MezzConfig und insbesondere das **Colorful Trims RP**. Das Serverarchiv enthält keine Client-Ressourcenpakete oder Shader.
 
 ## Offene Host- und Konfigurationsentscheidungen
 

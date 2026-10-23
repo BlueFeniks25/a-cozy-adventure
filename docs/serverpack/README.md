@@ -2,7 +2,7 @@
 
 ## v1.0.1-Vorbereitung
 
-Der aktuelle Stand entfernt ColorLight; die verifizierte Unified-Xaero-Integration fehlt wegen blockierter offizieller Downloads. Daher gibt es noch kein vollständiges neues Serverpaket. Weltübertragung, Backup und offene Kartenpfade: [Gemeinsame Karte](GEMEINSAME-KARTE.md). [Aktueller Prüfbericht](../releases/v1.0.1-validation.md).
+v1.0.1 entfernt ausschließlich ColorLight aus dem offiziellen Clientbestand und aktualisiert Website, Katalog und Packwiz-Metadaten. Der Serverbestand bleibt bei 108 unveränderten Mod-JARs und 105 Konfigurationen. `scripts/prepare_release.py` baut die vollständige v1.0.1-Server-ZIP aus dem hashgeprüften bisherigen Quellarchiv; es gibt keine zusätzliche Modanforderung. [Aktueller Prüfbericht](../releases/v1.0.1-validation.md).
 
 ## Historischer v1.0.0-Kandidat
 
@@ -10,7 +10,7 @@ Der [Release-Kandidaten-Workflow](../../.github/workflows/release-candidate.yml)
 
 ## Bisheriger Builder und Offline-Workflow
 
-`scripts/build_serverpack.py` erzeugt aus dem **aktuellen lokalen Git-Checkout** ein Serverarchiv für Minecraft **26.3**, Fabric Loader **0.19.5** und **Java 25**. Die veröffentlichte GitHub-Pages-Version wird nicht als Eingabe verwendet. Der aktuelle Bestand umfasst 137 Clientpack-Mods, davon 29 `client`, 108 `both`, keine `server`; vier Client-Ressourcenpakete einschließlich Colorful Trims RP. Phase A3 ergänzt ausschließlich Offline-Prüfungen über GitHub Actions. Die finale Dedicated-Server-Kompatibilität wird erst in Phase B geprüft.
+`scripts/build_serverpack.py` erzeugt aus dem **aktuellen lokalen Git-Checkout** ein Serverarchiv für Minecraft **26.3**, Fabric Loader **0.19.5** und **Java 25**. Die veröffentlichte GitHub-Pages-Version wird nicht als Eingabe verwendet. Der aktuelle Bestand umfasst 136 Clientpack-Mods, davon 28 `client`, 108 `both`, keine `server`; vier Client-Ressourcenpakete einschließlich Colorful Trims RP. Phase A3 ergänzt ausschließlich Offline-Prüfungen über GitHub Actions. Die finale Dedicated-Server-Kompatibilität wird erst in Phase B geprüft.
 
 ## Voraussetzungen
 
@@ -62,7 +62,7 @@ Der frühere lokale Downloadtest konnte die damals enthaltenen 107 Originaldatei
 
 ## Auswahl und Validierung
 
-Packwiz ist maßgeblich; `mods.json` ist keine Build-Eingabe. Eingeschlossen werden nur `side = "both"` und `side = "server"`. Unbekannte/fehlende Side-Werte sowie ungültige Dateinamen, Hashes und Projekt-/Versionsmetadaten führen zum Fehler. Die Policy erwartet aktuell 137 Mods insgesamt und 108 Servermods; Abweichungen erfordern eine neue Prüfung.
+Packwiz ist maßgeblich; `mods.json` ist keine Build-Eingabe. Eingeschlossen werden nur `side = "both"` und `side = "server"`. Unbekannte/fehlende Side-Werte sowie ungültige Dateinamen, Hashes und Projekt-/Versionsmetadaten führen zum Fehler. Die Policy erwartet aktuell 136 Mods insgesamt und 108 Servermods; Abweichungen erfordern eine neue Prüfung.
 
 JEI 31.15.0.79 und MezzConfig 0.6.8 bleiben beide mit `side = "both"` im Clientpack und in der Serverauswahl. Für sie sind derzeit keine Konfigurationsdateien eingecheckt; die Standardwerte und das Zusammenspiel mit Polydex sind in Phase B zu prüfen.
 
@@ -147,7 +147,7 @@ Berichterstellung und Upload werden auch nach Prüffehlern versucht. Bei einem f
 
 Für eine manuelle Prüfung in GitHub unter **Actions → Serverpack offline prüfen → Run workflow** den gewünschten Branch auswählen. GitHub bietet `workflow_dispatch` erst an, wenn die Workflowdefinition auf dem Default-Branch verfügbar ist; siehe [offizielle Trigger-Dokumentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_dispatch). Die lokale Vorbereitung auf `feature/serverpack-builder` allein startet keinen Remote-Lauf. Diese Aufgabe nimmt keinen Commit, Push oder Merge vor.
 
-Vollständige Server-ZIPs werden derzeit bewusst **lokal** mit vorhandenen Original-JARs oder ausdrücklich aktiviertem offiziellem Installer erstellt. So benötigt PR-CI weder Mod-Downloads noch Plattformzugänge und verteilt keine Mod-JARs als öffentliche Buildausgabe. CurseForge-Beschränkungen, die vollständige JAR-Prüfung und Host-spezifische Entscheidungen verbleiben beim lokalen Build und bei Phase B.
+Der eigenständige Offline-Workflow bleibt ohne Downloads und erzeugt nur Prüfberichte. Die gesonderte Release-Kandidaten-CI baut dagegen vollständige Server-ZIPs aus dem fest gepinnten früheren Releasearchiv und prüft jede Original-JAR erneut. Sie benötigt dafür keinen CurseForge-Zugang und stellt die geprüften Kandidaten als Actions-Artefakte bereit. Host-spezifische Entscheidungen und die Laufzeitprüfung verbleiben bei der praktischen Abnahme.
 
 ### Windows-Symlinktest und Linux-Abdeckung
 
@@ -157,6 +157,6 @@ Vollständige Server-ZIPs werden derzeit bewusst **lokal** mit vorhandenen Origi
 
 ZIP lokal prüfen; Minecraft 26.3, Fabric 0.19.5 und Java 25 im Hostingpanel auswählen; Server stoppen und in einen gesicherten, sauberen Serverbestand hochladen. EULA, RAM/Startparameter und den tatsächlich zugewiesenen Voice-Chat-UDP-Port selbst festlegen. Details in `README-SERVER.md`. Keine Clientwelt automatisch übernehmen.
 
-Phase A3 erzeugt ausschließlich die beschriebenen Prüfberichte. Automatische vollständige Builds oder Veröffentlichungen sind damit nicht freigegeben.
+Der Offline-Workflow erzeugt ausschließlich die beschriebenen Prüfberichte; vollständige Kandidaten entstehen im gesonderten Release-Kandidaten-Workflow. Keiner der beiden veröffentlicht ein Release oder führt ein Deployment aus.
 
 Phase B muss Dedicated-Start/Clientbeitritt, neue Chunks/Strukturen, Kampf/Magie, NPC-Konfiguration, Rezepte, Tod/Inventare, Claims, Voice Chat sowie Neustart/Persistenz prüfen. Claims-Adapter, NPC-Sicherheit, Polymer-Ressourcen, Backpack-Ladeort und gemeinsame bzw. ausgeschlossene Konfigurationen bleiben offen. Chunky erst mit endgültiger Weltgenerierungskonfiguration einsetzen. Eine erfolgreiche A2-ZIP belegt keine bestandenen Laufzeittests.

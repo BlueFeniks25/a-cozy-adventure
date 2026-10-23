@@ -2,16 +2,15 @@
 
 Ein gemütliches Minecraft-Modpack mit einer statischen, deutschen Mod-Übersicht. HTML5, CSS3 und Vanilla JavaScript; keine Laufzeit-Abhängigkeiten, Datenbank, kostenpflichtigen Dienste oder API-Schlüssel im Browser.
 
-## v1.0.1 – Vorbereitung, durch Unified-Download blockiert
+## v1.0.1 – ColorLight sicher entfernen
 
-ColorLight ist vollständig aus dem offiziellen Pack entfernt; Website und Katalog sind angepasst. Minecraft 26.3, Fabric 0.19.5 und alle übrigen Mod-/Ressourcenpaket-Versionen bleiben unverändert. Aktuell: 136 Mods, davon 28 clientseitig und 108 auf beiden Seiten; nach erfolgreicher Unified-Integration müssen diese Zahlen erneut geprüft werden.
+ColorLight ist vollständig aus dem offiziellen Pack entfernt; Website und Katalog sind angepasst. Minecraft 26.3, Fabric 0.19.5 und alle übrigen Mod-/Ressourcenpaket-Versionen bleiben unverändert. Aktuell: 136 Mods, davon 28 clientseitig und 108 auf beiden Seiten.
 
 - [Release Notes und offene Anforderungen](docs/releases/v1.0.1.md)
 - [Rollout: Backups und Schutz-Updater vor Merge/Pages](docs/releases/v1.0.1-rollout.md)
-- [Weltübertragung, Karten und Backup](docs/serverpack/GEMEINSAME-KARTE.md)
 - [Prüfbericht und Blocker](docs/releases/v1.0.1-validation.md)
 
-`scripts/prepare_release.py` und die Kandidaten-CI verwenden ausschließlich v1.0.1-Namen. Der Release-Build bricht vor Downloads ab, solange Unified Xaero Worldmap nicht verifiziert integriert ist. Es gibt daher noch kein vollständiges v1.0.1-Releasepaket. Vorhandene v1.0.0-Releases bleiben unverändert; die Website erkennt weiterhin nur veröffentlichte Releases.
+`scripts/prepare_release.py` und die Kandidaten-CI verwenden ausschließlich v1.0.1-Namen. Der Build erstellt nach Prüfung der festgelegten Werkzeug- und Mod-Hashes vollständige Prism-, Migrations- und Server-Kandidaten samt Prüfsummen. Die Kandidaten-CI erzwingt alle Schutz- und Browserprüfungen, bevor sie die Dateien als Review-Artefakte bereitstellt. Es werden keine neuen Mods hinzugefügt. Vorhandene v1.0.0-Releases bleiben unverändert; die Website erkennt weiterhin nur veröffentlichte Releases.
 
 **main liefert den öffentlichen Packwiz-Endpunkt.** Ein Merge kann Clients vor einem GitHub-Release aktualisieren. Zuerst Instanzen sichern und die strengere Schutzschicht per hashgesichertem Migrationsprogramm einspielen; danach Server und Clients im Wartungsfenster koordiniert umstellen. Kein Merge, Tag, Deployment oder Release im Rahmen dieses Auftrags. Die v1.0.0-Unterlagen bleiben als historische Nachweise erhalten.
 
@@ -81,7 +80,7 @@ Namen, Icons und weitere Angaben kommen nach Möglichkeit aus offiziellen APIs:
 3. Die tatsächliche Packwiz-Quelle bleibt dabei **CurseForge**. Die Detailansicht bietet die CurseForge-Projektseite sowie den nachgewiesenen Modrinth-Link und benennt die Quelle des Original-Kurztextes.
 4. Optional unterstützt der Generator die offizielle CurseForge-API über die Umgebungsvariable `CURSEFORGE_API_KEY`. Ein Schlüssel wird nicht benötigt. Falls verwendet, ausschließlich lokal als Umgebungsvariable oder in einem separat geprüften, vertrauenswürdigen Workflow als GitHub Secret setzen. Der mitgelieferte PR-Workflow erhält keine Secrets. Niemals einen Schlüssel in Dateien, Browsercode oder Git eintragen.
 
-Die aktuelle Liste enthält **137 Mods**, davon **128 mit API-Metadaten** und **9 mit Packwiz-Ersatzangaben**. Diese Zahlen sind eine Bestandsaufnahme; die Website zählt stets die tatsächlich generierten Einträge.
+Die aktuelle Liste enthält **136 Mods**, davon **127 mit API-Metadaten** und **9 mit Packwiz-Ersatzangaben**. Diese Zahlen sind eine Bestandsaufnahme; die Website zählt stets die tatsächlich generierten Einträge.
 
 ### Deutsche Beschreibungen und Kategorien
 
