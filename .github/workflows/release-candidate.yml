@@ -38,7 +38,11 @@ jobs:
     - name: Statische CI- und Release-Regressionen
       run: |
         python -B -m unittest discover -s tests -p 'test_ci*.py' -v
-        python -B -m compileall -q scripts
+        python -B - <<'PY'
+        from pathlib import Path
+        for path in Path('scripts').glob('*.py'):
+            compile(path.read_bytes(), str(path), 'exec')
+        PY
     - name: Release-Konsistenz prüfen
       if: ${{ steps.changes.outputs.candidate == 'true' || steps.changes.outputs.website == 'true' }}
       run: python -B -m unittest discover -s tests -p 'test_release.py' -v
