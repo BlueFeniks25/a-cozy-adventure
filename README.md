@@ -1,5 +1,33 @@
 # A Cozy Adventure
 
+## Website-Vorschau: CurseForge und AutoModpack
+
+Die Website-Änderung wird lokal auf `feature/automodpack-website` vorbereitet,
+auf Basis von `main` (`e52f229`, AutoModpack-Vorbereitung). Kein Push oder Deployment.
+
+- Einstieg: CurseForge-App installieren, eigenes Profil für Minecraft 26.3 mit
+  Fabric 0.19.5 erstellen, AutoModpack 5.0.0-rc.5 installieren und nach Freigabe
+  dem Server beitreten. Bestätigung und gegebenenfalls Neustart sind nötig.
+- Die offizielle GitHub-Veröffentlichung enthält die universelle Bootstrap-JAR.
+  Die Verfügbarkeit in der CurseForge-App ist noch nicht verifiziert.
+- Ressourcenpakete sind optional/empfohlen und werden im Spiel aktiviert.
+- Der Katalog stammt aus dem freigegebenen `docs/automodpack/pack.lock.json`;
+  alte Packwiz-Metadaten dienen nur der vorhandenen redaktionellen Zuordnung.
+  Ein nicht freigegebenes oder fehlerhaftes Manifest führt zum Abbruch.
+- Die Startseite lädt `assets/releases.js` nicht mehr. Dieser Code und die alten
+  Release-Tests bleiben historische Entwicklungsdateien, ohne aktive Downloadauswahl.
+- AutoModpack-Serverbetrieb und Client-Neustart müssen noch praktisch geprüft
+  werden. Keine Änderungen am laufenden Server oder an der Master-Instanz.
+
+Details und Prüfergebnisse: [Website-Prüfbericht](docs/website-automodpack.md).
+
+Die folgenden Abschnitte sind **historische Dokumentation der Packwiz-/Prism-
+Installation und der bisherigen Website**. Ihre Versionszahlen, Schutzversprechen
+und Release-Auswahl beschreiben nicht den neuen Installationsweg.
+
+---
+
+
 Ein gemütliches Minecraft-Modpack mit einer statischen, deutschen Mod-Übersicht. HTML5, CSS3 und Vanilla JavaScript; keine Laufzeit-Abhängigkeiten, Datenbank, kostenpflichtigen Dienste oder API-Schlüssel im Browser.
 
 ## v1.0.1 – ColorLight sicher entfernen

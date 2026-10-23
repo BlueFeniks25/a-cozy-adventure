@@ -229,6 +229,8 @@
       `Original-Kurzbeschreibung · ${mod.metadataSource || mod.source}`;
     $("detail-facts").replaceChildren();
     addFact("Im Pack", mod.packwizName);
+    if (mod.version) addFact("Version", mod.version);
+    if (mod.role === "bootstrap") addFact("Installation", "AutoModpack vor dem Serverbeitritt selbst installieren");
     addFact("Datei", mod.filename);
     addFact(
       "Umgebung",

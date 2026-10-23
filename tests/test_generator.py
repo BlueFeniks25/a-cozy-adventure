@@ -174,6 +174,39 @@ class GeneratorTests(unittest.TestCase):
         self.assertTrue(all(m["description"] and m["categories"] for m in data["mods"]))
         self.assertEqual(sum(c["count"] for c in data["categories"]), sum(len(m["categories"]) for m in data["mods"]))
 
+class AutoModpackCatalogTests(unittest.TestCase):
+    def test_repository_catalog_tracks_approved_manifest(self):
+        lock = json.loads((generator.ROOT / 'docs/automodpack/pack.lock.json').read_text())
+        _, records, _ = generator.load_pack(generator.ROOT)
+        expected = {m['id']: m for m in lock['mods'] if m['side'] != 'server'}
+        self.assertEqual({r['fabricId'] for r in records}, set(expected))
+        self.assertEqual(len({r['id'] for r in records}), len(records))
+        versions = {r['fabricId']: r['version'] for r in records}
+        self.assertEqual(versions['fabric-api'], '0.165.0+26.3')
+        self.assertEqual(versions['automodpack'], '5.0.0-rc.5')
+        self.assertTrue(any(r['version'] == '2.15.2' and 'streams' in r['fabricId'] for r in records))
+        self.assertNotIn('colorlight', versions)
+        for r in records:
+            self.assertEqual(r['filename'], expected[r['fabricId']]['filename'])
+
+    def test_lock_inventory_works_without_packwiz_and_ignores_private_fields(self):
+        lock = json.loads((generator.ROOT / 'docs/automodpack/pack.lock.json').read_text())
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / 'docs/automodpack/pack.lock.json'
+            path.parent.mkdir(parents=True)
+            lock['configs'] = [{'private': 'DO-NOT-PUBLISH'}]
+            lock['mods'][0]['side'] = 'server'
+            path.write_text(json.dumps(lock))
+            pack, records, fingerprint = generator.load_pack(root)
+            data = generator.build_catalog(pack, records, fingerprint, {}, {})
+            self.assertNotIn(lock['mods'][0]['id'], {r['fabricId'] for r in records})
+            self.assertNotIn('DO-NOT-PUBLISH', json.dumps(data))
+            self.assertEqual(len(records), len(lock['mods']) - 1)
+            lock['status'] = 'candidate'
+            path.write_text(json.dumps(lock))
+            with self.assertRaises(ValueError): generator.load_pack(root)
+
 
 if __name__ == "__main__":
     unittest.main()

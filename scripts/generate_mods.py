@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read Packwiz metadata and write a static catalog. Python 3.11+, stdlib only.
+"""Read the approved AutoModpack inventory and write a static catalog. Python 3.11+, stdlib only.
 
 Never downloads jars, resolves newer releases, or writes Packwiz files.
 """
@@ -125,7 +125,7 @@ def request_json(url, payload=None, api_key=None):
     return None
 
 
-def load_pack(root):
+def load_legacy_pack(root):
     pack_path = root / "pack.toml"
     pack = tomllib.loads(pack_path.read_text(encoding="utf-8"))
     fingerprint = hashlib.sha256()
@@ -153,6 +153,45 @@ def load_pack(root):
     if not records:
         raise ValueError("No mods/*.pw.toml found; refusing to generate an empty catalog.")
     return pack, records, fingerprint.hexdigest()
+
+
+def load_pack(root):
+    """Use the real approved lock; legacy parsing is only for older checkouts."""
+    path = root / "docs/automodpack/pack.lock.json"
+    if not path.exists():
+        return load_legacy_pack(root)
+    raw = path.read_bytes()
+    lock = json.loads(raw)
+    if lock.get("schemaVersion") != 1 or lock.get("status") != "approved":
+        raise ValueError("AutoModpack manifest must be schema 1 and approved")
+    # Keep established editorial IDs and hash-bound cache identities where possible.
+    # Packwiz is optional enrichment, never the inventory source.
+    legacy = load_legacy_pack(root)[1] if (root / "mods").is_dir() and any((root / "mods").glob("*.pw.toml")) else []
+    by_project = {(r["source"], r["projectId"]): r for r in legacy}
+    records, ids = [], set()
+    for mod in lock["mods"]:
+        if mod["id"] in ids:
+            raise ValueError("Duplicate AutoModpack mod ID")
+        ids.add(mod["id"])
+        if mod["side"] == "server":
+            continue
+        source_data = mod["source"]
+        source = {"modrinth": "Modrinth", "curseforge": "CurseForge"}.get(source_data["provider"], "Unbekannt")
+        project = str(source_data["projectId"])
+        old = by_project.get((source, project), {})
+        hashes = source_data.get("hashes", {})
+        algorithm = next((h for h in ("sha1", "sha512", "sha256") if h in hashes), "sha256")
+        digest = hashes.get(algorithm, mod["sha256"])
+        records.append({"id": old.get("id", mod["id"]), "packwizName": mod["name"],
+                        "filename": mod["filename"], "side": mod["side"],
+                        "packwizFile": None, "source": source, "projectId": project,
+                        "hash": digest, "hashAlgorithm": algorithm,
+                        "identity": ":".join((source, project, algorithm, digest)),
+                        "version": mod["version"], "role": mod["role"], "fabricId": mod["id"]})
+    if not records:
+        raise ValueError("Empty AutoModpack mod inventory")
+    pack = lock["pack"]
+    return {**pack, "versions": pack}, records, hashlib.sha256(raw).hexdigest()
 
 
 def normalize_modrinth(project):
@@ -236,6 +275,7 @@ def build_catalog(pack, records, fingerprint, metadata, descriptions):
         mods.append({k: v for k, v in {
             **{k: record[k] for k in ("id", "packwizName", "filename", "side", "packwizFile", "source", "projectId")},
             "name": info.get("name") or record["packwizName"], "url": url,
+            **{k: record[k] for k in ("version", "role", "fabricId") if k in record},
             "icon": https_url(info.get("icon"), icon=True), "categories": categories,
             "description": editorial.get("description") or CATEGORIES[categories[0]],
             "descriptionKind": "editorial" if editorial.get("description") else "category-fallback",
@@ -286,7 +326,7 @@ def main():
             if not args.offline:
                 write_json(cache_path, {"schemaVersion": 1, "entries": metadata})
         fallback_count = sum(not m["metadataSource"] for m in catalog["mods"])
-        print(f"Catalog OK: {len(records)} mods, {len(records) - fallback_count} with API metadata, {fallback_count} using Packwiz fallback.")
+        print(f"Catalog OK: {len(records)} mods, {len(records) - fallback_count} with API metadata, {fallback_count} using inventory fallback.")
         return 0
     except (OSError, ValueError, KeyError, TypeError) as exc:
         print(f"Cannot generate catalog: {exc}", file=sys.stderr)
