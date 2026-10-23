@@ -6,7 +6,7 @@ const path = require("node:path");
 const os = require("node:os");
 const { chromium } = require("playwright");
 const { checkGuides } = require("./guides.cjs");
-const { checkReleases, releasesApi, releasesPage } = require("./releases.cjs");
+const { releasesApi } = require("./releases.cjs");
 
 const root = path.resolve(__dirname, "..");
 const prefix = "/a-cozy-adventure/";
@@ -60,6 +60,10 @@ const server = http.createServer((request, response) => {
       viewport: { width: 1440, height: 1000 },
     });
     const errors = [];
+    const releaseRequests = [];
+    page.on("request", request => {
+      if (request.url().startsWith("https://api.github.com/")) releaseRequests.push(request.url());
+    });
     page.on("pageerror", (error) => errors.push(error.message));
     await page.route("https://cdn.modrinth.com/**", (route) => route.abort());
     await page.route(releasesApi, (route) => route.fulfill({ json: [] }));
@@ -173,15 +177,8 @@ const server = http.createServer((request, response) => {
       await packResponse.body(),
       fs.readFileSync(path.join(root, "pack.toml")),
     );
-    await page.waitForFunction(() =>
-      document
-        .getElementById("download-message")
-        .textContent.includes("Noch keine passende"),
-    );
-    assert.equal(
-      await page.locator("#install-download-link").getAttribute("href"),
-      releasesPage,
-    );
+    assert.equal(await page.locator('script[src="assets/releases.js"]').count(), 0);
+    assert.equal(await page.locator('a[href$=".zip"]').count(), 0);
 
     // API payloads are displayed as text, and unsafe links/icons are ignored.
     const malicious = structuredClone(catalog);
@@ -256,7 +253,14 @@ const server = http.createServer((request, response) => {
       "auto",
     );
     await reduced.close();
-    await checkReleases(browser, origin + prefix);
+    // Historic release assets must never become a current download.
+    assert.equal(await page.locator('#install-download-link').count(), 0);
+    await page.locator("#search").fill("AutoModpack");
+    await page.locator(".mod-card").click();
+    assert.match(await page.locator("#detail-facts").innerText(), /5.0.0-rc.5/);
+    assert.match(await page.locator("#detail-facts").innerText(), /vor dem Serverbeitritt/);
+    await page.keyboard.press("Escape");
+    assert.deepEqual(releaseRequests, []);
     assert.deepEqual(errors, []);
     console.log(
       `Browser checks passed: ${catalog.total} mods; search, combined filters, sorting, dialogs, 6 viewport widths, project paths, text safety, errors, icon fallback and reduced motion.`,

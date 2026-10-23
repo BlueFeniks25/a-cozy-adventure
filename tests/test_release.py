@@ -82,7 +82,8 @@ class V101PreparationTests(unittest.TestCase):
             self.assertFalse((ROOT / path).exists())
         catalog = json.loads((ROOT / 'mods.json').read_text(encoding="utf-8"))
         self.assertNotIn('ColorLight', (ROOT / 'mods.json').read_text(encoding="utf-8"))
-        self.assertEqual(catalog["total"], 136)
+        lock = json.loads((ROOT / 'docs/automodpack/pack.lock.json').read_text(encoding="utf-8"))
+        self.assertEqual(catalog["total"], sum(m['side'] != 'server' for m in lock['mods']))
         plan = build_serverpack.load_plan(ROOT)
         self.assertFalse(any('colorlight' in m.path for m in (*plan.mods, *plan.excluded)))
 
@@ -91,7 +92,9 @@ class V101PreparationTests(unittest.TestCase):
         self.assertNotIn('Vorbereitung von v1.0.0', html)
         self.assertNotIn('Wie deaktiviere ich ColorLight?', html)
         self.assertNotIn('ColorLight', (ROOT / 'assets/guides/mods.svg').read_text(encoding="utf-8"))
-        self.assertIn('veröffentlichten Stable Release', html)
+        self.assertIn('GitHub-Releases bleiben als historisches Archiv', html)
+        self.assertNotIn('assets/releases.js', html)
+        self.assertNotIn('.migration.jar', html)
 
     def test_cached_dependency_audit_rejects_unknown_or_changed_pins(self):
         import audit_customization

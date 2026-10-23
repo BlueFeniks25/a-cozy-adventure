@@ -6,19 +6,17 @@
     <meta name="theme-color" content="#111b19" />
     <meta
       name="description"
-      content="Dein Einstieg in A Cozy Adventure: Prism installieren, eigene Mods und Ressourcenpakete verwalten, Tasten finden und gemütlich losspielen."
+      content="Dein Einstieg in A Cozy Adventure: Mit CurseForge und AutoModpack einsteigen, Ressourcenpakete aktivieren und gemeinsam spielen."
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://cdn.modrinth.com https://*.forgecdn.net; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://cdn.modrinth.com https://*.forgecdn.net; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <meta name="referrer" content="no-referrer" />
     <title>A Cozy Adventure · Spielen &amp; Entdecken</title>
     <link rel="icon" href="assets/leaf.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/app.js" defer></script>
-    <script src="assets/releases.js" defer></script>
-    <script src="assets/guides.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#wegweiser">Zum Spielerwegweiser</a>
@@ -57,14 +55,15 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#installation"
-              >Jetzt spielen <span aria-hidden="true">↓</span></a
+              >A Cozy Adventure installieren <span aria-hidden="true">↓</span></a
             >
             <a class="text-link" href="#wegweiser"
               >Dein Spielerwegweiser <span aria-hidden="true">↗</span></a
             >
           </div>
           <div class="pack-facts" aria-label="Informationen zum Modpack">
-            <span><strong id="hero-count">…</strong> Mods zum Entdecken</span>
+            <span>
+<strong id="hero-count">…</strong> Mods zum Entdecken</span>
             <span
               ><span class="tiny-cube" aria-hidden="true">◇</span> Minecraft
               <strong id="minecraft-version">…</strong></span
@@ -102,14 +101,16 @@
           <a class="guide-link" href="#installation"
             ><span class="guide-link-number" aria-hidden="true">01</span
             ><span
-              ><strong>Prism installieren</strong
+              >
+<strong>A Cozy Adventure installieren</strong
               ><small>Vom Download bis zum ersten Start.</small></span
             ><span aria-hidden="true">↗</span></a
           >
           <a class="guide-link" href="#client-mods"
             ><span class="guide-link-number" aria-hidden="true">02</span
             ><span
-              ><strong>Client-Mods verwalten</strong
+              >
+<strong>Client-Mods verwalten</strong
               ><small
                 >Optionale Mods, eigene Ideen, sicher anpassen.</small
               ></span
@@ -118,7 +119,8 @@
           <a class="guide-link" href="#ressourcenpakete"
             ><span class="guide-link-number" aria-hidden="true">03</span
             ><span
-              ><strong>Ressourcenpakete</strong
+              >
+<strong>Ressourcenpakete</strong
               ><small
                 >Hinzufügen, aktivieren und richtig sortieren.</small
               ></span
@@ -127,438 +129,106 @@
           <a class="guide-link" href="#tasten"
             ><span class="guide-link-number" aria-hidden="true">04</span
             ><span
-              ><strong>Tasten & Steuerung</strong
+              >
+<strong>Tasten & Steuerung</strong
               ><small>Funktionen finden und Belegungen ändern.</small></span
             ><span aria-hidden="true">↗</span></a
           >
           <a class="guide-link" href="#hilfe"
             ><span class="guide-link-number" aria-hidden="true">05</span
             ><span
-              ><strong>Hilfe & FAQ</strong
+              >
+<strong>Hilfe & FAQ</strong
               ><small>Updates, optionale Mods und alte Instanzen.</small></span
             ><span aria-hidden="true">↗</span></a
           >
           <a class="guide-link" href="#katalog"
             ><span class="guide-link-number" aria-hidden="true">06</span
             ><span
-              ><strong>Mods entdecken</strong
+              >
+<strong>Mods entdecken</strong
               ><small>Unseren gesamten Mod-Katalog durchsuchen.</small></span
             ><span aria-hidden="true">↗</span></a
           >
         </div>
       </section>
-      <section
-        class="guide-section shell"
-        id="installation"
-        aria-labelledby="installation-title"
-      >
-        <p class="eyebrow">01 · JETZT SPIELEN</p>
-        <h2 id="installation-title">Dein erster Abend in unserer Welt.</h2>
-        <p class="section-lead">
-          Prism Launcher hält dieses Modpack in einer eigenen
-          <strong>Instanz</strong>: einem getrennten Spielordner mit passenden
-          Mods und Einstellungen. Du brauchst Minecraft: Java Edition auf deinem
-          eigenen Microsoft-Konto.
-        </p>
-        <div class="requirements" aria-label="Technische Voraussetzungen">
-          <span>Minecraft <strong>26.3</strong></span
-          ><span>Fabric <strong>0.19.5</strong></span
-          ><span>Spielstart: <strong>Java 25</strong></span>
-        </div>
-        <ol class="quick-steps">
-          <li>Prism einrichten</li>
-          <li>Prism-ZIP importieren</li>
-          <li>Instanz starten</li>
-        </ol>
-        <div class="install-download">
-          <div>
-            <strong>Ein Zuhause wartet schon auf dich.</strong>
-            <p id="download-message" role="status" aria-live="polite">
-              Installations-ZIPs und Versionshinweise findest du auf GitHub.
-            </p>
-            <p id="download-release" hidden>
-              <span id="download-version"></span>
-              <span id="download-channel" class="release-channel"></span>
-            </p>
-          </div>
-          <a
-            id="install-download-link"
-            class="button button-secondary"
-            href="https://github.com/BlueFeniks25/a-cozy-adventure/releases"
-            >GitHub Releases ansehen <span aria-hidden="true">↗</span></a
-          >
-        </div>
-
-        <details class="guide-detail" open>
-          <summary>1. Prism installieren und dein Konto anmelden</summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                Lade Prism ausschließlich von
-                <a href="https://prismlauncher.org/download/"
-                  >prismlauncher.org/download</a
-                >
-                für dein Betriebssystem herunter und installiere es.
-              </li>
-              <li>
-                Starte Prism und schließe die Ersteinrichtung ab. Über
-                <strong
-                  >Konten / Accounts → Konten verwalten / Manage
-                  Accounts</strong
-                >
-                beziehungsweise
-                <strong>Einstellungen / Settings → Konten / Accounts</strong>
-                kommst du zur Kontoliste.
-              </li>
-              <li>
-                Wähle <strong>Microsoft hinzufügen / Add Microsoft</strong>.
-                Folge der Anmeldung im Browser auf der echten Microsoft-Seite.
-                Dein Konto muss Minecraft: Java Edition besitzen. Passwörter
-                gehören weder in diese Website noch in einen Chat.
-              </li>
-              <li>
-                Wähle dein hinzugefügtes Konto als aktives Konto aus. Die
-                kostenlose Prism-App ersetzt keine Minecraft-Lizenz.
-              </li>
-            </ol>
-            <figure class="guide-figure">
-              <img
-                src="assets/guides/account.svg"
-                width="900"
-                height="430"
-                loading="lazy"
-                alt="Prism herunterladen und das eigene Microsoft-Konto hinzufügen."
-              />
-              <figcaption>
-                Schematische Darstellung · Prism herunterladen und das eigene
-                Microsoft-Konto hinzufügen.
-              </figcaption>
-            </figure>
-          </div>
-        </details>
-        <details class="guide-detail">
-          <summary>2. Die richtige ZIP herunterladen und importieren</summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                Nutze die Download-Schaltfläche oben. Auf GitHub benötigst du
-                unter <strong>Assets</strong> die Datei
-                <code>A-Cozy-Adventure-Prism-v1.0.0.zip</code> aus dem
-                veröffentlichten Stable Release. Die Download-Schaltfläche
-                erkennt ausschließlich veröffentlichte passende Releases. Wähle weder die Server-ZIP noch „Source code“.
-              </li>
-              <li>Lass die ZIP ungeöffnet und unentpackt im Downloadordner.</li>
-              <li>
-                Klicke in Prism auf
-                <strong>Instanz hinzufügen / Add Instance</strong> und wähle
-                <strong>Importieren / Import</strong>. Über
-                <strong>Durchsuchen / Browse</strong> wählst du die
-                heruntergeladene ZIP.
-              </li>
-              <li>
-                Bestätige den Import mit <strong>OK</strong>. Eine neue Kachel
-                „A Cozy Adventure“ erscheint. Importiere in eine neue Instanz;
-                überschreibe keine bestehende Welt.
-              </li>
-            </ol>
-            <figure class="guide-figure">
-              <img
-                src="assets/guides/import.svg"
-                width="900"
-                height="430"
-                loading="lazy"
-                alt="Die Prism-ZIP wird als neue Instanz importiert."
-              />
-              <figcaption>
-                Schematische Darstellung · Die Prism-ZIP wird als neue Instanz
-                importiert.
-              </figcaption>
-            </figure>
-          </div>
-        </details>
-        <details class="guide-detail">
-          <summary>
-            3. Java prüfen, erstmals starten und Updates verstehen
-          </summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                Wähle die Instanz und öffne
-                <strong>Bearbeiten / Edit → Version</strong>. Minecraft
-                <strong>26.3</strong> und Fabric Loader
-                <strong>0.19.5</strong> gehören zu diesem Pack. Stelle sie nicht
-                auf eigene Faust um.
-              </li>
-              <li>
-                Prism kann eine passende Java-Laufzeit automatisch auswählen
-                beziehungsweise herunterladen. Für das
-                <strong>Spiel ist Java 25</strong> erforderlich. Bei einem
-                Java-Fehler prüfe
-                <strong>Bearbeiten → Einstellungen → Java</strong> (Edit →
-                Settings → Java), die automatische Auswahl oder eine vorhandene
-                Java-25-Installation. Ein Java 17/21 für Hilfsprogramme genügt
-                nicht für den Spielstart.
-              </li>
-              <li>
-                Doppelklicke auf die Instanz oder wähle
-                <strong>Starten / Launch</strong>. Beim ersten Start werden die
-                offiziellen Mods geladen; das kann dauern. Bei vom Anbieter
-                gesperrten Downloads befolge die konkreten Hinweise des
-                Installers.
-              </li>
-              <li>
-                Das Schutzfenster sagt „Persönliche Mods und Einstellungen
-                werden geschützt“. Über <strong>Auswahl ändern</strong> kannst
-                du optionale Bestandteile wählen. Ohne Eingriff läuft der Start
-                nach vier Sekunden weiter.
-              </li>
-              <li>
-                Vor späteren Starts prüft der Updater die offizielle
-                Packdefinition. Er aktualisiert offiziellen Bestand; eigene
-                Mods, Ressourcenpaket-Reihenfolge und persönliche Einstellungen
-                bleiben geschützt. Bei Konflikten hält er an und nennt den
-                betroffenen Pfad. Währenddessen keine Instanzdateien bearbeiten.
-              </li>
-            </ol>
-            <p>
-              Nach dem ersten Start verwaltest du dieselbe Instanz weiter – kein
-              erneuter ZIP-Import für jedes reguläre Modpack-Update.
-              Aktualisiere offizielle Mods nicht einzeln über Prism; ihre
-              Versionen werden vom Pack festgelegt.
-            </p>
-            <p class="notice">
-              Du hast bereits v0.0.2? Der alte Startbefehl aktiviert den Schutz
-              nicht selbst. Lies zuerst die
-              <a href="#migration"
-                >einmalige Migration deiner vorhandenen Instanz</a
-              >.
-            </p>
-          </div>
-        </details>
-        <p class="guide-source">
-          UI-Begriffe geprüft am offiziellen Prism-Quellstand 11.1.1; deutsche
-          Übersetzungen können abweichen. Deshalb stehen die englischen
-          Bezeichnungen dabei.
-          <a href="https://prismlauncher.org/wiki/help-pages/Zip-import/"
-            >Offizielle ZIP-Import-Hilfe</a
-          >.
-        </p>
-      </section>
-      <section
-        class="guide-section shell"
-        id="client-mods"
-        aria-labelledby="mods-guide-title"
-      >
-        <p class="eyebrow">02 · DEINE CLIENT-MODS</p>
-        <h2 id="mods-guide-title">So, wie du gerne spielst.</h2>
-        <p class="section-lead">
-          Schließe Minecraft, wähle deine Instanz und öffne
-          <strong>Bearbeiten / Edit → Mods</strong>. Die Schutzschicht behält
-          persönliche Entscheidungen über spätere Updates bei.
-        </p>
-        <details class="guide-detail" open>
-          <summary>
-            Offizielle optionale Mods deaktivieren und wieder aktivieren
-          </summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                Prüfe, ob die Mod optional ist: Das Schutzfenster beim Start
-                zeigt über <strong>Auswahl ändern</strong> die offiziellen
-                Optionen. Die
-                <a href="docs/customization/dependencies.md"
-                  >geprüfte Optionsliste</a
-                >
-                nennt nach der Entfernung von ColorLight die 24 optionalen Client-Mods. Der Katalog allein ist
-                keine Freigabe zum Deaktivieren.
-              </li>
-              <li>
-                In <strong>Bearbeiten → Mods</strong> entfernst du das Häkchen
-                einer geprüften optionalen Mod.
-                Prism deaktiviert die Datei, statt sie zu löschen. Der
-                geschützte Updater erhält diesen Zustand.
-              </li>
-              <li>
-                Für die Rückkehr setzt du das Häkchen bei derselben Datei
-                wieder. Alternativ aktivierst du sie in der Startauswahl. Beim
-                nächsten Start wird nötigenfalls die aktuelle offizielle Version
-                bereitgestellt.
-              </li>
-            </ol>
-            <p>
-              Du hast versehentlich eine optionale Mod ausgeschaltet? Aktiviere
-              sie genau so wieder.
-              <strong
-                >Pflichtmods und notwendige Bibliotheken bleiben aktiv.</strong
-              >
-              Sodium, libIPN und andere gemeinsam benötigte Bibliotheken sind
-              keine beliebigen Schalter.
-            </p>
-            <p>
-              Prisms Modliste mischt eigene und offizielle Dateien. Vergleiche
-              Namen und Dateiversion mit dem
-              <a href="#katalog">Pack-Katalog</a> und der Optionsliste. Die
-              Startauswahl enthält nur offizielle optionale Bestandteile.
-              Offizielle Dateien nicht manuell löschen, wenn du sie nur
-              ausschalten möchtest.
-            </p>
-            <figure class="guide-figure">
-              <img
-                src="assets/guides/mods.svg"
-                width="900"
-                height="430"
-                loading="lazy"
-                alt="Ein Häkchen schaltet eine optionale Mod aus und wieder ein."
-              />
-              <figcaption>
-                Schematische Darstellung · Ein Häkchen schaltet eine optionale
-                Mod aus und wieder ein.
-              </figcaption>
-            </figure>
-          </div>
-        </details>
-        <details class="guide-detail">
-          <summary>Eigene Client-Mods über Prisms Suche hinzufügen</summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                Öffne
-                <strong
-                  >Bearbeiten / Edit → Mods → Mods herunterladen / Download
-                  Mods</strong
-                >.
-              </li>
-              <li>
-                Wähle <strong>Modrinth</strong> oder
-                <strong>CurseForge</strong>, soweit in deiner Prism-Version und
-                für die Mod verfügbar. Suche nach dem Namen.
-              </li>
-              <li>
-                Kontrolliere vor dem Download
-                <strong>Minecraft 26.3</strong> und <strong>Fabric</strong>.
-                Eine NeoForge-/Forge-Datei oder eine andere Minecraft-Version
-                passt nicht automatisch. Prüfe die Projektseite auf benötigte
-                Bibliotheken und Konflikte.
-              </li>
-              <li>
-                Wähle die passende Datei, lade sie über den Dialog herunter und
-                schließe die Bearbeitung ab. Prüfe angebotene Abhängigkeiten;
-                eine Suche allein garantiert keine vollständige oder kompatible
-                Auswahl.
-              </li>
-              <li>
-                Starte und teste die Instanz. Persönliche Zusatzmods sind
-                erlaubt, aber ihre Kompatibilität wird nicht pauschal
-                garantiert.
-              </li>
-            </ol>
-            <figure class="guide-figure">
-              <img
-                src="assets/guides/download.svg"
-                width="900"
-                height="430"
-                loading="lazy"
-                alt="In der Modsuche die passende Minecraft-Version und Fabric auswählen."
-              />
-              <figcaption>
-                Schematische Darstellung · In der Modsuche die passende
-                Minecraft-Version und Fabric auswählen.
-              </figcaption>
-            </figure>
-          </div>
-        </details>
-        <details class="guide-detail">
-          <summary>
-            Eine JAR manuell hinzufügen oder eine eigene Mod entfernen
-          </summary>
-          <div class="guide-detail-body">
-            <p>
-              Alternativ lade die passende JAR von der offiziellen
-              Mod-Projektseite herunter und wähle in Prism
-              <strong>Mods → Datei hinzufügen / Add File</strong>. Du kannst sie auch über
-              den Instanz-Spielordner in <code>mods</code> ablegen. Benötigte
-              Bibliotheken ebenfalls prüfen. Manche CurseForge-Dateien lassen
-              sich nur manuell beim Anbieter beziehen; solche Beschränkungen
-              werden nicht umgangen.
-            </p>
-            <p>
-              Zum Entfernen einer <strong>selbst installierten</strong> Mod:
-              Minecraft schließen, die Mod in Prism auswählen und
-              <strong>Entfernen / Remove</strong> benutzen. Bewahre vorher eine
-              Kopie auf, wenn du zurückwechseln möchtest. Für einen Test genügt
-              das Deaktivieren.
-            </p>
-            <p>
-              Der Updater entfernt persönliche Dateien nicht ungefragt. Ein
-              Namenskonflikt mit einer offiziellen Datei führt zu einem Stopp,
-              auch bei gleichem Inhalt ohne Eigentumsnachweis. Sichere die
-              persönliche Datei außerhalb von <code>mods</code> und kläre den
-              Konflikt. Niemals <code>.cozy</code> oder
-              <code>packwiz.json</code> zum Umgehen einer Meldung löschen.
-            </p>
-          </div>
-        </details>
-      </section>
-      <section
-        class="guide-section shell"
-        id="ressourcenpakete"
-        aria-labelledby="resources-title"
-      >
-        <p class="eyebrow">03 · TEXTUREN & ANIMATIONEN</p>
-        <h2 id="resources-title">Deiner Welt einen eigenen Look geben.</h2>
-        <p class="section-lead">
-          Prism legt die Paketdateien bereit. Welche davon aktiv sind und was
-          Vorrang hat, entscheidest du <strong>in Minecraft</strong>.
-        </p>
-        <details class="guide-detail" open>
-          <summary>Ressourcenpakete hinzufügen und im Spiel aktivieren</summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                In Prism:
-                <strong
-                  >Bearbeiten / Edit → Ressourcenpakete / Resource Packs</strong
-                >. <strong>Pakete herunterladen / Download Packs</strong> öffnet
-                die verfügbaren Anbieter. Oder wähle
-                <strong>Datei hinzufügen / Add File</strong> für deine eigene
-                Ressourcenpaket-ZIP.
-              </li>
-              <li>
-                Manuell geht es auch: Lege die unveränderte ZIP in den Ordner
-                <code>resourcepacks</code> der Instanz. Prüfe die unterstützte
-                Minecraft-Version und Hinweise des Erstellers.
-              </li>
-              <li>
-                Starte Minecraft und öffne
-                <strong>Optionen → Ressourcenpakete</strong> (Options → Resource
-                Packs). Schiebe das Paket in die ausgewählte Liste. Zum
-                Deaktivieren nimmst du es aus dieser Liste heraus. Bestätige mit
-                <strong>Fertig / Done</strong>.
-              </li>
-              <li>
-                Benutze die Pfeile am Paket, um es innerhalb der ausgewählten
-                Liste nach oben oder unten zu verschieben.
-                <strong
-                  >Ein weiter oben angezeigtes Paket hat bei denselben Dateien
-                  Vorrang.</strong
-                >
-              </li>
-            </ol>
-          </div>
-        </details>
-        <figure class="guide-figure">
-          <img
-            src="assets/guides/resources.svg"
-            width="900"
-            height="530"
-            loading="lazy"
-            alt="Die vier offiziellen Pakete in der sichtbaren Reihenfolge von oben nach unten."
-          />
-          <figcaption>
-            Schematische Darstellung · Die vier offiziellen Pakete in der
-            sichtbaren Reihenfolge von oben nach unten.
-          </figcaption>
-        </figure>
+      <section class="guide-section shell" id="installation" aria-labelledby="installation-title">
+<h2 id="installation-title">Dein erster Abend in unserer Welt.</h2>
+<p class="section-lead">Erstelle ein eigenes Minecraft-Profil in CurseForge. Beim Verbinden mit unserem Server lädt AutoModpack nach deiner Bestätigung die restlichen Mods herunter und synchronisiert künftige Änderungen.</p>
+<p class="notice">
+<strong>Vor dem ersten Spiel:</strong> Der Serverbetrieb mit AutoModpack muss noch durch die Packbetreuung freigegeben werden. Die offizielle JAR ist verfügbar; die direkte Installation dieser Vorabversion über die CurseForge-App ist noch nicht verifiziert.</p>
+<details class="guide-detail" open>
+<summary>1. CurseForge installieren</summary>
+<div class="guide-detail-body">
+<ol>
+<li>Öffne die <a href="https://www.curseforge.com/download/app">offizielle CurseForge-Webseite</a> und lade die App für dein Betriebssystem herunter.</li>
+<li>Öffne die heruntergeladene Installationsdatei und folge dem Installationsassistenten. Starte danach die CurseForge-App.</li>
+</ol>
+<p>Du brauchst eine Minecraft-Java-Lizenz und dein Microsoft-Konto für den Spielstart.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>2. Ein Minecraft-Profil erstellen</summary>
+<div class="guide-detail-body">
+<ol>
+<li>Öffne CurseForge und wähle <strong>Minecraft</strong>. Lass die App Minecraft bei Bedarf einrichten.</li>
+<li>Wähle <strong>Benutzerdefiniertes Profil erstellen / Create Custom Profile</strong>.</li>
+<li>Trage als Profilname <strong>A Cozy Adventure</strong> ein. Wähle Minecraft <strong>26.3</strong> und als Modloader <strong>Fabric</strong>.</li>
+<li>Wähle Fabric Loader <strong>0.19.5</strong>, sofern verfügbar, und erstelle das Profil. Ist diese Kombination nicht auswählbar, frage die Packbetreuung nach dem passenden Loader.</li>
+</ol>
+<p>Für Minecraft 26.3 wird Java 25 benötigt. Prüfe bei Startproblemen die Java-Einstellung des Launchers.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>3. AutoModpack installieren</summary>
+<div class="guide-detail-body">
+<ol>
+<li>Öffne dein Profil und dessen Modsuche über <strong>Weitere Inhalte hinzufügen / Add More Content</strong>.</li>
+<li>Suche <strong>AutoModpack</strong>. Wir verwenden derzeit <strong>5.0.0-rc.5</strong>. Prüfe vor der Installation, dass die Datei für <strong>Minecraft 26.3 und Fabric</strong> sowie deinen Fabric Loader geeignet ist. Eine angebotene neuere oder andere Version ist nicht automatisch passend.</li>
+<li>Ist die passende Vorabversion in der App nicht verfügbar, öffne die <a href="https://www.curseforge.com/minecraft/mc-mods/automodpack/files">offizielle AutoModpack-Dateiliste</a>. Prüfe dort Version, Minecraft-Version und Modloader. Lade nur die passende <code>.jar</code>-Datei herunter.</li>
+<li>Schließe Minecraft. Öffne im CurseForge-Profil das Menü mit den drei Punkten und wähle <strong>Ordner öffnen / Open Folder</strong>. Lege die heruntergeladene JAR im Unterordner <code>mods</code> ab. Entpacke sie nicht. Behalte nur eine AutoModpack-Version im Profil.</li>
+</ol>
+<p>Die direkte Verfügbarkeit dieser Vorabversion in der App und der passende Download konnten hier nicht verifiziert werden. Alternativ steht die veröffentlichte <a href="https://github.com/Skidamek/AutoModpack/releases/tag/v5.0.0-rc.5">offizielle AutoModpack-Version 5.0.0-rc.5 auf GitHub</a> bereit: Lade dort unter Assets <code>automodpack-5.0.0-rc.5.jar</code> herunter und lege sie wie oben beschrieben im <code>mods</code>-Ordner ab. Diese universelle JAR enthält die Fabric-Unterstützung für Minecraft 26.3. Es gibt derzeit kein veröffentlichtes CurseForge-Modpack-Projekt und keinen One-Click-Installationsbutton.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>4. Unserem Server beitreten</summary>
+<div class="guide-detail-body">
+<ol>
+<li>Klicke in deinem Profil auf <strong>Spielen / Play</strong>, melde dich bei Bedarf mit deinem Microsoft-Konto an und starte Minecraft.</li>
+<li>Wähle <strong>Mehrspieler → Server hinzufügen</strong> oder <strong>Direkt verbinden</strong>.</li>
+<li>Trage als Serveradresse <code>minehost140.host-unlimited.de:15156</code> ein und verbinde dich.</li>
+<li>Bestätige die AutoModpack-Installationsabfrage für unseren Server. Warte, bis die restlichen Mods heruntergeladen sind.</li>
+<li>Falls AutoModpack einen Neustart verlangt, starte Minecraft erneut über dasselbe Profil und verbinde dich noch einmal.</li>
+</ol>
+<p>AutoModpack synchronisiert spätere Änderungen beim Verbinden. Aktualisiere die offiziellen Mods nicht einzeln. Modänderungen können weiterhin einen Neustart und eine Bestätigung erfordern.</p>
+</div>
+</details>
+</section>
+      <section class="guide-section shell" id="client-mods" aria-labelledby="client-mods-title">
+<h2 id="client-mods-title">Dein Profil und deine Mods.</h2>
+<p class="section-lead">AutoModpack verwaltet die offiziellen Mods unseres Servers. Du musst die restlichen Mods nicht von Hand zusammensuchen.</p>
+<details class="guide-detail">
+<summary>Eigene Client-Mods verwenden</summary>
+<div class="guide-detail-body">
+<p>Zusätzliche Client-Mods müssen zu Minecraft 26.3, Fabric und dem Server passen. Stimme sie bei Unsicherheit mit der Packbetreuung ab. Sichere dein Profil vor Änderungen und aktualisiere oder entferne Pflichtmods nicht einzeln. Alte Schutzfunktionen des bisherigen Updaters sind kein Nachweis für das Verhalten von AutoModpack.</p>
+</div>
+</details>
+</section>
+      <section class="guide-section shell" id="ressourcenpakete" aria-labelledby="ressourcenpakete-title">
+<h2 id="ressourcenpakete-title">Deiner Welt einen eigenen Look geben.</h2>
+<p class="section-lead">Unsere vier offiziellen Ressourcenpakete werden von AutoModpack automatisch heruntergeladen. Sie sind <strong>optional und empfohlen</strong>: Aktivieren musst du sie selbst im Minecraft-Menü.</p>
+<details class="guide-detail" open>
+<summary>Pakete aktivieren und sortieren</summary>
+<div class="guide-detail-body">
+<ol>
+<li>Öffne Minecraft → <strong>Optionen → Ressourcenpakete</strong>.</li>
+<li>Verschiebe die gewünschten Pakete in die Liste der ausgewählten Pakete.</li>
+<li>Ordne sie mit den Pfeilen wie unten gezeigt an. Ein Paket weiter <strong>oben hat bei denselben Dateien Vorrang</strong>. Die Fresh-Animations-Erweiterungen benötigen das Basispaket Fresh Animations darunter.</li>
+<li>Bestätige mit <strong>Fertig / Done</strong> und warte, bis Minecraft die Ressourcen neu geladen hat.</li>
+</ol>
+</div>
+</details>
         <div class="resource-priority">
           <p class="eyebrow">OBEN · HÖCHSTE PRIORITÄT</p>
           <ol id="resource-order">
@@ -584,611 +254,54 @@
           </ol>
           <p>UNTEN · BASIS</p>
         </div>
-        <p>
-          Dies ist die
-          <strong>Startvorgabe für eine neue Prism-Instanz</strong>. Der Builder
-          speichert sie in <code>options.txt</code> intern von niedriger zu
-          höherer Priorität; oben siehst du die umgekehrte, sichtbare
-          Minecraft-Reihenfolge. Bestehende persönliche Auswahlen und
-          Reihenfolgen werden bei Updates nicht umsortiert.
-        </p>
-        <details class="guide-detail">
-          <summary>
-            Erweiterungen, eigene Pakete und Überschreibungen verstehen
-          </summary>
-          <div class="guide-detail-body">
-            <p>
-              <strong>Fresh Animations</strong> ist die Basis für die beiden
-              Fresh-Animations-Erweiterungen. Die Erweiterungen gehören darüber.
-              Die bereitgestellten
-              <strong>Entity Model Features (EMF)</strong> und
-              <strong>Entity Texture Features (ETF)</strong> ermöglichen die
-              betreffenden Modelle und Texturen; lasse sie für diese Darstellung
-              aktiviert. Die visuelle Funktion der gesamten Kombination muss
-              dennoch im Spiel geprüft werden.
-            </p>
-            <p>
-              <strong>Colorful Trims RP</strong> ergänzt die Darstellung der
-              zugehörigen Colorful-Trims-Mod. Lass die bisherige relative
-              Reihenfolge der vier offiziellen Pakete zunächst stehen.
-            </p>
-            <p>
-              Ein zusätzliches Paket setzt du
-              <strong>über die offiziellen Pakete</strong>, wenn seine
-              enthaltenen Texturen gewinnen sollen; <strong>darunter</strong>,
-              wenn es nur Lücken füllen soll. Pakete überschreiben nur die
-              jeweils gleichen Ressourcen. Ein allgemeines Texturpaket oberhalb
-              einer Animationserweiterung kann daher deren Wirkung verändern.
-              Befolge zusätzlich die Kombinationshinweise des jeweiligen
-              Erstellers.
-            </p>
-            <p>
-              Sieht etwas falsch aus? Prüfe Version, aktive Pakete, Reihenfolge
-              und benötigte Mods. Deaktiviere Zusatzpakete probeweise. Eine rote
-              Inkompatibilitätswarnung ist kein Kompatibilitätsnachweis.
-            </p>
-            <p>
-              Im Schutzfenster steuerst du, ob offizielle Paketdateien
-              installiert bleiben. Das normale Aktivieren und Sortieren erfolgt
-              im Minecraft-Menü. Eine manuell gelöschte offizielle ZIP wird
-              erneut geladen, solange ihre Startoption an ist. Persönliche ZIPs
-              werden nicht ungefragt entfernt.
-            </p>
-            <p>
-              <a href="docs/releases/v1.0.0-evidence.md#ressourcenpakete"
-                >Dateinamen, Priorität und Nachweisgrenzen</a
-              >
-            </p>
-          </div>
-        </details>
-      </section>
-      <section
-        class="guide-section shell"
-        id="tasten"
-        aria-labelledby="keys-title"
-      >
-        <p class="eyebrow">04 · TASTEN & STEUERUNG</p>
-        <h2 id="keys-title">Finde die Funktion. Wähle deine Taste.</h2>
-        <p class="section-lead">
-          Eine belegte Auswahl aus unseren Modversionen, keine vollständige
-          Tastenliste. Die Website zeigt <strong>Standardwerte</strong> und
-          liest deine persönlichen Tastenbelegungen nicht aus. Betriebssystem,
-          Tastaturlayout, eigene Änderungen und weitere Mods können abweichen.
-        </p>
-        <p class="notice">
-          <strong>Nicht belegt</strong> heißt: Die direkte Mod-Taste hat keinen
-          Standard. <strong>Nicht verifiziert</strong> heißt: Hier nennen wir
-          bewusst keine Taste. Es gibt keine vollständig geprüfte Konfliktliste;
-          kontrolliere doppelte Belegungen im Spiel.
-        </p>
-        <div class="controls-toolbar">
-          <label for="control-search"
-            >Funktion, Mod oder Taste suchen<input
-              id="control-search"
-              type="search"
-              maxlength="150"
-              placeholder="Zum Beispiel Zoom, Rucksack oder Magie"
-              autocomplete="off" /></label
-          ><label for="control-category"
-            >Bereich<select id="control-category" aria-label="Bereich">
-              <option value="all">Alle Bereiche</option>
-              <option>Inventar</option>
-              <option>Komfort</option>
-              <option>Kampf</option>
-              <option>Magie</option>
-              <option>Navigation</option>
-            </select></label
-          ><button
-            class="button button-secondary"
-            id="control-reset"
-            type="button"
-          >
-            Suche zurücksetzen
-          </button>
-        </div>
-        <p id="control-count" role="status" aria-live="polite">
-          14 Funktionen · ohne JavaScript vollständig sichtbar
-        </p>
-        <div class="controls-groups">
-          <section data-controls-group aria-labelledby="controls-komfort">
-            <h3 id="controls-komfort">Komfort</h3>
-            <ul class="control-list">
-              <li class="control-row" data-category="Komfort">
-                <div>
-                  <strong>Heranzoomen (halten)</strong
-                  ><span class="control-mod">Zoomify 2.17.0</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span><kbd>C</kbd>
-                </div>
-                <p>
-                  Zum Zoomen gedrückt halten. Zoomify muss aktiviert sein.
-                  <a href="docs/releases/v1.0.0-evidence.md#zoomify">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Komfort">
-                <div>
-                  <strong>Sekundärer Zoom</strong
-                  ><span class="control-mod">Zoomify 2.17.0</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span><kbd>F6</kbd>
-                </div>
-                <p>
-                  Zweite Zoom-Funktion. Zoomify muss aktiviert sein.
-                  <a href="docs/releases/v1.0.0-evidence.md#zoomify">Beleg</a>
-                </p>
-              </li>
-            </ul>
-          </section>
-          <section data-controls-group aria-labelledby="controls-kampf">
-            <h3 id="controls-kampf">Kampf</h3>
-            <ul class="control-list">
-              <li class="control-row" data-category="Kampf">
-                <div>
-                  <strong>Finte / Angriff abbrechen</strong
-                  ><span class="control-mod">Better Combat 3.2.2</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigene Taste voreingestellt. Im Spiel selbst zuweisen.
-                  <a href="docs/releases/v1.0.0-evidence.md#combat">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Kampf">
-                <div>
-                  <strong>Abbauen mit Waffen umschalten</strong
-                  ><span class="control-mod">Better Combat 3.2.2</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigene Taste voreingestellt. Im Spiel selbst zuweisen.
-                  <a href="docs/releases/v1.0.0-evidence.md#combat">Beleg</a>
-                </p>
-              </li>
-            </ul>
-          </section>
-          <section data-controls-group aria-labelledby="controls-inventar">
-            <h3 id="controls-inventar">Inventar</h3>
-            <ul class="control-list">
-              <li class="control-row" data-category="Inventar">
-                <div>
-                  <strong>Rucksack öffnen</strong
-                  ><span class="control-mod">Traveler’s Backpack 11.4.1</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht verifiziert</span>
-                </div>
-                <p>
-                  Den Standard bitte in der Tastenbelegung deiner Instanz
-                  prüfen.
-                  <a href="docs/releases/v1.0.0-evidence.md#backpack">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Inventar">
-                <div>
-                  <strong>Rucksack sortieren</strong
-                  ><span class="control-mod">Traveler’s Backpack 11.4.1</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigene Taste voreingestellt. Im Spiel selbst zuweisen.
-                  <a href="docs/releases/v1.0.0-evidence.md#backpack">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Inventar">
-                <div>
-                  <strong>Rucksack-Fähigkeit umschalten</strong
-                  ><span class="control-mod">Traveler’s Backpack 11.4.1</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigene Taste voreingestellt. Benötigt eine passende
-                  Rucksack-Fähigkeit.
-                  <a href="docs/releases/v1.0.0-evidence.md#backpack">Beleg</a>
-                </p>
-              </li>
-            </ul>
-          </section>
-          <section data-controls-group aria-labelledby="controls-navigation">
-            <h3 id="controls-navigation">Navigation</h3>
-            <ul class="control-list">
-              <li class="control-row" data-category="Navigation">
-                <div>
-                  <strong>Wegpunkt hinzufügen</strong
-                  ><span class="control-mod">Xaero’s Minimap 26.6.0</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht verifiziert</span>
-                </div>
-                <p>
-                  Den Standard bitte in der Tastenbelegung deiner Instanz
-                  prüfen.
-                  <a href="docs/releases/v1.0.0-evidence.md#xaero">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Navigation">
-                <div>
-                  <strong>Wegpunkt-Menü öffnen</strong
-                  ><span class="control-mod">Xaero’s Minimap 26.6.0</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht verifiziert</span>
-                </div>
-                <p>
-                  Den Standard bitte in der Tastenbelegung deiner Instanz
-                  prüfen.
-                  <a href="docs/releases/v1.0.0-evidence.md#xaero">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Navigation">
-                <div>
-                  <strong>Minikarte vergrößern</strong
-                  ><span class="control-mod">Xaero’s Minimap 26.6.0</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht verifiziert</span>
-                </div>
-                <p>
-                  Den Standard bitte in der Tastenbelegung deiner Instanz
-                  prüfen.
-                  <a href="docs/releases/v1.0.0-evidence.md#xaero">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Navigation">
-                <div>
-                  <strong>Minikarte umschalten</strong
-                  ><span class="control-mod">Xaero’s Minimap 26.6.0</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigene Taste voreingestellt. Im Spiel selbst zuweisen.
-                  <a href="docs/releases/v1.0.0-evidence.md#xaero">Beleg</a>
-                </p>
-              </li>
-            </ul>
-          </section>
-          <section data-controls-group aria-labelledby="controls-magie">
-            <h3 id="controls-magie">Magie</h3>
-            <ul class="control-list">
-              <li class="control-row" data-category="Magie">
-                <div>
-                  <strong>Zauber-Schnellleiste: Plätze 1–9</strong
-                  ><span class="control-mod">Spell Engine 1.10.9</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigenen Tasten voreingestellt; alternative
-                  Spiel-Eingaben können weiterhin wirken.
-                  <a href="docs/releases/v1.0.0-evidence.md#spell">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Magie">
-                <div>
-                  <strong>Zauber-Tooltip: Details</strong
-                  ><span class="control-mod">Spell Engine 1.10.9</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht belegt</span>
-                </div>
-                <p>
-                  Keine eigene Taste voreingestellt. Unter Spell Engine
-                  zuweisen.
-                  <a href="docs/releases/v1.0.0-evidence.md#spell">Beleg</a>
-                </p>
-              </li>
-              <li class="control-row" data-category="Magie">
-                <div>
-                  <strong>Zauber-Schnellleiste umgehen</strong
-                  ><span class="control-mod">Spell Engine 1.10.9</span>
-                </div>
-                <div class="control-key">
-                  <span class="visually-hidden">Standard: </span
-                  ><span class="key-status">Nicht verifiziert</span>
-                </div>
-                <p>
-                  Den Standard bitte in der Tastenbelegung deiner Instanz
-                  prüfen.
-                  <a href="docs/releases/v1.0.0-evidence.md#spell">Beleg</a>
-                </p>
-              </li>
-            </ul>
-          </section>
-        </div>
-        <p id="control-empty" class="notice" hidden>
-          Keine Funktion gefunden. Probiere den Modnamen oder setze die Suche
-          zurück.
-        </p>
-        <noscript
-          ><p>
-            Die vollständige Liste ist sichtbar. Suche und Bereichsfilter
-            benötigen JavaScript.
-          </p></noscript
-        >
-        <details class="guide-detail">
-          <summary>
-            Eigene Tasten ändern, Konflikte lösen und zurücksetzen
-          </summary>
-          <div class="guide-detail-body">
-            <ol>
-              <li>
-                Im Spiel:
-                <strong>Optionen → Steuerung → Tastenbelegung</strong> (Options
-                → Controls → Key Binds). Suche dort nach der Funktion oder
-                scrolle zur Mod-Kategorie. Studious Keybinds unterstützt die
-                Übersicht; die Bedienung kann von Vanilla abweichen.
-              </li>
-              <li>
-                Klicke auf die aktuelle Belegung und drücke die gewünschte
-                Taste. Prüfe die angezeigte neue Zuordnung.
-              </li>
-              <li>
-                Bei einer als doppelt markierten Belegung ändere eine der
-                betroffenen Funktionen auf eine andere Taste. Teste danach beide
-                Funktionen im Spiel. Eine doppelte Taste ist nicht immer ein
-                Konflikt, wenn Funktionen in unterschiedlichen Situationen
-                wirken.
-              </li>
-              <li>
-                Über <strong>Zurücksetzen / Reset</strong> an einer Funktion
-                holst du deren Standard zurück.
-                <strong>Alle zurücksetzen / Reset All</strong> betrifft
-                sämtliche Belegungen und verwirft deine eigene Auswahl. Benutze
-                das nur bewusst.
-              </li>
-            </ol>
-            <p>
-              Persönliche Tasten in <code>options.txt</code> und vorhandene
-              mod-spezifische Konfigurationen bleiben bei regulären geschützten
-              Updates erhalten. Sichere deine Instanz vor größeren Anpassungen.
-              Die Mod selbst kann beim Spielstart Einstellungen ändern; der
-              Updater überschreibt sie nicht.
-            </p>
-            <figure class="guide-figure">
-              <img
-                src="assets/guides/keys.svg"
-                width="900"
-                height="430"
-                loading="lazy"
-                alt="Den Tasten-Dialog öffnen, eine Funktion ändern und gezielt zurücksetzen."
-              />
-              <figcaption>
-                Schematische Darstellung · Den Tasten-Dialog öffnen, eine
-                Funktion ändern und gezielt zurücksetzen.
-              </figcaption>
-            </figure>
-          </div>
-        </details>
-      </section>
-      <section
-        class="guide-section shell"
-        id="hilfe"
-        aria-labelledby="faq-title"
-      >
-        <p class="eyebrow">05 · HILFE & FAQ</p>
-        <h2 id="faq-title">Damit es gemütlich bleibt.</h2>
-        <div class="faq-list">
-          <details class="guide-detail">
-            <summary>Muss ich Prism Launcher verwenden?</summary>
-            <div class="guide-detail-body">
-              <p>
-                Unser geprüfter Import und der geschützte Startbefehl sind für
-                Prism vorbereitet. Andere Launcher sind nicht Teil dieses
-                getesteten Wegs. Für einen unkomplizierten Einstieg verwende
-                Prism.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>Muss ich Mods manuell aktualisieren?</summary>
-            <div class="guide-detail-body">
-              <p>
-                Offizielle Mods werden vor dem Spielstart vom Pack-Updater
-                verwaltet. Aktualisiere sie nicht einzeln. Nur deine selbst
-                hinzugefügten Mods verwaltest du selbst; achte dabei auf
-                Minecraft 26.3 und Fabric.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>Darf ich eigene Client-Mods installieren?</summary>
-            <div class="guide-detail-body">
-              <p>
-                Ja. Nutze
-                <a href="#client-mods">Prisms Modsuche oder den JAR-Import</a>.
-                Der geschützte Updater bewahrt persönliche Dateien. Das
-                garantiert weder Kompatibilität noch die Zulässigkeit jeder
-                Zusatzfunktion auf einem Multiplayer-Server.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>Warum wurde ColorLight entfernt?</summary>
-            <div class="guide-detail-body">
-              <p>
-                ColorLight wird mit v1.0.1 wegen eines bestätigten Absturzes beim
-                Betreten einer Welt entfernt. Der geschützte Updater entfernt
-                nachweislich offizielle Dateien auch dann, wenn Prism sie deaktiviert
-                hat. Bei unklarem Besitz hält das Update an. Später privat
-                installierte Dateien bleiben persönlich verwaltet.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>Warum bleibt eine deaktivierte Mod deaktiviert?</summary>
-            <div class="guide-detail-body">
-              <p>
-                Die Schutzschicht merkt sich deine Auswahl und erkennt Prisms
-                deaktivierte Datei. Zum Wiedereinschalten das Häkchen bei
-                derselben Mod setzen oder die Startauswahl verwenden. Eine neue
-                offizielle Version wird dann bei Bedarf installiert.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>Wie ändere ich meine Tastenbelegung?</summary>
-            <div class="guide-detail-body">
-              <p>
-                Im Spiel unter Optionen → Steuerung → Tastenbelegung. Unsere
-                <a href="#tasten">Tastenübersicht mit Anleitung</a> hilft beim
-                Finden; deine persönlichen Werte werden nicht von dieser Website
-                ausgelesen.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>
-              Was passiert mit meinen Einstellungen nach einem Update?
-            </summary>
-            <div class="guide-detail-body">
-              <p>
-                Der geschützte Updater überschreibt options.txt nicht.
-                Vorhandene mod-spezifische Konfigurationen bleiben erhalten;
-                neue Vorgaben werden nur erstmals angelegt. Dies gilt für
-                geschützte Instanzen – alte v0.0.2-Instanzen benötigen zuerst
-                die Migration.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>
-              Warum funktioniert mein Ressourcenpaket nicht wie erwartet?
-            </summary>
-            <div class="guide-detail-body">
-              <p>
-                Prüfe, ob es im Spiel aktiviert ist, zur Minecraft-Version passt
-                und seine benötigten Mods aktiv sind. Oben liegende Pakete
-                überschreiben passende Ressourcen weiter unten. Siehe
-                <a href="#ressourcenpakete">Reihenfolge und Erweiterungen</a>.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>
-              Was mache ich, wenn Minecraft nach einer zusätzlichen Mod
-              abstürzt?
-            </summary>
-            <div class="guide-detail-body">
-              <p>
-                Spiel schließen und eine Sicherung anlegen. Deaktiviere zunächst
-                die zuletzt hinzugefügte persönliche Mod, starte erneut und
-                prüfe ihre Abhängigkeiten und Version. Pflichtmods beibehalten.
-                Bei Bedarf Prism-Konsole, logs/latest.log oder Crashreport mit
-                der Packbetreuung prüfen; vor dem Weitergeben persönliche
-                Angaben entfernen.
-              </p>
-            </div>
-          </details>
-          <details class="guide-detail">
-            <summary>
-              Wie migriere ich eine vorhandene v0.0.2-Installation?
-            </summary>
-            <div class="guide-detail-body">
-              <p>
-                Nicht einfach eine neue ZIP über die alte Instanz kopieren. Die
-                <a href="#migration">einmalige Migration</a> stellt den alten
-                Startbefehl auf den geschützten Updater um. Neuinstallationen
-                aus der neuen Prism-ZIP brauchen diesen Schritt nicht.
-              </p>
-            </div>
-          </details>
-        </div>
-        <article id="migration" class="migration-card">
-          <h3>Schon v0.0.2 gespielt? Deine Instanz bleibt.</h3>
-          <p>
-            Eine neue Prism-ZIP ist für <strong>neue Instanzen</strong>. Für
-            deine bestehende Testinstallation benötigst du die zur geprüften
-            Version gehörende
-            <code>A-Cozy-Adventure-Prism-v1.0.0.migration.jar</code>. Sie gehört zum veröffentlichten Stable Release v1.0.0.
-            Die strengere Schutzschicht für v1.0.1 wird separat vorbereitet;
-            vor deren Rollout ist auch bei v1.0.0-Instanzen ein geprüftes
-            Updater-Upgrade erforderlich.
-          </p>
-          <ol>
-            <li>
-              Minecraft schließen, Instanz nicht parallel starten und den
-              <strong>gesamten Instanzordner sichern</strong>.
-            </li>
-            <li>
-              Die geprüfte Migrations-JAR mit Java öffnen (mindestens Java 17,
-              Java 25 funktioniert ebenfalls). Wenn der Doppelklick keine
-              Java-Anwendung startet, die Datei über „Öffnen mit“ einer
-              vorhandenen Java-Laufzeit zuordnen. Keine Entwicklerbefehle nötig.
-            </li>
-            <li>
-              Den <strong>Instanzordner</strong> wählen, der
-              <code>instance.cfg</code>, <code>mmc-pack.json</code> und
-              <code>minecraft</code> beziehungsweise
-              <code>.minecraft</code> enthält. Prism kann den Instanzordner über
-              das Kontextmenü öffnen; nicht nur den darin liegenden Spielordner
-              wählen.
-            </li>
-            <li>
-              Erfolgsmeldung abwarten. Das Programm sichert
-              <code>instance.cfg.before-customization</code> und stellt den
-              Pre-Launch-Befehl um. Danach wie gewohnt starten; am Schutzfenster
-              erkennst du den neuen Weg.
-            </li>
-          </ol>
-          <p>
-            Welten, eigene Mods und Optionen werden bei der Migration nicht
-            verändert. Bei unbekannten eigenen Startbefehlen oder beschädigtem
-            Zustand hält sie an. Sichere den Fehlerbericht;
-            <strong
-              >lösche weder <code>packwiz.json</code> noch
-              <code>.cozy</code></strong
-            >. Ohne diese einmalige Umstellung aktiviert sich der Schutz nicht
-            selbst.
-          </p>
-          <figure class="guide-figure">
-            <img
-              src="assets/guides/migration.svg"
-              width="900"
-              height="430"
-              loading="lazy"
-              alt="Die vorhandene Instanz sichern und einmalig auf den geschützten Start umstellen."
-            />
-            <figcaption>
-              Schematische Darstellung · Die vorhandene Instanz sichern und
-              einmalig auf den geschützten Start umstellen.
-            </figcaption>
-          </figure>
-          <p>
-            <a href="docs/customization/README.md"
-              >Ausführliche Schutz- und Fehlerhilfe</a
-            >
-          </p>
-        </article>
-      </section>
+<p>Diese Reihenfolge stammt aus der <a href="docs/releases/v1.0.0-evidence.md#ressourcenpakete">vorhandenen Dokumentation und den offiziellen Paketdateinamen</a>. Ein visueller Kompatibilitätstest im Spiel steht noch aus.</p>
+<p>Du darfst eigene Ressourcenpakete und Shader verwenden. Prüfe ihre Versionsanforderungen und benötigten Mods. Pakete über den offiziellen Paketen können deren Texturen überschreiben. Deine Auswahl ist freiwillig; die Website lädt keine persönlichen Einstellungen herunter.</p>
+</section>
+      <section class="guide-section shell" id="tasten" aria-labelledby="tasten-title">
+<h2 id="tasten-title">Deine Tasten, deine Entscheidung.</h2>
+<p class="section-lead">Die Tastenbelegung wird nicht automatisch vorgegeben. Du kannst sämtliche Mod-Tasten unter <strong>Minecraft → Optionen → Steuerung → Tastenbelegung</strong> selbst konfigurieren.</p>
+<p>Klicke auf eine Belegung und drücke deine gewünschte Taste. Prüfe doppelte Belegungen und teste die Funktion im Spiel. Es gibt keinen Download für <code>options.txt</code>; persönliche Einstellungen werden von dieser Website nicht überschrieben.</p>
+</section>
+      <section class="guide-section shell" id="hilfe" aria-labelledby="hilfe-title">
+<h2 id="hilfe-title">Damit es gemütlich bleibt.</h2>
+<details class="guide-detail">
+<summary>Muss ich Prism Launcher verwenden?</summary>
+<div class="guide-detail-body">
+<p>Die Anleitung nutzt CurseForge. <a href="https://prismlauncher.org/">Prism Launcher</a> ist eine optionale Alternative: Du brauchst ebenfalls ein passendes Fabric-Profil und AutoModpack. Alte Prism-ZIPs und Packwiz-Startbefehle gehören nicht zur neuen Installation. Verwende für den Einstieg ein neues Profil und bewahre deine alte Instanz als Sicherung auf.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>Muss ich Mods selbst aktualisieren?</summary>
+<div class="guide-detail-body">
+<p>AutoModpack lädt nach deiner Bestätigung die restlichen offiziellen Mods und synchronisiert künftige Änderungen. Folge den Hinweisen im Spiel; Änderungen können einen Neustart erfordern.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>Warum ist ColorLight nicht dabei?</summary>
+<div class="guide-detail-body">
+<p>ColorLight bleibt wegen eines bestätigten Absturzes beim Betreten einer Welt entfernt.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>Wo sind die bisherigen Downloads?</summary>
+<div class="guide-detail-body">
+<p>Die <a href="https://github.com/BlueFeniks25/a-cozy-adventure/releases">GitHub-Releases bleiben als historisches Archiv</a> verfügbar. Die dortigen Prism-ZIPs und die frühere Custom-Updater-Migration sind keine Anleitung für den aktuellen Einstieg.</p>
+</div>
+</details>
+<details class="guide-detail">
+<summary>Was mache ich bei Problemen?</summary>
+<div class="guide-detail-body">
+<p>Prüfe Minecraft 26.3, Fabric und AutoModpack 5.0.0-rc.5. Ist die passende Version nicht verfügbar oder scheitert die Verbindung, frage die Packbetreuung. Teile Fehlermeldungen erst nach dem Entfernen persönlicher Angaben und Zugangsdaten.</p>
+</div>
+</details>
+</section>
       <section
         class="catalog-section"
         id="katalog"
         aria-labelledby="catalog-title"
       >
         <div class="shell">
+          <p class="notice">Dieser Katalog zeigt den freigegebenen Clientbestand aus dem AutoModpack-Lockmanifest einschließlich AutoModpack zur Ersteinrichtung. Server-only-Mods sind ausgeblendet. Die Version findest du in den Moddetails.</p>
           <div class="section-intro">
             <div>
               <p class="eyebrow">DAS STECKT IN UNSERER WELT</p>
@@ -1232,7 +345,8 @@
                 id="categories"
                 role="group"
                 aria-labelledby="category-heading"
-              ></div>
+              >
+</div>
               <div class="sidebar-note">
                 <span aria-hidden="true">✧</span>
                 <p>Ein kleines Detail,<br />ein neues Lieblingsabenteuer.</p>
@@ -1252,7 +366,8 @@
                   Filter zurücksetzen <span aria-hidden="true">↺</span>
                 </button>
               </div>
-              <div class="mod-grid" id="mod-grid"></div>
+              <div class="mod-grid" id="mod-grid">
+</div>
               <div class="empty-state" id="empty-state" hidden>
                 <span aria-hidden="true">⌕</span>
                 <h3>Hier ist es noch ganz still.</h3>
@@ -1283,7 +398,8 @@
                 </button>
               </div>
               <noscript
-                ><p class="notice">
+                >
+<p class="notice">
                   Bitte aktiviere JavaScript für Suche und Mod-Katalog. Du
                   kannst auch die
                   <a href="mods.json">vollständige Modliste als JSON</a> öffnen.
@@ -1328,9 +444,11 @@
         >
           ×
         </button>
-        <div id="detail-header" class="detail-header"></div>
+        <div id="detail-header" class="detail-header">
+</div>
         <p class="detail-description" id="detail-description"></p>
-        <div class="detail-categories" id="detail-categories"></div>
+        <div class="detail-categories" id="detail-categories">
+</div>
         <div id="detail-original" class="detail-original" hidden>
           <h3>Vom Mod-Projekt</h3>
           <p id="detail-summary"></p>
@@ -1338,10 +456,11 @@
         </div>
         <dl id="detail-facts" class="detail-facts"></dl>
         <p class="detail-fallback" id="detail-fallback" hidden></p>
-        <div class="detail-links" id="detail-links"></div>
+        <div class="detail-links" id="detail-links">
+</div>
         <p class="detail-note">
           Hier entdeckst du die Mods unseres Packs. Installiert wird das gesamte
-          Modpack über Prism Launcher.
+          Modpack mit AutoModpack nach deiner Bestätigung beim Serverbeitritt.
         </p>
       </div>
     </dialog>

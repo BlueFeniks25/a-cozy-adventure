@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - "docs/automodpack/pack.lock.json"
       - "mods/**"
       - "pack.toml"
       - "catalog/**"
@@ -14,6 +15,7 @@ on:
       - ".github/workflows/mod-catalog.yml"
   pull_request:
     paths:
+      - "docs/automodpack/pack.lock.json"
       - "mods/**"
       - "pack.toml"
       - "catalog/**"
