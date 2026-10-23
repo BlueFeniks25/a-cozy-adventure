@@ -1,0 +1,31 @@
+name: CI-Konfiguration prüfen
+
+# A small push check also covers branches without an open PR. No release build,
+# Java setup, mod downloads, npm installation or browser environment here.
+on:
+  push:
+    branches: ['release/**', 'feature/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-static-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Routing, kumulative PR-Diffs und sichere Release-Eingaben
+        run: python -B -m unittest discover -s tests -p 'test_ci*.py' -v
+      - name: Python-Syntax
+        run: python -B -m compileall -q scripts

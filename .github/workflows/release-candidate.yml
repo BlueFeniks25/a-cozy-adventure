@@ -1,88 +1,216 @@
-name: v1.0.1 Kandidat prüfen – ohne Veröffentlichung
-
-on:
-  push:
-    branches: [release/v1.0.1]
-  pull_request:
-  workflow_dispatch:
-
+name: Release-Kandidat prüfen – ohne Veröffentlichung
+'on':
+  pull_request: null
+  workflow_dispatch: null
 permissions:
   contents: read
-
 concurrency:
   group: release-candidate-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   candidate:
-    # This workflow prepares review artifacts only, never Pages, tags or releases.
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      PYTHONDONTWRITEBYTECODE: "1"
-      COZY_REQUIRE_E2E: "1"
-      COZY_TEST_JAR: ${{ github.workspace }}/dist/v1.0.1/A-Cozy-Adventure-Prism-v1.0.1.migration.jar
+      PYTHONDONTWRITEBYTECODE: '1'
       PACKWIZ_INSTALLER_JAR: ${{ github.workspace }}/build/customization/packwiz-installer.jar
       ACA_TEST_REPORT: ${{ github.workspace }}/build/release-validation/e2e.json
     defaults:
       run:
         shell: bash
     steps:
-      - name: Quellstand lesen
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          persist-credentials: false
-      - name: Python einrichten
-        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
-        with:
-          python-version: "3.11"
-      - name: Einheitliche Build-Werkzeugkette
-        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
-        with:
-          distribution: temurin
-          java-version: "21"
-      - name: Kandidaten aus geprüften offiziellen Dateien bauen
-        run: |
-          mkdir -p build/release-validation
-          set -o pipefail
-          python -B scripts/prepare_release.py | tee build/release-validation/build.log
-      - name: Alle Python- und echten Packwiz-Tests
-        run: |
-          set -o pipefail
-          python -B -m unittest discover -s tests -v 2>&1 | tee build/release-validation/unittest.log
-      - name: Packwiz, Katalog und JavaScript prüfen
-        run: |
-          python -B scripts/generate_mods.py --check
-          python -B scripts/build_serverpack.py --dry-run > build/release-validation/server-plan.txt
-          node --check assets/app.js
-          node --check assets/releases.js
-          node --check assets/guides.js
-          git diff --exit-code
-      - name: Browser-Abhängigkeiten installieren
-        working-directory: tests
-        run: |
-          npm ci
-          npx playwright install --with-deps chromium
-      - name: Spielerwege, Mobilansichten und Release-Erkennung prüfen
-        run: |
-          set -o pipefail
-          npm --prefix tests test 2>&1 | tee build/release-validation/browser.log
-          cp /tmp/cozy-*.png build/release-validation/
-      - name: Integrität der Kandidaten prüfen
-        working-directory: dist/v1.0.1
-        run: sha256sum --check SHA256SUMS.txt
-      - name: Geprüfte Kandidaten zum Download bereitstellen
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
-        with:
-          name: a-cozy-adventure-v1.0.1-${{ github.sha }}
-          path: dist/v1.0.1/
-          if-no-files-found: error
-          retention-days: 14
-      - name: Prüfnachweise auch bei Fehlern sichern
-        if: ${{ always() }}
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
-        with:
-          name: v1.0.1-validation-${{ github.sha }}
-          path: build/release-validation/
-          if-no-files-found: error
-          retention-days: 14
+    - name: Quellstand lesen
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Python einrichten
+      uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+      with:
+        python-version: '3.11'
+    - name: Gesamten PR-Diff klassifizieren
+      id: changes
+      shell: bash
+      env:
+        CI_BASE: ${{ github.event.pull_request.base.sha }}
+        CI_HEAD: ${{ github.event.pull_request.head.sha }}
+      run: python -B scripts/ci_changes.py
+    - name: Statische CI- und Release-Regressionen
+      run: |
+        python -B -m unittest discover -s tests -p 'test_ci*.py' -v
+        python -B -m compileall -q scripts
+    - name: Release-Konsistenz prüfen
+      if: ${{ steps.changes.outputs.candidate == 'true' || steps.changes.outputs.website == 'true' }}
+      run: python -B -m unittest discover -s tests -p 'test_release.py' -v
+    - name: Version aus pack.toml
+      id: version
+      run: |
+        python - <<'PY'
+        import os, sys
+        from pathlib import Path
+        sys.path.insert(0, "scripts")
+        from prepare_release import VERSION
+        with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
+            output.write("value=" + VERSION + "\n")
+        PY
+    - name: Einheitliche Build-Werkzeugkette
+      uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+      with:
+        distribution: temurin
+        java-version: '21'
+      if: ${{ steps.changes.outputs.candidate == 'true' }}
+    - name: Unveränderliche Release-Quellen zwischenspeichern
+      uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
+      if: ${{ steps.changes.outputs.candidate == 'true' }}
+      with:
+        path: |-
+          build/release-source/A-Cozy-Adventure-Server-v0.0.2.zip
+          build/customization/packwiz-installer*.jar
+        key: release-inputs-${{ runner.os }}-${{ hashFiles('scripts/prepare_release.py', 'scripts/build_prism.py', 'scripts/build_serverpack.py')
+          }}
+    - name: Kandidaten aus geprüften offiziellen Dateien bauen
+      run: |
+        mkdir -p build/release-validation
+        set -o pipefail
+        python -B scripts/prepare_release.py | tee build/release-validation/build.log
+      if: ${{ steps.changes.outputs.candidate == 'true' }}
+    - name: Integrität der Kandidaten prüfen
+      working-directory: dist/v${{ steps.version.outputs.value }}
+      run: sha256sum --check SHA256SUMS.txt
+      if: ${{ steps.changes.outputs.candidate == 'true' }}
+    - name: Geprüfte Kandidaten zum Download bereitstellen
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: a-cozy-adventure-v${{ steps.version.outputs.value }}-${{ github.sha }}
+        path: dist/v${{ steps.version.outputs.value }}/
+        if-no-files-found: error
+        retention-days: 14
+      if: ${{ steps.changes.outputs.candidate == 'true' }}
+    - name: Prüfnachweise auch bei Fehlern sichern
+      if: ${{ always() && (steps.changes.outputs.candidate == 'true') }}
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: v${{ steps.version.outputs.value }}-validation-${{ github.sha }}
+        path: build/release-validation/
+        if-no-files-found: error
+        retention-days: 14
+    - name: Prüfumfang protokollieren
+      if: ${{ always() }}
+      shell: bash
+      env:
+        SCOPE: ${{ toJSON(steps.changes.outputs) }}
+      run: echo "$SCOPE" >> "$GITHUB_STEP_SUMMARY"
+  website:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+      with:
+        python-version: '3.11'
+    - name: Gesamten PR-Diff klassifizieren
+      id: changes
+      shell: bash
+      env:
+        CI_BASE: ${{ github.event.pull_request.base.sha }}
+        CI_HEAD: ${{ github.event.pull_request.head.sha }}
+      run: python -B scripts/ci_changes.py
+    - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      with:
+        node-version: '22'
+        cache: npm
+        cache-dependency-path: tests/package-lock.json
+    - name: JavaScript-Syntax prüfen
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      run: |-
+        node --check assets/app.js
+        node --check assets/releases.js
+        node --check assets/guides.js
+    - name: Lockdatei installieren
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      working-directory: tests
+      timeout-minutes: 3
+      run: npm ci --no-audit --no-fund --fetch-retries=2 --fetch-timeout=30000
+    - name: Playwright-Version bestimmen
+      id: playwright
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      run: echo "version=$(node -p "require('./tests/node_modules/playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+    - uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
+      id: browsers
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-ubuntu24.04-${{ runner.os }}-${{ runner.arch }}-${{ steps.playwright.outputs.version }}-${{ hashFiles('tests/package-lock.json')
+          }}
+    - name: Chromium-Systembibliotheken
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      working-directory: tests
+      timeout-minutes: 3
+      run: npx --no-install playwright install-deps chromium
+    - name: Passendes Chromium bereitstellen
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      working-directory: tests
+      timeout-minutes: 3
+      env:
+        PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: '30000'
+      run: npx --no-install playwright install chromium
+    - name: Navigation, responsive Ansichten, Katalog und Downloads
+      if: ${{ steps.changes.outputs.website == 'true' }}
+      timeout-minutes: 5
+      run: npm --prefix tests test
+    - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      if: ${{ always() && steps.changes.outputs.website == 'true' }}
+      with:
+        name: browser-${{ github.sha }}
+        path: /tmp/cozy-*.png
+        if-no-files-found: warn
+        retention-days: 7
+  acceptance-protection:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    uses: ./.github/workflows/customization.yml
+    permissions:
+      contents: read
+  acceptance-pack:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    uses: ./.github/workflows/serverpack.yml
+    permissions:
+      contents: read
+  acceptance-catalog:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    uses: ./.github/workflows/mod-catalog.yml
+    permissions:
+      contents: read
+  full-acceptance:
+    if: ${{ always() && github.event_name == 'workflow_dispatch' }}
+    needs:
+    - candidate
+    - website
+    - acceptance-protection
+    - acceptance-pack
+    - acceptance-catalog
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - name: Vollständige Abnahme für diesen Quellstand bestätigen
+      env:
+        RESULTS: ${{ toJSON(needs) }}
+        SOURCE_SHA: ${{ github.sha }}
+      run: |
+        python - <<'PY'
+        import json, os
+        from pathlib import Path
+        results = json.loads(os.environ['RESULTS'])
+        assert all(job['result'] == 'success' for job in results.values()), results
+        report = {'scope': 'full-manual-acceptance', 'sourceSha': os.environ['SOURCE_SHA'], 'checks': results, 'published': False}
+        Path('acceptance.json').write_text(json.dumps(report, indent=2) + '\n')
+        PY
+    - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: full-acceptance-${{ github.sha }}
+        path: acceptance.json
+        if-no-files-found: error
+        retention-days: 14

@@ -1,132 +1,138 @@
 name: Serverpack offline prüfen
-
-# Untrusted PR code receives no secrets and never builds a distributable server ZIP.
-on:
-  pull_request:
-  workflow_dispatch:
-
+'on':
+  pull_request: null
+  workflow_dispatch: null
+  workflow_call: null
 permissions:
   contents: read
-
 concurrency:
   group: serverpack-check-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONDONTWRITEBYTECODE: '1'
     defaults:
       run:
         shell: bash
     steps:
-      - name: Repository lesen
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          persist-credentials: false
+    - name: Repository lesen
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Python einrichten
+      uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+      with:
+        python-version: '3.11'
+    - name: Gesamten PR-Diff klassifizieren
+      id: changes
+      shell: bash
+      env:
+        CI_BASE: ${{ github.event.pull_request.base.sha }}
+        CI_HEAD: ${{ github.event.pull_request.head.sha }}
+      run: python -B scripts/ci_changes.py
+    - name: Bestehende Python-Tests einschließlich Linux-Symlinks ausführen
+      id: tests
+      run: python -B -m unittest discover -s tests -p 'test_serverpack.py' -v
+      if: ${{ steps.changes.outputs.pack == 'true' }}
+    - name: Packwiz-Dateien und geprüfte Dateiauswahl validieren
+      id: packwiz
+      if: ${{ !cancelled() && (steps.changes.outputs.pack == 'true') }}
+      run: |
+        python -B - <<'PY'
+        import os
+        from pathlib import Path
+        import sys
 
-      - name: Python einrichten
-        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
-        with:
-          python-version: "3.11"
+        sys.path.insert(0, "scripts")
+        import build_serverpack as builder
 
-      - name: Bestehende Python-Tests einschließlich Linux-Symlinks ausführen
-        id: tests
-        run: python -B -m unittest discover -s tests -v
+        plan = builder.load_plan()
+        # Publish only counts and source identity, never raw configs or local paths.
+        manifest = {
+            "schemaVersion": 1,
+            "status": "validated-plan",
+            "source": plan.source,
+            "selectedModCount": len(plan.mods),
+            "excludedModCount": len(plan.excluded),
+            "configCount": len(plan.configs),
+            "excludedConfigCount": len(plan.excluded_configs),
+            "jarVerification": "pending-local-build",
+            "dedicatedServerCompatibility": "pending-phase-b",
+        }
+        directory = Path(os.environ["RUNNER_TEMP"]) / "serverpack-check"
+        directory.mkdir(parents=True, exist_ok=True)
+        (directory / "plan.json").write_bytes(builder.json_bytes(manifest))
+        print(f"Packwiz hashes and metadata valid: {len(plan.mods)} server mods, {len(plan.configs)} config files.")
+        PY
+    - name: Client-/Server-Abhängigkeiten anhand identischer geprüfter Mod-Hashes
+      if: ${{ steps.changes.outputs.pack == 'true' }}
+      run: python -B scripts/audit_customization.py --snapshot docs/customization/dependencies.json --output build/dependency-validation.json
+    - name: Katalog ohne Netzwerk auf Konsistenz prüfen
+      id: catalog
+      if: ${{ !cancelled() && (steps.changes.outputs.pack == 'true') }}
+      run: python -B scripts/generate_mods.py --check
+    - name: Serverpack-Dry-Run ohne Mod-Downloads ausführen
+      id: dry_run
+      if: ${{ !cancelled() && (steps.changes.outputs.pack == 'true') }}
+      run: |
+        mkdir -p "$RUNNER_TEMP/serverpack-check"
+        python -B scripts/build_serverpack.py --dry-run | tee "$RUNNER_TEMP/serverpack-check/dry-run.txt"
+    - name: Unveränderte Packwiz- und Katalogdateien prüfen
+      id: sources
+      if: ${{ !cancelled() && (steps.changes.outputs.pack == 'true') }}
+      run: git diff --exit-code -- pack.toml index.toml mods/ resourcepacks/ config/ .packwizignore .nojekyll mods.json catalog/
+    - name: Sicheren Prüfbericht auch bei Fehlern erzeugen
+      if: ${{ always() && (steps.changes.outputs.pack == 'true') }}
+      env:
+        TESTS_OUTCOME: ${{ steps.tests.outcome }}
+        PACKWIZ_OUTCOME: ${{ steps.packwiz.outcome }}
+        CATALOG_OUTCOME: ${{ steps.catalog.outcome }}
+        DRY_RUN_OUTCOME: ${{ steps.dry_run.outcome }}
+        SOURCES_OUTCOME: ${{ steps.sources.outcome }}
+      run: |
+        python -B - <<'PY'
+        import json
+        import os
+        from pathlib import Path
 
-      - name: Packwiz-Dateien und geprüfte Dateiauswahl validieren
-        id: packwiz
-        if: ${{ !cancelled() }}
-        run: |
-          python -B - <<'PY'
-          import os
-          from pathlib import Path
-          import sys
-
-          sys.path.insert(0, "scripts")
-          import build_serverpack as builder
-
-          plan = builder.load_plan()
-          # Publish only counts and source identity, never raw configs or local paths.
-          manifest = {
-              "schemaVersion": 1,
-              "status": "validated-plan",
-              "source": plan.source,
-              "selectedModCount": len(plan.mods),
-              "excludedModCount": len(plan.excluded),
-              "configCount": len(plan.configs),
-              "excludedConfigCount": len(plan.excluded_configs),
-              "jarVerification": "pending-local-build",
-              "dedicatedServerCompatibility": "pending-phase-b",
-          }
-          directory = Path(os.environ["RUNNER_TEMP"]) / "serverpack-check"
-          directory.mkdir(parents=True, exist_ok=True)
-          (directory / "plan.json").write_bytes(builder.json_bytes(manifest))
-          print(f"Packwiz hashes and metadata valid: {len(plan.mods)} server mods, {len(plan.configs)} config files.")
-          PY
-
-      - name: Katalog ohne Netzwerk auf Konsistenz prüfen
-        id: catalog
-        if: ${{ !cancelled() }}
-        run: python -B scripts/generate_mods.py --check
-
-      - name: Serverpack-Dry-Run ohne Mod-Downloads ausführen
-        id: dry_run
-        if: ${{ !cancelled() }}
-        run: |
-          mkdir -p "$RUNNER_TEMP/serverpack-check"
-          python -B scripts/build_serverpack.py --dry-run | tee "$RUNNER_TEMP/serverpack-check/dry-run.txt"
-
-      - name: Unveränderte Packwiz- und Katalogdateien prüfen
-        id: sources
-        if: ${{ !cancelled() }}
-        run: git diff --exit-code -- pack.toml index.toml mods/ resourcepacks/ config/ .packwizignore .nojekyll mods.json catalog/
-
-      - name: Sicheren Prüfbericht auch bei Fehlern erzeugen
-        if: ${{ always() }}
-        env:
-          TESTS_OUTCOME: ${{ steps.tests.outcome }}
-          PACKWIZ_OUTCOME: ${{ steps.packwiz.outcome }}
-          CATALOG_OUTCOME: ${{ steps.catalog.outcome }}
-          DRY_RUN_OUTCOME: ${{ steps.dry_run.outcome }}
-          SOURCES_OUTCOME: ${{ steps.sources.outcome }}
-        run: |
-          python -B - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          names = ("tests", "packwiz", "catalog", "dry_run", "sources")
-          allowed = {"success", "failure", "cancelled", "skipped"}
-          checks = {}
-          for name in names:
-              value = os.environ.get(name.upper() + "_OUTCOME", "skipped")
-              checks[name] = value if value in allowed else "skipped"
-          report = {
-              "schemaVersion": 1,
-              "status": "passed" if all(v == "success" for v in checks.values()) else "failed-or-incomplete",
-              "checks": checks,
-              "modDownloads": False,
-              "serverArchiveCreated": False,
-              "scope": "Offline validation; JAR verification and Phase B runtime tests remain pending.",
-          }
-          directory = Path(os.environ["RUNNER_TEMP"]) / "serverpack-check"
-          directory.mkdir(parents=True, exist_ok=True)
-          (directory / "summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-          print(json.dumps(report, indent=2, sort_keys=True))
-          PY
-
-      - name: Nur Prüfberichte als temporäres Artefakt bereitstellen
-        if: ${{ always() }}
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
-        with:
-          name: serverpack-check-${{ github.sha }}
-          path: |
-            ${{ runner.temp }}/serverpack-check/plan.json
-            ${{ runner.temp }}/serverpack-check/dry-run.txt
-            ${{ runner.temp }}/serverpack-check/summary.json
-          if-no-files-found: error
-          retention-days: 7
-          include-hidden-files: false
+        names = ("tests", "packwiz", "catalog", "dry_run", "sources")
+        allowed = {"success", "failure", "cancelled", "skipped"}
+        checks = {}
+        for name in names:
+            value = os.environ.get(name.upper() + "_OUTCOME", "skipped")
+            checks[name] = value if value in allowed else "skipped"
+        report = {
+            "schemaVersion": 1,
+            "status": "passed" if all(v == "success" for v in checks.values()) else "failed-or-incomplete",
+            "checks": checks,
+            "modDownloads": False,
+            "serverArchiveCreated": False,
+            "scope": "Offline validation; JAR verification and Phase B runtime tests remain pending.",
+        }
+        directory = Path(os.environ["RUNNER_TEMP"]) / "serverpack-check"
+        directory.mkdir(parents=True, exist_ok=True)
+        (directory / "summary.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(json.dumps(report, indent=2, sort_keys=True))
+        PY
+    - name: Nur Prüfberichte als temporäres Artefakt bereitstellen
+      if: ${{ always() && (steps.changes.outputs.pack == 'true') }}
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: serverpack-check-${{ github.sha }}
+        path: |
+          ${{ runner.temp }}/serverpack-check/plan.json
+          ${{ runner.temp }}/serverpack-check/dry-run.txt
+          ${{ runner.temp }}/serverpack-check/summary.json
+        if-no-files-found: error
+        retention-days: 7
+        include-hidden-files: 'false'
+    - name: Prüfumfang protokollieren
+      if: ${{ always() }}
+      shell: bash
+      env:
+        SCOPE: ${{ toJSON(steps.changes.outputs) }}
+      run: echo "$SCOPE" >> "$GITHUB_STEP_SUMMARY"
