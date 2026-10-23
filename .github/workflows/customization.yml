@@ -61,6 +61,7 @@ jobs:
           directory.mkdir(parents=True, exist_ok=True)
           tools = [
               ("packwiz-installer.jar", builder.shared.INSTALLER_URL, builder.shared.INSTALLER_SHA256),
+              ("v1.0.0-protection.jar", "https://github.com/BlueFeniks25/a-cozy-adventure/releases/download/v1.0.0/A-Cozy-Adventure-Prism-v1.0.0.migration.jar", "99dc680b056805515d48cab3800a096239b4206ee584402873107fe06023ffc6"),
               ("packwiz-installer-bootstrap.jar", builder.BOOTSTRAP_URL, builder.BOOTSTRAP_SHA256),
           ]
           for name, url, expected in tools:

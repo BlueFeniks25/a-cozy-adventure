@@ -6,10 +6,10 @@
     "mixinextras": "0.5.5"
   },
   "counts": {
-    "clientOnlyPackwiz": 29,
-    "fabricMetadataNodes": 307,
-    "independentOptions": 25,
-    "mods": 137,
+    "clientOnlyPackwiz": 28,
+    "fabricMetadataNodes": 306,
+    "independentOptions": 24,
+    "mods": 136,
     "requiredClientSupport": 4
   },
   "mods": [
@@ -1944,84 +1944,6 @@
       ],
       "packwizFile": "mods/colorful-trims.pw.toml",
       "side": "both",
-      "transitivePossibleProviderOwners": [
-        "fabric-api",
-        "irisshaders",
-        "modmenu",
-        "simple-voice-chat",
-        "sodium"
-      ]
-    },
-    {
-      "fabricEnvironment": "client",
-      "fabricId": "colorlight",
-      "fabricVersion": "0.2.5",
-      "filename": "colorlight-26.3-0.2.5.jar",
-      "hash": "e4f91d542b8cf2f860e07544a3888a24828d7198667d590d1237f79e0bba152f1daac9f7770d7f5812d194fdd588c6e60f8e982d16be4711de622a4c3679a3dd",
-      "hashFormat": "sha512",
-      "id": "colorlight",
-      "jarSha256": "bb40a639c9be1e9ec728fcf451e877e6ae1429c14e84fb568260a39f14fab452",
-      "mandatoryDependencies": [
-        {
-          "builtin": false,
-          "from": "colorlight",
-          "providers": [
-            "fabric-api"
-          ],
-          "requires": "fabric-api",
-          "version": "*"
-        },
-        {
-          "builtin": true,
-          "from": "colorlight",
-          "providers": [],
-          "requires": "fabricloader",
-          "version": "*"
-        },
-        {
-          "builtin": true,
-          "from": "colorlight",
-          "providers": [],
-          "requires": "minecraft",
-          "version": "~26.3"
-        }
-      ],
-      "name": "ColorLight",
-      "nodes": [
-        {
-          "breaks": {},
-          "conflicts": {},
-          "depends": {
-            "fabric-api": "*",
-            "fabricloader": "*",
-            "minecraft": "~26.3"
-          },
-          "environment": "client",
-          "id": "colorlight",
-          "location": "colorlight-26.3-0.2.5.jar",
-          "metadataSha256": "007b8a83b136af0021a9448ed0f4d2bd27ddb8e624fdf3fb2443bb06ff622c72",
-          "owner": "colorlight",
-          "provides": [],
-          "recommends": {},
-          "suggests": {
-            "distanthorizons": "=> 3.0.0",
-            "lambdynlights": "=> 4.0.0",
-            "nvidium": "=> 0.4.0",
-            "sodium": "~0.9.2",
-            "voxy": "=> 0.2.0"
-          },
-          "topLevel": true,
-          "version": "0.2.5"
-        }
-      ],
-      "packwizFile": "mods/colorlight.pw.toml",
-      "recommendation": "optional-default-on",
-      "removeIndividually": {
-        "breaks": [],
-        "conflicts": [],
-        "missingDependencies": []
-      },
-      "side": "client",
       "transitivePossibleProviderOwners": [
         "fabric-api",
         "irisshaders",
@@ -16358,7 +16280,6 @@
     "axolotl-buckets",
     "chat-heads",
     "chatanimation",
-    "colorlight",
     "continuity",
     "coolrain",
     "entity-model-features",
@@ -16387,14 +16308,14 @@
     "sodium"
   ],
   "schemaVersion": 1,
-  "scope": "Exact pinned JAR metadata including declared nested JARs; read-only inspection, no production instance tests.",
+  "scope": "Recomputed from previously recorded Fabric metadata for unchanged pinned identities; no fresh JAR downloads or hash verification in this run.",
   "selectionValidation": {
     "allEnabled": {
       "breaks": [],
       "conflicts": [],
       "missingDependencies": []
     },
-    "coveredSelectionCount": 33554432,
+    "coveredSelectionCount": 16777216,
     "eachOptionalWithMandatory": {
       "ambientsounds": {
         "breaks": [],
@@ -16412,11 +16333,6 @@
         "missingDependencies": []
       },
       "chatanimation": {
-        "breaks": [],
-        "conflicts": [],
-        "missingDependencies": []
-      },
-      "colorlight": {
         "breaks": [],
         "conflicts": [],
         "missingDependencies": []
@@ -16528,6 +16444,7 @@
       "missingDependencies": []
     },
     "method": "Every optional root is checked with mandatory roots alone; all enabled roots are checked for breaks/conflicts. Positive dependencies remain satisfied under every union of these independent options. Static availability is not a full Fabric resolver or runtime compatibility test.",
-    "optionalCount": 25
-  }
+    "optionalCount": 24
+  },
+  "snapshotSha256": "636e185bef81594dcd6b957fb39fdda6cc3489df14647880052d75dae4e3f496"
 }

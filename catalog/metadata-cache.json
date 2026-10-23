@@ -1699,24 +1699,6 @@
       ],
       "wikiUrl": null
     },
-    "Modrinth:DbLWxVRd:sha512:e4f91d542b8cf2f860e07544a3888a24828d7198667d590d1237f79e0bba152f1daac9f7770d7f5812d194fdd588c6e60f8e982d16be4711de622a4c3679a3dd": {
-      "authors": [],
-      "codeUrl": "https://github.com/MrHikmen/ColorLight",
-      "icon": "https://cdn.modrinth.com/data/DbLWxVRd/ee8cf6b27e0bad7b769179645cceeb6183198a27.png",
-      "license": "MIT",
-      "metadataSource": "Modrinth",
-      "metadataUrl": "https://modrinth.com/mod/DbLWxVRd",
-      "name": "ColorLight",
-      "summary": "ColorLight is a mod that adds colored lighting and is compatible with many popular mods. The mod has support for some mods: Voxy, Distant Horizon, Sable (fabric/neoforge), LambDinamycLight.",
-      "tags": [
-        "adventure",
-        "decoration",
-        "game-mechanics",
-        "technology",
-        "utility"
-      ],
-      "wikiUrl": null
-    },
     "Modrinth:E2LV3K2B:sha512:a763c00424d97dd5dcb2d92c559145b1662ce09fee657c17e479ed365244bf4469d1856d14cac597a09cdcbeb6e1e574b298019af3005d9fdc5cf0e24ec217f3": {
       "authors": [],
       "codeUrl": "https://github.com/macuguita/Spanish-Delight-Refabricated",

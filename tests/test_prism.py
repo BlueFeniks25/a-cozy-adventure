@@ -51,7 +51,12 @@ class MigrationTests(unittest.TestCase):
         cls.root = Path(cls.workspace.name)
         sources = cls.root / "src/customization/cozy"
         sources.mkdir(parents=True)
-        shutil.copyfile(builder.ROOT / "src/customization/cozy/Launcher.java", sources / "Launcher.java")
+        # Exercise the exact hash-gated upgrade with isolated fixture bytes.
+        cls.previous_jar = b"official previous launcher fixture"
+        cls.previous_digest = hashlib.sha256(cls.previous_jar).hexdigest()
+        source = (builder.ROOT / "src/customization/cozy/Launcher.java").read_text(encoding="utf-8")
+        source = source.replace("99dc680b056805515d48cab3800a096239b4206ee584402873107fe06023ffc6", cls.previous_digest)
+        (sources / "Launcher.java").write_text(source, encoding="utf-8")
         # Exercise the launcher and migration without replacing native E2E coverage.
         (sources / "Protector.java").write_text(
             'package cozy; public final class Protector { public static void main(String[] args) {} }', encoding="utf-8")
@@ -105,6 +110,34 @@ class MigrationTests(unittest.TestCase):
         result = self.migrate()
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(before, (target.stat().st_mtime_ns, (self.instance / "instance.cfg").stat().st_mtime_ns, backup.stat().st_mtime_ns))
+
+    def test_protection_upgrade_preserves_ownership_and_existing_prism_settings(self):
+        self.assertEqual(self.migrate().returncode, 0)
+        target = self.minecraft / "cozy-customization.jar"
+        target.write_bytes(self.previous_jar)
+        state = self.minecraft / ".cozy/state.json"
+        state.parent.mkdir()
+        state.write_bytes(b'{"schemaVersion":1,"entries":{"official":"proof"}}')
+        before_state = state.read_bytes()
+        config = (self.instance / "instance.cfg").read_bytes()
+        result = self.migrate()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(target.read_bytes(), self.jar.read_bytes())
+        self.assertEqual((self.minecraft / "cozy-customization.jar.before-v1.0.1").read_bytes(), self.previous_jar)
+        self.assertEqual(state.read_bytes(), before_state)
+        self.assertEqual((self.instance / "instance.cfg").read_bytes(), config)
+        self.assertEqual(self.migrate().returncode, 0)
+
+    def test_protection_upgrade_rejects_ambiguous_backup(self):
+        self.assertEqual(self.migrate().returncode, 0)
+        target = self.minecraft / "cozy-customization.jar"
+        target.write_bytes(self.previous_jar)
+        backup = self.minecraft / "cozy-customization.jar.before-v1.0.1"
+        backup.write_bytes(b"personal backup")
+        before = self.inventory()
+        result = self.migrate()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(self.inventory(), before)
 
     def test_dot_minecraft_layout(self):
         self.minecraft.rename(self.instance / ".minecraft")

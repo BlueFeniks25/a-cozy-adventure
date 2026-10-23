@@ -55,6 +55,11 @@ def audit(root: Path, jars: Path):
                         "hash": download["hash"], "jarSha256": hashlib.sha256(data).hexdigest(),
                         "fabricId": found[0]["id"], "fabricVersion": found[0]["version"],
                         "fabricEnvironment": found[0]["environment"], "nodes": found})
+    return analyze(records, nodes, root)
+
+
+def analyze(records, nodes, root):
+    """Analyze verified Fabric metadata independently of its acquisition."""
     by_owner = {record["id"]: record for record in records}
     builtins = dict(BUILTINS)
     pack = tomllib.loads((root / "pack.toml").read_text(encoding="utf-8"))
@@ -139,10 +144,34 @@ def audit(root: Path, jars: Path):
             "selectionValidation": combinations, "mods": records}
 
 
+def audit_snapshot(root, snapshot):
+    """Reuse recorded metadata only for byte-identical pinned mod identities.
+
+    Refuses additions/updates. This mode does not claim a fresh JAR verification.
+    """
+    raw = snapshot.read_bytes()
+    previous = json.loads(raw)
+    known = {record["packwizFile"]: record for record in previous["mods"]}
+    records, nodes = [], []
+    for path in sorted((root / "mods").glob("*.pw.toml")):
+        identifier = path.relative_to(root).as_posix()
+        meta = tomllib.loads(path.read_text(encoding="utf-8"))
+        record = known.get(identifier)
+        if record is None or (record["filename"], record["hashFormat"], record["hash"], record["side"]) != (
+                meta["filename"], meta["download"]["hash-format"], meta["download"]["hash"], meta["side"]):
+            raise BuildError("Snapshot cannot verify added or changed mod: " + identifier)
+        records.append(record)
+        nodes.extend(record["nodes"])
+    report = analyze(records, nodes, root)
+    report["scope"] = "Recomputed from previously recorded Fabric metadata for unchanged pinned identities; no fresh JAR downloads or hash verification in this run."
+    report["snapshotSha256"] = hashlib.sha256(raw).hexdigest()
+    return report
+
+
 def markdown(report):
     counts = report["counts"]
     lines = ["# Dependency audit for player customization", "",
-             f"All {counts['mods']} pinned mod JARs were verified against their Packwiz hashes, then {counts['fabricMetadataNodes']} top-level/nested Fabric metadata records were read. No installed instance was launched or modified.", "",
+             f"Inventory: {counts['mods']} pinned mods, {counts['fabricMetadataNodes']} top-level/nested Fabric metadata records. {report['scope']} No installed instance was launched or modified.", "",
              "Reproduce with Python 3.11+: `python scripts/audit_customization.py --jars PATH_TO_PINNED_JARS`. The input directory is read only. The output JSON records hashes, exact versions, environment, dependency ranges, aliases, nested origins, breaks/conflicts, and dependency providers for every mod.", "",
              "`depends` is mandatory; `breaks` is a hard incompatibility; `conflicts` is a Fabric warning. `recommends`/`suggests` are recorded as advisory. Shared libraries remain required when making their users independent options. Packwiz `side` alone does not establish dependency safety.", "",
              "Dependency provider lists are alternatives: Fabric API modules can be supplied by Fabric API itself or by another mod's bundled JAR. A listed provider is not individually mandatory when another compatible provider remains. The JSON also includes each root's transitive possible provider closure; it deliberately preserves these alternatives.", "",
@@ -171,16 +200,20 @@ def markdown(report):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--jars", type=Path, required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--jars", type=Path)
+    source.add_argument("--snapshot", type=Path, help="Recompute from previous audit; unchanged pinned identities only")
     parser.add_argument("--output", type=Path, default=ROOT / "docs/customization/dependencies.json")
     args = parser.parse_args()
     try:
-        report = audit(args.root, args.jars)
+        report = audit(args.root, args.jars) if args.jars else audit_snapshot(args.root, args.snapshot)
     except (OSError, ValueError, BuildError) as error:
         parser.exit(1, f"Dependency audit failed: {error}\n")
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
-    args.output.with_suffix(".md").write_text(markdown(report), encoding="utf-8")
+    for target, content in [(args.output, json.dumps(report, indent=2, ensure_ascii=False, sort_keys=True) + "\n"),
+                            (args.output.with_suffix(".md"), markdown(report))]:
+        newline = "\r\n" if target.exists() and b"\r\n" in target.read_bytes() else "\n"
+        target.write_bytes(content.replace("\n", newline).encode("utf-8"))
     print(json.dumps(report["counts"], sort_keys=True))
     print("Required client support: " + ", ".join(report["requiredClientSupport"]))
     findings = [report["selectionValidation"]["allEnabled"], report["selectionValidation"]["mandatoryOnly"],

@@ -29,7 +29,7 @@
       "name": "Komfort"
     },
     {
-      "count": 19,
+      "count": 18,
       "name": "Atmosphäre"
     },
     {
@@ -41,7 +41,7 @@
       "name": "Bibliotheken"
     }
   ],
-  "inputSha256": "e6daa4779612d7abc140deb1efe98589c953c050a27f84c26e76fbff7ae2c3b9",
+  "inputSha256": "014f0766ddde4e92baf191a04f2ec847ff6eef9089022887788533383a36087d",
   "mods": [
     {
       "authors": [],
@@ -668,31 +668,6 @@
       "side": "both",
       "source": "Modrinth",
       "url": "https://modrinth.com/mod/hCf7CjRg",
-      "wikiUrl": null
-    },
-    {
-      "authors": [],
-      "categories": [
-        "Atmosphäre"
-      ],
-      "codeUrl": "https://github.com/MrHikmen/ColorLight",
-      "description": "Ergänzt farbige Lichteffekte für eine stimmungsvollere Welt.",
-      "descriptionKind": "editorial",
-      "featured": false,
-      "filename": "colorlight-26.3-0.2.5.jar",
-      "icon": "https://cdn.modrinth.com/data/DbLWxVRd/ee8cf6b27e0bad7b769179645cceeb6183198a27.png",
-      "id": "colorlight",
-      "license": "MIT",
-      "metadataSource": "Modrinth",
-      "metadataUrl": "https://modrinth.com/mod/DbLWxVRd",
-      "name": "ColorLight",
-      "originalSummary": "ColorLight is a mod that adds colored lighting and is compatible with many popular mods. The mod has support for some mods: Voxy, Distant Horizon, Sable (fabric/neoforge), LambDinamycLight.",
-      "packwizFile": "mods/colorlight.pw.toml",
-      "packwizName": "ColorLight",
-      "projectId": "DbLWxVRd",
-      "side": "client",
-      "source": "Modrinth",
-      "url": "https://modrinth.com/mod/DbLWxVRd",
       "wikiUrl": null
     },
     {
@@ -3493,8 +3468,8 @@
     "fabric": "0.19.5",
     "minecraft": "26.3",
     "name": "A Cozy Adventure",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "schemaVersion": 1,
-  "total": 137
+  "total": 136
 }

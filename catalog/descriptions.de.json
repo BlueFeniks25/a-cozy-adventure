@@ -92,10 +92,6 @@
     "description": "Erweitert die farbige Gestaltung deiner Rüstungsverzierungen.",
     "categories": ["Atmosphäre"]
   },
-  "colorlight": {
-    "description": "Ergänzt farbige Lichteffekte für eine stimmungsvollere Welt.",
-    "categories": ["Atmosphäre"]
-  },
   "continuity": {
     "description": "Verbindet passende Blocktexturen für weichere Übergänge, etwa bei Glas.",
     "categories": ["Atmosphäre"]
